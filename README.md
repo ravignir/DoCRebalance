@@ -1,2 +1,2 @@
 # DoCRebalance
-DoC rebalancr
+DoC rebalance
