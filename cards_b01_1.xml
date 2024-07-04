@@ -155,7 +155,7 @@
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_008" DisplayName="Lacerator" Faction="Inferno" School="Fire" SubType="Magic|Melee|Shooter" Race="Demon|Tormentor" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="2" HP="6" ID="33">
         <Ability Type="AreaBlast" Value="3" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_006" DisplayName="Ravager" Faction="Inferno" SubType="Melee" Race="Demon|Juggernaut" Cost="4" MightLevel="3" Attack="6" Retaliate="4" HP="4" ID="34" />
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_006" DisplayName="Ravager" Faction="Inferno" SubType="Melee" Race="Demon|Juggernaut" Cost="4" MightLevel="4" Attack="6" Retaliate="3" HP="5" ID="34" />
     <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_003" DisplayName="Pit Lord" Faction="Inferno" SubType="Flyer" Race="Demon" Cost="6" MightLevel="5" Attack="4" Retaliate="3" HP="7" ID="35">
         <Ability Type="AttackAnywhere" />
     </Card>
