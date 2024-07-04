@@ -23,7 +23,7 @@
     <!--...............................................................................-->
     <!-- Tutorial cards -->
     <!--...............................................................................-->
-    <Card Rarity="NotPlayable" Token="True" Type="Fortune" Name="For_Neu_000" DisplayName="Dragon's Crystal" Faction="Sylvan" Cost="0" DestinyLevel="0" ID="10007">
+    <Card Rarity="NotPlayable" Token="True" Type="Fortune" Name="For_Neu_000" DisplayName="Dragon's Crystal" Faction="Neutral" Cost="0" DestinyLevel="0" ID="10007">
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>

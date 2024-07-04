@@ -59,7 +59,7 @@
     <!--...............................................................................-->
     <!-- Creatures - Haven -->
     <!--...............................................................................-->
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Hav_060" DisplayName="Crusader Sergeant" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="5" MightLevel="5" Attack="1" Retaliate="3" HP="7" ID="602">
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Hav_060" DisplayName="Crusader Sergeant" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="5" MightLevel="4" Attack="1" Retaliate="3" HP="7" ID="602">
         <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="All">
             <CardFilter IncludeFaction="Haven" />
             <Variable Type="CardDamage" UseCurrentTarget="True" />

@@ -56,30 +56,52 @@ At the beginning of your turn, return Shifting Sands to its owner's hand.</Descr
         </Target>
         <Description>Search your library for spell card and put it into your hand, then shuffle your library. Until end of turn, that spell costs [1:RESOURCES] less to play.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_005" DisplayName="Lost in the Void" Faction="Academy" Cost="2" DestinyLevel="2" ID="532">
+    <Card Rarity="Common" Type="Fortune" Name="For_Aca_005" DisplayName="Lost in the Void" Faction="Academy" Cost="1" DestinyLevel="2" ID="532">
+        <Variable Type="TargetCount" ValueModifier="3mi">
+            <Target Zone="Graveyard" Side="Friendly"  Amount="All"/>
+        </Variable>
+        <Variable2 Type="TargetCount" ValueModifier="3mi">
+            <Target Zone="Graveyard" Side="Enemy"  Amount="All"/>
+        </Variable2>
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
-                <Target Zone="Graveyard" Side="Friendly" Amount="3">
-                    <Option Value="0" DisplayText="Friendly Graveyard" />
-                    <Effect Type="Banish" />
-                </Target>
-                <Target Zone="Graveyard" Side="Enemy" Amount="3">
+			
+				<Target Zone="Graveyard" Side="Friendly" Amount="Variable">
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+					<Option Value="0" DisplayText="Friendly Graveyard" />
+					<Effect Type="Banish" />
+					<Subgroup>
+						<Target Zone="None" Side="Friendly">
+							<Effect Type="Draw" Value="1" />
+						</Target>
+					</Subgroup>
+				</Target>
+                <Target Zone="Graveyard" Side="Enemy" Amount="Variable2">
+					<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0" />
                     <Option Value="1" DisplayText="Enemy Graveyard" />
                     <Effect Type="Banish" />
-                </Target>
+					<Subgroup>
+						<Target Zone="None" Side="Friendly">
+							<Effect Type="Draw" Value="1" />
+						</Target>
+					</Subgroup>
+				</Target>
+				
             </Subgroup>
         </Target>
-        <Description>Banish 3 target cards from a graveyard of your choice.</Description>
+        <Description>Banish 3 target cards from a graveyard of your choice, than draw a card.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_006" DisplayName="Severed Fate" Faction="Academy" Cost="3" DestinyLevel="3" ID="533">
+    <Card Rarity="Common" Type="Fortune" Name="For_Aca_006" DisplayName="Severed Fate" Faction="Academy" Cost="1" DestinyLevel="3" ID="533">
         <Variable Type="TargetCount">
-            <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" />
+            <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+				<CardFilter IncludeUnitType="Magic" />
+			</Target>
         </Variable>
         <Target Zone="Library" Side="Enemy" Amount="Variable" MinAmount="0" AutoTakeFirstInputs="True">
             <Effect Type="MoveCardTo" Destination="Graveyard" />
         </Target>
-        <Description>Put the top X cards of opponent's library into their graveyard, where X is equal to the number of friendly creatures on the battleground.</Description>
+        <Description>Put the top X cards of opponent's library into their graveyard, where X is equal to the number of friendly magic creatures on the battleground.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Aca_007" DisplayName="Conversion to the Void" Faction="Academy" Cost="1" DestinyLevel="1" ID="534">
         <Target Zone="Hand" Side="Friendly" Amount="1" SkipNextTargetValidation="True">
@@ -425,7 +447,7 @@ At the beginning of your turn, return Eternal Battlefield to its owner's hand.</
     <!--....................................................................-->
     <!-- Fortune - Sanctuary -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_San_050" DisplayName="Zen Garden" Faction="Sanctuary" Cost="4" DestinyLevel="3" ID="558">
+    <Card Rarity="Common" Type="Fortune" Name="For_San_050" DisplayName="Zen Garden" Faction="Sanctuary" Cost="2" DestinyLevel="3" ID="558">
         <Ongoing Duration="Permanent" />
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Battleground" Amount="Self">

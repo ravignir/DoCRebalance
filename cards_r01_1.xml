@@ -26,14 +26,10 @@
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_102" DisplayName="Power Blast Titan" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Construct|Titan" Cost="4" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="1008">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="Shockwave" Value="2" />
-		<Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Splash" Side="Friendly" ExecuteOncePerTransaction="True">
+		<Target Zone="Battleground" Amount="All" Side="Friendly">
 			<CardFilter IncludeRaces="Construct"/>
-			<Target Zone="Battleground" Amount="FromTrigger" CardType="Unit" >
-				<Variable Type="UnitAttackCount" FromTrigger="True"/>
-				<Condition Operator="LesserThan" ValueA="Variable" ValueB="2"/>
-				<Effect Type="AdditionalAttack" Value="1"/>
-      </Target>
-		</Trigger>
+			<Effect Type="ModifyAbility" Ability="TitanAttackTwice"/>
+		</Target>
 		<Description>Whenever a friendly construct destory a enemy with blast damage for the first time in a turn, it gains an additional attack.</Description>
 	</Card>
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_103" DisplayName="Crimson Wizard" Faction="Academy" SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="1" HP="6" ID="1009">

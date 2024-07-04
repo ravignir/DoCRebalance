@@ -485,4 +485,17 @@
 			</Target>
 		</Trigger>	
 	</TemplateEffect>
+	
+	
+	<TemplateEffect Name="TitanAttackTwice">
+        <Trigger Type="OnThisKillUnit" DamageIncludeFlags="Splash" Side="Friendly" ExecuteOncePerTurn="True">
+            <Target Zone="Battleground" Amount="Self">
+                <Variable Type="UnitAttackCount"/>
+                <Condition Operator="LesserThan" ValueA="Variable" ValueB="2"/>
+                <Effect Type="AdditionalAttack" Value="1" OwnerAbility="TitanAttackTwice"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+	
+
 </Cards>

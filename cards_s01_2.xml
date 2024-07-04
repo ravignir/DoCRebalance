@@ -369,18 +369,33 @@ Inheritance can only be played if you have [0:RESOURCES] left.</Description>
         <Description>Gain [RESOURCES] equal to opponent's current [RESOURCES], then empty opponent's [RESOURCES].</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Neu_033" DisplayName="Pillage" Faction="Neutral" Cost="3" DestinyLevel="4" ID="303">
-        <Ongoing Duration="UntilEnemyEndOfTurn" />
+        <Ongoing Duration="UntilYourNextTurn" />
+		<Variable Type="PillagedResources" Side="Enemy" />
         <Target Zone="Hero" Amount="All" Side="Enemy">
             <Effect Type="ModifyResourcesProduction" Value="0.5xd" />
         </Target>
-        <Description>Until your next turn:
-During their supply phase, opponent only produce half of their [RESOURCES] production, rounded down.</Description>
+        <Trigger Type="OnThisCardLeavePlay">
+			<Target Zone="Hero" Amount="All" Side="Enemy">
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+				<Effect Type="GainResources" Value="Variable" />
+			</Target>
+        </Trigger>
+        <Description>
+			Until your next turn:
+			During their supply phase, opponent only produce half of their [RESOURCES] production, rounded down.
+			If [THIS] leaves the battleground during your opponent's turn, return the pillaged [RESOURCES] to your opponent.
+		</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Neu_034" DisplayName="Monastery of Helexia" Faction="Neutral" Cost="1" DestinyLevel="1" ID="304">
-        <Target Side="Friendly">
-            <Effect Type="Shuffle" CardHolder="Events" />
-        </Target>
-        <Description>Shuffle all event cards and draw 2 new ones.</Description>
+		<Target Zone="Events" Side="Friendly" Amount="1">
+			<Effect Type="Banish" />
+			<Subgroup>
+				<Target Side="Friendly">
+					<Effect Type="Shuffle" CardHolder="Events" />
+				</Target>
+			</Subgroup>
+		</Target>
+        <Description>Banish target event card from the battleground. Shuffle all event cards and draw 2 new ones.</Description>
     </Card>
     <Card Rarity="Rare" Type="Fortune" Name="For_Neu_035" DisplayName="Cosmic Realignment" Faction="Neutral" Cost="4" DestinyLevel="4" ID="305">
         <Target Zone="Hand" Side="Any" Amount="AllOther">
