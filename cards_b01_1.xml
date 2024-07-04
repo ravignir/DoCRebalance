@@ -96,18 +96,14 @@
     </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Hav_002" DisplayName="Eleonore, the Voice of Harmony" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Unique="True" Cost="5" MightLevel="3" MagicLevel="3" Attack="2" Retaliate="0" HP="5" ID="57">
       <Ability Type="ImmuneToRetaliate" />
-      <Trigger Type="OnTurnBegin" Side="Friendly">
+      <Trigger Type="OnTurnEnd" Side="Friendly">
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+		<Variable Type="UnitAttackCount"/>
+		<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
           <Effect Type="Heal" Value="infinite" />
         </Target>
       </Trigger>
-      <Trigger Type="OnThisCardDeploy" Side="Friendly">
-        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
-          <Effect Type="Heal" Value="infinite" />
-        </Target>
-      </Trigger>
-      <Description>When [THIS] enter the battleground, heal all damage from all friendly creatures.
-At the beginning of your turn, heal all damage from all friendly creatures.</Description>
+      <Description>At the end of turn, if Eleonore, the Voice of Harmony did not attack, heal all damage from all friendly creatures.</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Creatures - Inferno -->
