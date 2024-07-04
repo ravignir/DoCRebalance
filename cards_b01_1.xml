@@ -172,7 +172,11 @@ At the beginning of your turn, heal all damage from all friendly creatures.</Des
     </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Inf_001" DisplayName="Chaos Imp" Faction="Inferno" SubType="Shooter" Race="Demon|Imp" Cost="4" MightLevel="1" DestinyLevel="3" Attack="1" Retaliate="0" HP="1" ID="38">
         <Ability Type="ImmuneToRetaliate" />
-        <Description>Whenever opponent plays a card, they discard a card.</Description>
+        <Description>Chaos Imp cannot be targeted.
+Whenever opponent plays a card, they discard a card.</Description>
+	<Target Zone="Battleground" Amount="Self">
+		<Effect Type="ModifyAbility" Ability="CannotTarget"/>
+	</Target>
         <Trigger Type="OnCardPlay" Side="Enemy">
             <Target Zone="Hand" Side="Enemy" Amount="1" Cancelable="False">
                 <Effect Type="MoveCardTo" Destination="Graveyard" />
