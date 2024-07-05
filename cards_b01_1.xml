@@ -354,11 +354,14 @@ Whenever opponent plays a card, they discard a card.</Description>
         <Ability Type="Enrage" Value="2" />
         <Ability Type="MagicResist" />
     </Card>
-    <Card Rarity="Epic" Type="Unit" Name="Cre_Str_002" DisplayName="Blood Caller" Faction="Stronghold" SubType="Magic|Melee" Race="Orc|Warrior" Unique="True" Cost="5" MightLevel="5" MagicLevel="1" Attack="0" Retaliate="0" HP="7" ID="93">
-        <Description>When Blood Caller enters the battleground, destroy 2 other target friendly creatures. Blood Caller's [ATK] and [RET] are both equal to the total remaining health of the destroyed creatures.</Description>
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Str_002" DisplayName="Blood Caller" Faction="Stronghold" SubType="Magic|Melee" Race="Orc|Warrior" Unique="True" Cost="7" MightLevel="5" MagicLevel="1" Attack="0" Retaliate="0" HP="7" ID="93">
+        <Description>When Blood Caller enters the battleground, you may destroy target friendly creature and target enemy creature. Blood Caller's [ATK] and [RET] are both equal to the total remaining health of the destroyed creatures.</Description>
         <Trigger Type="OnThisCardDeploy">
-            <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="2" Cancelable="False" CantTargetSelf="True">
-                <Effect Type="Kill" EpicEnrage="True" />
+            <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" Cancelable="True" CantTargetSelf="True">
+                <Effect Type="Kill" EpicEnrage="True" EvaluationOrder="First" />
+            </Target>
+            <Target Zone="Battleground" CardType="Unit" Side="Enemy" Amount="1" Cancelable="False">
+                <Effect Type="Kill" EpicEnrage="True" EvaluationOrder="Last" />
             </Target>
         </Trigger>
     </Card>
