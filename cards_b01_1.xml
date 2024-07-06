@@ -96,18 +96,14 @@
     </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Hav_002" DisplayName="Eleonore, the Voice of Harmony" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Unique="True" Cost="5" MightLevel="3" MagicLevel="3" Attack="2" Retaliate="0" HP="5" ID="57">
       <Ability Type="ImmuneToRetaliate" />
-      <Trigger Type="OnTurnBegin" Side="Friendly">
+      <Trigger Type="OnTurnEnd" Side="Friendly">
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+		<Variable Type="UnitAttackCount"/>
+		<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
           <Effect Type="Heal" Value="infinite" />
         </Target>
       </Trigger>
-      <Trigger Type="OnThisCardDeploy" Side="Friendly">
-        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
-          <Effect Type="Heal" Value="infinite" />
-        </Target>
-      </Trigger>
-      <Description>When [THIS] enter the battleground, heal all damage from all friendly creatures.
-At the beginning of your turn, heal all damage from all friendly creatures.</Description>
+      <Description>At the end of turn, if Eleonore, the Voice of Harmony did not attack, heal all damage from all friendly creatures.</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Creatures - Inferno -->
@@ -159,7 +155,7 @@ At the beginning of your turn, heal all damage from all friendly creatures.</Des
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_008" DisplayName="Lacerator" Faction="Inferno" School="Fire" SubType="Magic|Melee|Shooter" Race="Demon|Tormentor" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="2" HP="6" ID="33">
         <Ability Type="AreaBlast" Value="3" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_006" DisplayName="Ravager" Faction="Inferno" SubType="Melee" Race="Demon|Juggernaut" Cost="4" MightLevel="3" Attack="6" Retaliate="4" HP="4" ID="34" />
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_006" DisplayName="Ravager" Faction="Inferno" SubType="Melee" Race="Demon|Juggernaut" Cost="4" MightLevel="4" Attack="6" Retaliate="3" HP="5" ID="34" />
     <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_003" DisplayName="Pit Lord" Faction="Inferno" SubType="Flyer" Race="Demon" Cost="6" MightLevel="5" Attack="4" Retaliate="3" HP="7" ID="35">
         <Ability Type="AttackAnywhere" />
     </Card>
@@ -172,7 +168,11 @@ At the beginning of your turn, heal all damage from all friendly creatures.</Des
     </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Inf_001" DisplayName="Chaos Imp" Faction="Inferno" SubType="Shooter" Race="Demon|Imp" Cost="4" MightLevel="1" DestinyLevel="3" Attack="1" Retaliate="0" HP="1" ID="38">
         <Ability Type="ImmuneToRetaliate" />
-        <Description>Whenever opponent plays a card, they discard a card.</Description>
+        <Description>Chaos Imp cannot be targeted.
+Whenever opponent plays a card, they discard a card.</Description>
+	<Target Zone="Battleground" Amount="Self">
+		<Effect Type="ModifyAbility" Ability="CannotTarget"/>
+	</Target>
         <Trigger Type="OnCardPlay" Side="Enemy">
             <Target Zone="Hand" Side="Enemy" Amount="1" Cancelable="False">
                 <Effect Type="MoveCardTo" Destination="Graveyard" />
@@ -354,11 +354,14 @@ At the beginning of your turn, heal all damage from all friendly creatures.</Des
         <Ability Type="Enrage" Value="2" />
         <Ability Type="MagicResist" />
     </Card>
-    <Card Rarity="Epic" Type="Unit" Name="Cre_Str_002" DisplayName="Blood Caller" Faction="Stronghold" SubType="Magic|Melee" Race="Orc|Warrior" Unique="True" Cost="5" MightLevel="5" MagicLevel="1" Attack="0" Retaliate="0" HP="7" ID="93">
-        <Description>When Blood Caller enters the battleground, destroy 2 other target friendly creatures. Blood Caller's [ATK] and [RET] are both equal to the total remaining health of the destroyed creatures.</Description>
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Str_002" DisplayName="Blood Caller" Faction="Stronghold" SubType="Magic|Melee" Race="Orc|Warrior" Unique="True" Cost="7" MightLevel="5" MagicLevel="1" Attack="0" Retaliate="0" HP="7" ID="93">
+        <Description>When Blood Caller enters the battleground, you may destroy target friendly creature and target enemy creature. Blood Caller's [ATK] and [RET] are both equal to the total remaining health of the destroyed creatures.</Description>
         <Trigger Type="OnThisCardDeploy">
-            <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="2" Cancelable="False" CantTargetSelf="True">
-                <Effect Type="Kill" EpicEnrage="True" />
+            <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" Cancelable="True" CantTargetSelf="True">
+                <Effect Type="Kill" EpicEnrage="True" EvaluationOrder="First" />
+            </Target>
+            <Target Zone="Battleground" CardType="Unit" Side="Enemy" Amount="1" Cancelable="False">
+                <Effect Type="Kill" EpicEnrage="True" EvaluationOrder="Last" />
             </Target>
         </Trigger>
     </Card>
@@ -373,7 +376,7 @@ At the beginning of your turn, heal all damage from all friendly creatures.</Des
     <Card Rarity="Common" Type="Unit" Name="Cre_Neu_013" DisplayName="Lesser Fire Elemental" Faction="Neutral" School="Fire" SubType="Magic|Shooter" Race="Spirit" Cost="4" MightLevel="3" MagicLevel="1" Attack="3" Retaliate="2" HP="4" ID="114">
         <Ability Type="ImmuneToRetaliate" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_016" DisplayName="Wild Griffin" Faction="Neutral" SubType="Flyer" Race="Griffin" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="3" ID="115" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_016" DisplayName="Wild Griffin" Faction="Neutral" SubType="Flyer" Race="Griffin" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="4" ID="115" />
     <Card Rarity="Common" Type="Unit" Name="Cre_Neu_003" DisplayName="Sea Elf Archer" Faction="Neutral" SubType="Shooter" Race="Elf|Archer" Cost="3" MightLevel="3" Attack="3" Retaliate="0" HP="3" ID="116">
         <Ability Type="ImmuneToRetaliate" />
     </Card>

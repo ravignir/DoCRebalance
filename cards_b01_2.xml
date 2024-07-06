@@ -458,11 +458,15 @@ Your hero and all friendly creatures gain Magic Shield.</Description>
         </Target>
         <Description>Draw a card. Gain [4:RESOURCES].</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_009" DisplayName="Dragon Vein" Faction="Neutral" Cost="2" DestinyLevel="2" ID="166">
+    <Card Rarity="Common" Type="Fortune" Name="For_Neu_009" DisplayName="Dragon Vein" Faction="Neutral" Cost="2" DestinyLevel="1" ID="166">
         <Target Zone="None" Side="Friendly">
             <Effect Type="IncreaseLevel" Value="1" LevelType="Magic" />
         </Target>
-        <Description>Increase your [MAGIC] level by 1.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="Draw" Value="1" />
+        </Target>
+        <Description>Increase your [MAGIC] level by 1.
+Draw a card.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Neu_018" DisplayName="Stone of Enlightenment" Faction="Neutral" Cost="4" DestinyLevel="4" ID="167">
         <Target Zone="None" Side="Friendly">
@@ -470,11 +474,15 @@ Your hero and all friendly creatures gain Magic Shield.</Description>
         </Target>
         <Description>Draw 3 cards.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_020" DisplayName="Weapon Supplies" Faction="Neutral" Cost="2" DestinyLevel="2" ID="168">
+    <Card Rarity="Common" Type="Fortune" Name="For_Neu_020" DisplayName="Weapon Supplies" Faction="Neutral" Cost="2" DestinyLevel="1" ID="168">
         <Target Zone="None" Side="Friendly">
             <Effect Type="IncreaseLevel" Value="1" LevelType="Might" />
         </Target>
-        <Description>Increase your [MIGHT] level by 1.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="Draw" Value="1" />
+        </Target>
+        <Description>Increase your [MIGHT] level by 1.
+Draw a card.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Neu_011" DisplayName="Gold Pile" Faction="Neutral" Cost="1" DestinyLevel="1" ID="169">
         <Target Zone="None" Side="Friendly">
@@ -571,11 +579,15 @@ Opponent cannot play cards of that type.</Description>
         </Target>
         <Description>Choose target friendly creature. Deploy a creature with the same name as that creature from your hand for free.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_003" DisplayName="Cartographer" Faction="Neutral" Cost="2" DestinyLevel="2" ID="177">
+    <Card Rarity="Common" Type="Fortune" Name="For_Neu_003" DisplayName="Cartographer" Faction="Neutral" Cost="2" DestinyLevel="1" ID="177">
         <Target Zone="None" Side="Friendly">
             <Effect Type="IncreaseLevel" Value="1" LevelType="Destiny" />
         </Target>
-        <Description>Increase your [DESTINY] level by 1.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="Draw" Value="1" />
+        </Target>
+        <Description>Increase your [DESTINY] level by 1.
+Draw a card.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Neu_014" DisplayName="Rally Flag" Faction="Neutral" Cost="2" DestinyLevel="2" ID="178">
         <Ongoing Duration="UntilEndOfTurn" />
