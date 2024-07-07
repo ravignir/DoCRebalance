@@ -458,7 +458,7 @@ Your hero and all friendly creatures gain Magic Shield.</Description>
         </Target>
         <Description>Draw a card. Gain [4:RESOURCES].</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_009" DisplayName="Dragon Vein" Faction="Neutral" Cost="2" DestinyLevel="1" ID="166">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_009" DisplayName="Dragon Vein" Faction="Neutral" Cost="2" DestinyLevel="1" ID="166">
         <Target Zone="None" Side="Friendly">
             <Effect Type="IncreaseLevel" Value="1" LevelType="Magic" />
         </Target>
@@ -474,7 +474,7 @@ Draw a card.</Description>
         </Target>
         <Description>Draw 3 cards.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_020" DisplayName="Weapon Supplies" Faction="Neutral" Cost="2" DestinyLevel="1" ID="168">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_020" DisplayName="Weapon Supplies" Faction="Neutral" Cost="2" DestinyLevel="1" ID="168">
         <Target Zone="None" Side="Friendly">
             <Effect Type="IncreaseLevel" Value="1" LevelType="Might" />
         </Target>
@@ -579,7 +579,7 @@ Opponent cannot play cards of that type.</Description>
         </Target>
         <Description>Choose target friendly creature. Deploy a creature with the same name as that creature from your hand for free.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_003" DisplayName="Cartographer" Faction="Neutral" Cost="2" DestinyLevel="1" ID="177">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_003" DisplayName="Cartographer" Faction="Neutral" Cost="2" DestinyLevel="1" ID="177">
         <Target Zone="None" Side="Friendly">
             <Effect Type="IncreaseLevel" Value="1" LevelType="Destiny" />
         </Target>
