@@ -8,13 +8,26 @@
     <!--...............................................................................-->
     <!-- Fortune - Haven -->
     <!--...............................................................................-->
-    <Card Rarity="Rare" Unique="True" Type="Fortune" Name="For_Hav_005" DisplayName="Prison" Faction="Haven" Cost="5" DestinyLevel="5" ID="126">
+    <Card UseXmlDescription="True" Rarity="Rare" Unique="True" Type="Fortune" Name="For_Hav_005" DisplayName="Prison" Faction="Haven" Cost="5" DestinyLevel="5" ID="126">
         <Ongoing Duration="UntilYourNextTurn" />
+			<Variable Type="PillagedResources" Side="Enemy" />
         <Target Zone="Hero" Amount="All" Side="Enemy">
             <Effect Type="GlobalEffect" GlobalEffectType="SkipResources" />
         </Target>
+		<Trigger Type="OnSupplyPhaseBegin" Side="Enemy">
+			<Target Zone="None" Side="Enemy">
+				<Effect Type="GainResources" Value="1" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisCardLeavePlay">
+			<Target Zone="Hero" Amount="All" Side="Enemy">
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+				<Effect Type="GainResources" Value="Variable" />
+			</Target>
+        </Trigger>
         <Description>Until your next turn:
-During their supply phase, opponent doesn't produce [RESOURCES]. ([RESOURCES] are still emptied.)</Description>
+During their supply phase, opponent only produces [1:RESOURCES] regardless of their [RESOURCES] production.
+When Prison leaves the battleground during your opponent's turn, return half of prisoned [RESOURCES] to your opponent, rounded up.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Hav_002" DisplayName="River of Gems" Faction="Haven" Cost="3" DestinyLevel="3" ID="127">
         <Target Zone="None" Side="Friendly">
