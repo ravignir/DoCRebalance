@@ -293,7 +293,7 @@ Whenever opponent plays a card, they discard a card.</Description>
             </Effect>
         </Target>
         <Description>Until end of turn:
-Your creature cards costs 1 less to play for each creature card with the same name in your graveyard.</Description>
+Your creature cards costs [1:RESOURCES] less to play for each creature card with the same name in your graveyard.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Nec_005" DisplayName="Graveyard" Faction="Necropolis" Cost="2" DestinyLevel="2" ID="144">
         <Target Zone="None" Side="Friendly">
