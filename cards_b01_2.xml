@@ -76,7 +76,7 @@ Whenever opponent plays a card, heal 2 damage from your hero.</Description>
 		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Friendly">	
 			<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
 		</Target>
-        <Description>Take a card from your hand and put it on the top of your library. Heal 2 damage from your hero.Put a +[1:ATK] counter on target friendly creature.</Description>
+        <Description>Take a card from your hand and put it on the top of your library. Heal 2 damage from your hero. Put a +[1:ATK] counter on target friendly creature.</Description>
     </Card>
     <Card Rarity="Epic" Type="Fortune" Name="For_Hav_003" DisplayName="Cassandra's Imperial Devotion" Faction="Haven" Cost="4" DestinyLevel="4" Unique="True" ID="132">
         <Target Zone="None" Side="Friendly">
