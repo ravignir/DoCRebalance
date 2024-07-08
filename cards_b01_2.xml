@@ -356,13 +356,21 @@ No rest for the Wicked can only be played if you will have less cards in hand th
         </Target>
         <Description>Choose target friendly creature. Deal damage equal to the remaining [HEALTH] of the chosen creature to another target creature and destroy the chosen creature.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Str_007" DisplayName="Orc Camp" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="155">
-        <Target Zone="Battleground" Side="Friendly" Amount="All">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Str_007" DisplayName="Orc Camp" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="155">
+        <Target Zone="Battleground" Side="Friendly" Amount="All" CardType="Unit">
+            <CardFilter IncludeAbility="Enrage|Bloodthirst" />
+        </Target>
+	<Target Zone="Battleground" Side="Friendly" Amount="All">
             <CardFilter IncludeAbility="Enrage" />
             <Variable Type="AbilityValue" Ability="Enrage" UseCurrentTarget="True" />
             <Effect Type="AddCounter" CounterType="Enrage" Value="Variable" />
         </Target>
-        <Description>Put a number of enrage counters on all friendly creatures equal to their Enrage value.</Description>
+        <Target Zone="Battleground" Side="Friendly" Amount="All">
+            <CardFilter IncludeAbility="Bloodthirst" />
+            <Variable Type="AbilityValue" Ability="Bloodthirst" UseCurrentTarget="True" />
+            <Effect Type="AddCounter" CounterType="Enrage" Value="Variable" />
+        </Target>
+        <Description>Put a number of Enrage counters on all friendly creatures equal to their Enrage and Bloodthirst value.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Str_003" DisplayName="Blood Pool" Faction="Stronghold" Cost="2" DestinyLevel="2" Zone="Battleground" ID="156">
         <Ongoing Duration="UntilEndOfTurn" />
