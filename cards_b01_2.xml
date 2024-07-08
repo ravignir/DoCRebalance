@@ -295,7 +295,7 @@ Whenever opponent plays a card, they discard a card.</Description>
         <Description>Until end of turn:
 Your creature cards costs [1:RESOURCES] less to play for each creature card with the same name in your graveyard.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Nec_005" DisplayName="Graveyard" Faction="Necropolis" Cost="2" DestinyLevel="2" ID="144">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_005" DisplayName="Graveyard" Faction="Necropolis" Cost="2" DestinyLevel="2" ID="144">
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
@@ -303,7 +303,7 @@ Your creature cards costs [1:RESOURCES] less to play for each creature card with
                     <Option Value="0" DisplayText="Draw a card." />
                     <Effect Type="Draw" Value="1" />
                 </Target>
-                <Target Zone="Graveyard" CardType="Unit" Side="Friendly" Amount="1">
+                <Target Zone="Graveyard" CardType="Unit" Side="Friendly" Amount="1" SkipNextTargetValidation="True">
                     <Option Value="1" DisplayText="Take unit from graveyard." />
                     <Variable Type="TargetCount">
                         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" />
@@ -313,10 +313,15 @@ Your creature cards costs [1:RESOURCES] less to play for each creature card with
                     </Variable2>
                     <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="Variable" />
                     <Effect Type="MoveCardTo" Destination="Hand" />
+					<Effect Type="ModifyCost" Value="-2" Duration="UntilEndOfTurn" />
                 </Target>
+				<Target Zone="None" Amount="Same" ForceExecute="True" Persistent="True">
+				<Option Value="1" />
+            <Effect Type="ModifyCost" Value="-2" Duration="UntilEndOfTurn" />
+        </Target>
             </Subgroup>
         </Target>
-        <Description>Choose one: Draw a card OR If there are fewer friendly creatures than enemy creatures on the battleground, take target creature card from your graveyard and put it into your hand.</Description>
+        <Description>Choose one: Draw a card OR If there are fewer friendly creatures than enemy creatures on the battleground, take target creature card from your graveyard and put it into your hand. Until end of turn, this creature costs [2:RESOURCES] less to play.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Nec_002" DisplayName="Mass Grave" Faction="Necropolis" Cost="1" DestinyLevel="1" ID="145">
         <Target Zone="Hand" Side="Friendly" Amount="1">
