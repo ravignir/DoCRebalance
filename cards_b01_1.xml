@@ -6,6 +6,18 @@
     <!-- //	##      ## #    ##      ##  #    ##     ##  #   ## #    ##         ##      -->
     <!-- //	 ####   ##  #   #####   ##  #    ##     #####   ##  #   #####   #####      -->
     <!--...............................................................................-->
+	<!--...............................................................................-->
+	<!-- Token -->
+	<!--...............................................................................-->
+	<Card Rarity="NotPlayable" Unique="False" Type="Unit" Name="Tok_Inf_001" Token="True" DisplayName="Breeder" Faction="Inferno" SubType="Melee|Shooter" Race="Breeder" Cost="0" MightLevel="0" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="0" HP="1" ID="902">
+		<Ability Type="Stackable"/>
+	</Card>
+	<Card Rarity="NotPlayable" Unique="False" Type="Unit" Name="Tok_Nec_001" Token="True" DisplayName="Skeleton" Faction="Necropolis" SubType="Melee|Shooter" Race="Skeleton" Cost="0" MightLevel="0" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="0" HP="1" ID="903">
+		<Ability Type="Stackable"/>
+	</Card>
+	<Card Rarity="NotPlayable" Unique="False" Type="Unit" Name="Tok_Hav_001" Token="True" DisplayName="Human Soldier" Faction="Haven" SubType="Melee|Shooter" Race="Human|Soldier" Cost="0" MightLevel="0" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="1" HP="1" ID="904">
+		<Ability Type="Stackable"/>
+	</Card>
     <!--...............................................................................-->
     <!-- Creatures - Haven -->
     <!--...............................................................................-->
@@ -94,7 +106,7 @@
         <Ability Type="AbsorbHeroDamage" Value="infinite" />
         <Description>Redirect all damage dealt to your hero to Imperial Guard instead.</Description>
     </Card>
-    <Card Rarity="Epic" Type="Unit" Name="Cre_Hav_002" DisplayName="Eleonore, the Voice of Harmony" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Unique="True" Cost="5" MightLevel="3" MagicLevel="3" Attack="2" Retaliate="0" HP="5" ID="57">
+    <Card UseXmlDescription="True" Rarity="Epic" Type="Unit" Name="Cre_Hav_002" DisplayName="Eleonore, the Voice of Harmony" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Unique="True" Cost="5" MightLevel="3" MagicLevel="3" Attack="2" Retaliate="0" HP="5" ID="57">
       <Ability Type="ImmuneToRetaliate" />
       <Trigger Type="OnTurnEnd" Side="Friendly">
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
@@ -166,7 +178,7 @@
     <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_007" DisplayName="Abyssal Lord" Faction="Inferno" SubType="Melee" Race="Demon" Cost="7" MightLevel="6" Attack="5" Retaliate="4" HP="9" ID="37" School="Dark">
         <Ability Type="AttackAnywhere" />
     </Card>
-    <Card Rarity="Epic" Type="Unit" Name="Cre_Inf_001" DisplayName="Chaos Imp" Faction="Inferno" SubType="Shooter" Race="Demon|Imp" Cost="4" MightLevel="1" DestinyLevel="3" Attack="1" Retaliate="0" HP="1" ID="38">
+    <Card UseXmlDescription="True" Rarity="Epic" Type="Unit" Name="Cre_Inf_001" DisplayName="Chaos Imp" Faction="Inferno" SubType="Shooter" Race="Demon|Imp" Cost="4" MightLevel="1" DestinyLevel="3" Attack="1" Retaliate="0" HP="1" ID="38">
         <Ability Type="ImmuneToRetaliate" />
         <Description>Chaos Imp cannot be targeted.
 Whenever opponent plays a card, they discard a card.</Description>
@@ -354,7 +366,7 @@ Whenever opponent plays a card, they discard a card.</Description>
         <Ability Type="Enrage" Value="2" />
         <Ability Type="MagicResist" />
     </Card>
-    <Card Rarity="Epic" Type="Unit" Name="Cre_Str_002" DisplayName="Blood Caller" Faction="Stronghold" SubType="Magic|Melee" Race="Orc|Warrior" Unique="True" Cost="7" MightLevel="5" MagicLevel="1" Attack="0" Retaliate="0" HP="7" ID="93">
+    <Card UseXmlDescription="True" Rarity="Epic" Type="Unit" Name="Cre_Str_002" DisplayName="Blood Caller" Faction="Stronghold" SubType="Magic|Melee" Race="Orc|Warrior" Unique="True" Cost="7" MightLevel="5" MagicLevel="1" Attack="0" Retaliate="0" HP="7" ID="93">
         <Description>When Blood Caller enters the battleground, you may destroy target friendly creature and target enemy creature. Blood Caller's [ATK] and [RET] are both equal to the total remaining health of the destroyed creatures.</Description>
         <Trigger Type="OnThisCardDeploy">
             <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" Cancelable="True" CantTargetSelf="True">

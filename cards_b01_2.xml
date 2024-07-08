@@ -8,13 +8,26 @@
     <!--...............................................................................-->
     <!-- Fortune - Haven -->
     <!--...............................................................................-->
-    <Card Rarity="Rare" Unique="True" Type="Fortune" Name="For_Hav_005" DisplayName="Prison" Faction="Haven" Cost="5" DestinyLevel="5" ID="126">
+    <Card UseXmlDescription="True" Rarity="Rare" Unique="True" Type="Fortune" Name="For_Hav_005" DisplayName="Prison" Faction="Haven" Cost="5" DestinyLevel="5" ID="126">
         <Ongoing Duration="UntilYourNextTurn" />
+			<Variable Type="PillagedResources" Side="Enemy" />
         <Target Zone="Hero" Amount="All" Side="Enemy">
             <Effect Type="GlobalEffect" GlobalEffectType="SkipResources" />
         </Target>
+		<Trigger Type="OnSupplyPhaseBegin" Side="Enemy">
+			<Target Zone="None" Side="Enemy">
+				<Effect Type="GainResources" Value="1" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisCardLeavePlay">
+			<Target Zone="Hero" Amount="All" Side="Enemy">
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+				<Effect Type="GainResources" Value="Variable" />
+			</Target>
+        </Trigger>
         <Description>Until your next turn:
-During their supply phase, opponent doesn't produce [RESOURCES]. ([RESOURCES] are still emptied.)</Description>
+During their supply phase, opponent only produces [1:RESOURCES] regardless of their [RESOURCES] production.
+When Prison leaves the battleground during your opponent's turn, return half of prisoned [RESOURCES] to your opponent, rounded up.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Hav_002" DisplayName="River of Gems" Faction="Haven" Cost="3" DestinyLevel="3" ID="127">
         <Target Zone="None" Side="Friendly">
@@ -43,7 +56,7 @@ Whenever opponent plays a card, heal 2 damage from your hero.</Description>
         </Target>
         <Description>For each friendly creature on the battleground, gain [1:RESOURCES].</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Hav_006" DisplayName="Fortified Outpost" Faction="Haven" Cost="2" DestinyLevel="2" ID="130">
+    <Card UseXmlDescription="True" NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Hav_006" DisplayName="Fortified Outpost" Faction="Haven" Cost="2" DestinyLevel="2" ID="130">
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
@@ -51,8 +64,8 @@ Whenever opponent plays a card, heal 2 damage from your hero.</Description>
                     <Option Value="0" DisplayText="Draw a card." />
                     <Effect Type="Draw" Value="1" />
                 </Target>
-                <Target Zone="None" Side="Friendly">
-                    <Option Value="1" DisplayText="Gain 4[RESOURCES]." />
+                <Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare">
+                    <Option Value="1" DisplayText="Deploy 2 token creatures." />
                     <Variable Type="TargetCount">
                         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" />
                     </Variable>
@@ -60,11 +73,22 @@ Whenever opponent plays a card, heal 2 damage from your hero.</Description>
                         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy" />
                     </Variable2>
                     <Condition Operator="LesserThan" ValueA="Variable" ValueB="Variable2" />
-                    <Effect Type="GainResources" Value="4" />
+                    <Effect Type="PopulateStack" Name="Tok_Hav_001"/>
+                </Target>
+                <Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare">
+                    <Option Value="1" />
+                    <Variable Type="TargetCount">
+                        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" />
+                    </Variable>
+                    <Variable2 Type="TargetCount">
+                        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy" />
+                    </Variable2>
+                    <Condition Operator="LesserThan" ValueA="Variable" ValueB="Variable2" />
+                    <Effect Type="PopulateStack" Name="Tok_Hav_001"/>
                 </Target>
             </Subgroup>
         </Target>
-        <Description>Choose one: Draw a card. OR If there are fewer friendly creatures than enemy creatures on the battleground, gain [4:RESOURCES].</Description>
+        <Description>Choose one: Draw a card OR If there are fewer friendly creatures than enemy creatures on the battleground, deploy 2 Human Soldier melee-shooter token creatures with [1:ATK]/[1:RET]/[1:HEALTH] and Stackable.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Hav_001" DisplayName="Dwarven Smith" Faction="Haven" Cost="1" DestinyLevel="1" ID="131">
         <Target Zone="Hand" Side="Friendly" Amount="1">
@@ -458,7 +482,7 @@ Your hero and all friendly creatures gain Magic Shield.</Description>
         </Target>
         <Description>Draw a card. Gain [4:RESOURCES].</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_009" DisplayName="Dragon Vein" Faction="Neutral" Cost="2" DestinyLevel="1" ID="166">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_009" DisplayName="Dragon Vein" Faction="Neutral" Cost="2" DestinyLevel="1" ID="166">
         <Target Zone="None" Side="Friendly">
             <Effect Type="IncreaseLevel" Value="1" LevelType="Magic" />
         </Target>
@@ -474,7 +498,7 @@ Draw a card.</Description>
         </Target>
         <Description>Draw 3 cards.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_020" DisplayName="Weapon Supplies" Faction="Neutral" Cost="2" DestinyLevel="1" ID="168">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_020" DisplayName="Weapon Supplies" Faction="Neutral" Cost="2" DestinyLevel="1" ID="168">
         <Target Zone="None" Side="Friendly">
             <Effect Type="IncreaseLevel" Value="1" LevelType="Might" />
         </Target>
@@ -579,7 +603,7 @@ Opponent cannot play cards of that type.</Description>
         </Target>
         <Description>Choose target friendly creature. Deploy a creature with the same name as that creature from your hand for free.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_003" DisplayName="Cartographer" Faction="Neutral" Cost="2" DestinyLevel="1" ID="177">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_003" DisplayName="Cartographer" Faction="Neutral" Cost="2" DestinyLevel="1" ID="177">
         <Target Zone="None" Side="Friendly">
             <Effect Type="IncreaseLevel" Value="1" LevelType="Destiny" />
         </Target>
