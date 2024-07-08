@@ -280,20 +280,20 @@ Whenever opponent plays a card, they discard a card.</Description>
         </Target>
         <Description>Discard a fortune card. Take target non-unique fortune card from your graveyard and put it into your hand.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Nec_007" DisplayName="No Rest for the Wicked" Faction="Necropolis" Cost="1" DestinyLevel="1" ID="143">
-        <Variable Type="TargetCount">
-            <Target Zone="Hand" Amount="All" Side="Friendly" CantTargetSelf="True" />
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_007" DisplayName="No Rest for the Wicked" Faction="Necropolis" Cost="1" DestinyLevel="1" ID="143">
+        <Ongoing Duration="UntilEndOfTurn" />
+		<Variable Type="TargetCount" ValueModifier="-1.0x">
+            <Target Zone="Graveyard" Side="Friendly" Amount="All">
+                <CardFilter IncludeCardType="Unit" />
+            </Target>
         </Variable>
-        <Variable2 Type="TargetCount">
-            <Target Zone="Hand" Amount="All" Side="Enemy" />
-        </Variable2>
-        <PlayabilityCondition Operator="GreaterThan" ValueA="Variable2" ValueB="Variable" />
-        <Target Zone="Graveyard" Side="Friendly" Amount="1">
-            <CardType Include="Unit" />
-            <Effect Type="MoveCardTo" Destination="Hand" />
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+            <Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="Variable">
+                <CardFilter IncludeCardType="Unit" SameGPID="True"/>
+            </Effect>
         </Target>
-        <Description>Take target creature card from your graveyard and put it into your hand.
-No rest for the Wicked can only be played if you will have less cards in hand than opponent after playing it.</Description>
+        <Description>Until end of turn:
+Your creature cards costs 1 less to play for each creature card with the same name in your graveyard.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Nec_005" DisplayName="Graveyard" Faction="Necropolis" Cost="2" DestinyLevel="2" ID="144">
         <Target Zone="None" Side="Friendly">
