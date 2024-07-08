@@ -90,14 +90,17 @@ Whenever opponent plays a card, heal 2 damage from your hero.</Description>
         </Target>
         <Description>Choose one: Draw a card OR If there are fewer friendly creatures than enemy creatures on the battleground, deploy 2 Human Soldier melee-shooter token creatures with [1:ATK]/[1:RET]/[1:HEALTH] and Stackable.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Hav_001" DisplayName="Dwarven Smith" Faction="Haven" Cost="1" DestinyLevel="1" ID="131">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Hav_001" DisplayName="Dwarven Smith" Faction="Haven" Cost="1" DestinyLevel="1" ID="131">
         <Target Zone="Hand" Side="Friendly" Amount="1">
             <Effect Type="MoveCardTo" Destination="Library" />
         </Target>
         <Target Zone="Hero" Amount="All" Side="Friendly">
             <Effect Type="Heal" Value="2" />
         </Target>
-        <Description>Take a card from your hand and put it on the top of your library. Heal 2 damage from your hero.</Description>
+		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Friendly">	
+			<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
+		</Target>
+        <Description>Take a card from your hand and put it on the top of your library. Heal 2 damage from your hero. Put a +[1:ATK] counter on target friendly creature.</Description>
     </Card>
     <Card Rarity="Epic" Type="Fortune" Name="For_Hav_003" DisplayName="Cassandra's Imperial Devotion" Faction="Haven" Cost="4" DestinyLevel="4" Unique="True" ID="132">
         <Target Zone="None" Side="Friendly">
