@@ -613,13 +613,13 @@ Opponent cannot play cards of that type.</Description>
         <Description>Increase your [DESTINY] level by 1.
 Draw a card.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_014" DisplayName="Rally Flag" Faction="Neutral" Cost="2" DestinyLevel="2" ID="178">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_014" DisplayName="Rally Flag" Faction="Neutral" Cost="2" DestinyLevel="2" ID="178">
         <Ongoing Duration="UntilEndOfTurn" />
         <Target Zone="Hero" Amount="All" Side="Friendly">
-            <Effect Type="IncreaseLevel" Value="2" LevelType="Might" />
+            <Effect Type="IncreaseLevel" Value="3" LevelType="Might" />
         </Target>
         <Description>Until end of turn:
-Increase your [MIGHT] level by 2.</Description>
+Increase your [MIGHT] level by 3.</Description>
     </Card>
     <Card Rarity="Epic" Type="Fortune" Name="For_Neu_001" DisplayName="Altar of Asha" Faction="Neutral" Cost="4" DestinyLevel="4" MightLevel="2" Unique="True" ID="179">
         <Target Zone="None" Side="Friendly">
