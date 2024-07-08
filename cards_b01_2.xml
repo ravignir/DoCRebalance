@@ -395,7 +395,7 @@ When Blood Pool enters the battleground, deal 2 damage to your hero.</Descriptio
         </Target>
         <Description>Choose one: Draw a card OR If your hero's remaining health is less than opponent's, deal 3 damage to enemy hero.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Str_004" DisplayName="Blood Shaman Hut" Faction="Stronghold" Cost="1" DestinyLevel="1" Zone="Battleground" ID="158">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Str_004" DisplayName="Blood Shaman Hut" Faction="Stronghold" Cost="1" DestinyLevel="1" Zone="Battleground" ID="158">
         <Ongoing Duration="UntilEndOfTurn" />
         <Target Zone="Hand" Side="Friendly" Amount="1">
             <Effect Type="MoveCardTo" Destination="Library" Duration="Immediate" />
@@ -403,7 +403,7 @@ When Blood Pool enters the battleground, deal 2 damage to your hero.</Descriptio
         <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1">
             <Effect Type="ModifyAttack" Value="2" />
         </Target>
-        <Description>Until end of turn:
+        <Description>Attach to creature. Until end of turn:
 Target friendly creature gains +[2:ATK].
 When Blood Shaman Hut enters the battleground, take a card from your hand and put it on the top of your library.</Description>
     </Card>
