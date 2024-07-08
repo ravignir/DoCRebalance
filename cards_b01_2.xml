@@ -27,7 +27,7 @@
         </Trigger>
         <Description>Until your next turn:
 During their supply phase, opponent only produces [1:RESOURCES] regardless of their [RESOURCES] production.
-When Prison leaves the battleground during your opponent's turn, return half of prisoned [RESOURCES] to your opponent, rounded up.</Description>
+When Prison leaves the battleground during your opponent's turn, they gain half of their current [RESOURCES] production, rounded up.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Hav_002" DisplayName="River of Gems" Faction="Haven" Cost="3" DestinyLevel="3" ID="127">
         <Target Zone="None" Side="Friendly">
