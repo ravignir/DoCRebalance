@@ -418,6 +418,10 @@ Whenever opponent plays a card, they discard a card.</Description>
     <Card Rarity="Common" Type="Unit" Name="Cre_Neu_016" DisplayName="Wild Griffin" Faction="Neutral" SubType="Flyer" Race="Griffin" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="4" ID="115" />
     <Card Rarity="Common" Type="Unit" Name="Cre_Neu_003" DisplayName="Sea Elf Archer" Faction="Neutral" SubType="Shooter" Race="Elf|Archer" Cost="3" MightLevel="3" Attack="3" Retaliate="0" HP="3" ID="116">
         <Ability Type="ImmuneToRetaliate" />
+		<Target Zone="Battleground" Amount="Self">
+		<Effect Type="ModifyDamage" Value="1.0x" DamageFlags="Enforced" />
+	</Target>
+		
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_014" DisplayName="Lesser Earth Elemental" Faction="Neutral" School="Earth" SubType="Magic|Melee" Race="Spirit" Cost="5" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="4" HP="7" ID="117" />
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_011" DisplayName="Lesser Shadow Elemental" Faction="Neutral" School="Dark" SubType="Magic|Melee" Race="Spirit" Cost="3" MightLevel="2" MagicLevel="1" Attack="1" Retaliate="1" HP="3" ID="118">
