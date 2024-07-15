@@ -227,7 +227,7 @@
     <Card Rarity="Common" Type="Unit" Name="Cre_Neu_020" DisplayName="Dire Wolf" Faction="Neutral" SubType="Melee" Race="Wolf" Cost="2" MightLevel="2" Attack="1" Retaliate="2" HP="2" ID="280">
         <Ability Type="Retribution" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_021" DisplayName="Black Vulture" Faction="Neutral" SubType="Flyer" Race="Bird" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="2" ID="281">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_021" DisplayName="Black Vulture" Faction="Neutral" SubType="Flyer" Race="Bird" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="2" ID="281">
         <Variable Type="DeadCardLastTurnCount" Side="Any">
             <CardFilter Side="Friendly" />
         </Variable>        
