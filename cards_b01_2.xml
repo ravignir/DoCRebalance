@@ -35,17 +35,16 @@ When Prison leaves the battleground during your opponent's turn, they gain half 
         </Target>
         <Description>Gain [5:RESOURCES].</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Hav_004" DisplayName="Fountain of Youth" Faction="Haven" Cost="2" DestinyLevel="2" ID="128">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Hav_004" DisplayName="Fountain of Youth" Faction="Haven" Cost="2" DestinyLevel="2" ID="128">
         <Ongoing Duration="UntilYourNextTurn" />
         <Target Zone="Hero" Amount="All" Side="Friendly" />
         <Trigger Type="OnCardPlay" Side="Enemy">
-            <Target Zone="Hero" Amount="All" Side="Friendly">
-                <Effect Type="Heal" Value="2" />
+            <Target Zone="Hero" Amount="All" Side="Friendly" ForceExecute="True" Persistent="True" >
+                <Effect Type="ModifyMaxHp" Value="2" />
             </Target>
         </Trigger>
         <Description>Until your next turn:
-Whenever opponent plays a card, heal 2 damage from your hero.</Description>
-        <ExtraDescription>(Can't go over max HP)</ExtraDescription>
+Whenever opponent plays a card, your hero gains [2:HEALTH].</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Hav_007" DisplayName="Tax Office" Faction="Haven" Cost="2" DestinyLevel="2" ID="129">
         <Target Zone="None" Side="Friendly">
@@ -90,29 +89,36 @@ Whenever opponent plays a card, heal 2 damage from your hero.</Description>
         </Target>
         <Description>Choose one: Draw a card OR If there are fewer friendly creatures than enemy creatures on the battleground, deploy 2 Human Soldier melee-shooter token creatures with [1:ATK]/[1:RET]/[1:HEALTH] and Stackable.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Hav_001" DisplayName="Dwarven Smith" Faction="Haven" Cost="1" DestinyLevel="1" ID="131">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Hav_001" DisplayName="Dwarven Smith" Faction="Haven" Cost="1" DestinyLevel="1" ID="131">
         <Target Zone="Hand" Side="Friendly" Amount="1">
             <Effect Type="MoveCardTo" Destination="Library" />
         </Target>
         <Target Zone="Hero" Amount="All" Side="Friendly">
             <Effect Type="Heal" Value="2" />
         </Target>
-        <Description>Take a card from your hand and put it on the top of your library. Heal 2 damage from your hero.</Description>
+		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Friendly">	
+			<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
+		</Target>
+        <Description>Take a card from your hand and put it on the top of your library. Heal 2 damage from your hero. Put a +[1:ATK] counter on target friendly creature.</Description>
     </Card>
-    <Card Rarity="Epic" Type="Fortune" Name="For_Hav_003" DisplayName="Cassandra's Imperial Devotion" Faction="Haven" Cost="4" DestinyLevel="4" Unique="True" ID="132">
+    <Card UseXmlDescription="True" Rarity="Epic" Type="Fortune" Name="For_Hav_003" DisplayName="Cassandra's Imperial Devotion" Faction="Haven" Cost="4" DestinyLevel="4" Unique="True" ID="132">
         <Target Zone="None" Side="Friendly">
             <Variable Type="TargetCount">
-                <Target Zone="Battleground" CardType="Unit" Amount="All" />
+                <Target Zone="Battleground" CardType="Unit" ExcludeToken="True" Amount="All" >
+				<CardFilter ExcludeToken="True" />
+				</Target>
             </Variable>
             <Effect Type="GainResources" Value="Variable" />
         </Target>
         <Target Zone="Hero" Amount="All" Side="Friendly">
             <Variable Type="TargetCount">
-                <Target Zone="Battleground" CardType="Unit" Amount="All" />
+                <Target Zone="Battleground" CardType="Unit" ExcludeToken="True" Amount="All" >
+				<CardFilter ExcludeToken="True" />
+				</Target>
             </Variable>
             <Effect Type="Heal" Value="Variable" />
         </Target>
-        <Description>For each creature on the battleground, gain [1:RESOURCES] and heal 1 damage from your hero.</Description>
+        <Description>For each non-token creature on the battleground, gain [1:RESOURCES] and heal 1 damage from your hero.</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Fortune - Inferno -->
@@ -277,22 +283,22 @@ Whenever opponent plays a card, they discard a card.</Description>
         </Target>
         <Description>Discard a fortune card. Take target non-unique fortune card from your graveyard and put it into your hand.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Nec_007" DisplayName="No Rest for the Wicked" Faction="Necropolis" Cost="1" DestinyLevel="1" ID="143">
-        <Variable Type="TargetCount">
-            <Target Zone="Hand" Amount="All" Side="Friendly" CantTargetSelf="True" />
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_007" DisplayName="No Rest for the Wicked" Faction="Necropolis" Cost="1" DestinyLevel="1" ID="143">
+        <Ongoing Duration="UntilEndOfTurn" />
+		<Variable Type="TargetCount" ValueModifier="-1.0x">
+            <Target Zone="Graveyard" Side="Friendly" Amount="All">
+                <CardFilter IncludeCardType="Unit" />
+            </Target>
         </Variable>
-        <Variable2 Type="TargetCount">
-            <Target Zone="Hand" Amount="All" Side="Enemy" />
-        </Variable2>
-        <PlayabilityCondition Operator="GreaterThan" ValueA="Variable2" ValueB="Variable" />
-        <Target Zone="Graveyard" Side="Friendly" Amount="1">
-            <CardType Include="Unit" />
-            <Effect Type="MoveCardTo" Destination="Hand" />
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+            <Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="Variable">
+                <CardFilter IncludeCardType="Unit" SameGPID="True"/>
+            </Effect>
         </Target>
-        <Description>Take target creature card from your graveyard and put it into your hand.
-No rest for the Wicked can only be played if you will have less cards in hand than opponent after playing it.</Description>
+        <Description>Until end of turn:
+Your creature cards costs [1:RESOURCES] less to play for each creature card with the same name in your graveyard.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Nec_005" DisplayName="Graveyard" Faction="Necropolis" Cost="2" DestinyLevel="2" ID="144">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_005" DisplayName="Graveyard" Faction="Necropolis" Cost="2" DestinyLevel="2" ID="144">
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
@@ -300,7 +306,7 @@ No rest for the Wicked can only be played if you will have less cards in hand th
                     <Option Value="0" DisplayText="Draw a card." />
                     <Effect Type="Draw" Value="1" />
                 </Target>
-                <Target Zone="Graveyard" CardType="Unit" Side="Friendly" Amount="1">
+                <Target Zone="Graveyard" CardType="Unit" Side="Friendly" Amount="1" SkipNextTargetValidation="True">
                     <Option Value="1" DisplayText="Take unit from graveyard." />
                     <Variable Type="TargetCount">
                         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" />
@@ -310,10 +316,15 @@ No rest for the Wicked can only be played if you will have less cards in hand th
                     </Variable2>
                     <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="Variable" />
                     <Effect Type="MoveCardTo" Destination="Hand" />
+					<Effect Type="ModifyCost" Value="-2" Duration="UntilEndOfTurn" />
                 </Target>
+				<Target Zone="None" Amount="Same" ForceExecute="True" Persistent="True">
+				<Option Value="1" />
+            <Effect Type="ModifyCost" Value="-2" Duration="UntilEndOfTurn" />
+        </Target>
             </Subgroup>
         </Target>
-        <Description>Choose one: Draw a card OR If there are fewer friendly creatures than enemy creatures on the battleground, take target creature card from your graveyard and put it into your hand.</Description>
+        <Description>Choose one: Draw a card OR If there are fewer friendly creatures than enemy creatures on the battleground, take target creature card from your graveyard and put it into your hand. Until end of turn, this creature costs [2:RESOURCES] less to play.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Nec_002" DisplayName="Mass Grave" Faction="Necropolis" Cost="1" DestinyLevel="1" ID="145">
         <Target Zone="Hand" Side="Friendly" Amount="1">
@@ -447,20 +458,20 @@ All friendly creatures gain Attack Anywhere.</Description>
         <Description>Until end of turn:
 Melee and flyer creatures can attack creatures on the back line.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Neu_017" DisplayName="Altar of Shadows" Faction="Neutral" Cost="3" DestinyLevel="3" ID="162">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Neu_017" DisplayName="Altar of Shadows" Faction="Neutral" Cost="3" DestinyLevel="3" ID="162">
         <Variable Type="CardPlayedCount" />
         <PlayabilityCondition Operator="LesserThan" ValueA="Variable" ValueB="1" />
         <Ongoing Duration="UntilYourNextTurn" />
         <Target Zone="Hero" Amount="All" Side="Friendly">
-            <Effect Type="GlobalEffect" GlobalEffectType="CantPlay">
-                <CardFilter IncludeCardType="Fortune|Spell|Unit|Building" />
-            </Effect>
-        </Target>
+			<Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="1">
+			</Effect>
+		</Target>
         <Target Zone="Battleground" CardType="Unit" Side="Enemy" Amount="All">
             <Effect Type="ModifyAbility" Ability="CannotAttack" />
         </Target>
         <Description>Until your next turn:
-Enemy creatures gain Cannot Attack. You cannot play another card this turn.
+Enemy creatures gain Cannot Attack.
+Your cards cost [1:RESOURCES] more to play.
 Altar of Shadows can only be played if you haven't played any card this turn.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Neu_019" DisplayName="Broken Bridge" Faction="Neutral" Cost="3" DestinyLevel="3" ID="163">

@@ -27,17 +27,14 @@
         <Description>Deal 4 damage to target creature and all adjacent creatures.</Description>
         <ExtraDescription>(Also damage friendly units.)</ExtraDescription>
     </Card>
-    <Card NotLocalized="True" Rarity="Rare" Type="Spell" Name="Spe_Fir_001" DisplayName="Armageddon" School="Fire" Cost="6" MagicLevel="6" ID="183">
-        <Target Zone="None" Side="Friendly">
-          <Effect Type="IncreaseLevel" LevelType="Magic" Value="-1"/>
-        </Target>
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Fir_001" DisplayName="Armageddon" School="Fire" Cost="7" MagicLevel="6" ID="183">
         <Target Zone="Battleground" CardType="Unit" Amount="All">
             <Effect Type="Damage" Value="10" />
         </Target>
-        <Description>Deal 10 damage to all creatures. Decrease your Magic Level by 1.</Description>
+        <Description>Deal 10 damage to all creatures.</Description>
         <ExtraDescription>(Also damage friendly units.)</ExtraDescription>
     </Card>
-    <Card NotLocalized="True" Rarity="Common" Type="Spell" Name="Spe_Fir_004" DisplayName="Fire Trap" School="Fire" Cost="2" MagicLevel="2" ID="184">
+    <Card NotLocalized="True" Rarity="Common" Type="Spell" Name="Spe_Fir_004" DisplayName="Fire Trap" School="Fire" Cost="1" MagicLevel="3" ID="184">
       <Ongoing Duration="Permanent" />
       <Target Zone="BattlegroundColumn" Amount="1" />
       <Trigger Type="OnDeployThisRow">
@@ -97,7 +94,7 @@ At the beginning of each player's turn, deal 1 damage to all creatures. When the
         <Description>Enchant creature. Permanent:
 Whenever enchanted creature is attacked and dealt damage, Fire Shield deals the same amount of damage to the attacking creature.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_007" DisplayName="Frenzy" School="Fire" Cost="2" MagicLevel="3" ID="187">
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_007" DisplayName="Frenzy" School="Fire" Cost="2" MagicLevel="2" ID="187">
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" />
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any" CantTargetPrevious="True">
             <Variable Type="CardAttack" UseLastTarget="True" />
@@ -291,20 +288,14 @@ Enchanted creature gains +[3:ATK].</Description>
         <Description>Deal 2 damage to all non-flyer creatures.</Description>
         <ExtraDescription>(Also damage friendly units.)</ExtraDescription>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Ear_011" DisplayName="Rock Wall" School="Earth" Cost="1" MagicLevel="1" ID="208">
-        <Ongoing Duration="Permanent" />
-        <Target Zone="BattlegroundColumn" Amount="1" />
-        <Trigger Type="OnPreAttackThisRow">
-            <CardFilter IncludeUnitType="Melee" />
-            <Target Zone="Battleground" Amount="FromTrigger">
-                <Effect Type="CancelAttack" />
-            </Target>
-            <Target Zone="Battleground" Amount="Self">
-                <Effect Type="Kill" />
-            </Target>
-        </Trigger>
-        <Description>Enchant row. Permanent:
-When a melee creature on enchanted row attacks, prevent all combat damage that would be dealt to and dealt by the attacking creature and destroy Rock Wall.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Ear_011" DisplayName="Rock Wall" School="Earth" Cost="1" MagicLevel="3" ID="208">
+        <Ongoing Duration="UntilDamagedAbsorbedAtEndOfTurn" />
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+            <Effect Type="ModifyDamage" Value="0.0x" />
+        </Target>
+        <Description>Enchant creature. Permanent:
+Prevent all damage dealt to enchanted Creature.
+At the end of the turn, if damage was prevented in this way this turn, destroy Rock Wall.</Description>
     </Card>
     <Card Rarity="Rare" Type="Spell" Name="Spe_Ear_002" DisplayName="Contagion" School="Earth" Cost="3" MagicLevel="3" ID="209">
         <Ongoing Duration="Permanent" />
@@ -321,7 +312,7 @@ When a melee creature on enchanted row attacks, prevent all combat damage that w
         <Description>Enchant creature. Permanent:
 At the beginning of each player's turn, put 1 poison counter on enchanted creature. Then, if possible, Contagion enchants an adjacent creature chosen at random.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_007" DisplayName="Regeneration" School="Earth" Cost="2" MagicLevel="2" ID="210">
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_007" DisplayName="Regeneration" School="Earth" Cost="1" MagicLevel="2" ID="210">
         <Ongoing Duration="Permanent" />
         <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1">
@@ -358,14 +349,15 @@ Combat damage dealt to enchanted creature is halved, rounded down.</Description>
 Prevent all damage dealt to your Hero.
 At the end of the turn, if damage was prevented in this way this turn, destroy Stone Shield.</Description>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Ear_010" DisplayName="Venomous Touch" School="Earth" Cost="1" MagicLevel="2" ID="214">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Ear_010" DisplayName="Venomous Touch" School="Earth" Cost="1" MagicLevel="2" ID="214">
         <Ongoing Duration="Permanent" />
         <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAbility" Ability="Infect" Value="1" />
+			<Effect Type="ModifyAbility" Ability="InfectBlast" Value="1" />
         </Target>
         <Description>Enchant creature. Permanent:
-Enchanted creature gains Infect 1.</Description>
+Enchanted creature gains Infect 1 and Infect Blast 1.</Description>
         <ExtraDescription>(When a unit with Infect 1 deals attack damage to a unit, that unit gets 1 poison counter. Units with poison counter lose 1 HP at the beginning of their controller’s turn for each poison counter.)</ExtraDescription>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_001" DisplayName="Insect Swarm" School="Earth" Cost="3" MagicLevel="3" ID="215">
@@ -414,7 +406,7 @@ After enchanted creature moves or attacks, deal 2 damage to it.</Description>
         <Description>Deal 3 damage to all enemy creatures.
 Heal 3 damage from all friendly creatures.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Dar_010" DisplayName="Vampiric Embrace" School="Dark" Cost="2" MagicLevel="2" ID="219">
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Dar_010" DisplayName="Vampiric Embrace" School="Dark" Cost="2" MagicLevel="1" ID="219">
         <Ongoing Duration="Permanent" />
         <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1">
@@ -430,8 +422,9 @@ Enchanted creature gains Life Drain 2.</Description>
         </Target>
         <Description>Destroy target creature.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Spell" Name="Spe_Dar_004" DisplayName="Shadow Image" School="Dark" Cost="4" MagicLevel="4" ID="221">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Dar_004" DisplayName="Shadow Image" School="Dark" Cost="4" MagicLevel="4" ID="221">
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy">
+		<CardFilter ExcludeUnique="True" />
             <Effect Type="Clone" />
         </Target>
         <Target Zone="Battleground" CardType="Unit" Amount="FromEffect" IgnoreWard="True">
@@ -439,7 +432,7 @@ Enchanted creature gains Life Drain 2.</Description>
             <Effect Type="ModifyAbility" Ability="DieOnDamage" />
         </Target>
         <Description>Permanent:
-Deploy a token that's a copy of target enemy creature. That token gains Quick Attack.
+Deploy a token that's a copy of target non-unique enemy creature. That token gains Quick Attack.
 When any damage is dealt to the token, destroy it.</Description>
         <ExtraDescription>You put the copy on your side of the battleground, on a valid deploy position.</ExtraDescription>
     </Card>
@@ -467,11 +460,12 @@ When any damage is dealt to the token, destroy it.</Description>
 When combat damage is dealt to a creature on enchanted row, destroy that creature.
 When there are no creatures on enchanted row, destroy [THIS].</Description>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Dar_007" DisplayName="Purge" School="Dark" Cost="1" MagicLevel="1" ID="223">
-        <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy">
-            <Effect Type="Cleanse" />
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Dar_007" DisplayName="Purge" School="Dark" Cost="1" MagicLevel="1" ID="223">
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Any">
+            <Variable Type="CounterCount" CounterType="Crippling" UseCurrentTarget="True" />
+            <Effect Type="Damage" Value="Variable" />
         </Target>
-        <Description>Destroy all ongoing spells on target enemy creature.</Description>
+        <Description>Deal damage to each creature equal to the number of crippling counters on it.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Dar_011" DisplayName="Weakness" School="Dark" Cost="2" MagicLevel="2" ID="224">
         <Ongoing Duration="Permanent" />
@@ -485,11 +479,11 @@ Enchanted creature gains -[2:ATK] and -[2:RET].</Description>
     <!--...............................................................................-->
     <!-- Spells - Light -->
     <!--...............................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Lig_007" DisplayName="Heal" School="Light" Cost="1" MagicLevel="1" ID="225">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Lig_007" DisplayName="Heal" School="Light" Cost="0" MagicLevel="1" ID="225">
         <Target Zone="Battleground" CardType="Unit" Amount="1">
-            <Effect Type="Heal" Value="3" />
+            <Effect Type="Heal" Value="infinite" />
         </Target>
-        <Description>Heal 3 damage from target creature.</Description>
+        <Description>Heal all damage from target creature.</Description>
     </Card>
     <Card Rarity="Rare" Type="Spell" Name="Spe_Lig_010" DisplayName="Resurrection" School="Light" Cost="5" MagicLevel="3" MightLevel="3" ID="226">
         <Target Zone="Graveyard" CardType="Unit" Side="Friendly" Amount="1">
