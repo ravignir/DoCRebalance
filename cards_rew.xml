@@ -194,7 +194,7 @@
             </Subgroup>
         </Target>
     </Card>
-<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Nec_007" DisplayName="Siham, Spirit Severer" Faction="Necropolis" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="453">
+<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Nec_007" DisplayName="Siham, Spirit Severer" Faction="Necropolis" MightLevel="1" MagicLevel="0" DestinyLevel="2" HP="20" ID="453">
         <School Name="Dark" />
         <School Name="Earth" />
         <Description>If your [MIGHT] level is 5 or more and your [DESTINY] level is 4 or more:
