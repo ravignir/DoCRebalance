@@ -237,7 +237,7 @@
                     <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn" />
                 </Target>
         </Trigger>
-        <Description>If any friendly creature died during opponent's last turn, Black Vulture gains +[1:ATK] until end of your turn.</Description>
+        <Description>At the beginning of your turn, if any friendly creature died during opponent's last turn, Black Vulture gains +[1:ATK] until end of your turn.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_022" DisplayName="Blind Brother" Faction="Neutral" SubType="Melee|Shooter" Race="Human|Seer" Cost="4" MightLevel="1" DestinyLevel="3" Attack="1" Retaliate="1" HP="5" ID="282">
         <Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
