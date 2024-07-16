@@ -59,7 +59,7 @@
         <Ability Type="Heal" Value="3" />
 		<Ability Type="Mending" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_008" DisplayName="Imperial Griffin" Faction="Haven" SubType="Flyer" Race="Griffin" Cost="4" MightLevel="4" Attack="3" Retaliate="1" HP="6" ID="50">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Hav_008" DisplayName="Imperial Griffin" Faction="Haven" SubType="Flyer" Race="Griffin" Cost="4" MightLevel="4" Attack="3" Retaliate="1" HP="6" ID="50">
         <Ability Type="BattleDive" Value="0" />
 		<Trigger Type="OnDeploy" Side="Enemy">
 			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
