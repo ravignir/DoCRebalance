@@ -77,6 +77,7 @@
 				<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="Variable2"/>
 			</Target>
 		</Trigger>
+	<Description>At the beginning of your turn Imperial Griffin gains phased. If Imperial Griffin has phased, it deals 5 damage to the first creature played during opponent's turn. When Imperial Griffin attacks, deals damage or moves, it loses phased.</Description>
     </Card>
     </Card>
     <Card  Rarity="Uncommon" Type="Unit" Name="Cre_Hav_006" DisplayName="Blazing Glory" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Spirit" Cost="5" MightLevel="4" MagicLevel="2" Attack="3" Retaliate="3" HP="7" ID="51">
