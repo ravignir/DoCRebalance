@@ -496,6 +496,37 @@
             </Target>
         </Trigger>
     </TemplateEffect>
-	
+
+	<TemplateEffect Name="BattleDive">
+		<Trigger Type="OnThisPostAttack">
+			<Target Zone="Battleground" Amount="Self">
+				<Variable Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True" />
+				<Variable2 Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True" ValueModifier="-1.0x"/>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+				<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="Variable2"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnMove" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
+				<Variable Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True" />
+				<Variable2 Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True" ValueModifier="-1.0x"/>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+				<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="Variable2"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnTurnBegin" Side="Friendly" >
+			<Target Zone="Battleground" Amount="Self">
+				<Variable Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True" />
+				<Variable2 Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True" ValueModifier="1"/>
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+				<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="Variable2"/>
+			</Target>
+		</Trigger>					
+		<Target Zone="Battleground" Amount="Self" Side="Friendly" ForceExecute="False" Persistent="False">
+			<Variable Type="AbilityValue" Ability="BattleDive" />
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+				<Effect Type="ModifyAbility" Ability="Phased" OwnerAbility="BattleDive"/>
+		</Target>
+    </TemplateEffect>
 
 </Cards>
