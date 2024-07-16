@@ -228,7 +228,7 @@
         <Ability Type="Retribution" />
     </Card>
     <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_021" DisplayName="Black Vulture" Faction="Neutral" SubType="Flyer" Race="Bird" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="2" ID="281">
-        <Variable Type="DeadCardLastTurnCount" Side="Any">
+        <Variable Type="DeadCardLastTurnCount" Side="Enemy">
             <CardFilter Side="Friendly" />
         </Variable>        
         <Trigger Type="OnTurnBegin" Side="Friendly">    
