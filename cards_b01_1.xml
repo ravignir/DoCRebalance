@@ -60,8 +60,24 @@
 		<Ability Type="Mending" />
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_008" DisplayName="Imperial Griffin" Faction="Haven" SubType="Flyer" Race="Griffin" Cost="4" MightLevel="4" Attack="3" Retaliate="1" HP="6" ID="50">
-        <Ability Type="ImmuneToRetaliate" />
-        <Ability Type="Charge" />
+        <Ability Type="BattleDive" Value="0" />
+		<Trigger Type="OnDeploy" Side="Enemy">
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
+				<Variable Type="AbilityValue" Ability="BattleDive" UseParent="True" />
+				<Variable2 Type="AbilityValue" Ability="BattleDive" UseParent="True" ValueModifier="-1.0x"/>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+				<Effect Type="Damage" Value="5" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnDeploy" Side="Enemy">
+			<Target Zone="Battleground" Amount="Self">
+				<Variable Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True" />
+				<Variable2 Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True" ValueModifier="-1.0x"/>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+				<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="Variable2"/>
+			</Target>
+		</Trigger>
+    </Card>
     </Card>
     <Card  Rarity="Uncommon" Type="Unit" Name="Cre_Hav_006" DisplayName="Blazing Glory" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Spirit" Cost="5" MightLevel="4" MagicLevel="2" Attack="3" Retaliate="3" HP="7" ID="51">
         <Ability Type="Regenerate" Value="2" />
