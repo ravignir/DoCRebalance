@@ -168,13 +168,14 @@ Enemy shooter and flyer creatures gain Cannot Attack.</Description>
 Creatures on enchanted line gain Cannot Attack.
 When Cyclone enters the battleground, deal 1 damage to all creatures on enchanted line.</Description>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Air_011" DisplayName="Wind Shield" School="Air" Cost="1" MagicLevel="1" ID="195">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Air_011" DisplayName="Wind Shield" School="Air" Cost="1" MagicLevel="1" ID="195">
         <Ongoing Duration="Permanent" />
-        <Target Zone="Battleground" CardType="Unit" Amount="1">
+        <Target Zone="BattlegroundColumn" Amount="1">
+            <CardType Include="Unit" />
             <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Shooter" />
         </Target>
-        <Description>Enchant creature. Permanent:
-Combat damage dealt to enchanted creature by shooter creatures is halved, rounded down.</Description>
+        <Description>Enchant line. Permanent:
+Combat damage dealt to creatures on enchanted line by shooter creatures is halved, rounded down.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Air_006" DisplayName="Grounded" School="Air" Cost="2" MagicLevel="2" ID="196">
         <Target Zone="Battleground" CardType="Unit" Amount="All">
