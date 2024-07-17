@@ -72,25 +72,30 @@ Whenever you play a creature, if Memory Lapse is in your graveyard, take it and 
         </Target>
         <Description>Take all creature cards put into your graveyard since the end of your last turn and put them at the bottom of your library. Draw a card.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Hav_061" DisplayName="Morgan's Inspiration" Faction="Haven" Cost="3" DestinyLevel="3" ID="618">
+    <Card UseXmlDescription="True" NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Hav_061" DisplayName="Morgan's Inspiration" Faction="Haven" Cost="3" DestinyLevel="3" ID="618">
         <Ongoing Duration="UntilEndOfTurn" />
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
                 <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="All">
-                    <Option Value="0" DisplayText="Charge" />
-                    <Variable Type="CardDamage" UseCurrentTarget="True" />
-                    <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
+                    <Option Value="0" DisplayText="Gain Charge" />
                     <Effect Type="ModifyAbility" Ability="Charge" />
                 </Target>
-                <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="All">
-                    <Option Value="1" DisplayText="Mending" />
-                    <Effect Type="ModifyAbility" Ability="Mending" />
-                </Target>
-            </Subgroup>
+		<Target Zone="None" Side="Friendly">
+			<Option Value="1" DisplayText="Gain [2:RESOURCES] and heal" />				
+			<Effect Type="GainResources" Value="2" Duration="Immediate" />
+		</Target>
+		<Trigger Type="OnCardPlay" Side="Friendly">
+		<CardFilter IncludeCardType="Unit" />
+			<Target Zone="Hero" Amount="All" Side="Friendly">
+				<Option Value="1" DisplayText="Gain [2:RESOURCES] and heal" />
+				<Effect Type="Heal" Value="1" />
+			</Target>
+	    	</Trigger>
+	    </Subgroup>
         </Target>
         <Description>Until end of turn:
-Choose one: While friendly creatures have no damage, they gain Charge OR All friendly creatures gain Mending.</Description>
+Choose one: All friendly creatures gain Charge OR Gain [2:RESOURCES]. Whenever you play a creature, heal 1 damage from your hero.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Hav_062" DisplayName="Favor of the Just" Faction="Haven" Cost="3" DestinyLevel="2" ID="659">
         <Ongoing Duration="UntilYourNextTurn" />
