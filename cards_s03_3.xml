@@ -108,14 +108,14 @@ Remove 1 from all damage dealt to enchanted creature.</Description>
         <Description>Until your next turn:
 All friendly creatures gain Anchored.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Spell" Name="Spe_Ear_052" DisplayName="Deep Roots" School="Earth" Cost="4" MagicLevel="4" ID="581">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Ear_052" DisplayName="Deep Roots" School="Earth" Cost="4" MagicLevel="4" ID="581">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" Amount="All" CardType="Unit">
-            <CardFilter IncludeUnitType="Melee" />
+            <CardFilter ExcludeUnitType="Flyer" />
             <Effect Type="ModifyAbility" Ability="Anchored" />
         </Target>
         <Description>Permanent:
-All melee creatures gain Anchored.</Description>
+All non-flyer creatures gain Anchored.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Spells - Fire -->
