@@ -120,17 +120,16 @@ All non-flyer creatures gain Anchored.</Description>
     <!--....................................................................-->
     <!-- Spells - Fire -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Fir_050" DisplayName="Fiery Death" School="Fire" Cost="3" MagicLevel="3" ID="582">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Fir_050" DisplayName="Fiery Death" School="Fire" Cost="3" MagicLevel="3" ID="582">
         <Ongoing Duration="Permanent" />
-        <Ability Type="Endurable"/>
         <Target Zone="Battleground" Amount="1" CardType="Unit" />
         <Trigger Type="OnEnchantedCardDeath">
-            <Target Zone="BattlegroundPosition" CardType="Unit" Amount="FromTrigger" Shape="AdjacentOnly">
-                <Effect Type="Damage" Value="2" />
-            </Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="All">
+			<Effect Type="Damage" Value="3" />
+		</Target>
         </Trigger>
         <Description>Enchant creature. Permanent:
-When enchanted creature dies, deal 2 damage to all adjacent creatures.</Description>
+When enchanted creature dies, deal 3 damage to all creatures.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_051" DisplayName="Fire Blast" School="Fire" Cost="3" MagicLevel="2" ID="583">
         <Target Zone="BattlegroundLine" CardType="Unit" Amount="1">
