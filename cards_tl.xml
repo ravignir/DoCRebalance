@@ -522,10 +522,6 @@
 			<Variable Type="AbilityValue" Ability="BattleDive" />
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
 				<Effect Type="ModifyAbility" Ability="AttackAnywhere" OwnerAbility="BattleDive"/>
-		</Target>
-		<Target Zone="Battleground" Amount="Self" Side="Friendly" ForceExecute="False" Persistent="False">
-			<Variable Type="AbilityValue" Ability="BattleDive" />
-			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
 				<Effect Type="ModifyAttack" Value="2" OwnerAbility="BattleDive"/>
 		</Target>
     </TemplateEffect>
