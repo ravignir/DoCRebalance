@@ -500,7 +500,7 @@ While there is a friendly wizard on battle ground, [THIS] gain Swift. </Descript
         </Target>
         <Description>While Crusader Watchman has no damage, it gains +[2:ATK] and +[1:RET].</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_052" DisplayName="Crusader Treasurer" Faction="Haven" SubType="Melee" Race="Human" Cost="4" MightLevel="4" DestinyLevel="1" Attack="2" Retaliate="2" HP="6" ID="494">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_052" DisplayName="Crusader Treasurer" Faction="Haven" SubType="Melee" Race="Human" Cost="4" MightLevel="4" DestinyLevel="1" Attack="2" Retaliate="2" HP="5" ID="494">
         <Ability Type="Income" Value="2" />
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_053" DisplayName="Scattershot Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="5" MightLevel="4" Attack="3" Retaliate="2" HP="7" ID="495">
