@@ -86,15 +86,14 @@ Creatures with no adjacent friendly creature gain Cannot Attack.</Description>
         <Description>Enchant creature. Permanent:
 Enchanted creature gains Anchored.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_041" DisplayName="Sylanna's Embrace" School="Earth" Cost="2" MagicLevel="2" ID="425">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Ear_041" DisplayName="Sylanna's Embrace" School="Earth" Cost="2" MagicLevel="2" ID="425">
         <Ongoing Duration="Permanent" />
         <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any">
-            <Effect Type="ModifyMaxHp" Value="2" />
-            <Effect Type="ModifyAbility" Ability="Regenerate" Value="1" />
+            <Effect Type="ModifyAbility" Ability="Mending" />
         </Target>
         <Description>Enchant creature. Permanent:
-Enchanted creature gains Regenerate 1 and +[2:HEALTH].</Description>
+Enchanted creature gains Mending.</Description>
     </Card>
     <Card Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Ear_042" DisplayName="The Might of Nature" School="Earth" Cost="4" MagicLevel="4" ID="426">
         <Ongoing Duration="Permanent" />
