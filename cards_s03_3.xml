@@ -170,12 +170,15 @@ Enchanted creature gains Heal 2.</Description>
         <Description>Deal 3 damage to all creatures that attacked your creature during opponent's last turn.</Description>
 		<DescriptionChinese>对所有对方上回合攻击过你生物的生物造成3点伤害。</DescriptionChinese>
 	</Card>
-    <Card Rarity="Rare" Type="Spell" Name="Spe_Lig_052" DisplayName="Lay of Hands" School="Light" Cost="3" MagicLevel="1" ID="587">
-        <Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Lig_052" DisplayName="Lay of Hands" School="Light" Cost="3" MagicLevel="1" ID="587">
+        <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1">
+            <Effect Type="RemoveCounter" CounterType="Any" Value="Infinite" />
+        </Target>        
+	<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
             <Variable Type="Level" LevelType="Magic" Side="Friendly" />
             <Effect Type="Heal" Value="Variable" />
         </Target>
-        <Description>Heal an amount of damage equal to your [MAGIC] level from all friendly creatures.</Description>
+        <Description>Remove all counters from target friendly creature, then heal an amount of damage equal to your [MAGIC] level from all friendly creatures.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Spells - Prime -->
