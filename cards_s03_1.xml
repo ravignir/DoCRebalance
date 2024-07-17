@@ -223,6 +223,7 @@ While there is a friendly wizard on battle ground, [THIS] gain Swift. </Descript
     </Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Aca_026" DisplayName="Shantiri Titan" Faction="Academy" School="Prime" SubType="Magic|Melee" Race="Titan|Construct" Cost="5" MagicLevel="5" MightLevel="5" Attack="5" Retaliate="2" HP="11" ID="481">
         <Ability Type="Shockwave" Value="2" />
+	<Ability Type="FocusedBlast" Value="3" />
         <Target Zone="Battleground" Amount="Self">
             <Variable Type="CardDamage" />
             <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
