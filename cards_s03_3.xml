@@ -154,7 +154,7 @@ When enchanted creature dies, deal 3 damage to all creatures.</Description>
     <!--....................................................................-->
     <!-- Spells - Light -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Lig_050" DisplayName="Aura of Healing" School="Light" Cost="3" MagicLevel="3" ID="585">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Lig_050" DisplayName="Aura of Healing" School="Light" Cost="1" MagicLevel="3" ID="585">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" Amount="1" CardType="Unit">
             <Effect Type="ModifyAbility" Ability="Heal" Value="2" />
