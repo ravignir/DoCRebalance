@@ -568,16 +568,14 @@ Whenever you deploy a creature, that creature deals damage equal to its [ATK] to
     <!--....................................................................-->
     <!--  Fortune - Neutral -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_050" DisplayName="Fortune Telling" Faction="Neutral" Cost="4" DestinyLevel="2" ID="566">
-        <Target Zone="None" Side="Friendly" Cancelable="False" SkipSubTargetValidation="True">
-            <Effect Type="Draw" Value="3" />
-            <Subgroup>
-                <Target Zone="Hand" Amount="2" Side="Friendly" Cancelable="False">
-                    <Effect Type="MoveCardTo" Destination="Graveyard" />
-                </Target>
-            </Subgroup>
-        </Target>
-        <Description>Draw 3 cards then discard 2 cards.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_050" DisplayName="Fortune Telling" Faction="Neutral" Cost="4" DestinyLevel="2" ID="566">
+	<Target Zone="Library" Side="Friendly" Amount="2" AmountVisible="5">
+		<Effect Type="MoveCardTo" Destination="Hand"/>
+	</Target>
+	<Target Zone="Library" Side="Friendly" Amount="3" AutoTakeFirstInputs="True" InputOnExec="True">
+		<Effect Type="MoveCardTo" Destination="Graveyard"/>
+	</Target>
+        <Description>Look at the top 5 cards of your library. Put 2 of them into your hand and the rest into your graveyard.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Neu_051" DisplayName="Full Moon" Faction="Neutral" Cost="2" DestinyLevel="3" ID="567">
         <Target Zone="Graveyard" Amount="All" CardType="Unit" Side="Friendly">
