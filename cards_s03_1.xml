@@ -541,7 +541,7 @@ While Crusader Chaplain has no damage, it cannot be targeted.</Description>
     <!--...............................................................................-->
     <!-- Creatures - Inferno -->
     <!--...............................................................................-->
-    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_050" DisplayName="Lashing Lilim" Faction="Inferno" School="Fire" SubType="Magic|Shooter" Race="Demon|Succubus" Cost="4" MightLevel="4" MagicLevel="1" Attack="2" Retaliate="2" HP="6" ID="498">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_050" DisplayName="Lashing Lilim" Faction="Inferno" School="Fire" SubType="Magic|Shooter" Race="Demon|Succubus" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="1" HP="6" ID="498">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="SweepAttack" />
     </Card>
