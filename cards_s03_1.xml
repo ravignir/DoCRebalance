@@ -509,7 +509,8 @@ While there is a friendly wizard on battle ground, [THIS] gain Swift. </Descript
         <Description>Whenever Scattershot Marksman attacks a melee creature, deal 2 damage to all other enemy melee creatures.</Description>
     </Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Hav_054" DisplayName="Crusader Chaplain" Faction="Haven" SubType="Magic|Melee" Race="Human|Priest" School="Light" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="2" HP="5" ID="496">
-        <Target Zone="Battleground" Amount="Self">
+        <Ability Type="Regeneration" Value="1" />
+	<Target Zone="Battleground" Amount="Self">
             <Variable Type="CardDamage" />
             <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
             <Effect Type="ModifyAbility" Ability="CannotTarget" />
