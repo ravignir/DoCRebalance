@@ -540,18 +540,25 @@ Heal all damage from all friendly creatures.</Description>
         </Target>
         <Description>Deal 3 damage to all creatures on target row.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Lig_006" DisplayName="Martyr" School="Light" Cost="3" MagicLevel="3" ID="233">
-        <Ongoing Duration="UntilDamagedAbsorbedAtEndOfTurn" SuicideParent="True" />
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Lig_006" DisplayName="Martyr" School="Light" Cost="3" MagicLevel="3" ID="233">
+        <Ongoing Duration="UntilDamagedAbsorbedAtEndOfTurn" />
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly">
           <Effect Type="ModifyAbility" Ability="Anchored" />
         </Target>
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
             <Effect Type="ModifyDamage" Value="0.0x" Side="Enemy" DamageIncludeFlags="All" />
         </Target>
+		<Trigger Type="OnThisDetach" >
+		<CardFilter SameGPID="True"/>
+            <Target Zone="Battleground" Amount="Parent">
+                <Effect Type="Banish"/>
+            </Target>
+        </Trigger>
         <Description>Enchant friendly creature. Permanent:
 Enchanted creature gains Anchored.
 Prevent all damage dealt to friendly creatures from sources you don't control.
-At end of turn, if damage was prevented in this way this turn, destroy enchanted creature.</Description>
+When Martyr leaves the battleground, banish enchanted creature.
+At end of turn, if damage was prevented in this way this turn, destroy Martyr.</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Spells - Prime -->
