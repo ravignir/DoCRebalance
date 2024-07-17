@@ -25,7 +25,7 @@
                     <Effect Type="GainResources" Value="-5" Duration="Immediate" />
                 </Target>
                 <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
-                    <Option Value="5" />
+                    <Option Value="4" />
                     <Effect Type="Heal" Value="infinite" Duration="Immediate" />
                 </Target>
             </Subgroup>
