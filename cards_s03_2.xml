@@ -232,7 +232,7 @@ Whenever opponent plays a card of this type, draw a card.</Description>
         </Target>
         <Description>Gain [RESOURCES] equal to your [MAGIC] level. Deal damage to your hero equal to your [MAGIC] level.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Fortune" Name="For_Aca_016" DisplayName="Chain Casting" Faction="Academy" Cost="0" DestinyLevel="1" ID="543">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Fortune" Name="For_Aca_016" DisplayName="Chain Casting" Faction="Academy" Cost="1" DestinyLevel="1" ID="543">
         <Ongoing Duration="UntilEndOfTurn" />
         <Variable Type="CardPlayedCount" ValueModifier="-1.0x">
             <CardFilter IncludeCardType="Spell" />
@@ -245,8 +245,12 @@ Whenever opponent plays a card of this type, draw a card.</Description>
                 <CardFilter IncludeCardType="Spell" />
             </Effect>
         </Target>
-        <Description>Until end of turn:
-Spells you play cost [1:RESOURCES] less for each other spell you played this turn. The cost of those spells could not be reduced to less than [1:RESOURCES].</Description>
+	<Target Zone="Hand" Side="Friendly" Amount="1">
+            <Effect Type="MoveCardTo" Destination="Library" Duration="Immediate" />
+        </Target>
+        <Description>Take a card from your hand and put it on the top of your library.
+Until end of turn:
+Spells you play cost [1:RESOURCES] less for each other spell you played this turn.</Description>
     </Card>
     <Card Rarity="Rare" Type="Fortune" Name="For_Aca_017" DisplayName="Offering to the Void" Faction="Academy" Cost="6" DestinyLevel="3" ID="544">
         <Target Zone="None" Side="Friendly">
