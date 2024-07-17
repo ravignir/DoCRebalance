@@ -37,7 +37,7 @@
         <Ability Type="CannotAttack" />
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Aca_007" DisplayName="Enslaved Harpy" Faction="Academy" SubType="Flyer" Race="Beastmen|Harpy" Cost="2" MightLevel="2" Attack="2" Retaliate="0" HP="5" ID="462" />
-	<Card Rarity="Common" Type="Unit" Name="Cre_Aca_008" DisplayName="Spirit-Bound Djinn" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="2" MightLevel="2" MagicLevel="3" Attack="2" Retaliate="2" HP="6" ID="463">
+	<Card Rarity="Common" Type="Unit" Name="Cre_Aca_008" DisplayName="Spirit-Bound Djinn" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="2" MightLevel="2" MagicLevel="2" Attack="2" Retaliate="2" HP="6" ID="463">
         <Trigger Type="OnThisCardDeath">
             <Target Zone="Hero" Side="Friendly" Amount="All">
                 <Variable Type="CardAttack" />
@@ -97,7 +97,7 @@
         <Description>Whenever a friendly wizard creatures attacks and destroys a creature the first time during your turn, take target non-unique spell card in your graveyard and put it into your hand.</Description>
 		<DescriptionChinese>每当一个本方巫师生物第一次在本方回合消灭一个生物时，指定本方墓地中的一张非独有法术卡放入你的手牌中。</DescriptionChinese>
 	</Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_016" DisplayName="Guardian Golem" Faction="Academy" School="Prime" SubType="Magic|Melee" Race="Golem|Construct" Cost="3" MightLevel="2" MagicLevel="2" Attack="2" Retaliate="1" HP="4" ID="471">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_016" DisplayName="Guardian Golem" Faction="Academy" School="Prime" SubType="Magic|Melee" Race="Golem|Construct" Cost="3" MightLevel="2" MagicLevel="2" Attack="2" Retaliate="1" HP="5" ID="471">
         <Target Zone="Battleground" Amount="Self">
             <Effect Type="PlayEffect" PlayEffectType="Decoy">
                 <CardFilter IncludeCardType="All" Side="Enemy" />
