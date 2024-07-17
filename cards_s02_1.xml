@@ -20,8 +20,18 @@
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_042" DisplayName="Griffin Mounted Spearman" Faction="Haven" SubType="Melee" Race="Human|Knight" Cost="4" MightLevel="4" Attack="3" Retaliate="2" HP="6" ID="347">
         <Ability Type="Swift" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_043" DisplayName="Griffin Knight" Faction="Haven" SubType="Flyer" Race="Human|Knight" Cost="3" MightLevel="3" Attack="1" Retaliate="2" HP="6" ID="348">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Hav_043" DisplayName="Griffin Knight" Faction="Haven" SubType="Flyer" Race="Human|Knight" Cost="3" MightLevel="3" Attack="1" Retaliate="2" HP="5" ID="348">
         <Ability Type="FlyerGuard" Value="2" />
+		<Target Zone="Battleground" CardType="Unit" Amount="Self">
+            <Variable Type="TargetCount">
+                <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly" >
+				<CardFilter IncludeUnitType="Flyer"/>
+				</Target>
+            </Variable>
+            <Effect Type="ModifyAttack" Value="Variable" />
+            <Effect Type="ModifyRetaliate" Value="Variable" />
+        </Target>
+		<Description>Griffin Knight gains +[1:ATK] for each adjacent friendly flyer creature.</Description>
     </Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Hav_044" DisplayName="Immaculate Glory" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Spirit" Cost="5" MightLevel="4" MagicLevel="2" Attack="3" Retaliate="3" HP="7" ID="349">
         <Ability Type="DarkWard" />
@@ -71,7 +81,7 @@
         <Description>Enemy creatures on the same row as Hellfire Maniac gain Berserk.
 After Hellfire Maniac is attacked, deal 4 damage to the attacking creature.</Description>
     </Card>
-    <Card Rarity="Epic" Type="Unit" Name="Cre_Inf_044" DisplayName="Chaos Seer" Faction="Inferno" School="Prime" SubType="Shooter" Race="Demon|Seer" Cost="3" MightLevel="2" DestinyLevel="2" Attack="2" Retaliate="0" HP="3" ID="355">
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Inf_044" DisplayName="Chaos Seer" Faction="Inferno" School="Prime" SubType="Shooter" Race="Demon|Seer" Cost="3" MightLevel="2" DestinyLevel="2" Attack="2" Retaliate="0" HP="4" ID="355">
         <Ability Type="ImmuneToRetaliate" />
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Hand" Amount="Variable" Side="Friendly" Cancelable="False">
@@ -93,7 +103,7 @@ After Hellfire Maniac is attacked, deal 4 damage to the attacking creature.</Des
         <Description>At the beginning of each player's turn, if that player has more than 6 cards in hand, they discard until they have 6 cards left.
 When Chaos Seer leaves the battleground during opponent's turn, they discard a card.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_045" DisplayName="Void Arbiter" Faction="Inferno" School="Prime" SubType="Magic|Shooter" Race="Void|Demon|Succubus" Cost="4" MightLevel="2" MagicLevel="2" DestinyLevel="2" Attack="2" Retaliate="1" HP="4" ID="356">
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_045" DisplayName="Void Arbiter" Faction="Inferno" School="Prime" SubType="Magic|Shooter" Race="Void|Demon|Succubus" Cost="4" MightLevel="2" MagicLevel="2" DestinyLevel="2" Attack="2" Retaliate="0" HP="6" ID="356">
         <Ability Type="ImmuneToRetaliate" />
         <Target Zone="Hero" Amount="All" Side="Any">
             <Effect Type="GlobalEffect" GlobalEffectType="CantDrawAdditional" />
@@ -142,8 +152,14 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
     <Card Rarity="Common" Type="Unit" Name="Cre_San_040" DisplayName="Waterfall Guardians" Faction="Sanctuary" School="Water" SubType="Melee" Race="Spirit" Cost="2" MightLevel="1" Attack="0" Retaliate="2" HP="5" ID="363">
         <Ability Type="Hypnotize" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_San_041" DisplayName="Naga Yokujin" Faction="Sanctuary" SubType="Shooter" Race="Naga|Archer" Cost="3" MightLevel="3" Attack="2" Retaliate="1" HP="6" ID="364">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_San_041" DisplayName="Naga Yokujin" Faction="Sanctuary" SubType="Shooter" Race="Naga|Archer" Cost="3" MightLevel="3" Attack="2" Retaliate="1" HP="6" ID="364">
         <Ability Type="ImmuneToRetaliate" />
+		<Trigger Type="OnThisPreAttack">
+            <Target Zone="Battleground" CardType="Unit" Amount="1" ForceExecute="True" Persistent="True" Cancelable="False">
+                <Effect Type="ModifyAbility" Ability="Immobilized" Duration="UntilYourNextTurn" />
+            </Target>
+        </Trigger>
+		<Description>Whenever Naga Yokujin attacks, target creature is immobilized until your next turn.</Description>
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_San_042" DisplayName="Okane no Okane" Faction="Sanctuary" School="Prime" SubType="Shooter" Race="Eel" Cost="3" MightLevel="2" DestinyLevel="1" Attack="2" Retaliate="1" HP="4" ID="365">
         <Ability Type="ImmuneToRetaliate" />
@@ -165,7 +181,7 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
         </Trigger>
         <Description>After Shinje Warrior is attacked, destroy attacking creature.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_San_045" DisplayName="Unmei-Kami" Faction="Sanctuary" SubType="Magic|Melee" Race="Spirit" Cost="4" MightLevel="2" MagicLevel="2" DestinyLevel="2" Attack="2" Retaliate="1" HP="5" ID="368">
+    <Card Rarity="Rare" Type="Unit" Name="Cre_San_045" DisplayName="Unmei-Kami" Faction="Sanctuary" SubType="Magic|Melee" Race="Spirit" Cost="3" MightLevel="2" MagicLevel="2" DestinyLevel="2" Attack="2" Retaliate="1" HP="5" ID="368">
         <Ability Type="FortuneWard" />
         <Trigger Type="OnThisDamageHero" Side="Enemy">
             <Target Zone="Hand" Amount="1" Side="Enemy" Cancelable="True">
@@ -183,7 +199,7 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
         <Ability Type="SpellResist" />
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Str_041" DisplayName="War Oliphant" Faction="Stronghold" SubType="Melee" Race="Beast" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="7" ID="370" />
-    <Card Rarity="Common" Type="Unit" Name="Cre_Str_042" DisplayName="Blackskull Centaur" Faction="Stronghold" SubType="Shooter" Race="Centaur|Archer" Cost="3" MightLevel="3" Attack="2" Retaliate="1" HP="3" ID="371">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Str_042" DisplayName="Blackskull Centaur" Faction="Stronghold" SubType="Shooter" Race="Centaur|Archer" Cost="3" MightLevel="3" Attack="2" Retaliate="1" HP="4" ID="371">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="Swift" />
     </Card>
@@ -295,13 +311,22 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_San_047" DisplayName="Venerable Kappa" Faction="Sanctuary" SubType="Melee" Race="Spirit" Cost="4" MightLevel="4" DestinyLevel="1" Attack="3" Retaliate="3" HP="6" ID="388">
         <Ability Type="FortuneWard" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_047" DisplayName="Blackskull Spellsmasher" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="2" HP="7" ID="389">
-        <Trigger Type="OnThisPreAttack">
-            <Target Zone="Battleground" CardType="Spell" Side="Any" Amount="1" Cancelable="False">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Str_047" DisplayName="Blackskull Spellsmasher" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="2" HP="7" ID="389">
+        <Variable Type="TargetCount" Side="Any" MustBeTargetable="True">
+		<Target Zone="Battleground" Amount="All">
+			<CardFilter IncludeCardType="Spell" Damaged="True"/>
+			</Target>
+			</Variable>
+		<Trigger Type="OnThisPreAttack">
+		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+            <Target Zone="Battleground" CardType="Spell" Side="Any" Amount="1" Cancelable="True">
                 <Effect Type="Kill" />
             </Target>
+			<Target Zone="Battleground" Amount="Self">
+				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
+			</Target>
         </Trigger>
-        <Description>Whenever Blackskull Spellsmasher attacks, destroy target ongoing spell.</Description>
+        <Description>Whenever Blackskull Spellsmasher attacks, you may destroy target ongoing spell. If you do, put a +[1:ATTACK] counter on Blackskull Spellsmasher.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_048" DisplayName="Blackskull Crusher" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="5" MightLevel="5" Attack="3" Retaliate="2" HP="7" ID="390">
         <Ability Type="EnemySpellWard" />
