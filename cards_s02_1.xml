@@ -191,13 +191,14 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
         <Ability Type="QuickAttack" />
         <Ability Type="Swift" />
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Str_044" DisplayName="Bloodfrenzied Wyvern" Faction="Stronghold" SubType="Flyer" Race="Wyvern" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="8" ID="373">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Str_044" DisplayName="Bloodfrenzied Wyvern" Faction="Stronghold" SubType="Flyer" Race="Wyvern" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="8" ID="373">
 	<Ability Type="Bloodthirst" Value="1"/>
 	<Trigger Type="OnThisPostDeadlyCombat">
             <Target Zone="Battleground" Amount="Self">
                 <Effect Type="Heal" Value="Infinite" />
             </Target>
         </Trigger>
+	<Description>Whenever Bloodfrenzied Wyvern attacks and destroys a creature, heal all damage from it.</Description>
     </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Str_045" DisplayName="Blackskull Cyclops" Faction="Stronghold" SubType="Melee" Race="Cyclops" Cost="6" MightLevel="6" Attack="3" Retaliate="0" HP="6" ID="374">
         <Ability Type="DoubleAttack" />
