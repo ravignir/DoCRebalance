@@ -127,7 +127,7 @@ All enemy creatures gains -[2:ATK].</Description>
 	<Card UseXmlDescription="True" NotLocalized="True" Rarity="Rare" Unique="False" Type="Fortune" Name="For_San_092" DisplayName="Foreknowledge" Faction="Sanctuary" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="4" ID="961">
         <Target Zone="None" Side="Friendly">
 		<Effect Type="ChoiceOption" />
-        <Subgroup>
+                <Subgroup>
 			<Target Zone="Library" Side="Friendly" Amount="3" AmountVisible="5">
 				<Option Value="0" DisplayText="Look at 5. Put into hand 3. Put into graveyard rest." />
 				<Effect Type="MoveCardTo" Destination="Hand"/>
