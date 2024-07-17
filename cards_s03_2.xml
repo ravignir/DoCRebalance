@@ -367,7 +367,7 @@ At the beginning of your turn, return Garden of Ecstasy to its owner's hand.</De
         </Target>
         <Description>Opponent discards X cards at random, where X is equal to 1 plus the number of cards named Escalating Madness in your graveyard.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Inf_052" DisplayName="Dunes of Madness" Faction="Inferno" Cost="1" DestinyLevel="2" ID="552">
+    <Card Rarity="Uncommon" Type="Fortune" Name="For_Inf_052" DisplayName="Dunes of Madness" Faction="Inferno" Cost="1" DestinyLevel="1" ID="552">
         <Target Zone="Hand" Side="Friendly" Amount="2" MinAmount="0" Random="True">
             <Effect Type="MoveCardTo" Destination="Graveyard" />
         </Target>
