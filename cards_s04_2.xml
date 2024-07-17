@@ -92,15 +92,15 @@ Whenever you play a creature, if Memory Lapse is in your graveyard, take it and 
         <Description>Until end of turn:
 Choose one: While friendly creatures have no damage, they gain Charge OR All friendly creatures gain Mending.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Hav_062" DisplayName="Favor of the Just" Faction="Haven" Cost="2" DestinyLevel="2" ID="659">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Hav_062" DisplayName="Favor of the Just" Faction="Haven" Cost="3" DestinyLevel="2" ID="659">
         <Ongoing Duration="UntilYourNextTurn" />
-        <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="All">
-            <Variable Type="CardDamage" UseCurrentTarget="True" />
-            <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+		<CardFilter IncludeRaces="Priest" />
+            <Effect Type="ModifyAbility" Ability="CombatGuard" Value="1" />
             <Effect Type="ModifyAbility" Ability="CannotTarget" />
         </Target>
         <Description>Until your next turn:
-While friendly creatures have no damage, they cannot be targeted.</Description>
+Friendly Priest creatures gain Combat Guard 1 and cannot be targeted.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Fortune - Inferno -->
