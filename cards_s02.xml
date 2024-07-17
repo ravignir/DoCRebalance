@@ -20,7 +20,7 @@
                 <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
                 <Target Zone="None" Side="Friendly">
                     <Variable Type="Resources" Side="Friendly" />
-                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="3" />
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="4" />
                     <Option Value="4" DisplayText="[5:RESOURCES]: Heal all friendly creatures." />
                     <Effect Type="GainResources" Value="-5" Duration="Immediate" />
                 </Target>
