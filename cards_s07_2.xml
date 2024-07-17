@@ -129,7 +129,7 @@ All enemy creatures gains -[2:ATK].</Description>
 		<Effect Type="ChoiceOption" />
                 <Subgroup>
 			<Target Zone="Library" Side="Friendly" Amount="3" AmountVisible="5">
-				<Option Value="0" DisplayText="Look at 5. Put into hand 3. Put into graveyard rest." />
+				<Option Value="0" DisplayText="Look" />
 				<Effect Type="MoveCardTo" Destination="Hand"/>
 				<Subgroup>
 					<Target Zone="Library" Side="Friendly" Amount="2" AutoTakeFirstInputs="True" InputOnExec="True">
@@ -138,7 +138,7 @@ All enemy creatures gains -[2:ATK].</Description>
 				</Subgroup>
 			</Target>
 			<Target Zone="None" Side="Friendly" Cancelable="False" SkipSubTargetValidation="True">
-				<Option Value="1" DisplayText="Discard 2. Draw 5." />
+				<Option Value="1" DisplayText="Discard" />
 				<Effect Type="Draw" Value="5" />
 				<Subgroup>
 					<Target Zone="Hand" Amount="2" Side="Friendly" Cancelable="False">
