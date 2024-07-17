@@ -162,7 +162,7 @@ At the beginning of your turn, take a non-unique creature card at random from yo
     <!--....................................................................-->
     <!-- Spells - Prime -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Pri_040" DisplayName="Minor Recall" School="Prime" Cost="1" MagicLevel="3" ID="433">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Pri_040" DisplayName="Minor Recall" School="Prime" Cost="1" MagicLevel="2" ID="433">
         <Target Zone="Battleground" Amount="1">
             <CardFilter IncludeCardType="Fortune|Spell" />
             <Effect Type="MoveCardTo" Destination="Hand" />
