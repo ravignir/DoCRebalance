@@ -9,7 +9,7 @@
     <!--....................................................................-->
     <!-- Spells - Air -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Air_050" DisplayName="Air Trap" School="Air" Cost="1" MagicLevel="3" ID="573">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Air_050" DisplayName="Air Trap" School="Air" Cost="1" MagicLevel="3" ID="573">
         <Ongoing Duration="Permanent" />
         <Target Zone="BattlegroundLine" Amount="1" />
         <Trigger Type="OnDeployThisLine">
@@ -21,7 +21,13 @@
                 <Effect Type="Kill" />
             </Target>
         </Trigger>
+		<Target Zone="Hero" Amount="All" Side="Enemy">
+			<Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="1">
+				<CardFilter IncludeCardType="Unit" IncludeUnitType="Flyer" />
+			</Effect>
+		</Target>
         <Description>Enchant line. Permanent:
+Opponent's Flyer creatures cost [1:RESOURCES] more to play.
 When a flyer creature is deployed on enchanted line, destroy it and destroy Air Trap.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Air_051" DisplayName="Homebound Winds" School="Air" Cost="5" MagicLevel="4" ID="574">
