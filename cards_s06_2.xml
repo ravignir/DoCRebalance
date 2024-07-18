@@ -156,16 +156,9 @@ At the beginning of opponent's turn, they must choose one creature they control 
 		<Target Zone="Hand" Side="Enemy" Amount="All">
 			<Effect Type="MoveCardTo" Destination="Library"/>
 			<Subgroup>
-				<Target Zone="Library" Side="Enemy" Amount="4" ValidateFilterOnExecute="True" >
-          <Effect Type="MoveCardTo" Destination="Graveyard" EvaluationOrder="First" >
-		  </Effect>
-		  </Target>
-		  <Target Zone="Graveyard" Side="Enemy" Amount="Same" ValidateFilterOnExecute="True" >
-		  <CardFilter ExcludeUnique="True"/>
-		  <Effect Type="Banish" EvaluationOrder="Last">
-		  <CardFilter ExcludeUnique="True"/>
-		  </Effect>
-		  </Target>
+				<Target Zone="Library" Side="Enemy" Amount="4">
+          <Effect Type="MoveCardTo" Destination="Graveyard" />
+        </Target>
 				<Target Side="Enemy">
 					<Effect Type="Shuffle" CardHolder="Library"/>
 				</Target>

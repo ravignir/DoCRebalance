@@ -59,10 +59,9 @@
         <Ability Type="Heal" Value="3" />
 		<Ability Type="Mending" />
     </Card>
-    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Hav_008" DisplayName="Imperial Griffin" Faction="Haven" SubType="Flyer" Race="Griffin" Cost="4" MightLevel="4" Attack="2" Retaliate="2" HP="6" ID="50">
-	    <Ability Type="ImmuneToRetaliate" />
-	    <Ability Type="BattleDive" Value="0" />
-	<Description>At the end of turn, if Imperial Griffin did not attack, it gains +[2:ATK] and Attack Anywhere until it attacks.</Description>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_008" DisplayName="Imperial Griffin" Faction="Haven" SubType="Flyer" Race="Griffin" Cost="4" MightLevel="4" Attack="3" Retaliate="1" HP="6" ID="50">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Charge" />
     </Card>
     <Card  Rarity="Uncommon" Type="Unit" Name="Cre_Hav_006" DisplayName="Blazing Glory" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Spirit" Cost="5" MightLevel="4" MagicLevel="2" Attack="3" Retaliate="3" HP="7" ID="51">
         <Ability Type="Regenerate" Value="2" />

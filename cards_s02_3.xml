@@ -86,14 +86,15 @@ Creatures with no adjacent friendly creature gain Cannot Attack.</Description>
         <Description>Enchant creature. Permanent:
 Enchanted creature gains Anchored.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Ear_041" DisplayName="Sylanna's Embrace" School="Earth" Cost="2" MagicLevel="2" ID="425">
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_041" DisplayName="Sylanna's Embrace" School="Earth" Cost="2" MagicLevel="2" ID="425">
         <Ongoing Duration="Permanent" />
         <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any">
-            <Effect Type="ModifyAbility" Ability="Mending" />
+            <Effect Type="ModifyMaxHp" Value="2" />
+            <Effect Type="ModifyAbility" Ability="Regenerate" Value="1" />
         </Target>
         <Description>Enchant creature. Permanent:
-Enchanted creature gains Mending.</Description>
+Enchanted creature gains Regenerate 1 and +[2:HEALTH].</Description>
     </Card>
     <Card Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Ear_042" DisplayName="The Might of Nature" School="Earth" Cost="4" MagicLevel="4" ID="426">
         <Ongoing Duration="Permanent" />
@@ -162,7 +163,7 @@ At the beginning of your turn, take a non-unique creature card at random from yo
     <!--....................................................................-->
     <!-- Spells - Prime -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Pri_040" DisplayName="Minor Recall" School="Prime" Cost="1" MagicLevel="2" ID="433">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Pri_040" DisplayName="Minor Recall" School="Prime" Cost="1" MagicLevel="3" ID="433">
         <Target Zone="Battleground" Amount="1">
             <CardFilter IncludeCardType="Fortune|Spell" />
             <Effect Type="MoveCardTo" Destination="Hand" />
@@ -246,7 +247,7 @@ All friendly creatures gain +[1:ATK] and Fortune Ward.</Description>
         </Target>
         <Description>[1:RESOURCES] : Until your next turn, target creature cannot be targeted.</Description>
     </Card>
-    <Card Rarity="Common" Type="Event" Name="Eve_Neu_041" DisplayName="Hail Storm" Cost="3" Faction="Neutral" ID="440">
+    <Card Rarity="Common" Type="Event" Name="Eve_Neu_041" DisplayName="Hail Storm" Cost="4" Faction="Neutral" ID="440">
         <Target Zone="Battleground" CardType="Unit" Amount="All" NeedActivation="True">
             <Effect Type="Damage" Value="1" />
         </Target>

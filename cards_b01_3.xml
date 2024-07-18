@@ -168,14 +168,13 @@ Enemy shooter and flyer creatures gain Cannot Attack.</Description>
 Creatures on enchanted line gain Cannot Attack.
 When Cyclone enters the battleground, deal 1 damage to all creatures on enchanted line.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Air_011" DisplayName="Wind Shield" School="Air" Cost="1" MagicLevel="1" ID="195">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Air_011" DisplayName="Wind Shield" School="Air" Cost="1" MagicLevel="1" ID="195">
         <Ongoing Duration="Permanent" />
-        <Target Zone="BattlegroundColumn" Amount="1">
-            <CardType Include="Unit" />
+        <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Shooter" />
         </Target>
-        <Description>Enchant line. Permanent:
-Combat damage dealt to creatures on enchanted line by shooter creatures is halved, rounded down.</Description>
+        <Description>Enchant creature. Permanent:
+Combat damage dealt to enchanted creature by shooter creatures is halved, rounded down.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Air_006" DisplayName="Grounded" School="Air" Cost="2" MagicLevel="2" ID="196">
         <Target Zone="Battleground" CardType="Unit" Amount="All">
@@ -540,25 +539,18 @@ Heal all damage from all friendly creatures.</Description>
         </Target>
         <Description>Deal 3 damage to all creatures on target row.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Lig_006" DisplayName="Martyr" School="Light" Cost="3" MagicLevel="3" ID="233">
-        <Ongoing Duration="UntilDamagedAbsorbedAtEndOfTurn" />
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Lig_006" DisplayName="Martyr" School="Light" Cost="3" MagicLevel="3" ID="233">
+        <Ongoing Duration="UntilDamagedAbsorbedAtEndOfTurn" SuicideParent="True" />
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly">
           <Effect Type="ModifyAbility" Ability="Anchored" />
         </Target>
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
             <Effect Type="ModifyDamage" Value="0.0x" Side="Enemy" DamageIncludeFlags="All" />
         </Target>
-		<Trigger Type="OnThisDetach" >
-		<CardFilter SameGPID="True"/>
-            <Target Zone="Battleground" Amount="Parent">
-                <Effect Type="Banish"/>
-            </Target>
-        </Trigger>
         <Description>Enchant friendly creature. Permanent:
 Enchanted creature gains Anchored.
 Prevent all damage dealt to friendly creatures from sources you don't control.
-When Martyr leaves the battleground, banish enchanted creature.
-At end of turn, if damage was prevented in this way this turn, destroy Martyr.</Description>
+At end of turn, if damage was prevented in this way this turn, destroy enchanted creature.</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Spells - Prime -->
