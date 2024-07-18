@@ -204,16 +204,15 @@ At the end of your turn, opponent gains control of Nether Curse.</Description>
         <Description>Enchant creature. Permanent:
 Enchanted creature gains +[1:ATK] for each ongoing water spell on the battleground.</Description>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Wat_061" DisplayName="Ice Armour" School="Water" Cost="3" MagicLevel="4" ID="648">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Wat_061" DisplayName="Ice Armour" School="Water" Cost="3" MagicLevel="4" ID="648">
         <Ongoing Duration="Permanent" />
         <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAbility" Ability="CannotTarget" />
-            <Effect Type="ModifyAttack" Value="1" />
-            <Effect Type="ModifyRetaliate" Value="1" />
+            <Effect Type="ModifyAbility" Ability="Armor" Value="1" />
         </Target>
         <Description>Enchant creature. Permanent:
-Enchanted creature cannot be targeted and gains +[1:ATK] and +[1:RET].</Description>
+Enchanted creature cannot be targeted and gains Armor 1.</Description>
     </Card>
     <!--....................................................................-->
     <!-- //	#####   ##  #   #####   #   #   #####   ##### -->
