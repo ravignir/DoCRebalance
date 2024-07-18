@@ -89,7 +89,7 @@ The first time combat damage is dealt to enchanted creature in a turn, prevent t
     <!--....................................................................-->
     <!-- Spells - Fire -->
     <!--....................................................................-->
-    <Card Rarity="Rare" Type="Spell" Name="Spe_Fir_060" DisplayName="Lava Stream" School="Fire" Cost="1" MagicLevel="2" ID="641">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Fir_060" DisplayName="Lava Stream" School="Fire" Cost="1" MagicLevel="2" ID="641">
         <Variable Type="TargetCount">
             <Target Zone="BattlegroundColumn" CardType="Unit" Amount="Self" BattlegroundPositionState="DontCare" />
         </Variable>
@@ -97,13 +97,13 @@ The first time combat damage is dealt to enchanted creature in a turn, prevent t
             <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
         </Ongoing>
         <Target Zone="BattlegroundColumn" Amount="1" />
-        <Trigger Type="OnTurnBegin" Side="Any">
+        <Trigger Type="OnTurnEnd" Side="Friendly">
             <Target Zone="BattlegroundColumn" CardType="Unit" Amount="Self" BattlegroundPositionState="DontCare">
-                <Effect Type="Damage" Value="1" />
+                <Effect Type="Damage" Value="2" />
             </Target>
         </Trigger>
         <Description>Enchant row. Permanent:
-At the beginning of each players's turn, deal 1 damage to all creatures on enchanted row. When there are no creatures on enchanted row, destroy Lava Stream.</Description>
+At the end of your turn, deal 2 damage to all creatures on enchanted row. When there are no creatures on enchanted row, destroy Lava Stream.</Description>
     </Card>
     <Card Rarity="Common" Type="Spell" Name="Spe_Fir_061" DisplayName="Soulfire" School="Fire" Cost="3" MagicLevel="2" ID="642">
         <Ongoing Duration="Permanent" />
