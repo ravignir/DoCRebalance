@@ -78,17 +78,17 @@ Whenever you play a creature, if Memory Lapse is in your graveyard, take it and 
             <Effect Type="ChoiceOption" />
             <Subgroup>
                 <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="All">
-                    <Option Value="0" DisplayText="Gain Charge" />
+                    <Option Value="0" DisplayText="Charge" />
                     <Effect Type="ModifyAbility" Ability="Charge" />
                 </Target>
 		<Target Zone="None" Side="Friendly">
-			<Option Value="1" DisplayText="Gain [2:RESOURCES] and heal" />				
+			<Option Value="1" DisplayText="Heal" />				
 			<Effect Type="GainResources" Value="2" Duration="Immediate" />
 		</Target>
 		<Trigger Type="OnCardPlay" Side="Friendly">
 		<CardFilter IncludeCardType="Unit" />
 			<Target Zone="Hero" Amount="All" Side="Friendly">
-				<Option Value="1" DisplayText="Gain [2:RESOURCES] and heal" />
+				<Option Value="1" DisplayText="Heal" />
 				<Effect Type="Heal" Value="1" />
 			</Target>
 	    	</Trigger>
