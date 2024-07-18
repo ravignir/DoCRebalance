@@ -247,26 +247,25 @@ You can play Sanctuary creatures without meeting their level requirements.</Desc
     <!--....................................................................-->
     <!-- Fortune - Stronghold -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Str_060" DisplayName="Zefiria's Celerity" Faction="Stronghold" Cost="3" DestinyLevel="3" ID="625">
+    <Card UseXmlDescription="True" NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Str_060" DisplayName="Zefiria's Celerity" Faction="Stronghold" Cost="4" DestinyLevel="4" ID="625">
         <Ongoing Duration="UntilEndOfTurn" />
         <Target Zone="Battleground" CardType="Unit" Amount="1">
-            <CardFilter IncludeUnitType="Melee" />
         </Target>
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
                 <Target Zone="Battleground" CardType="Unit" Amount="Same">
-                    <Option Value="0" DisplayText="Swift" />
-                    <Effect Type="ModifyAbility" Ability="Swift" />
+                    <Option Value="0" DisplayText="Quick Attack" />
+                    <Effect Type="ModifyAbility" Ability="QuickAttack" />
                 </Target>
                 <Target Zone="Battleground" CardType="Unit" Amount="Same">
-                    <Option Value="1" DisplayText="Charge" />
-                    <Effect Type="ModifyAbility" Ability="Charge" />
+                    <Option Value="1" DisplayText="Double Attack" />
+                    <Effect Type="ModifyAbility" Ability="DoubleAttack" />
                 </Target>
             </Subgroup>
         </Target>
-        <Description>Until end of turn:
-Choose one: Target melee creature gains Swift OR Target melee creature gains Charge.</Description>
+        <Description>Attach to creature. Until end of turn:
+Choose one: Target creature gains Quick Attack OR Target creature gains Double Attack.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Str_061" DisplayName="Famous Last Blows" Faction="Stronghold" Cost="2" MightLevel="2" MagicLevel="2" DestinyLevel="2" ID="626">
         <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1">
