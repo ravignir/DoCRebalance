@@ -131,7 +131,7 @@
 	<!--...............................................................................-->
 	<!-- Creatures - Necropolis -->
 	<!--...............................................................................-->
-	<Card  Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Nec_100" DisplayName="Skeleton Master" Faction="Necropolis" SubType="Magic|Melee" Race="Human|Wizard" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="1018">
+	<Card  Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Nec_100" DisplayName="Skeleton Master" Faction="Necropolis" SubType="Magic|Melee" Race="Human|Wizard" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="1018">
 		<Trigger Type="OnThisPreAttack">
             <Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
 				<Effect Type="PopulateStack" Name="s06_Tok_Nec_001"/>
