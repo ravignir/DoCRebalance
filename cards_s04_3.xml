@@ -110,7 +110,7 @@ At the end of your turn, deal 2 damage to all creatures on enchanted row. When t
         <Variable Type="CardAttack" UseCurrentTarget="True" />
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyDuration" NewDuration="FromCondition">
-                <Condition Operator="LesserThan" ValueA="Variable" ValueB="6" />
+                <Condition Operator="LesserThan" ValueA="Variable" ValueB="5" />
             </Effect>
         </Target>
         <Trigger Type="OnThisPreAttack" Side="Enemy">
@@ -120,12 +120,12 @@ At the end of your turn, deal 2 damage to all creatures on enchanted row. When t
         </Trigger>
         <Trigger Type="OnThisPreAttack" Side="Enemy" ExecuteLast="True">
             <Target Zone="Battleground" CardType="Unit" Amount="Parent">
-                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="5" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="4" />
                 <Effect Type="Kill" />
             </Target>
         </Trigger>
         <Description>Enchant creature. Permanent:
-Whenever enchanted creature attacks, put 1 +[1:ATK] counter on it. When enchanted creature's [ATK] is greater than 5, destroy it.</Description>
+Whenever enchanted creature attacks, put 1 +[1:ATK] counter on it. When enchanted creature's [ATK] is greater than 4, destroy it.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Spells - Light -->
