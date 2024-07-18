@@ -110,7 +110,7 @@ Friendly Priest creatures gain Combat Guard 1 and cannot be targeted.</Descripti
     <!--....................................................................-->
     <!-- Fortune - Inferno -->
     <!--...................................................................-->
-    <Card UseXmlDescription="True" NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Inf_060" DisplayName="Phrias' Gift" Faction="Inferno" Cost="3" DestinyLevel="3" ID="619">
+    <Card UseXmlDescription="True" NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Inf_060" DisplayName="Phrias' Gift" Faction="Inferno" Cost="2" DestinyLevel="3" ID="619">
         <Ongoing Duration="UntilEndOfTurn" />
         <Target Zone="Battleground" CardType="Unit" Amount="1" />
 		<Trigger Type="OnThisPostDeadlyCombat" ExecuteOncePerTransaction="True">
