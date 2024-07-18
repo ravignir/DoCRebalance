@@ -110,9 +110,14 @@ Friendly Priest creatures gain Combat Guard 1 and cannot be targeted.</Descripti
     <!--....................................................................-->
     <!-- Fortune - Inferno -->
     <!--...................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Inf_060" DisplayName="Phrias' Gift" Faction="Inferno" Cost="3" DestinyLevel="3" ID="619">
+    <Card UseXmlDescription="True" NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Inf_060" DisplayName="Phrias' Gift" Faction="Inferno" Cost="3" DestinyLevel="3" ID="619">
         <Ongoing Duration="UntilEndOfTurn" />
         <Target Zone="Battleground" CardType="Unit" Amount="1" />
+		<Trigger Type="OnThisPostDeadlyCombat" ExecuteOncePerTransaction="True">
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="Draw" Value="1" />
+			</Target>
+		</Trigger>
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
@@ -126,8 +131,9 @@ Friendly Priest creatures gain Combat Guard 1 and cannot be targeted.</Descripti
                 </Target>
             </Subgroup>
         </Target>
-        <Description>Until end of turn:
-Choose one: Target creature gains Sweep Attack OR Target creature gains Attack Anywhere.</Description>
+        <Description>Attach to creature. Until end of turn:
+Choose one: Target creature gains Sweep Attack OR target creature gains Attack Anywhere.
+When that creature destroys a creature for the first time in a turn, draw a card.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Inf_061" DisplayName="Pleasure in Pain" Faction="Inferno" Cost="1" DestinyLevel="2" ID="620">
         <Ongoing Duration="UntilEndOfTurn" />
