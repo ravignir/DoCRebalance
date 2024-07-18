@@ -9,7 +9,7 @@
     <!--....................................................................-->
     <!-- Spells - Air -->
     <!--....................................................................-->
-    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Air_050" DisplayName="Air Trap" School="Air" Cost="1" MagicLevel="3" ID="573">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Air_050" DisplayName="Air Trap" School="Air" Cost="1" MagicLevel="3" ID="573">
         <Ongoing Duration="Permanent" />
         <Target Zone="BattlegroundLine" Amount="1" />
         <Trigger Type="OnDeployThisLine">
@@ -21,16 +21,10 @@
                 <Effect Type="Kill" />
             </Target>
         </Trigger>
-		<Target Zone="Hero" Amount="All" Side="Enemy">
-			<Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="1">
-				<CardFilter IncludeCardType="Unit" IncludeUnitType="Flyer" />
-			</Effect>
-		</Target>
         <Description>Enchant line. Permanent:
-Opponent's Flyer creatures cost [1:RESOURCES] more to play.
 When a flyer creature is deployed on enchanted line, destroy it and destroy Air Trap.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Air_051" DisplayName="Homebound Winds" School="Air" Cost="4" MagicLevel="4" ID="574">
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Air_051" DisplayName="Homebound Winds" School="Air" Cost="5" MagicLevel="4" ID="574">
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="MoveCardTo" Destination="Library" Shuffle="True" />
         </Target>
@@ -48,7 +42,7 @@ When a flyer creature is deployed on enchanted line, destroy it and destroy Air 
     <!--....................................................................-->
     <!-- Spells - Dark -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Dar_050" DisplayName="Shared Agony" School="Dark" Cost="1" MagicLevel="1" ID="576">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Dar_050" DisplayName="Shared Agony" School="Dark" Cost="1" MagicLevel="2" ID="576">
         <Ongoing Duration="Permanent" />
         <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1" />
@@ -72,7 +66,7 @@ Whenever damage is dealt to your hero, deal that much damage to enchanted creatu
         <Description>Enchant creature. Permanent:
 Whenever enchanted creature attacks, it deals damage equal to its [ATK] to its controller's hero.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Spell" Name="Spe_Dar_052" DisplayName="Enthrall" School="Dark" Cost="6" MagicLevel="5" ID="578">
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Dar_052" DisplayName="Enthrall" School="Dark" Cost="6" MagicLevel="6" ID="578">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy">
             <Effect Type="Relocate" Side="Friendly" Duration="Immediate" />
@@ -108,28 +102,29 @@ Remove 1 from all damage dealt to enchanted creature.</Description>
         <Description>Until your next turn:
 All friendly creatures gain Anchored.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Ear_052" DisplayName="Deep Roots" School="Earth" Cost="4" MagicLevel="4" ID="581">
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Ear_052" DisplayName="Deep Roots" School="Earth" Cost="4" MagicLevel="4" ID="581">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" Amount="All" CardType="Unit">
-            <CardFilter ExcludeUnitType="Flyer" />
+            <CardFilter IncludeUnitType="Melee" />
             <Effect Type="ModifyAbility" Ability="Anchored" />
         </Target>
         <Description>Permanent:
-All non-flyer creatures gain Anchored.</Description>
+All melee creatures gain Anchored.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Spells - Fire -->
     <!--....................................................................-->
-    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Fir_050" DisplayName="Fiery Death" School="Fire" Cost="3" MagicLevel="3" ID="582">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Fir_050" DisplayName="Fiery Death" School="Fire" Cost="3" MagicLevel="3" ID="582">
         <Ongoing Duration="Permanent" />
+        <Ability Type="Endurable"/>
         <Target Zone="Battleground" Amount="1" CardType="Unit" />
         <Trigger Type="OnEnchantedCardDeath">
-		<Target Zone="Battleground" CardType="Unit" Amount="All">
-			<Effect Type="Damage" Value="3" />
-		</Target>
+            <Target Zone="BattlegroundPosition" CardType="Unit" Amount="FromTrigger" Shape="AdjacentOnly">
+                <Effect Type="Damage" Value="2" />
+            </Target>
         </Trigger>
         <Description>Enchant creature. Permanent:
-When enchanted creature dies, deal 3 damage to all creatures.</Description>
+When enchanted creature dies, deal 2 damage to all adjacent creatures.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_051" DisplayName="Fire Blast" School="Fire" Cost="3" MagicLevel="2" ID="583">
         <Target Zone="BattlegroundLine" CardType="Unit" Amount="1">
@@ -154,7 +149,7 @@ When enchanted creature dies, deal 3 damage to all creatures.</Description>
     <!--....................................................................-->
     <!-- Spells - Light -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Lig_050" DisplayName="Aura of Healing" School="Light" Cost="1" MagicLevel="3" ID="585">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Lig_050" DisplayName="Aura of Healing" School="Light" Cost="3" MagicLevel="3" ID="585">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" Amount="1" CardType="Unit">
             <Effect Type="ModifyAbility" Ability="Heal" Value="2" />
@@ -170,15 +165,12 @@ Enchanted creature gains Heal 2.</Description>
         <Description>Deal 3 damage to all creatures that attacked your creature during opponent's last turn.</Description>
 		<DescriptionChinese>对所有对方上回合攻击过你生物的生物造成3点伤害。</DescriptionChinese>
 	</Card>
-    <Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Lig_052" DisplayName="Lay of Hands" School="Light" Cost="3" MagicLevel="1" ID="587">
-        <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1">
-            <Effect Type="RemoveCounter" CounterType="Any" Value="Infinite" />
-        </Target>        
-	<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Lig_052" DisplayName="Lay of Hands" School="Light" Cost="3" MagicLevel="1" ID="587">
+        <Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
             <Variable Type="Level" LevelType="Magic" Side="Friendly" />
             <Effect Type="Heal" Value="Variable" />
         </Target>
-        <Description>Remove all counters from target friendly creature, then heal an amount of damage equal to your [MAGIC] level from all friendly creatures.</Description>
+        <Description>Heal an amount of damage equal to your [MAGIC] level from all friendly creatures.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Spells - Prime -->

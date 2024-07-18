@@ -164,16 +164,15 @@ While no friendly melee creature has attacked in a turn, all friendly creatures 
         </Target>
         <Description>Choose target friendly creature. Search your library for a creature card with the same name and put it into your hand. Until end of turn, this creature costs [2:RESOURCES] less to play. Shuffle your library.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_San_001" DisplayName="Challenge Hall" Faction="Sanctuary" Cost="2" DestinyLevel="2" ID="149">
+    <Card Rarity="Common" Type="Fortune" Name="For_San_001" DisplayName="Challenge Hall" Faction="Sanctuary" Cost="2" DestinyLevel="2" ID="149">
         <Ongoing Duration="UntilYourNextTurn" />
-		<Target Zone="Battleground" Amount="1" Side="Friendly" >
-			<Effect Type="ModifyAbility" Ability="Taunt"/>
-		</Target>
-        <Target Zone="Battleground" Amount="All" CardType="Unit" Side="Enemy">
-			<Effect Type="ModifyAbility" Ability="AttackAnywhere"/>
-		</Target>
-        <Description>Attach to creature. Until your next turn:
-All enemy creatures gain Attack Anywhere and can only attack target creature if able.</Description>
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy">
+            <Variable Type="AttackerCountPerLine" UseCurrentTarget="True" />
+            <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+            <Effect Type="ModifyAbility" Ability="CannotAttack" />
+        </Target>
+        <Description>Until your next turn:
+Only one enemy creature per line can attack each turn.</Description>
     </Card>
     <Card Rarity="Rare" Type="Fortune" Name="For_San_002" DisplayName="Honored Land" Faction="Sanctuary" Cost="2" DestinyLevel="3" ID="150">
         <Ongoing Duration="UntilYourNextTurn" />

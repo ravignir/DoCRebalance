@@ -103,7 +103,7 @@
     <!--...............................................................................-->
     <!-- Creatures - Inferno -->
     <!--...............................................................................-->
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_060" DisplayName="Fate Bender" Faction="Inferno" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard|Demon" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="2" HP="5" ID="604">
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_060" DisplayName="Fate Bender" Faction="Inferno" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard|Demon" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="2" HP="5" ID="604">
         <Ability Type="ImmuneToRetaliate" />
         <Trigger Type="OnCardDiscard" Side="Enemy" ExecuteOncePerTurn="True">
             <Target Zone="Battleground" Amount="Self" ForceExecute="True">
@@ -153,7 +153,7 @@
         <Description>Ambush: Put 1 crippling counter on ambushed creature.
 (Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Nec_061" DisplayName="Plague Bearer" Faction="Necropolis" School="Earth" SubType="Melee" Race="Zombie|Cyclops" Cost="6" MightLevel="5" Attack="4" Retaliate="2" HP="7" ID="607">
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Nec_061" DisplayName="Plague Bearer" Faction="Necropolis" School="Earth" SubType="Melee" Race="Zombie|Cyclops" Cost="6" MightLevel="4" Attack="4" Retaliate="2" HP="7" ID="607">
         <Ability Type="Infect" Value="1" />
         <Variable Type="InPlayCounterCount" CounterType="Poison" ValueModifier="-1.0x" />
         <Target Zone="Hand" Amount="Self">
@@ -161,7 +161,7 @@
         </Target>
         <Description>Plague Bearer costs [1:RESOURCES] less to play for each poison counter on the battleground.</Description>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_062" DisplayName="Undead Minotaur" Faction="Necropolis" SubType="Melee" Race="Zombie|Minotaur" Cost="3" MightLevel="3" Attack="3" Retaliate="2" HP="6" ID="675" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_062" DisplayName="Undead Minotaur" Faction="Necropolis" SubType="Melee" Race="Zombie|Minotaur" Cost="3" MightLevel="3" Attack="2" Retaliate="3" HP="6" ID="675" />
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_063" DisplayName="Scavenger Ratkin" Faction="Necropolis" SubType="Melee|Shooter" Race="Rat" Cost="3" MightLevel="2" Attack="2" Retaliate="0" HP="5" ID="676">
         <Ability Type="ImmuneToRetaliate" />
         <Variable Type="TargetCount" ValueModifier="0.2xd">

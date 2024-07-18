@@ -120,21 +120,14 @@ All friendly creatures gain +[2:ATK] and +[2:RET].</Description>
     <!--....................................................................-->
     <!-- Spells - Light -->
     <!--....................................................................-->
-    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Lig_030" DisplayName="Guardian Angel" School="Light" Cost="2" MagicLevel="2" ID="319">
-        <Ongoing Duration="Permanent" />
-		 <Target Zone="BattlegroundColumn" Amount="1" />
-			<Trigger Type="OnDeployThisRow" Side="Friendly">
-            <Target Zone="Battleground" Side="Friendly" Amount="FromTrigger" Persistent="True" ForceExecute="True">
-				<Effect Type="ModifyAbility" Ability="CannotTarget" Duration="UntilYourNextTurn"/>
-            </Target>
-        </Trigger>
-		<Trigger Type="OnDeployThisRow" Side="Enemy" >
-            <Target Zone="Battleground" Side="Enemy" Amount="FromTrigger" Persistent="True" ForceExecute="True">
-				<Effect Type="ModifyAbility" Ability="CannotTarget" Duration="UntilEnemyEndOfTurn"/>
-            </Target>
-        </Trigger>
-        <Description>Enchant row. Permanent:
-Creatures deployed on the enchanted row cannot be targeted until their controller's next turn.</Description>
+    <Card Rarity="Common" Type="Spell" Name="Spe_Lig_030" DisplayName="Guardian Angel" School="Light" Cost="2" MagicLevel="2" ID="319">
+        <Ongoing Duration="UntilYourNextTurn" />
+        <Target Zone="BattlegroundColumn" Amount="1">
+            <CardType Include="Unit" />
+            <Effect Type="ModifyAbility" Ability="CannotTarget" />
+        </Target>
+        <Description>Enchant Row. Until your next turn:
+Creatures on enchanted row cannot be targeted.</Description>
     </Card>
     <Card Rarity="Rare" Type="Spell" Name="Spe_Lig_031" DisplayName="Ward Against Darkness" School="Light" Cost="3" MagicLevel="2" ID="320">
         <Variable Type="TargetCount">

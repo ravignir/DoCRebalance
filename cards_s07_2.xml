@@ -124,31 +124,14 @@ Friendly Spirits creatures gain +1 [ATK].</Description>
 		<Description>Until your next turn:
 All enemy creatures gains -[2:ATK].</Description>
 	</Card>
-	<Card UseXmlDescription="True" NotLocalized="True" Rarity="Rare" Unique="False" Type="Fortune" Name="For_San_092" DisplayName="Foreknowledge" Faction="Sanctuary" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="4" ID="961">
-        <Target Zone="None" Side="Friendly">
-		<Effect Type="ChoiceOption" />
-                <Subgroup>
-			<Target Zone="Library" Side="Friendly" Amount="3" AmountVisible="5">
-				<Option Value="0" DisplayText="Look" />
-				<Effect Type="MoveCardTo" Destination="Hand"/>
-				<Subgroup>
-					<Target Zone="Library" Side="Friendly" Amount="2" AutoTakeFirstInputs="True" InputOnExec="True">
-						<Effect Type="MoveCardTo" Destination="Graveyard"/>
-					</Target>
-				</Subgroup>
-			</Target>
-			<Target Zone="None" Side="Friendly" Cancelable="False" SkipSubTargetValidation="True">
-				<Option Value="1" DisplayText="Discard" />
-				<Effect Type="Draw" Value="5" />
-				<Subgroup>
-					<Target Zone="Hand" Amount="2" Side="Friendly" Cancelable="False">
-						<Effect Type="MoveCardTo" Destination="Graveyard" />
-					</Target>
-				</Subgroup>
-			</Target>
-		</Subgroup>
+	<Card Rarity="Rare" Unique="False" Type="Fortune" Name="For_San_092" DisplayName="Foreknowledge" Faction="Sanctuary" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="4" ID="961">
+		<Target Zone="Library" Side="Friendly" Amount="3" AmountVisible="5">
+			<Effect Type="MoveCardTo" Destination="Hand"/>
 		</Target>
-		<Description>Choose one: Look at the top 5 cards of your library. Put 3 of them into your hand and the rest into your graveyard OR Discard 2 cards, then draw 5 cards.</Description>
+		<Target Zone="Library" Side="Friendly" Amount="2" AutoTakeFirstInputs="True" InputOnExec="True">
+			<Effect Type="MoveCardTo" Destination="Graveyard"/>
+		</Target>
+		<Description>Look at the top 5 cards of your library. Put 3 of them into your hand and the rest into your graveyard.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Fortune - Stronghold -->
