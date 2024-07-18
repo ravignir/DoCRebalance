@@ -154,8 +154,18 @@
         <Ability Type="BlockDeploy" />
         <Description>Enemy creatures cannot be deployed on the same row as Nyorai Sairensa.</Description>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_San_016" DisplayName="Wanizame" Faction="Sanctuary" SubType="Melee" Race="Beastmen|Warrior" Cost="4" MightLevel="4" Attack="3" Retaliate="1" HP="5" School="Water" ID="101">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_San_016" DisplayName="Wanizame" Faction="Sanctuary" SubType="Melee" Race="Beastmen|Warrior" Cost="4" MightLevel="4" Attack="3" Retaliate="1" HP="5" School="Water" ID="101">
         <Ability Type="Honor" Value="1" />
+			<Target Zone="Battleground" Amount="Self">
+			<Variable Type="TargetCount">
+            <Target Zone="Battleground" Amount="All" Side="Enemy" >
+			<CardFilter IncludeCardType="Unit" Damaged="True"/>
+			</Target>
+        </Variable>
+            <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+            <Effect Type="ModifyAttack" Value="1" />
+        </Target>
+		<Description>While there is enemy damaged creature on the battleground, Wanizame gains +[1:ATK].</Description>
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_San_012" DisplayName="Shark Guard" Faction="Sanctuary" SubType="Melee" Race="Beastmen|Warrior" Cost="1" MightLevel="1" Attack="2" Retaliate="1" HP="2" ID="94" />
     <Card Rarity="Common" Type="Unit" Name="Cre_San_015" DisplayName="Spring Spirit" Faction="Sanctuary" School="Water" SubType="Magic|Melee" Race="Spirit" Cost="2" MightLevel="2" MagicLevel="1" Attack="2" Retaliate="2" HP="4" ID="97" />
@@ -227,7 +237,18 @@
     <Card Rarity="Common" Type="Unit" Name="Cre_Neu_020" DisplayName="Dire Wolf" Faction="Neutral" SubType="Melee" Race="Wolf" Cost="2" MightLevel="2" Attack="1" Retaliate="2" HP="2" ID="280">
         <Ability Type="Retribution" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_021" DisplayName="Black Vulture" Faction="Neutral" SubType="Flyer" Race="Bird" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="2" ID="281" />
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_021" DisplayName="Black Vulture" Faction="Neutral" SubType="Flyer" Race="Bird" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="2" ID="281">
+        <Variable Type="DeadCardLastTurnCount" Side="Enemy">
+            <CardFilter Side="Friendly" />
+        </Variable>        
+        <Trigger Type="OnTurnBegin" Side="Friendly">    
+                <Target Zone="Battleground" CardType="Unit" Amount="Self" ForceExecute="True">
+                    <Condition Operator="NotEqualTo" ValueA="Variable" ValueB="0" />
+                    <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn" />
+                </Target>
+        </Trigger>
+        <Description>At the beginning of your turn, if any friendly creature died during opponent's last turn, Black Vulture gains +[1:ATK] until end of your turn.</Description>
+    </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_022" DisplayName="Blind Brother" Faction="Neutral" SubType="Melee|Shooter" Race="Human|Seer" Cost="4" MightLevel="1" DestinyLevel="3" Attack="1" Retaliate="1" HP="5" ID="282">
         <Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
             <Target Zone="None" Side="Friendly">
