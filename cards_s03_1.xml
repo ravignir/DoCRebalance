@@ -37,7 +37,7 @@
         <Ability Type="CannotAttack" />
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Aca_007" DisplayName="Enslaved Harpy" Faction="Academy" SubType="Flyer" Race="Beastmen|Harpy" Cost="2" MightLevel="2" Attack="2" Retaliate="0" HP="5" ID="462" />
-	<Card Rarity="Common" Type="Unit" Name="Cre_Aca_008" DisplayName="Spirit-Bound Djinn" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="2" MightLevel="2" MagicLevel="3" Attack="2" Retaliate="2" HP="6" ID="463">
+	<Card Rarity="Common" Type="Unit" Name="Cre_Aca_008" DisplayName="Spirit-Bound Djinn" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="2" MightLevel="2" MagicLevel="2" Attack="2" Retaliate="2" HP="6" ID="463">
         <Trigger Type="OnThisCardDeath">
             <Target Zone="Hero" Side="Friendly" Amount="All">
                 <Variable Type="CardAttack" />
@@ -97,7 +97,7 @@
         <Description>Whenever a friendly wizard creatures attacks and destroys a creature the first time during your turn, take target non-unique spell card in your graveyard and put it into your hand.</Description>
 		<DescriptionChinese>每当一个本方巫师生物第一次在本方回合消灭一个生物时，指定本方墓地中的一张非独有法术卡放入你的手牌中。</DescriptionChinese>
 	</Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_016" DisplayName="Guardian Golem" Faction="Academy" School="Prime" SubType="Magic|Melee" Race="Golem|Construct" Cost="3" MightLevel="2" MagicLevel="2" Attack="2" Retaliate="1" HP="4" ID="471">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_016" DisplayName="Guardian Golem" Faction="Academy" School="Prime" SubType="Magic|Melee" Race="Golem|Construct" Cost="3" MightLevel="2" MagicLevel="2" Attack="2" Retaliate="1" HP="5" ID="471">
         <Target Zone="Battleground" Amount="Self">
             <Effect Type="PlayEffect" PlayEffectType="Decoy">
                 <CardFilter IncludeCardType="All" Side="Enemy" />
@@ -223,6 +223,7 @@ While there is a friendly wizard on battle ground, [THIS] gain Swift. </Descript
     </Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Aca_026" DisplayName="Shantiri Titan" Faction="Academy" School="Prime" SubType="Magic|Melee" Race="Titan|Construct" Cost="5" MagicLevel="5" MightLevel="5" Attack="5" Retaliate="2" HP="11" ID="481">
         <Ability Type="Shockwave" Value="2" />
+	<Ability Type="FocusedBlast" Value="3" />
         <Target Zone="Battleground" Amount="Self">
             <Variable Type="CardDamage" />
             <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
@@ -499,7 +500,7 @@ While there is a friendly wizard on battle ground, [THIS] gain Swift. </Descript
         </Target>
         <Description>While Crusader Watchman has no damage, it gains +[2:ATK] and +[1:RET].</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_052" DisplayName="Crusader Treasurer" Faction="Haven" SubType="Melee" Race="Human" Cost="4" MightLevel="4" DestinyLevel="1" Attack="2" Retaliate="2" HP="6" ID="494">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_052" DisplayName="Crusader Treasurer" Faction="Haven" SubType="Melee" Race="Human" Cost="4" MightLevel="4" DestinyLevel="1" Attack="2" Retaliate="2" HP="5" ID="494">
         <Ability Type="Income" Value="2" />
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_053" DisplayName="Scattershot Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="5" MightLevel="4" Attack="3" Retaliate="2" HP="7" ID="495">
@@ -508,7 +509,8 @@ While there is a friendly wizard on battle ground, [THIS] gain Swift. </Descript
         <Description>Whenever Scattershot Marksman attacks a melee creature, deal 2 damage to all other enemy melee creatures.</Description>
     </Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Hav_054" DisplayName="Crusader Chaplain" Faction="Haven" SubType="Magic|Melee" Race="Human|Priest" School="Light" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="2" HP="5" ID="496">
-        <Target Zone="Battleground" Amount="Self">
+        <Ability Type="Regenerate" Value="1" />
+	<Target Zone="Battleground" Amount="Self">
             <Variable Type="CardDamage" />
             <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
             <Effect Type="ModifyAbility" Ability="CannotTarget" />
@@ -539,7 +541,7 @@ While Crusader Chaplain has no damage, it cannot be targeted.</Description>
     <!--...............................................................................-->
     <!-- Creatures - Inferno -->
     <!--...............................................................................-->
-    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_050" DisplayName="Lashing Lilim" Faction="Inferno" School="Fire" SubType="Magic|Shooter" Race="Demon|Succubus" Cost="4" MightLevel="4" MagicLevel="1" Attack="2" Retaliate="2" HP="6" ID="498">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_050" DisplayName="Lashing Lilim" Faction="Inferno" School="Fire" SubType="Magic|Shooter" Race="Demon|Succubus" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="1" HP="6" ID="498">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="SweepAttack" />
     </Card>
@@ -573,12 +575,10 @@ While Crusader Chaplain has no damage, it cannot be targeted.</Description>
         </Target>
         <Description>Whenever a player plays a card or uses an ability targeting a single creature, it must target Imp Jester if possible.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_054" DisplayName="Abyssal Worm" Faction="Inferno" SubType="Melee" Race="Demon|Worm" Cost="6" MightLevel="6" Attack="8" Retaliate="4" HP="8" ID="502">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Inf_054" DisplayName="Abyssal Worm" Faction="Inferno" SubType="Melee" Race="Demon|Worm" Cost="6" MightLevel="6" Attack="8" Retaliate="4" HP="8" ID="502">
         <Ability Type="AttackAnywhere" />
-        <Target Zone="Hero" Amount="All" Side="Friendly">
-            <Effect Type="ModifyResourcesProduction" Value="3mi" />
-        </Target>
-        <Description>During your supply phase, you cannot produce more than [3:RESOURCES] .</Description>
+        <Ability Type="KillOtherOnly" />
+        <Description>Abyssal Worm can only be deployed on another friendly creature, then destroy that creature.</Description>
     </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Inf_055" DisplayName="Hikyu, Fists of Fury" Faction="Inferno" School="Fire" SubType="Magic|Shooter" Race="Human|Warrior" Unique="True" Cost="6" MightLevel="5" MagicLevel="1" Attack="4" Retaliate="3" HP="6" ID="503">
         <Ability Type="ImmuneToRetaliate" />

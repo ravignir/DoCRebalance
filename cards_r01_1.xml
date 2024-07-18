@@ -146,15 +146,15 @@
         </Trigger>
 		<Description>When [THIS] attacks, deploy a Skeleton melee-shooter token with 1/0/1 and Stackable on target friendly battleground position</Description>
 	</Card>
-	<Card  Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Nec_101" DisplayName="Necromancer Reinforcer" Faction="Necropolis"  SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="0" HP="6" ID="1019">
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Nec_101" DisplayName="Necromancer Reinforcer" Faction="Necropolis"  SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="0" HP="6" ID="1019">
 		<Ability Type="ImmuneToRetaliate"/>
-		<Trigger Type="OnPreAttackUnit" Side="Friendly">
+		<Trigger Type="OnPostAttackUnit" Side="Friendly">
 			<CardFilter IncludeAbility="Stackable" />
 			<Target Zone="Battleground" Amount="FromTrigger" CardType="Unit" ForceExecute="True">
 				<Effect Type="IncreaseStackSize" Value="1"/>
             </Target>
 		</Trigger>
-		<Description>Whenever a friendly creature with stackable attacks enemy creature, increase its' stack size by 1.</Description>
+		<Description>After a friendly creature with stackable attacks enemy creature, increase its' stack size by 1.</Description>
 	</Card>
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_102" DisplayName="Namtaru Infector" Faction="Necropolis" SubType="Magic|Melee" Race="Namtaru" Cost="5" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="4" Retaliate="3" HP="7" ID="1020" School="Prime">
 		<Ability Type="Infect" Value="1"/>	
@@ -171,14 +171,17 @@
 		<Ability Type="Infect" Value="1"/>	
 		<Variable Type="LastAliveCounterCount" CounterType="Poison" FromTrigger="True"/>	
 		<Trigger Type="OnUnitDeath">
-			<Target Zone="Battleground" Amount="Variable" CardType="Unit" Random="True" AllowDuplicate="True">
+		<Target Zone="Battleground" Amount="FromTrigger" CardType="Unit" Shape="AdjacentOnly">
+				<Variable Type="CounterCount" CounterType="Poison"/>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
 				<Effect Type="AddCounter" CounterType="Poison" Value="1"/>
 			</Target>
 		</Trigger>
 		<Target Zone="Battleground" Amount="All" CardType="Unit"  Side="Friendly">
-			<Effect Type="ModifyAbility" Ability="AbsorbPoisonDamageHeal"/>
+			<Effect Type="ModifyAbility" Ability="AbsorbPoisonDamage"/>
 		</Target>
-		<Description>Friendly creatures gain Poison Heal. Whenever a creature with poison counters on it dies, put the same number of poison counters on other random creatures.</Description>
+		<Description>All friendly creatures do not receive damage from poison counters.
+Whenever a creature with poison counters on it dies, put 1 poison counter on all creatures adjacent to it.</Description>
 	</Card>
 	
 	<!--...............................................................................-->
@@ -201,15 +204,15 @@
 		</Trigger>
 		<Description>Whenever a spy deal damage to enemy hero, next Sanctuary fortune cost 1 less to play.</Description>
 	</Card>
-	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_102" DisplayName="Shinobi Whisperer" Faction="Sanctuary" SubType="Shooter" Race="Naga|Spy" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="2" Attack="3" Retaliate="3" HP="7" ID="1024">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_102" DisplayName="Shinobi Whisperer" Faction="Sanctuary" SubType="Shooter" Race="Naga|Spy" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="2" Attack="3" Retaliate="3" HP="7" ID="1024">
 		<Ability Type="ImmuneToRetaliate"/>				
-		<Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Attack" Side="Friendly">	
+		<Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Attack" Side="Friendly" ExecuteOncePerTurn="True" >	
 			<CardFilter IncludeRaces="Spy" />
 			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" Cancelable="False">
 				<Effect Type="MoveCardTo" Destination="Hand" />
 			</Target>
 		</Trigger>
-		<Description>Whenever a spy attacks and destory a creature, return target enemy creature to its owner's hand.</Description>
+		<Description>The first time a friendly Spy creature attacks and destroys a creature during your turn, return target enemy creature to its owner's hand</Description>
 	</Card>
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_103" DisplayName="Shinobi Gunshi" Faction="Sanctuary" SubType="Magic|Melee|Shooter" Race="Naga|Spy" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="3" Retaliate="2" HP="6" ID="1025" School="Water">
 		<Trigger Type="OnCardReturnToHandFromPlay" Side="Enemy">

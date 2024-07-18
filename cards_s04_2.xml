@@ -364,58 +364,58 @@ All creatures gain +[1:ATK] and +[1:RET] for each other creature with the same n
     <!--....................................................................-->
     <!-- Building - Haven -->
     <!--....................................................................-->
-    <Card Rarity="Uncommon" Type="Building" Name="Bui_Hav_060" DisplayName="Watchtower" Faction="Haven" Cost="2" MightLevel="2" DestinyLevel="2" ID="651">
-        <Target Zone="Battleground" CardType="Unit" Amount="Occupant">
-            <Effect Type="ModifyAbility" Ability="PreemptiveStrike" />
-        </Target>
-        <Target Zone="Battleground" CardType="Unit" Amount="Occupant">
-            <Effect Type="ModifyRetaliate" Value="1" />
-        </Target>
-        <Trigger Type="OnOccupantCardDeathByDamage" DamageIncludeFlags="Combat">
-            <Target Zone="None" Amount="Self">
-                <Effect Type="Kill" />
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Building" Name="Bui_Hav_060" DisplayName="Watchtower" Faction="Haven" Cost="2" MightLevel="2" DestinyLevel="2" ID="651">
+        <Trigger Type="OnDeployThisRow" Side="Enemy">
+            <Target Zone="Battleground" Amount="FromTrigger" Side="Any" CardType="Unit">
+                <Variable Type="OccupantCount"/>
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+                <Effect Type="Damage" Value="1" />
             </Target>
         </Trigger>
-        <Description>Creatures at Watchtower gain Preemptive Strike and +[1:RET].
-When a creature at Watchtower dies from combat damage, destroy Watchtower.</Description>
+        <Description>If a creature is at Watchtower, Whenever an enemy creature is deployed to the same row as Watchtower, deal 1 damage to it.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Building - Inferno -->
     <!--....................................................................-->
     <Card Rarity="Uncommon" Type="Building" Name="Bui_Inf_060" DisplayName="Hall of Nightmares" Faction="Inferno" Cost="2" MightLevel="2" DestinyLevel="2" ID="652">
-        <Target Zone="Battleground" CardType="Unit" Amount="Occupant">
-            <Effect Type="ModifyAbility" Ability="Fear" Value="3" />
+        <Variable Type="TargetCount" ValueModifier="1">
+                <Target Zone="Battleground" Side="Friendly" Amount="All">
+                    <CardFilter IncludeCardID="Bui_Inf_060" />
+                </Target>
+            </Variable>
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+            <Effect Type="ModifyAbility" Ability="Fear" Value="Variable" />
         </Target>
         <Description>Creatures at Hall of Nightmares gain Fear 3.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Building - Necropolis -->
     <!--....................................................................-->
-    <Card Rarity="Uncommon" Type="Building" Name="Bui_Nec_060" DisplayName="Soul Spire" Faction="Necropolis" Cost="2" MightLevel="2" MagicLevel="2" ID="653">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Building" Name="Bui_Nec_060" DisplayName="Soul Spire" Faction="Necropolis" Cost="2" MightLevel="2" MagicLevel="2" ID="653">
         <Target Zone="Battleground" CardType="Unit" Amount="Occupant">
             <Effect Type="ModifyAbility" Ability="Crippling" Value="1" />
         </Target>
-        <Trigger Type="OnOccupantCardDeathByDamage" DamageIncludeFlags="Combat">
-            <Target Zone="None" Amount="Self">
-                <Effect Type="Kill" />
-            </Target>
-        </Trigger>
-        <Description>Creatures at Soul Spire gain Crippling 1.
-When a creature at Soul Spire dies from combat damage, destroy Soul Spire.</Description>
+        <Description>Creatures at Soul Spire gain Crippling 1.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Building - Sanctuary -->
     <!--....................................................................-->
-    <Card Rarity="Uncommon" Type="Building" Name="Bui_San_060" DisplayName="Hidden Dojo" Faction="Sanctuary" Cost="3" MightLevel="2" DestinyLevel="2" ID="654">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Building" Name="Bui_San_060" DisplayName="Hidden Dojo" Faction="Sanctuary" Cost="2" MightLevel="2" DestinyLevel="2" ID="654">
         <Target Zone="Battleground" CardType="Unit" Amount="Occupant">
             <Effect Type="ModifyAbility" Ability="Honor" Value="1" />
         </Target>
-        <Description>Creatures at Hidden Dojo gain Honor 1.</Description>
+		<Trigger Type="OnOccupantCardDeathByDamage" DamageIncludeFlags="Combat">
+            <Target Zone="None" Amount="Self">
+                <Effect Type="Kill" />
+            </Target>
+        </Trigger>
+        <Description>Creatures at Hidden Dojo gain Honor 1.
+When a creature at Hidden Dojo dies from combat damage, destroy Hidden Dojo.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Building - Stronghold -->
     <!--....................................................................-->
-    <Card Rarity="Uncommon" Type="Building" Name="Bui_Str_060" DisplayName="War Tent" Faction="Stronghold" Cost="3" MightLevel="3" MagicLevel="2" ID="655">
+    <Card Rarity="Uncommon" Type="Building" Name="Bui_Str_060" DisplayName="War Tent" Faction="Stronghold" Cost="3" MightLevel="3" DestinyLevel="1" ID="655">
         <Target Zone="Battleground" CardType="Unit" Amount="Occupant">
             <Effect Type="ModifyAttack" Value="2" />
         </Target>

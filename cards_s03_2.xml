@@ -26,16 +26,18 @@
 Whenever a friendly magic creature attacks, put the top card of opponent's library into their graveyard.
 At the beginning of your turn, return Shifting Sands to its owner's hand.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_002" DisplayName="Unraveled Fate" Faction="Academy" Cost="1" DestinyLevel="1" ID="529">
-        <Variable Type="TargetCount" ValueModifier="3">
-            <Target Zone="Graveyard" Side="Friendly" Amount="All">
-                <CardFilter IncludeCardID="For_Aca_002" />
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Aca_002" DisplayName="Unraveled Fate" Faction="Academy" Cost="1" DestinyLevel="1" ID="529">
+        <Ongoing Duration="Permanent" />
+		<Ability Type="FateTrigger" Value="1"/>
+		<Variable Type="AbilityValue" Ability="FateTrigger"/>
+		<Trigger Type="OnCardMill" Side="Enemy" ExecuteOncePerTransaction="True">
+			<Target Zone="Battleground" Amount="All" Side="Friendly" >
+			<CardFilter IncludeCardID="For_Aca_002"/>
+                <Effect Type="ModifyAbilityValue" Ability="FateTrigger" Value="2" />
             </Target>
-        </Variable>
-        <Target Zone="Library" Side="Enemy" Amount="1" AmountVisible="Variable">
-            <Effect Type="MoveCardTo" Destination="Graveyard" />
-        </Target>
-        <Description>Look at the top X cards of opponent's library and choose one to put into their graveyard, where X is equal to 3 plus the number of cards named Unraveled Fate in your graveyard.</Description>
+                    </Trigger>
+        <Description>Permanent:
+Whenever one or more cards are put from your opponent's library into their graveyard, put one additional card into their graveyard.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Aca_003" DisplayName="Arcane Research" Faction="Academy" Cost="3" DestinyLevel="2" ID="530">
         <Target Zone="None" Side="Friendly">
@@ -232,7 +234,7 @@ Whenever opponent plays a card of this type, draw a card.</Description>
         </Target>
         <Description>Gain [RESOURCES] equal to your [MAGIC] level. Deal damage to your hero equal to your [MAGIC] level.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Fortune" Name="For_Aca_016" DisplayName="Chain Casting" Faction="Academy" Cost="0" DestinyLevel="1" ID="543">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Fortune" Name="For_Aca_016" DisplayName="Chain Casting" Faction="Academy" Cost="1" DestinyLevel="1" ID="543">
         <Ongoing Duration="UntilEndOfTurn" />
         <Variable Type="CardPlayedCount" ValueModifier="-1.0x">
             <CardFilter IncludeCardType="Spell" />
@@ -245,8 +247,12 @@ Whenever opponent plays a card of this type, draw a card.</Description>
                 <CardFilter IncludeCardType="Spell" />
             </Effect>
         </Target>
-        <Description>Until end of turn:
-Spells you play cost [1:RESOURCES] less for each other spell you played this turn. The cost of those spells could not be reduced to less than [1:RESOURCES].</Description>
+	<Target Zone="Hand" Side="Friendly" Amount="1">
+            <Effect Type="MoveCardTo" Destination="Library" Duration="Immediate" />
+        </Target>
+        <Description>Take a card from your hand and put it on the top of your library.
+Until end of turn:
+Spells you play cost [1:RESOURCES] less for each other spell you played this turn.</Description>
     </Card>
     <Card Rarity="Rare" Type="Fortune" Name="For_Aca_017" DisplayName="Offering to the Void" Faction="Academy" Cost="6" DestinyLevel="3" ID="544">
         <Target Zone="None" Side="Friendly">
@@ -363,7 +369,7 @@ At the beginning of your turn, return Garden of Ecstasy to its owner's hand.</De
         </Target>
         <Description>Opponent discards X cards at random, where X is equal to 1 plus the number of cards named Escalating Madness in your graveyard.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Inf_052" DisplayName="Dunes of Madness" Faction="Inferno" Cost="1" DestinyLevel="2" ID="552">
+    <Card Rarity="Uncommon" Type="Fortune" Name="For_Inf_052" DisplayName="Dunes of Madness" Faction="Inferno" Cost="0" DestinyLevel="2" ID="552">
         <Target Zone="Hand" Side="Friendly" Amount="2" MinAmount="0" Random="True">
             <Effect Type="MoveCardTo" Destination="Graveyard" />
         </Target>
@@ -564,16 +570,14 @@ Whenever you deploy a creature, that creature deals damage equal to its [ATK] to
     <!--....................................................................-->
     <!--  Fortune - Neutral -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_050" DisplayName="Fortune Telling" Faction="Neutral" Cost="4" DestinyLevel="2" ID="566">
-        <Target Zone="None" Side="Friendly" Cancelable="False" SkipSubTargetValidation="True">
-            <Effect Type="Draw" Value="3" />
-            <Subgroup>
-                <Target Zone="Hand" Amount="2" Side="Friendly" Cancelable="False">
-                    <Effect Type="MoveCardTo" Destination="Graveyard" />
-                </Target>
-            </Subgroup>
-        </Target>
-        <Description>Draw 3 cards then discard 2 cards.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_050" DisplayName="Fortune Telling" Faction="Neutral" Cost="4" DestinyLevel="2" ID="566">
+	<Target Zone="Library" Side="Friendly" Amount="2" AmountVisible="5">
+		<Effect Type="MoveCardTo" Destination="Hand"/>
+	</Target>
+	<Target Zone="Library" Side="Friendly" Amount="3" AutoTakeFirstInputs="True" InputOnExec="True">
+		<Effect Type="MoveCardTo" Destination="Graveyard"/>
+	</Target>
+        <Description>Look at the top 5 cards of your library. Put 2 of them into your hand and the rest into your graveyard.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Neu_051" DisplayName="Full Moon" Faction="Neutral" Cost="2" DestinyLevel="3" ID="567">
         <Target Zone="Graveyard" Amount="All" CardType="Unit" Side="Friendly">
