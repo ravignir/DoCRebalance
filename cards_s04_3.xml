@@ -105,7 +105,7 @@ The first time combat damage is dealt to enchanted creature in a turn, prevent t
         <Description>Enchant row. Permanent:
 At the end of your turn, deal 2 damage to all creatures on enchanted row. When there are no creatures on enchanted row, destroy Lava Stream.</Description>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Fir_061" DisplayName="Soulfire" School="Fire" Cost="3" MagicLevel="2" ID="642">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Fir_061" DisplayName="Soulfire" School="Fire" Cost="3" MagicLevel="2" ID="642">
         <Ongoing Duration="Permanent" />
         <Variable Type="CardAttack" UseCurrentTarget="True" />
         <Target Zone="Battleground" CardType="Unit" Amount="1">
