@@ -108,20 +108,14 @@
         </Trigger>
 		<Description>When [THIS] attacks, increase the size of each friendly adjacent stacks by 1. </Description>
 	</Card>
-	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Inf_102" DisplayName="Abyssal Lilim" Faction="Inferno" SubType="Magic|Melee|Shooter" Race="Demon|Succubus" Cost="5" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="3" HP="8" ID="1016" School="Dark">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Inf_102" DisplayName="Abyssal Lilim" Faction="Inferno" SubType="Magic|Melee|Shooter" Race="Demon|Succubus" Cost="5" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="3" HP="8" ID="1016" School="Dark">
 		<Trigger Type="OnThisCardDeploy">
-            <Target Zone="Battleground" Amount="AllOther" CardType="Unit" Side="Friendly">
-				<CardFilter IncludeSchool="Dark"/>
+            		<Target Zone="Battleground" Amount="AllOther" CardType="Unit" Side="Friendly">
+			<CardFilter IncludeSchool="Dark"/>
 				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
 			</Target>
-        </Trigger>
-        <Trigger Type="OnThisCardLeavePlay">
-            <Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
-				<CardFilter IncludeSchool="Dark"/>
-				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
-			</Target>
-        </Trigger>
-		<Description>When [THIS] enter or leave the battle ground, Put +1 ATK counter on all other friendly dark creatures.</Description>
+        	</Trigger>
+		<Description>When [THIS] enter the battleground, Put +1 ATK counter on all other friendly dark creatures.</Description>
 	</Card>
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Inf_103" DisplayName="Breeder Progenitor" Faction="Inferno" SubType="Magic|Shooter" Race="Demon|Breeder" Cost="5" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="1017">	
 		<Ability Type="ImmuneToRetaliate"/>
