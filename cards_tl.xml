@@ -22,6 +22,7 @@
         <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
             <Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Poison" OwnerAbility="AbsorbPoisonDamage"/>
         </Target>
+	</TemplateEffect>
 	
     <TemplateEffect Name="AirWard">
         <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
