@@ -8,7 +8,7 @@
     <!--....................................................................-->
     <!-- Spells - Air -->
     <!--....................................................................-->
-    <Card Rarity="Rare" Type="Spell" Name="Spe_Air_060" DisplayName="Thunder Weapon" School="Air" Cost="2" MagicLevel="3" ID="635">
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Air_060" DisplayName="Thunder Weapon" School="Air" Cost="2" MagicLevel="2" ID="635">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAbility" Ability="Shockwave" Value="2" />
@@ -41,7 +41,7 @@ Other creatures on the same row as enchanted creature gain Cannot Attack. When e
     <!--....................................................................-->
     <!-- Spells - Dark -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Dar_060" DisplayName="Wither" School="Dark" Cost="3" MagicLevel="3" ID="637">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Dar_060" DisplayName="Wither" School="Dark" Cost="3" MagicLevel="2" ID="637">
         <Ongoing Duration="Permanent" />
         <Variable Type="Level" Side="Friendly" LevelType="Magic" ValueModifier="-1.0x" />
         <Target Zone="Battleground" CardType="Unit" Amount="1">
