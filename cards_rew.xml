@@ -144,10 +144,10 @@
             </Subgroup>
         </Target>
     </Card>
-    <Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Inf_007" DisplayName="Ignatius" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="452">
+    <Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Inf_007" DisplayName="Ignatius" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="452">
         <School Name="Dark" />
         <School Name="Fire" />
-        <Description>The first time opponent discards a card in a turn, if your [MIGHT] level is 3 or more and your [DESTINY] level is 4 or more, deal 2 damage to their hero.</Description>
+        <Description>The first time opponent discards a card in a turn, if your [MIGHT] level is 2 or more and your [DESTINY] level is 4 or more, deal 2 damage to their hero.</Description>
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
@@ -160,7 +160,7 @@
               <Variable Type="Level" Side="Friendly" LevelType="Might" />
               <Variable2 Type="Level" Side="Friendly" LevelType="Destiny" />
               <Condition Operator="And" ValueA="Condition" ValueB="Condition">
-                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="2" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
                 <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="3" />
               </Condition>
               <Effect Type="Damage" Value="2" />
