@@ -408,17 +408,26 @@ Whenever opponent plays a card, they discard a card.</Description>
     <!--...............................................................................-->
     <!-- Creatures - Neutral -->
     <!--...............................................................................-->
-    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_010" DisplayName="Pao Hunter" Faction="Neutral" SubType="Shooter" Race="Orc|Archer" Cost="2" MightLevel="1" Attack="1" Retaliate="0" HP="3" ID="112">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_010" DisplayName="Pao Hunter" Faction="Neutral" SubType="Shooter" Race="Orc|Archer" Cost="2" MightLevel="1" Attack="1" Retaliate="0" HP="3" ID="112">
         <Ability Type="ImmuneToRetaliate" />
 		<Ability Type="Stackable" />
+		<Trigger Type="OnDeployOnThis">
+		<Target Zone="Battleground" Amount="Self">
+		<Effect Type="ModifyAbility" Ability="PaoHunterQA"/>
+		</Target>
+		</Trigger>
+		<Description>If you play another copy of Pao Hunter to increase its stack size, it gains Quick Attack.</Description>
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Neu_012" DisplayName="Lesser Air Elemental" Faction="Neutral" School="Air" SubType="Magic|Flyer" Race="Spirit" Cost="4" MightLevel="3" MagicLevel="1" Attack="2" Retaliate="2" HP="6" ID="113" />
     <Card Rarity="Common" Type="Unit" Name="Cre_Neu_013" DisplayName="Lesser Fire Elemental" Faction="Neutral" School="Fire" SubType="Magic|Shooter" Race="Spirit" Cost="4" MightLevel="3" MagicLevel="1" Attack="3" Retaliate="2" HP="4" ID="114">
         <Ability Type="ImmuneToRetaliate" />
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Neu_016" DisplayName="Wild Griffin" Faction="Neutral" SubType="Flyer" Race="Griffin" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="4" ID="115" />
-    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_003" DisplayName="Sea Elf Archer" Faction="Neutral" SubType="Shooter" Race="Elf|Archer" Cost="3" MightLevel="3" Attack="3" Retaliate="0" HP="3" ID="116">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_003" DisplayName="Sea Elf Archer" Faction="Neutral" SubType="Shooter" Race="Elf|Archer" Cost="3" MightLevel="3" Attack="3" Retaliate="0" HP="3" ID="116">
         <Ability Type="ImmuneToRetaliate" />
+		<Ability Type="PerfectAttack" />
+        <Ability Type="PerfectRetaliate" DontShowIcon="True" />
+    <Description>Combat damage dealt by Sea Elf Archer cannot be prevented or reduced.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_014" DisplayName="Lesser Earth Elemental" Faction="Neutral" School="Earth" SubType="Magic|Melee" Race="Spirit" Cost="5" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="4" HP="7" ID="117" />
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_011" DisplayName="Lesser Shadow Elemental" Faction="Neutral" School="Dark" SubType="Magic|Melee" Race="Spirit" Cost="3" MightLevel="2" MagicLevel="1" Attack="1" Retaliate="1" HP="3" ID="118">

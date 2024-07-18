@@ -14,8 +14,11 @@
         <Ability Type="Retribution" />	
 		<Ability Type="PerfectRetaliate" />	
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Hav_041" DisplayName="Griffin Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="4" MightLevel="4" Attack="3" Retaliate="3" HP="6" ID="346">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Hav_041" DisplayName="Griffin Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="4" MightLevel="4" Attack="3" Retaliate="3" HP="6" ID="346">
         <Ability Type="ImmuneToRetaliate" />
+		<Ability Type="PerfectAttack" />
+        <Ability Type="PerfectRetaliate" DontShowIcon="True" />
+    <Description>Combat damage dealt by Griffin Marksman cannot be prevented or reduced.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_042" DisplayName="Griffin Mounted Spearman" Faction="Haven" SubType="Melee" Race="Human|Knight" Cost="4" MightLevel="4" Attack="3" Retaliate="2" HP="6" ID="347">
         <Ability Type="Swift" />

@@ -18,6 +18,11 @@
         </Target>
     </TemplateEffect>	
 	
+	<TemplateEffect Name="AbsorbPoisonDamage">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Poison" OwnerAbility="AbsorbPoisonDamage"/>
+        </Target>
+	
     <TemplateEffect Name="AirWard">
         <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
             <Effect Type="PlayEffect" PlayEffectType="Ward" OwnerAbility="AirWard">
@@ -495,6 +500,14 @@
                 <Effect Type="AdditionalAttack" Value="1" OwnerAbility="TitanAttackTwice"/>
             </Target>
         </Trigger>
+    </TemplateEffect>
+	
+	<TemplateEffect Name="PaoHunterQA">
+        <Trigger Type="OnDeployOnThis">
+		<Target Zone="Battleground" Amount="Self">
+		<Effect Type="ModifyAbility" Ability="QuickAttack"/>
+		</Target>
+		</Trigger>
     </TemplateEffect>
 
 	<TemplateEffect Name="BattleDive">
