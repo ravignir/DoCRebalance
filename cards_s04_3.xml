@@ -60,19 +60,23 @@ Enchanted creature gains -[X:ATK] and -[X:RET] where X is equal to your [MAGIC] 
     <!--....................................................................-->
     <!-- Spells - Earth -->
     <!--....................................................................-->
-    <Card  Rarity="Rare" Type="Spell" Name="Spe_Ear_060" DisplayName="Symbiotic Barkskin" School="Earth" Cost="3" MagicLevel="3" ID="639">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Ear_060" DisplayName="Symbiotic Barkskin" School="Earth" Cost="3" MagicLevel="3" ID="639">
         <Ongoing Duration="Permanent" />
-		<Ability Type="Endurable" />
+	<Ability Type="Endurable" />
         <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" />
         <Target Zone="None" Amount="Parent">
-            <Effect Type="ModifyMaxHp" Value="4" />
-            <Effect Type="ModifyAbility" Ability="Regenerate" Value="2" />
-		</Target>
-        <Description>Enchant friendly creature. Permanent:
-Enchanted creature gains Regenerate 2 and +[4:HEALTH].</Description>
-		<DescriptionChinese>依附于本方指定生物。永久：
-被依附生物获得+[3:HEALTH]。</DescriptionChinese>
-	</Card>
+            <Effect Type="ModifyMaxHp" Value="2" />
+            <Effect Type="ModifyAbility" Ability="Regenerate" Value="1" />
+	</Target>
+	<Target Zone="Battleground" Amount="Parent">
+		<Variable Type="CardPreventedDamage" UseParent="True" />
+		<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+		<Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Combat"/>
+	</Target>
+        <Description>Enchant creature. Permanent:
+Enchanted creature gains Regenerate 1 and +[2:HEALTH].
+The first time combat damage is dealt to enchanted creature in a turn, prevent that damage.</Description>
+    </Card>
     <Card Rarity="Common" Type="Spell" Name="Spe_Ear_061" DisplayName="Landslide" School="Earth" Cost="3" MagicLevel="3" ID="640">
         <Target Zone="BattlegroundPosition" CardType="Building" Amount="1" Shape="Self">
             <Effect Type="Kill" />
