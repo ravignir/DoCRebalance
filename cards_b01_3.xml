@@ -658,7 +658,7 @@ Enchanted creature gains Magic Shield.</Description>
     <!-- //	##      ##  #   ##      #  ##    ##        ## -->
     <!-- //	#####     ##    #####   #   #    ##     ##### -->
     <!--...............................................................................-->
-    <Card Rarity="Rare" Type="Event" Name="Eve_Neu_002" DisplayName="Market of Wonders" Faction="Neutral" Cost="5" ID="243">
+    <Card Rarity="Rare" Type="Event" Name="Eve_Neu_002" DisplayName="Market of Wonders" Faction="Neutral" Cost="3" ID="243">
         <Target Zone="Library" Side="Friendly" Amount="1" AmountVisible="3">
             <Effect Type="MoveCardTo" Destination="Hand" />
         </Target>
