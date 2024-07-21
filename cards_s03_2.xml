@@ -458,9 +458,11 @@ At the beginning of your turn, return Eternal Battlefield to its owner's hand.</
                 <Effect Type="MoveCardTo" Destination="Hand" />
             </Target>
         </Trigger>
+	<Trigger Type="OnThisCardPlay">
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAbility" Ability="CannotAttack" />
         </Target>
+	</Trigger>
         <Description>Permanent:
 Target creature gains Cannot Attack.
 At the beginning of your turn, return Zen Garden to its owner's hand.</Description>
