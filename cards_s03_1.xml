@@ -575,12 +575,10 @@ While Crusader Chaplain has no damage, it cannot be targeted.</Description>
         </Target>
         <Description>Whenever a player plays a card or uses an ability targeting a single creature, it must target Imp Jester if possible.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_054" DisplayName="Abyssal Worm" Faction="Inferno" SubType="Melee" Race="Demon|Worm" Cost="6" MightLevel="6" Attack="8" Retaliate="4" HP="8" ID="502">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Inf_054" DisplayName="Abyssal Worm" Faction="Inferno" SubType="Melee" Race="Demon|Worm" Cost="6" MightLevel="6" Attack="8" Retaliate="4" HP="8" ID="502">
         <Ability Type="AttackAnywhere" />
-        <Target Zone="Hero" Amount="All" Side="Friendly">
-            <Effect Type="ModifyResourcesProduction" Value="3mi" />
-        </Target>
-        <Description>During your supply phase, you cannot produce more than [3:RESOURCES] .</Description>
+        <Ability Type="KillOtherOnly" />
+        <Description>Abyssal Worm can only be deployed on another friendly creature, then destroy that creature.</Description>
     </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Inf_055" DisplayName="Hikyu, Fists of Fury" Faction="Inferno" School="Fire" SubType="Magic|Shooter" Race="Human|Warrior" Unique="True" Cost="6" MightLevel="5" MagicLevel="1" Attack="4" Retaliate="3" HP="6" ID="503">
         <Ability Type="ImmuneToRetaliate" />

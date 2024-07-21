@@ -197,29 +197,20 @@ At the end of opponent's turn, if they didn't play a card of the chosen type dur
         <Description>Until your next turn:
 Whenever opponent plays a card, they discard a card.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Inf_003" DisplayName="Chaos Rift" Faction="Inferno" Cost="2" DestinyLevel="2" ID="137">
-        <Target Zone="None" Side="Friendly">
-            <Effect Type="ChoiceOption" />
-            <Subgroup>
-                <Target Zone="None" Side="Friendly" Option="0">
-                    <Option Value="0" DisplayText="Draw a card." />
-                    <Effect Type="Draw" Value="1" />
-                </Target>
-                <Target Zone="Hand" Side="Enemy" Amount="2" Random="True">
-                    <Option Value="1" DisplayText="Enemy discards two card at random." />
-                    <Variable Type="TargetCount">
-                        <Target Zone="Hand" Amount="All" Side="Friendly" />
-                    </Variable>
-                    <Variable2 Type="TargetCount">
-                        <Target Zone="Hand" Amount="All" Side="Enemy" />
-                    </Variable2>
-                    <Condition Operator="LesserThan" ValueA="Variable" ValueB="Variable2" />
-                    <Effect Type="MoveCardTo" Destination="Graveyard" />
-                </Target>
-            </Subgroup>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Inf_003" DisplayName="Chaos Rift" Faction="Inferno" Cost="1" DestinyLevel="2" ID="137">
+        <Target Zone="Library" Side="Friendly" Amount="1">
+            <CardFilter IncludeFaction="Inferno" IncludeCardType="Fortune" ExcludeUnique="True" ExcludeCardID="For_Inf_003" />
+            <Effect Type="MoveCardTo" Destination="Hand" />
         </Target>
-        <Description>Choose one: Draw a card OR If you have less cards in hand than opponent after playing Chaos Rift, opponent discards two cards at random.</Description>
-    </Card>
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+            <Variable Type="BaseCardCost" UseLastTarget="True" />
+            <Effect Type="Damage" Value="Variable" />
+        </Target>
+        <Target Side="Friendly">
+            <Effect Type="Shuffle" CardHolder="Library" />
+        </Target>
+        <Description>Search your library for a non-unique Inferno fortune card other than Chaos Rift and put it into your hand, then deal damage to your hero equal to that card's cost. Shuffle your library.</Description>
+	</Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Inf_005" DisplayName="Altar of Destruction" Faction="Inferno" Cost="1" DestinyLevel="1" ID="138">
         <Target Zone="Hand" Side="Friendly" Amount="1">
             <Effect Type="MoveCardTo" Destination="Library" />
