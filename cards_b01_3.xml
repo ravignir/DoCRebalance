@@ -297,20 +297,15 @@ Enchanted creature gains +[3:ATK].</Description>
 Prevent all damage dealt to enchanted Creature.
 At the end of the turn, if damage was prevented in this way this turn, destroy Rock Wall.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Spell" Name="Spe_Ear_002" DisplayName="Contagion" School="Earth" Cost="3" MagicLevel="3" ID="209">
-        <Ongoing Duration="Permanent" />
-		<Ability Type="Endurable"/>
-		<Target Zone="Battleground" CardType="Unit" Amount="1" />
-        <Trigger Type="OnTurnBegin" Duration="Permanent">
-            <Target Zone="Battleground" CardType="Unit" Amount="Parent">
-                <Effect Type="AddCounter" CounterType="Poison" Value="1" />
-            </Target>
-            <Target Zone="Battleground" Amount="Self">
-                <Effect Type="AdjacentMovement" Side="Friendly" />
-            </Target>
-        </Trigger>
-        <Description>Enchant creature. Permanent:
-At the beginning of each player's turn, put 1 poison counter on enchanted creature. Then, if possible, Contagion enchants an adjacent creature chosen at random.</Description>
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Ear_002" DisplayName="Contagion" School="Earth" Cost="3" MagicLevel="3" ID="209">
+		<Ongoing Duration="Permanent"/>
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" Random="True">
+				<Effect Type="AddCounter" CounterType="Poison" Value="1"/>
+			</Target>
+		</Trigger>
+        <Description>Permanent:
+At the end of your turn, put 1 poison counter on an enemy creature chosen at random.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_007" DisplayName="Regeneration" School="Earth" Cost="1" MagicLevel="2" ID="210">
         <Ongoing Duration="Permanent" />
