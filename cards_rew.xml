@@ -252,7 +252,7 @@ At the beginning of your turn, you may destroy target creature with a cost of [2
     <!--...............................................................................-->
     <!-- Heroes Sanctuary -->
     <!--...............................................................................-->
-    <Card Rarity="Heroic" Type="Hero" Name="Her_San_005" DisplayName="Akane, Mourner of Lost Memories" Faction="Sanctuary" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="258">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_San_005" DisplayName="Akane, Mourner of Lost Memories" Faction="Sanctuary" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="20" ID="258">
         <School Name="Air" />
         <School Name="Prime" />
         <Description>[1:RESOURCES]: Remove all counters and destroy all ongoing spells on target creature.</Description>
@@ -319,7 +319,7 @@ At the beginning of your turn, you may destroy target creature with a cost of [2
             </Subgroup>
         </Target>
     </Card>
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_007" DisplayName="Zouleika, Renegade Wizard" Faction="Stronghold" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="20" ID="455">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_007" DisplayName="Zouleika, Renegade Wizard" Faction="Stronghold" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="20" ID="455">
         <School Name="Air" />
         <School Name="Earth" />
         <Description>At the beginning of your turn, if your [MIGHT] level is 5 or more and your [MAGIC] level is 4 or more, target friendly creature gains Magic Resist until your next turn.</Description>
