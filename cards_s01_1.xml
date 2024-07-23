@@ -268,8 +268,10 @@
         <Ability Type="ShuffleOnEnterGraveyard" />
         <Description>When Shi-No-Shi is put into your graveyard, shuffle it into your library instead.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_025" DisplayName="Deep Mountain Turtle" Faction="Neutral" SubType="Melee" Race="Beast" Cost="3" MightLevel="3" Attack="1" Retaliate="3" HP="5" ID="333">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Neu_025" DisplayName="Deep Mountain Turtle" Faction="Neutral" School="Earth" SubType="Melee" Race="Beast" Cost="3" MightLevel="3" Attack="1" Retaliate="3" HP="5" ID="333">
         <Ability Type="PreemptiveStrike" />
+	<Ability Type="Turtling" Value="0" />
+	<Description>At the end of turn, if Deep Mountain Turtle did not attack, it gains Anchored and Armor 1 until end of your next turn.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_026" DisplayName="Void Wraith" Faction="Neutral" School="Prime" SubType="Magic|Melee" Race="Spirit" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="2" Attack="1" Retaliate="0" HP="1" ID="334">
         <Trigger Type="OnThisCardDeath" Side="Enemy">
