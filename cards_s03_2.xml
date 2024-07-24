@@ -155,7 +155,7 @@ At the beginning of your turn, return Shifting Sands to its owner's hand.</Descr
 Whenever you play a magic creature, put the top 3 cards of opponent's library into their graveyard.
 When Void Tainted Ritual enters the battleground, draw a card.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Aca_011" DisplayName="Stolen Research" Faction="Academy" Cost="3" DestinyLevel="3" ID="538">
+    <Card Rarity="Uncommon" Type="Fortune" Name="For_Aca_011" DisplayName="Stolen Research" Faction="Academy" Cost="2" DestinyLevel="3" ID="538">
         <Target Zone="None" Side="Friendly">
             <Effect Type="IncreaseLevel" Value="1" LevelType="Magic" />
         </Target>
