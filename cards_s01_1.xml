@@ -94,7 +94,7 @@
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="Outmaneuver" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_San_005" DisplayName="Kappa" Faction="Sanctuary" SubType="Melee" Race="Spirit" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="7" ID="96" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_San_005" DisplayName="Kappa" Faction="Sanctuary" School="Water" SubType="Melee" Race="Spirit" Cost="3" MightLevel="4" Attack="3" Retaliate="3" HP="6" ID="96" />
     <Card Rarity="Common" Type="Unit" Name="Cre_San_014" DisplayName="Snow Maiden" Faction="Sanctuary" School="Water" SubType="Shooter" Race="Spirit" Cost="3" MightLevel="3" Attack="2" Retaliate="1" HP="5" ID="98">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="Hypnotize" />
