@@ -277,9 +277,19 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
         </Trigger>
         <Description>When Angel of Mercy enters the battleground, take a creature card at random from your graveyard and put it into your hand.</Description>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Hav_047" DisplayName="Chosen of Elrath" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Knight" Cost="4" MightLevel="4" MagicLevel="1" Attack="2" Retaliate="2" HP="6" ID="382">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Hav_047" DisplayName="Chosen of Elrath" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Knight" Cost="4" MightLevel="3" MagicLevel="2" Attack="2" Retaliate="2" HP="6" ID="382">
         <Ability Type="ImmuneToRetaliate" />
-        <Ability Type="Mending" />
+		<Trigger Type="OnThisCardDeploy">
+            <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" Cancelable="False" Persistent="True" ForceExecute="True">
+                <Effect Type="ModifyAbility" Ability="CannotTarget" Duration="UntilYourNextTurn" />
+            </Target>
+        </Trigger>
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+            <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" Cancelable="False" Persistent="True" ForceExecute="True">
+                <Effect Type="ModifyAbility" Ability="CannotTarget" Duration="UntilYourNextTurn" />
+            </Target>
+	</Trigger>
+	<Description>When Chosen of Elrath enters the battleground and at the start of your turn, choose a friendly creature. That creature cannot be targeted until your next turn.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_046" DisplayName="Lurker in the Dark" Faction="Inferno" School="Dark" SubType="Melee" Race="Demon|Breeder" Cost="2" MightLevel="3" Attack="2" Retaliate="0" HP="4" ID="383">
         <Ability Type="Fear" Value="2" />
