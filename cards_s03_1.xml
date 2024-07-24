@@ -598,9 +598,9 @@ While Crusader Chaplain has no damage, it cannot be targeted.</Description>
     <!--...............................................................................-->
     <!-- Creatures - Necropolis -->
     <!--...............................................................................-->
-    <Card NotLocalized="True" Rarity="Common" Type="Unit" Name="Cre_Nec_050" DisplayName="Al-Betyl Ghoul" Faction="Necropolis" SubType="Melee" Race="Ghoul" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="8" ID="504">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Nec_050" DisplayName="Al-Betyl Ghoul" Faction="Necropolis" SubType="Melee" Race="Ghoul" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="7" ID="504">
 		<Ability Type="Infect" Value="1" />
-		<Trigger Type="OnTurnBegin" Side="Friendly">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
 			<Target Zone="Graveyard" CardType="Unit" Amount="1" Side="Enemy" Random="True">
 				<Variable Type="TargetCount">
 					<Target Zone="Graveyard" CardType="Unit" Amount="All" Side="Enemy" />
@@ -616,7 +616,7 @@ While Crusader Chaplain has no damage, it cannot be targeted.</Description>
 				<Effect Type="Banish" />
 			</Target>			
         </Trigger>
-		<Trigger Type="OnTurnBegin" Side="Friendly">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
 			<Target Zone="Battleground" Amount="Self">
 				<Variable Type="TargetCount" >
 					<Target Zone="Graveyard" CardType="Unit" Amount="All" Side="Any" />
@@ -625,7 +625,7 @@ While Crusader Chaplain has no damage, it cannot be targeted.</Description>
 				<Effect Type="ModifyMaxHp" Value="2"/>
 			</Target>
 		</Trigger>
-		<Description>At the beginning of your turn, banish a random creature card from any graveyard. If you do, [THIS] gains +[2:HEALTH].</Description>
+		<Description>At the end of your turn, banish a random creature card from enemy graveyard, or if there are no creature cards in enemy graveyard, banish a random creature card from your graveyard instead. If you do, Al-Betyl Ghoul gains +2 [HEALTH].</Description>
 	</Card>
 	<Card  Rarity="Common" Type="Unit" Name="Cre_Nec_051" DisplayName="Rotting Zombie" Faction="Necropolis" SubType="Magic|Melee" Race="Zombie" Cost="2" MightLevel="2" MagicLevel="1" Attack="0" Retaliate="1" HP="4" ID="505">
         <Trigger Type="OnThisCardDeath">
