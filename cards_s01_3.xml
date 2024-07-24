@@ -43,14 +43,20 @@ Enemy melee and flyer creatures gain Cannot Attack.</Description>
         </Target>
         <Description>Put 1 crippling counter on two target creatures.</Description>
     </Card>
-    <Card  Rarity="Uncommon" Type="Spell" Name="Spe_Dar_031" DisplayName="Despair" School="Dark" Cost="3" MagicLevel="3" ID="311">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Dar_031" DisplayName="Despair" School="Dark" Cost="2" MagicLevel="3" ID="311">
+		<Ongoing Duration="UntilYourNextTurn"/>
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Any">
+            <CardFilter IncludeStatus="NoFriendlyAdjacent" />
+			<Effect Type="ModifyAbility" Ability="CannotAttack"/>
+		</Target>
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy">
             <CardFilter IncludeStatus="NoFriendlyAdjacent" />
-            <Effect Type="Damage" Value="2" />
+            <Effect Type="Damage" Value="2" Duration="Immediate" />
         </Target>
-        <Description>Deal 2 damage to all enemy creatures with no adjacent friendly creature.</Description>
-		<DescriptionChinese>对所有没有相邻的同一方生物的敌方生物造成2点伤害。</DescriptionChinese>
-	</Card>
+        <Description>Until your next turn:
+All creatures with no adjacent friendly creature gain Cannot Attack.
+When Despair enters the battleground, deal 2 damage to all enemy creatures with no adjacent friendly creature.</Description>
+    </Card>
     <Card Rarity="Rare" Type="Spell" Name="Spe_Dar_032" DisplayName="Curse of the Penitent" School="Dark" Cost="4" MagicLevel="4" ID="312">
         <Target Zone="Battleground" CardType="Unit" Amount="All">
             <Variable Type="CardHealth" UseCurrentTarget="True" ValueModifier="0.5xu" />
