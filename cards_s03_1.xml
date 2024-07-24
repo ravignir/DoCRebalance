@@ -665,10 +665,10 @@ Putrid Ghoul's [ATK] is equal to the number of poison counters on friendly creat
         </Trigger>
         <Description>At the beginning of your supply phase, if Sahaar Mummy is in your graveyard and there are 5 cards or less in your graveyard, take Sahaar Mummy and put it into your hand.</Description>
     </Card>
-    <Card  Rarity="Rare" Type="Unit" Name="Cre_Nec_054" DisplayName="Rotting Mummy" Faction="Necropolis" SubType="Melee" Race="Zombie" Cost="2" MightLevel="2" Attack="1" Retaliate="0" HP="3" ID="508" School="Earth">	
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Nec_054" DisplayName="Rotting Mummy" Faction="Necropolis" SubType="Melee" Race="Zombie" Cost="2" MightLevel="2" Attack="1" Retaliate="0" HP="4" ID="508" School="Earth">	
 		<Ability Type="AbsorbPoisonDamageHeal" />
 		<Variable Type="LastAliveCounterCount" CounterType="Poison" />
-		<Trigger Type="OnTurnEnd" Side="Any">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
             <Target Zone="Battleground" Amount="Self">
                 <Effect Type="AddCounter" CounterType="Poison" Value="1" />
             </Target>
@@ -678,10 +678,8 @@ Putrid Ghoul's [ATK] is equal to the number of poison counters on friendly creat
 				<Effect Type="AddCounter" CounterType="Poison" Value="1"/>
 			</Target>
 		</Trigger>
-        <Description>At the end of each turn, put 1 poison counter on [THIS].
-When [THIS] dies with poison counters on it, put the same number of poison counters on other random creatures.</Description>
-		<DescriptionChinese>在每回合结束时，给[THIS]放置1个中毒指示物。
-当[THIS]在有中毒指示物时死亡，给其他生物随机分配放置等量的中毒指示物。</DescriptionChinese>
+        <Description>At the end of your turn, put 1 poison counter on Rotting Mummy.
+When Rotting Mummy dies with poison counters on it, put the same number of poison counters on other random creatures.</Description>
 	</Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Nec_055" DisplayName="Damran, the Tainted" Faction="Necropolis" School="Earth" SubType="Melee" Race="DarkElf" Unique="True" Cost="5" MightLevel="4" Attack="3" Retaliate="3" HP="7" ID="509">
         <Ability Type="Infect" Value="2" />
