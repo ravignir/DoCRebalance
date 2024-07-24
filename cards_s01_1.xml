@@ -249,13 +249,17 @@
         </Trigger>
         <Description>At the beginning of your turn, if any friendly creature died during opponent's last turn, Black Vulture gains +[1:ATK] until end of your turn.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_022" DisplayName="Blind Brother" Faction="Neutral" SubType="Melee|Shooter" Race="Human|Seer" Cost="4" MightLevel="1" DestinyLevel="3" Attack="1" Retaliate="1" HP="5" ID="282">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Neu_022" DisplayName="Blind Brother" Faction="Neutral" SubType="Melee|Shooter" Race="Human|Seer" Cost="3" MightLevel="1" DestinyLevel="3" Attack="1" Retaliate="1" HP="5" ID="282">
         <Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
             <Target Zone="None" Side="Friendly">
                 <Effect Type="Draw" Value="1" />
             </Target>
         </Trigger>
-        <Description>At the beginning of your supply phase, draw an additional card.</Description>
+	<Target Zone="Hero" Amount="All" Side="Any">
+		<Effect Type="GlobalEffect" GlobalEffectType="CantSearchLibrary"/>
+	</Target>
+        <Description>At the beginning of your supply phase, draw an additional card.
+Players cannot search their library.</Description>
     </Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Neu_023" DisplayName="Greater Fire Elemental" Faction="Neutral" School="Fire" SubType="Magic|Shooter" Race="Spirit" Cost="5" MightLevel="3" MagicLevel="3" Attack="3" Retaliate="2" HP="5" ID="283">
         <Ability Type="ImmuneToRetaliate" />
