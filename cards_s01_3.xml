@@ -236,7 +236,7 @@ Fire and earth spells deal half damage, rounded down.</Description>
                 </Target>
             </Trigger>
         </Target>
-        <Description>[1:RESOURCES]: Creatures you deploy this turn gain + [1:RET].</Description>
+        <Description>[1:RESOURCES]: Non-token creatures you deploy this turn gain + [1:RET].</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_021" DisplayName="Week of the Tamed Spirits" Faction="Neutral" Cost="2" ID="329">
         <Ongoing Duration="UntilYourNextTurn" />
