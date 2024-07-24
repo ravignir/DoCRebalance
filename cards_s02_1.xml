@@ -210,7 +210,7 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
         <Ability Type="QuickAttack" />
         <Ability Type="Swift" />
     </Card>
-    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Str_044" DisplayName="Bloodfrenzied Wyvern" Faction="Stronghold" SubType="Flyer" Race="Wyvern" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="7" ID="373">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Str_044" DisplayName="Bloodfrenzied Wyvern" Faction="Stronghold" SubType="Flyer" Race="Wyvern" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="8" ID="373">
 	<Ability Type="Bloodthirst" Value="1"/>
 	<Trigger Type="OnThisPostDeadlyCombat">
             <Target Zone="Battleground" Amount="Self">
