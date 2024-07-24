@@ -37,11 +37,12 @@ At the beginning of your turn, return Shifting Sands to its owner's hand.</Descr
         </Target>
         <Description>Look at the top X cards of opponent's library and choose one to put into their graveyard, where X is equal to 3 plus the number of cards named Unraveled Fate in your graveyard.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_003" DisplayName="Arcane Research" Faction="Academy" Cost="3" DestinyLevel="2" ID="530">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Aca_003" DisplayName="Arcane Research" Faction="Academy" Cost="4" DestinyLevel="3" ID="530">
         <Target Zone="None" Side="Friendly">
-            <Effect Type="IncreaseLevel" Value="2" LevelType="Magic" />
+            <Variable Type="Level" Side="Friendly" LevelType="Magic" ValueModifier="0.5xd"/>
+            <Effect Type="Draw" Value="Variable" />
         </Target>
-        <Description>Increase your [MAGIC] level by 2.</Description>
+        <Description>Draw X cards, where X is equal to half of your [MAGIC] level, rounded down.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Aca_004" DisplayName="Favorite Spell" Faction="Academy" Cost="3" DestinyLevel="2" ID="531">
         <Target Zone="Library" Side="Friendly" Amount="1">
