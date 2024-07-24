@@ -20,7 +20,7 @@
                 <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
             </Subgroup>
         </Target>
-		<Trigger Type="OnCardMill" Side="Enemy" ExecuteOncePerTransaction="True">
+	<Trigger Type="OnCardMill" Side="Enemy" ExecuteOncePerTransaction="True">
             <Target Zone="Hero" Amount="All" Side="Friendly">
                 <Effect Type="Heal" Value="1" />
             </Target>
