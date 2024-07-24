@@ -116,9 +116,16 @@
     <Card Rarity="Rare" Type="Unit" Name="Cre_San_013" DisplayName="Mizu-Kami" Faction="Sanctuary" School="Water" SubType="Magic|Melee" Race="Spirit" Cost="5" MightLevel="3" MagicLevel="2" Attack="3" Retaliate="1" HP="5" ID="104">
         <Ability Type="MagicShield" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_San_009" DisplayName="Yuki-Onna" Faction="Sanctuary" School="Water" SubType="Shooter" Race="Spirit" Cost="5" MightLevel="5" Attack="3" Retaliate="2" HP="9" ID="105">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_San_009" DisplayName="Yuki-Onna" Faction="Sanctuary" School="Water" SubType="Shooter" Race="Spirit" Cost="5" MightLevel="5" Attack="2" Retaliate="2" HP="8" ID="105">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="Hypnotize" />
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy" >
+                <CardFilter IncludeAbility="Immobilized" />
+                <Effect Type="Damage" Value="1" />
+            </Target>
+		</Trigger>
+	<Description>At the end of your turn, deal 1 damage to all immobilized enemy creatures.</Description>
     </Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_San_008" DisplayName="Kensei" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="7" MightLevel="5" Attack="2" Retaliate="1" HP="4" ID="106">
         <Ability Type="ImmuneToRetaliate" />
