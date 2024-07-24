@@ -43,7 +43,7 @@ Enemy melee and flyer creatures gain Cannot Attack.</Description>
         </Target>
         <Description>Put 1 crippling counter on two target creatures.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Dar_031" DisplayName="Despair" School="Dark" Cost="2" MagicLevel="3" ID="311">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Dar_031" DisplayName="Despair" School="Dark" Cost="2" MagicLevel="2" ID="311">
 		<Ongoing Duration="UntilYourNextTurn"/>
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Any">
             <CardFilter IncludeStatus="NoFriendlyAdjacent" />
