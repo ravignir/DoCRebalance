@@ -851,7 +851,7 @@ When Rotting Mummy dies with poison counters on it, put the same number of poiso
         </Trigger>
         <Description>When Soothsayer enters the battleground, search your library for a unique fortune card and put it into your hand, then shuffle your library.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_053" DisplayName="Cactus Thing" Faction="Neutral" School="Earth" SubType="Melee" Race="Plant" Cost="2" MightLevel="2" Attack="0" Retaliate="3" HP="3" ID="525">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_053" DisplayName="Cactus Thing" Faction="Neutral" School="Earth" SubType="Melee" Race="Plant" Cost="2" MightLevel="2" Attack="0" Retaliate="3" HP="4" ID="525">
         <Ability Type="PreemptiveStrike" />
 		<Ability Type="CannotAttack" />
     </Card>
