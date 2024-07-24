@@ -332,31 +332,20 @@ When a friendly creatue with Enrage or Bloodthirst dies, destroy Call of the Blo
         <Description>Banish target creature card from your graveyard, then gain [3:RESOURCES].
 Inheritance can only be played if you have [0:RESOURCES] left.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_031" DisplayName="Curse of Negation" Faction="Neutral" Cost="2" DestinyLevel="2" ID="301">
-        <Target Zone="None" Side="Enemy">
-            <Effect Type="ChoiceOption" />
-            <Subgroup>
-                <Target Zone="None" Side="Enemy">
-                    <Variable Type="Level" Side="Enemy" LevelType="Might" />
-                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
-                    <Option Value="0" DisplayText="Decrease [MIGHT] level." />
-                    <Effect Type="IncreaseLevel" Value="-1" LevelType="Might" />
-                </Target>
-                <Target Zone="None" Side="Enemy">
-                    <Variable Type="Level" Side="Enemy" LevelType="Magic" />
-                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
-                    <Option Value="1" DisplayText="Decrease [MAGIC] level." />
-                    <Effect Type="IncreaseLevel" Value="-1" LevelType="Magic" />
-                </Target>
-                <Target Zone="None" Side="Enemy">
-                    <Variable Type="Level" Side="Enemy" LevelType="Destiny" />
-                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
-                    <Option Value="2" DisplayText="Decrease [DESTINY] level." />
-                    <Effect Type="IncreaseLevel" Value="-1" LevelType="Destiny" />
-                </Target>
-            </Subgroup>
-        </Target>
-        <Description>Decrease opponent's [MIGHT], [MAGIC] or [DESTINY] level by one</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_031" DisplayName="Curse of Negation" Faction="Neutral" Cost="2" DestinyLevel="2" ID="301">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Hero" Amount="All">
+			<Effect Type="GlobalEffect" GlobalEffectType="Deny">
+				<CardFilter IncludeCardType="Fortune" IncludeOngoingType="Immediate"/>
+			</Effect>
+		</Target>
+		<Trigger Type="OnThisCardDeny">
+			<Target Zone="None" Amount="Self">
+				<Effect Type="Kill"/>
+			</Target>
+		</Trigger>
+        <Description>Permanent:
+When an instant fortune is about to be played, negate that fortune and destroy Curse of Negation.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Neu_032" DisplayName="Stolen Supplies" Faction="Neutral" Cost="1" DestinyLevel="3" ID="302">
         <Target Zone="None" Side="Friendly">
