@@ -90,17 +90,17 @@ All creatures lose Quick Attack.</Description>
     <!--....................................................................-->
     <!-- Spells - Fire -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Fir_030" DisplayName="Combustion" School="Fire" Cost="2" MagicLevel="2" ID="316">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Fir_030" DisplayName="Combustion" School="Fire" Cost="2" MagicLevel="2" ID="316">
         <Ongoing Duration="Permanent" />
         <Ability Type="Endurable"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="1" />
         <Trigger Type="OnTurnBegin">
             <Target Zone="Battleground" CardType="Unit" Amount="Parent">
-                <Effect Type="Damage" Value="1" />
+                <Effect Type="Damage" Value="2" />
             </Target>
         </Trigger>
         <Description>Enchant creature. Permanent:
-At the begining of each player's turn, deal 1 damage to enchanted creature.</Description>
+At the begining of each player's turn, deal 2 damage to enchanted creature.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_031" DisplayName="Fiery Weapon" School="Fire" Cost="3" MagicLevel="2" ID="317">
         <Ongoing Duration="Permanent" />
