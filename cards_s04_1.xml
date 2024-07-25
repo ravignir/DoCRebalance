@@ -19,7 +19,7 @@
         <Description>Ambush: Put the top 2 cards of opponent's library into their graveyard.
 (Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>
     </Card>
-    <Card  Rarity="Uncommon" Type="Unit" Name="Cre_Aca_061" DisplayName="Insatiable Djinn" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="5" MightLevel="4" MagicLevel="4" Attack="5" Retaliate="4" HP="9" ID="601">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Aca_061" DisplayName="Insatiable Djinn" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="5" MightLevel="4" MagicLevel="4" Attack="3" Retaliate="3" HP="9" ID="601">
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Graveyard" CardType="Spell" Amount="1" Side="Enemy" Random="True">
 				<Variable Type="TargetCount">
@@ -36,17 +36,16 @@
 				<Effect Type="Banish" />
             </Target>
         </Trigger>
-        <Trigger Type="OnTurnBegin" Side="Friendly">
-            <Target Zone="Battleground" Amount="Self">
-                <Variable Type="TargetCount">
-                    <Target Zone="Graveyard" CardType="Spell" Amount="All" Side="Any" />
-                </Variable>
-                <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
-                <Effect Type="Kill" />
-            </Target>
-        </Trigger>
-        <Description>At the beginning of your turn, banish a random spell card from any graveyard. If you can't, destroy Insatiable Djinn.</Description>
-		<DescriptionChinese>在本方回合开始时，随机驱逐任意墓地中1张法术牌。如果不能，消灭贪婪灯神。</DescriptionChinese>
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+			<Target Zone="Battleground" Amount="Self">
+				<Variable Type="TargetCount" >
+					<Target Zone="Graveyard" CardType="Spell" Amount="All" Side="Any" />
+				</Variable>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
+			</Target>
+		</Trigger>
+        <Description>At the beginning of your turn, banish a random spell card from enemy graveyard, or if there are no spell cards in enemy graveyard, banish a random spell card from your graveyard instead. If you do, put a +[1:ATK] counter on Insatiable Djinn.</Description>
 	</Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Aca_063" DisplayName="Sentinel of the Ages" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Titan|Construct" Cost="8" MightLevel="6" MagicLevel="4" Attack="6" Retaliate="6" HP="10" ID="667">
         <Ability Type="ImmuneToRetaliate" />
