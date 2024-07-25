@@ -10,9 +10,16 @@
     <!--...............................................................................-->
     <!-- Creatures - Haven -->
     <!--...............................................................................-->
-    <Card Rarity="Common" Type="Unit" Name="Cre_Hav_020" DisplayName="Wolf Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="4" ID="260">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Hav_020" DisplayName="Wolf Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="4" ID="260">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="Retribution" />
+        <Target Zone="Battleground" CardType="Unit" Amount="Self">
+            <Variable Type="TargetCount">
+                <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly" />
+            </Variable>
+            <Effect Type="ModifyRetaliate" Value="Variable" />
+        </Target>
+	<Description>Wolf Marksman gains +[1:RET] for each adjacent friendly creature.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_021" DisplayName="Wolf Praetorian" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="4" MightLevel="4" Attack="2" Retaliate="4" HP="6" ID="261">
         <Ability Type="Retribution" />
@@ -24,7 +31,7 @@
         </Target>
         <Description>All other friendly creatures gain +[2:RET]</Description>
     </Card>
-    <Card Rarity="Epic" Type="Unit" Name="Cre_Hav_023" DisplayName="Wolf Captain" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="2" MightLevel="3" Attack="1" Retaliate="0" HP="5" ID="263">
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Hav_023" DisplayName="Wolf Captain" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="2" MightLevel="3" Attack="1" Retaliate="0" HP="4" ID="263">
         <Ability Type="Retribution" />
         <Target Zone="Battleground" CardType="Unit" Amount="Self">
             <Variable Type="TargetCount">
