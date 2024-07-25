@@ -164,8 +164,9 @@ When opponent discards one or more cards, draw 2 cards and destroy Pleasure in P
     <!--....................................................................-->
     <!-- Fortune - Necropolis -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Nec_060" DisplayName="Ariana's Will" Faction="Necropolis" Cost="1" DestinyLevel="2" ID="621">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_060" DisplayName="Ariana's Will" Faction="Necropolis" Cost="1" DestinyLevel="2" ID="621">
         <Target Zone="None" Side="Friendly">
+	    <Effect Type="Draw" Value="1" />
             <Effect Type="ChoiceOption" />
             <Subgroup>
                 <Target Zone="Graveyard" Side="Friendly" Amount="5" CardType="Unit">
@@ -182,7 +183,8 @@ When opponent discards one or more cards, draw 2 cards and destroy Pleasure in P
                 </Target>
             </Subgroup>
         </Target>
-        <Description>Choose one: Take 5 target creature cards from your graveyard and shuffle them into your library OR Take the top 5 cards of your library and put them into your graveyard.</Description>
+        <Description>Draw a card.
+Choose one: Take 5 target creature cards from your graveyard and shuffle them into your library OR Take the top 5 cards of your library and put them into your graveyard.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Nec_061" DisplayName="Soul Harvest" Faction="Necropolis" Cost="3" DestinyLevel="3" ID="622">
         <Ongoing Duration="UntilYourNextTurn" />
