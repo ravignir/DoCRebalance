@@ -129,15 +129,17 @@
         </Trigger>
         <Description>When Reborn Incubus is put into your graveyard from your library, put it into your hand.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_063" DisplayName="Soul-Consuming Efreet" Faction="Inferno" School="Fire" SubType="Magic|Flyer" Race="Djinn|Spirit" Cost="3" MightLevel="2" MagicLevel="2" Attack="2" Retaliate="2" HP="5" ID="673">
-        <Variable2 Type="TargetCount" ValueModifier="0.2xd">
-            <Target Zone="Graveyard" Amount="All" Side="Friendly" />
-        </Variable2>
-        <Target Zone="None" Amount="Self">
-            <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0" />
-            <Effect Type="ModifyAbility" Ability="FireBurst" Value="Variable2" />
-        </Target>
-        <Description>For every 5 cards in your graveyard, Soul-Consuming Efreet gains Fire Burst 1.</Description>
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Inf_063" DisplayName="Soul-Consuming Efreet" Faction="Inferno" School="Fire" SubType="Magic|Flyer" Race="Djinn|Spirit" Cost="3" MightLevel="2" MagicLevel="2" Attack="2" Retaliate="2" HP="5" ID="673">
+		<Trigger Type="OnThisPreAttackHero">	
+			<Target Zone="None" Amount="Self" ForceExecute="True">
+				<Variable Type="TargetCount" ValueModifier="0.2xd">
+					<Target Zone="Graveyard" Amount="All" Side="Friendly" />
+				</Variable>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+				<Effect Type="PlayEffect" PlayEffectType="AttackBonus" Value="Variable" Duration="UntilEndOfTransaction" />
+			</Target>
+		</Trigger>
+        <Description>When Soul-Consuming Efreet attacks enemy hero, it deals 1 more attack damage for every 5 cards in your graveyard.</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Creatures - Necropolis -->
