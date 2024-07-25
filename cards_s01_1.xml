@@ -134,7 +134,7 @@
 		</Trigger>
 	<Description>At the end of your turn, deal 1 damage to all immobilized enemy creatures.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_San_008" DisplayName="Kensei" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="7" MightLevel="5" Attack="2" Retaliate="1" HP="4" ID="106">
+    <Card Rarity="Rare" Type="Unit" Name="Cre_San_008" DisplayName="Kensei" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="6" MightLevel="5" Attack="2" Retaliate="1" HP="4" ID="106">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="Honor" Value="3" />
     </Card>
@@ -248,8 +248,18 @@
     <!--...............................................................................-->
     <!-- Creatures - Neutral -->
     <!--...............................................................................-->
-    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_020" DisplayName="Dire Wolf" Faction="Neutral" SubType="Melee" Race="Wolf" Cost="2" MightLevel="2" Attack="1" Retaliate="2" HP="2" ID="280">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_020" DisplayName="Dire Wolf" Faction="Neutral" SubType="Melee" Race="Wolf" Cost="2" MightLevel="2" Attack="1" Retaliate="2" HP="2" ID="280">
         <Ability Type="Retribution" />
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Library" Side="Friendly" CardType="Unit" Amount="1" RevealToOther="True">
+				<CardFilter IncludeCardID="Cre_Neu_020"/>
+				<Effect Type="MoveCardTo" Destination="Hand"/>
+			</Target>
+			<Target Side="Friendly">
+				<Effect Type="Shuffle" CardHolder="Library"/>
+			</Target>
+		</Trigger>
+		<Description>When Dire Wolf enters the battleground, search your library for a card named Dire Wolf, put it into your hand, then shuffle your library.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_021" DisplayName="Black Vulture" Faction="Neutral" SubType="Flyer" Race="Bird" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="2" ID="281">
         <Variable Type="DeadCardLastTurnCount" Side="Enemy">
