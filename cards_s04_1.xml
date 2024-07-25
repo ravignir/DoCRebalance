@@ -236,8 +236,16 @@
         <Ability Type="Bloodthirst" Value="1" />
         <Ability Type="Enrage" Value="1" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Str_063" DisplayName="Erg Hunter" Faction="Stronghold" SubType="Shooter" Race="Orc|Hunter" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="5" ID="682" School="Earth">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Str_063" DisplayName="Erg Hunter" Faction="Stronghold" SubType="Shooter" Race="Orc|Hunter" Cost="3" MightLevel="3" Attack="2" Retaliate="1" HP="5" ID="682" School="Earth">
         <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Ambush" />
+        <Trigger Type="OnAmbush" Side="Enemy">
+            <Target Zone="Battleground" Amount="FromTrigger" CardType="Unit">
+                <Effect Type="Damage" Value="1" />
+            </Target>
+        </Trigger>
+        <Description>Ambush: Deal 1 damage to ambushed creature.
+(Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>	
     </Card>
     <!--...............................................................................-->
     <!-- Creatures - Neutral -->
