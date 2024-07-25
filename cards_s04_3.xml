@@ -140,11 +140,11 @@ Whenever enchanted creature attacks, put 1 +[1:ATK] counter on it. When enchante
         <Description>Enchant creature. Permanent:
 Enchanted creature cannot be targeted and gains Spell Shield.</Description>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Lig_061" DisplayName="Chain Heal" School="Light" Cost="2" MagicLevel="2" ID="644">
-        <Target Zone="Battleground" CardType="Unit" Amount="2">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Lig_061" DisplayName="Chain Heal" School="Light" Cost="1" MagicLevel="2" ID="644">
+        <Target Zone="BattlegroundLine" CardType="Unit" Amount="1">
             <Effect Type="Heal" Value="3" />
         </Target>
-        <Description>Heal 3 damage from 2 target creatures.</Description>
+        <Description>Heal 3 damage from all creatures on target line.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Spells - Prime -->
