@@ -93,7 +93,7 @@ While no friendly melee creature has attacked in a turn, all friendly creatures 
         </Target>
         <Description>Choose one: Look at opponent's hand and choose a fortune card from it. Opponent discards that card OR Search opponent's library for a fortune card and put it into their graveyard, then shuffle their library.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Inf_031" DisplayName="Hellfire Bridge" Faction="Inferno" Cost="3" DestinyLevel="3" ID="289">
+    <Card Rarity="Uncommon" Type="Fortune" Name="For_Inf_031" DisplayName="Hellfire Bridge" Faction="Inferno" Cost="2" DestinyLevel="3" ID="289">
         <Target Zone="Hand" Side="Friendly" Amount="AllOther">
             <Effect Type="MoveCardTo" Destination="Graveyard" />
         </Target>
@@ -128,7 +128,7 @@ While no friendly melee creature has attacked in a turn, all friendly creatures 
         </Target>
         <Description>Discard a creature card. Take target creature card from your graveyard and put it into your hand.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Nec_032" DisplayName="Altar of the Spider Goddess" Faction="Necropolis" Cost="3" DestinyLevel="2" ID="293">
+    <Card Rarity="Uncommon" Type="Fortune" Name="For_Nec_032" DisplayName="Altar of the Spider Goddess" Faction="Necropolis" Cost="2" DestinyLevel="2" ID="293">
         <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1">
             <Effect Type="Kill" />
         </Target>
@@ -358,7 +358,7 @@ When an instant fortune is about to be played, negate that fortune and destroy C
         </Target>
         <Description>Gain [RESOURCES] equal to opponent's current [RESOURCES], then empty opponent's [RESOURCES].</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Neu_033" DisplayName="Pillage" Faction="Neutral" Cost="3" DestinyLevel="4" ID="303">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Neu_033" DisplayName="Pillage" Faction="Neutral" Cost="3" DestinyLevel="4" ID="303">
         <Ongoing Duration="UntilYourNextTurn" />
 		<Variable Type="PillagedResources" Side="Enemy" />
         <Target Zone="Hero" Amount="All" Side="Enemy">
@@ -370,11 +370,9 @@ When an instant fortune is about to be played, negate that fortune and destroy C
 				<Effect Type="GainResources" Value="Variable" />
 			</Target>
         </Trigger>
-        <Description>
-			Until your next turn:
-			During their supply phase, opponent only produce half of their [RESOURCES] production, rounded down.
-			If [THIS] leaves the battleground during your opponent's turn, return the pillaged [RESOURCES] to your opponent.
-		</Description>
+        <Description>Until your next turn:
+During their supply phase, opponent only produce half of their [RESOURCES] production, rounded down.
+If Pillage leaves the battleground during your opponent's turn, they gain half of their current [RESOURCES] production, rounded up.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Neu_034" DisplayName="Monastery of Helexia" Faction="Neutral" Cost="1" DestinyLevel="1" ID="304">
 		<Target Zone="Events" Side="Friendly" Amount="1">
