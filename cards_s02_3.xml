@@ -107,11 +107,15 @@ Damage dealt to friendly melee creatures in the front line is halved, rounded do
     <!--....................................................................-->
     <!-- Spells - Fire -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Fir_040" DisplayName="Heat Wave" School="Fire" Cost="1" MagicLevel="1" ID="427">
-        <Target Zone="Battleground" CardType="Unit" Side="Any" Amount="All">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Fir_040" DisplayName="Heat Wave" School="Fire" Cost="1" MagicLevel="2" ID="427">
+        <Target Zone="BattlegroundLine" CardType="Unit" Amount="1" Side="Enemy">
+            <BattlegroundFilter Line="Front" />
             <Effect Type="Damage" Value="1" />
         </Target>
-        <Description>Deal 1 damage to all creatures.</Description>
+        <Target Zone="BattlegroundLine" CardType="Unit" Amount="Same" Shape="AdjacentOnly" Side="Any">
+            <Effect Type="Damage" Value="1" />
+        </Target>
+        <Description>Deal 1 damage to all creatures on opponent's front line and all creatures on adjacent lines.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_041" DisplayName="Fiery Rage" School="Fire" Cost="2" MagicLevel="2" ID="428">
         <Ongoing Duration="Permanent" />
