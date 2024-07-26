@@ -136,7 +136,7 @@ Enchanted creature gains +[1:ATK] and Berserk.</Description>
     <!--....................................................................-->
     <!-- Spells - Light -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Lig_040" DisplayName="Lightspeed" School="Light" Cost="2" MagicLevel="1" ID="430">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Lig_040" DisplayName="Lightspeed" School="Light" Cost="1" MagicLevel="1" ID="430">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAbility" Ability="PreemptiveStrike" />
