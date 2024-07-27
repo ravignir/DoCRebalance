@@ -19,7 +19,7 @@
         <Description>Ambush: Put the top 2 cards of opponent's library into their graveyard.
 (Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>
     </Card>
-    <Card  Rarity="Uncommon" Type="Unit" Name="Cre_Aca_061" DisplayName="Insatiable Djinn" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="5" MightLevel="4" MagicLevel="4" Attack="5" Retaliate="4" HP="9" ID="601">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Aca_061" DisplayName="Insatiable Djinn" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="5" MightLevel="4" MagicLevel="4" Attack="3" Retaliate="3" HP="9" ID="601">
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Graveyard" CardType="Spell" Amount="1" Side="Enemy" Random="True">
 				<Variable Type="TargetCount">
@@ -36,17 +36,16 @@
 				<Effect Type="Banish" />
             </Target>
         </Trigger>
-        <Trigger Type="OnTurnBegin" Side="Friendly">
-            <Target Zone="Battleground" Amount="Self">
-                <Variable Type="TargetCount">
-                    <Target Zone="Graveyard" CardType="Spell" Amount="All" Side="Any" />
-                </Variable>
-                <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
-                <Effect Type="Kill" />
-            </Target>
-        </Trigger>
-        <Description>At the beginning of your turn, banish a random spell card from any graveyard. If you can't, destroy Insatiable Djinn.</Description>
-		<DescriptionChinese>在本方回合开始时，随机驱逐任意墓地中1张法术牌。如果不能，消灭贪婪灯神。</DescriptionChinese>
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+			<Target Zone="Battleground" Amount="Self">
+				<Variable Type="TargetCount" >
+					<Target Zone="Graveyard" CardType="Spell" Amount="All" Side="Any" />
+				</Variable>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
+			</Target>
+		</Trigger>
+        <Description>At the beginning of your turn, banish a random spell card from enemy graveyard, or if there are no spell cards in enemy graveyard, banish a random spell card from your graveyard instead. If you do, put a +[1:ATK] counter on Insatiable Djinn.</Description>
 	</Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Aca_063" DisplayName="Sentinel of the Ages" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Titan|Construct" Cost="8" MightLevel="6" MagicLevel="4" Attack="6" Retaliate="6" HP="10" ID="667">
         <Ability Type="ImmuneToRetaliate" />
@@ -130,15 +129,17 @@
         </Trigger>
         <Description>When Reborn Incubus is put into your graveyard from your library, put it into your hand.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_063" DisplayName="Soul-Consuming Efreet" Faction="Inferno" School="Fire" SubType="Magic|Flyer" Race="Djinn|Spirit" Cost="3" MightLevel="2" MagicLevel="2" Attack="2" Retaliate="2" HP="5" ID="673">
-        <Variable2 Type="TargetCount" ValueModifier="0.2xd">
-            <Target Zone="Graveyard" Amount="All" Side="Friendly" />
-        </Variable2>
-        <Target Zone="None" Amount="Self">
-            <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0" />
-            <Effect Type="ModifyAbility" Ability="FireBurst" Value="Variable2" />
-        </Target>
-        <Description>For every 5 cards in your graveyard, Soul-Consuming Efreet gains Fire Burst 1.</Description>
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Inf_063" DisplayName="Soul-Consuming Efreet" Faction="Inferno" School="Fire" SubType="Magic|Flyer" Race="Djinn|Spirit" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="2" HP="5" ID="673">
+		<Trigger Type="OnThisPreAttackHero">	
+			<Target Zone="None" Amount="Self" ForceExecute="True">
+				<Variable Type="TargetCount" ValueModifier="0.2xd">
+					<Target Zone="Graveyard" Amount="All" Side="Friendly" />
+				</Variable>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+				<Effect Type="PlayEffect" PlayEffectType="AttackBonus" Value="Variable" Duration="UntilEndOfTransaction" />
+			</Target>
+		</Trigger>
+        <Description>When Soul-Consuming Efreet attacks enemy hero, it deals 1 more attack damage for every 5 cards in your graveyard.</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Creatures - Necropolis -->
@@ -235,8 +236,16 @@
         <Ability Type="Bloodthirst" Value="1" />
         <Ability Type="Enrage" Value="1" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Str_063" DisplayName="Erg Hunter" Faction="Stronghold" SubType="Shooter" Race="Orc|Hunter" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="5" ID="682" School="Earth">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Str_063" DisplayName="Erg Hunter" Faction="Stronghold" SubType="Shooter" Race="Orc|Hunter" Cost="3" MightLevel="3" Attack="2" Retaliate="1" HP="5" ID="682" School="Earth">
         <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Ambush" />
+        <Trigger Type="OnAmbush" Side="Enemy">
+            <Target Zone="Battleground" Amount="FromTrigger" CardType="Unit">
+                <Effect Type="Damage" Value="1" />
+            </Target>
+        </Trigger>
+        <Description>Ambush: Deal 1 damage to ambushed creature.
+(Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>	
     </Card>
     <!--...............................................................................-->
     <!-- Creatures - Neutral -->

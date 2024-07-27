@@ -37,11 +37,12 @@ At the beginning of your turn, return Shifting Sands to its owner's hand.</Descr
         </Target>
         <Description>Look at the top X cards of opponent's library and choose one to put into their graveyard, where X is equal to 3 plus the number of cards named Unraveled Fate in your graveyard.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_003" DisplayName="Arcane Research" Faction="Academy" Cost="3" DestinyLevel="2" ID="530">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Aca_003" DisplayName="Arcane Research" Faction="Academy" Cost="3" DestinyLevel="4" ID="530">
         <Target Zone="None" Side="Friendly">
-            <Effect Type="IncreaseLevel" Value="2" LevelType="Magic" />
+            <Variable Type="Level" Side="Friendly" LevelType="Magic" ValueModifier="0.5xd"/>
+            <Effect Type="Draw" Value="Variable" />
         </Target>
-        <Description>Increase your [MAGIC] level by 2.</Description>
+        <Description>Draw X cards, where X is equal to half of your [MAGIC] level, rounded down.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Aca_004" DisplayName="Favorite Spell" Faction="Academy" Cost="3" DestinyLevel="2" ID="531">
         <Target Zone="Library" Side="Friendly" Amount="1">
@@ -155,7 +156,7 @@ At the beginning of your turn, return Shifting Sands to its owner's hand.</Descr
 Whenever you play a magic creature, put the top 3 cards of opponent's library into their graveyard.
 When Void Tainted Ritual enters the battleground, draw a card.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Aca_011" DisplayName="Stolen Research" Faction="Academy" Cost="3" DestinyLevel="3" ID="538">
+    <Card Rarity="Uncommon" Type="Fortune" Name="For_Aca_011" DisplayName="Stolen Research" Faction="Academy" Cost="2" DestinyLevel="3" ID="538">
         <Target Zone="None" Side="Friendly">
             <Effect Type="IncreaseLevel" Value="1" LevelType="Magic" />
         </Target>
@@ -458,9 +459,11 @@ At the beginning of your turn, return Eternal Battlefield to its owner's hand.</
                 <Effect Type="MoveCardTo" Destination="Hand" />
             </Target>
         </Trigger>
+	<Trigger Type="OnThisCardPlay">
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAbility" Ability="CannotAttack" />
         </Target>
+	</Trigger>
         <Description>Permanent:
 Target creature gains Cannot Attack.
 At the beginning of your turn, return Zen Garden to its owner's hand.</Description>

@@ -164,8 +164,9 @@ When opponent discards one or more cards, draw 2 cards and destroy Pleasure in P
     <!--....................................................................-->
     <!-- Fortune - Necropolis -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Nec_060" DisplayName="Ariana's Will" Faction="Necropolis" Cost="1" DestinyLevel="2" ID="621">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_060" DisplayName="Ariana's Will" Faction="Necropolis" Cost="1" DestinyLevel="2" ID="621">
         <Target Zone="None" Side="Friendly">
+	    <Effect Type="Draw" Value="1" />
             <Effect Type="ChoiceOption" />
             <Subgroup>
                 <Target Zone="Graveyard" Side="Friendly" Amount="5" CardType="Unit">
@@ -182,7 +183,8 @@ When opponent discards one or more cards, draw 2 cards and destroy Pleasure in P
                 </Target>
             </Subgroup>
         </Target>
-        <Description>Choose one: Take 5 target creature cards from your graveyard and shuffle them into your library OR Take the top 5 cards of your library and put them into your graveyard.</Description>
+        <Description>Draw a card.
+Choose one: Take 5 target creature cards from your graveyard and shuffle them into your library OR Take the top 5 cards of your library and put them into your graveyard.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Nec_061" DisplayName="Soul Harvest" Faction="Necropolis" Cost="3" DestinyLevel="3" ID="622">
         <Ongoing Duration="UntilYourNextTurn" />
@@ -194,7 +196,7 @@ When opponent discards one or more cards, draw 2 cards and destroy Pleasure in P
         <Description>Until your next turn:
 Whenever a creature dies, heal 1 damage from your hero.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Nec_062" DisplayName="Unholy Communion" Faction="Necropolis" Cost="1" DestinyLevel="2" ID="661">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Nec_062" DisplayName="Unholy Communion" Faction="Necropolis" Cost="1" DestinyLevel="2" ID="661">
         <Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
             <Variable Type="InPlayCounterCount" Side="Friendly" CounterType="Poison" />
             <Effect Type="Heal" Value="Variable" />
@@ -202,7 +204,14 @@ Whenever a creature dies, heal 1 damage from your hero.</Description>
         <Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
             <Effect Type="RemoveCounter" CounterType="Poison" Value="Infinite" />
         </Target>
-        <Description>Remove all poison counters from friendly creatures. Heal all friendly creatures for an amount of damage equal to the number of counters removed this way.</Description>
+		<Trigger Type="OnDeploy" Side="Friendly" Location="Graveyard">
+			<CardFilter IncludeAbility="Infect"/>
+			<Target Zone="Graveyard" Amount="Self" Cancelable="False">
+				<Effect Type="MoveCardTo" Destination="Hand"/>
+			</Target>
+		</Trigger>
+        <Description>Remove all poison counters from friendly creatures. Heal all friendly creatures for an amount of damage equal to the number of counters removed this way.
+		Whenever you play a creature with Infect, if Unholy Communion is in your graveyard, take it and put it into your hand.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Fortune - Sanctuary -->

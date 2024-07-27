@@ -598,9 +598,9 @@ While Crusader Chaplain has no damage, it cannot be targeted.</Description>
     <!--...............................................................................-->
     <!-- Creatures - Necropolis -->
     <!--...............................................................................-->
-    <Card NotLocalized="True" Rarity="Common" Type="Unit" Name="Cre_Nec_050" DisplayName="Al-Betyl Ghoul" Faction="Necropolis" SubType="Melee" Race="Ghoul" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="8" ID="504">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Nec_050" DisplayName="Al-Betyl Ghoul" Faction="Necropolis" SubType="Melee" Race="Ghoul" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="7" ID="504">
 		<Ability Type="Infect" Value="1" />
-		<Trigger Type="OnTurnBegin" Side="Friendly">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
 			<Target Zone="Graveyard" CardType="Unit" Amount="1" Side="Enemy" Random="True">
 				<Variable Type="TargetCount">
 					<Target Zone="Graveyard" CardType="Unit" Amount="All" Side="Enemy" />
@@ -616,7 +616,7 @@ While Crusader Chaplain has no damage, it cannot be targeted.</Description>
 				<Effect Type="Banish" />
 			</Target>			
         </Trigger>
-		<Trigger Type="OnTurnBegin" Side="Friendly">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
 			<Target Zone="Battleground" Amount="Self">
 				<Variable Type="TargetCount" >
 					<Target Zone="Graveyard" CardType="Unit" Amount="All" Side="Any" />
@@ -625,7 +625,7 @@ While Crusader Chaplain has no damage, it cannot be targeted.</Description>
 				<Effect Type="ModifyMaxHp" Value="2"/>
 			</Target>
 		</Trigger>
-		<Description>At the beginning of your turn, banish a random creature card from any graveyard. If you do, [THIS] gains +[2:HEALTH].</Description>
+		<Description>At the end of your turn, banish a random creature card from enemy graveyard, or if there are no creature cards in enemy graveyard, banish a random creature card from your graveyard instead. If you do, Al-Betyl Ghoul gains +2 [HEALTH].</Description>
 	</Card>
 	<Card  Rarity="Common" Type="Unit" Name="Cre_Nec_051" DisplayName="Rotting Zombie" Faction="Necropolis" SubType="Magic|Melee" Race="Zombie" Cost="2" MightLevel="2" MagicLevel="1" Attack="0" Retaliate="1" HP="4" ID="505">
         <Trigger Type="OnThisCardDeath">
@@ -665,10 +665,10 @@ Putrid Ghoul's [ATK] is equal to the number of poison counters on friendly creat
         </Trigger>
         <Description>At the beginning of your supply phase, if Sahaar Mummy is in your graveyard and there are 5 cards or less in your graveyard, take Sahaar Mummy and put it into your hand.</Description>
     </Card>
-    <Card  Rarity="Rare" Type="Unit" Name="Cre_Nec_054" DisplayName="Rotting Mummy" Faction="Necropolis" SubType="Melee" Race="Zombie" Cost="2" MightLevel="2" Attack="1" Retaliate="0" HP="3" ID="508" School="Earth">	
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Nec_054" DisplayName="Rotting Mummy" Faction="Necropolis" SubType="Melee" Race="Zombie" Cost="2" MightLevel="2" Attack="1" Retaliate="0" HP="4" ID="508" School="Earth">	
 		<Ability Type="AbsorbPoisonDamageHeal" />
 		<Variable Type="LastAliveCounterCount" CounterType="Poison" />
-		<Trigger Type="OnTurnEnd" Side="Any">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
             <Target Zone="Battleground" Amount="Self">
                 <Effect Type="AddCounter" CounterType="Poison" Value="1" />
             </Target>
@@ -678,10 +678,8 @@ Putrid Ghoul's [ATK] is equal to the number of poison counters on friendly creat
 				<Effect Type="AddCounter" CounterType="Poison" Value="1"/>
 			</Target>
 		</Trigger>
-        <Description>At the end of each turn, put 1 poison counter on [THIS].
-When [THIS] dies with poison counters on it, put the same number of poison counters on other random creatures.</Description>
-		<DescriptionChinese>在每回合结束时，给[THIS]放置1个中毒指示物。
-当[THIS]在有中毒指示物时死亡，给其他生物随机分配放置等量的中毒指示物。</DescriptionChinese>
+        <Description>At the end of your turn, put 1 poison counter on Rotting Mummy.
+When Rotting Mummy dies with poison counters on it, put the same number of poison counters on other random creatures.</Description>
 	</Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Nec_055" DisplayName="Damran, the Tainted" Faction="Necropolis" School="Earth" SubType="Melee" Race="DarkElf" Unique="True" Cost="5" MightLevel="4" Attack="3" Retaliate="3" HP="7" ID="509">
         <Ability Type="Infect" Value="2" />
@@ -853,7 +851,7 @@ When [THIS] dies with poison counters on it, put the same number of poison count
         </Trigger>
         <Description>When Soothsayer enters the battleground, search your library for a unique fortune card and put it into your hand, then shuffle your library.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_053" DisplayName="Cactus Thing" Faction="Neutral" School="Earth" SubType="Melee" Race="Plant" Cost="2" MightLevel="2" Attack="0" Retaliate="3" HP="3" ID="525">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_053" DisplayName="Cactus Thing" Faction="Neutral" School="Earth" SubType="Melee" Race="Plant" Cost="2" MightLevel="2" Attack="0" Retaliate="3" HP="4" ID="525">
         <Ability Type="PreemptiveStrike" />
 		<Ability Type="CannotAttack" />
     </Card>
