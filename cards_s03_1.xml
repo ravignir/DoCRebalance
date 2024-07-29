@@ -827,7 +827,7 @@ When Rotting Mummy dies with poison counters on it, put the same number of poiso
     <!--...............................................................................-->
     <!-- Creatures - Neutral -->
     <!--...............................................................................-->
-    <Card NotLocalized="True" Rarity="Common" Type="Unit" Name="Cre_Neu_050" DisplayName="Burning Sand Elemental" Faction="Neutral" School="Fire" SubType="Magic|Melee" Race="Spirit" Cost="4" MightLevel="2" MagicLevel="3" Attack="2" Retaliate="0" HP="4" ID="522">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_050" DisplayName="Burning Sand Elemental" Faction="Neutral" School="Fire" SubType="Magic|Melee" Race="Spirit" Cost="4" MightLevel="2" MagicLevel="3" Attack="2" Retaliate="0" HP="4" ID="522">
         <Ability Type="FireBurst" Value="3" />
         <Ability Type="Ambush" />
         <Trigger Type="OnAmbush" Side="Enemy">
@@ -835,7 +835,16 @@ When Rotting Mummy dies with poison counters on it, put the same number of poiso
                 <Effect Type="Damage" DamageFlags="Fire" Value="2" />
             </Target>
         </Trigger>
-    <Description>Ambush: Deal 2 Fire damage to ambushed creature.
+		 <Trigger Type="OnTurnEnd" Side="Friendly">
+            <Target Zone="BattlegroundColumn" Amount="Self" Side="Enemy" CardType="Unit" BattlegroundPositionState="DontCare">
+                <Effect Type="Damage" Value="1" />
+            </Target>
+            <Target Zone="BattlegroundColumn" Amount="Self" Side="Friendly" Shape="AdjacentOnly" CardType="Unit" BattlegroundPositionState="DontCare">
+                <Effect Type="Damage" Value="1" />
+            </Target>
+        </Trigger>
+    <Description>At the end of your turn, deal 1 damage to all other creatures in the same row as Burning Sand Elemental.
+Ambush: Deal 2 Fire damage to ambushed creature.
 (Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Neu_051" DisplayName="Sahaar Bedouin" Faction="Neutral" SubType="Melee" Race="Human" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="4" ID="523" />
