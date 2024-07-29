@@ -251,18 +251,21 @@ Whenever opponent plays a card, they discard a card.</Description>
     <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Nec_011" DisplayName="Putrid Lamasu" Faction="Necropolis" SubType="Flyer" Race="Lamasu" Cost="5" MightLevel="5" Attack="3" Retaliate="2" HP="8" ID="69">
         <Ability Type="Infect" Value="1" />
         <Ability Type="SpellResist" />
-		<Trigger Type="OnThisCardDeath">
+	<Trigger Type="OnThisCardDeath">
             <Target Zone="BattlegroundColumn" Amount="FromTrigger" BattlegroundPositionState="DontCare">
                 <CardFilter IncludeCardType="Unit" />
                 <Effect Type="AddCounter" CounterType="Poison" Value="1" />
             </Target>
         </Trigger>
-		<Trigger Type="OnTurnBegin" Side="Friendly" >
-            <Target Zone="BattlegroundColumn" Amount="Self" Side="Any" CardType="Unit" BattlegroundPositionState="DontCare">
-				<Effect Type="AddCounter" CounterType="Poison" Value="1"/>
-			</Target>
+        <Trigger Type="OnTurnBegin" Side="Friendly" >
+            <Target Zone="BattlegroundColumn" Amount="Self" Side="Enemy" CardType="Unit" BattlegroundPositionState="DontCare">
+                <Effect Type="AddCounter" CounterType="Poison" Value="1"/>
+            </Target>
+            <Target Zone="BattlegroundColumn" Amount="Self" Side="Friendly" Shape="AdjacentOnly" CardType="Unit" BattlegroundPositionState="DontCare">
+                <Effect Type="AddCounter" CounterType="Poison" Value="1"/>
+            </Target>
         </Trigger>
-        <Description>At the beginning of your turn and when Putrid Lamasu dies, put 1 poison counter on all creatures on the same row.</Description>
+        <Description>At the beginning of your turn and when Putrid Lamasu dies, put 1 poison counter on all other creatures in the same row as Putrid Lamasu.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Nec_004" DisplayName="Vampire Lord" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="6" MightLevel="5" Attack="3" Retaliate="3" HP="7" ID="70">
         <Ability Type="ImmuneToRetaliate" />
