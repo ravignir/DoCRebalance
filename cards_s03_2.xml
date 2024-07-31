@@ -128,11 +128,8 @@ At the beginning of your turn, return Shifting Sands to its owner's hand.</Descr
         </Target>
         <Description>Look at the top 5 cards of opponent's library and put them back in any order.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Aca_010" DisplayName="Void Tainted Ritual" Faction="Academy" Cost="2" MightLevel="2" DestinyLevel="3" ID="537">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Aca_010" DisplayName="Void Tainted Ritual" Faction="Academy" Cost="2" MightLevel="2" DestinyLevel="3" ID="537">
         <Ongoing Duration="UntilEndOfTurn" />
-        <Target Zone="None" Side="Friendly" ForceExecute="True">
-            <Effect Type="Draw" Value="1" />
-        </Target>
         <Trigger Type="OnCardPlay" Side="Friendly">
             <CardFilter IncludeCardType="Unit" IncludeUnitType="Magic" />
             <Target Zone="Library" Side="Enemy" Amount="3" AutoTakeFirstInputs="True">
@@ -140,8 +137,7 @@ At the beginning of your turn, return Shifting Sands to its owner's hand.</Descr
             </Target>
         </Trigger>
         <Description>Until end of turn:
-Whenever you play a magic creature, put the top 3 cards of opponent's library into their graveyard.
-When Void Tainted Ritual enters the battleground, draw a card.</Description>
+Whenever you play a magic creature, put the top 3 cards of opponent's library into their graveyard.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Aca_011" DisplayName="Stolen Research" Faction="Academy" Cost="2" DestinyLevel="3" ID="538">
         <Target Zone="None" Side="Friendly">
