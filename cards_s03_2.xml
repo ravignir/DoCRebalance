@@ -104,14 +104,11 @@ At the beginning of your turn, return Shifting Sands to its owner's hand.</Descr
         </Target>
         <Description>Put the top X cards of opponent's library into their graveyard, where X is equal to the number of friendly magic creatures on the battleground.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_007" DisplayName="Conversion to the Void" Faction="Academy" Cost="1" DestinyLevel="1" ID="534">
-        <Target Zone="Hand" Side="Friendly" Amount="1" SkipNextTargetValidation="True">
-            <Effect Type="MoveCardTo" Destination="Library" />
-        </Target>
-        <Target Zone="Library" Side="Enemy" Amount="2" AmountVisible="4">
-            <Effect Type="MoveCardTo" Destination="Graveyard" />
-        </Target>
-        <Description>Take a card from your hand and put it on the top of your library. Look at the top 4 cards of opponent's library and choose 2 to put into their graveyard.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Aca_007" DisplayName="Conversion to the Void" Faction="Academy" Cost="1" DestinyLevel="1" ID="534">
+        <Target Zone="Library" Side="Enemy" Amount="3" AutoTakeFirstInputs="True" Cancelable="False">
+            <Effect Type="Banish" />
+         </Target>
+        <Description>Banish the top 3 cards of opponent's library.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Aca_008" DisplayName="Rivalry" Faction="Academy" Cost="2" DestinyLevel="2" ID="535">
         <Target Zone="None" Side="Friendly">
