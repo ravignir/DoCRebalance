@@ -110,24 +110,14 @@ At the beginning of your turn, return Shifting Sands to its owner's hand.</Descr
          </Target>
         <Description>Banish the top 3 cards of opponent's library.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_008" DisplayName="Rivalry" Faction="Academy" Cost="2" DestinyLevel="2" ID="535">
-        <Target Zone="None" Side="Friendly">
-            <Effect Type="ChoiceOption" />
-            <Subgroup>
-                <Target Zone="None" Side="Friendly">
-                    <Option Value="0" DisplayText="Draw a card." />
-                    <Effect Type="Draw" Value="1" />
-                </Target>
-                <Target Zone="None" Side="Friendly">
-                    <Option Value="1" DisplayText="Increase your [MAGIC] level." />
-                    <Variable Type="Level" LevelType="Magic" Side="Friendly" />
-                    <Variable2 Type="Level" LevelType="Magic" Side="Enemy" />
-                    <Condition Operator="LesserThan" ValueA="Variable" ValueB="Variable2" />
-                    <Effect Type="IncreaseLevel" Value="2" LevelType="Magic" />
-                </Target>
-            </Subgroup>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Aca_008" DisplayName="Rivalry" Faction="Academy" Cost="2" DestinyLevel="2" ID="535">
+        <Target Zone="Hero" Amount="All" Side="Enemy">
+            <Variable Type="Level" LevelType="Magic" Side="Friendly" />
+            <Variable2 Type="Level" LevelType="Magic" Side="Enemy" />
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="Variable2" />
+			<Effect Type="Damage" Value="2" />
         </Target>
-        <Description>Choose one: Draw a card OR If your [MAGIC] level is lower than opponent's, increase your [MAGIC] level by 2.</Description>
+        <Description>If your [MAGIC] level is higher than opponent's, deal 2 damage to enemy hero.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Aca_009" DisplayName="Scrying Orb" Faction="Academy" Cost="3" DestinyLevel="3" ID="536">
         <Variable Type="TargetCount" ValueModifier="5mi">
