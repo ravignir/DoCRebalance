@@ -119,14 +119,11 @@ At the beginning of your turn, return Shifting Sands to its owner's hand.</Descr
         </Target>
         <Description>If your [MAGIC] level is higher than opponent's, deal 2 damage to enemy hero.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_009" DisplayName="Scrying Orb" Faction="Academy" Cost="3" DestinyLevel="3" ID="536">
-        <Variable Type="TargetCount" ValueModifier="5mi">
-            <Target Zone="Library" Side="Enemy" Amount="All" />
-        </Variable>
-        <Target Zone="Library" Side="Enemy" Amount="Variable" AmountVisible="5">
-            <Effect Type="Reorder" />
-        </Target>
-        <Description>Look at the top 5 cards of opponent's library and put them back in any order.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Aca_009" DisplayName="Scrying Orb" Faction="Academy" Cost="3" DestinyLevel="3" ID="536">
+		<Target Zone="Library" Side="Enemy" Amount="1" AmountVisible="3" >
+			<Effect Type="Play" Free="True" CancelDestination="Library" RequireLevel="True" Force="True" />
+		</Target>
+        <Description>Look at the top 3 cards of opponent's library and choose one for which you meet its level requirements. Play it for free.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Aca_010" DisplayName="Void Tainted Ritual" Faction="Academy" Cost="2" MightLevel="2" DestinyLevel="3" ID="537">
         <Ongoing Duration="UntilEndOfTurn" />
