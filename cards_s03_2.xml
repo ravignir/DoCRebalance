@@ -270,10 +270,11 @@ Spells you play cost [1:RESOURCES] less for each other spell you played this tur
     <!--....................................................................-->
     <!-- Fortune - Haven -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Hav_050" DisplayName="Fleeting Oasis" Faction="Haven" Cost="2" DestinyLevel="2" ID="546">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Hav_050" DisplayName="Fleeting Oasis" Faction="Haven" Cost="2" DestinyLevel="2" ID="546">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
             <Effect Type="ModifyAbility" Ability="Mending" />
+			<Effect Type="ModifyAbility" Ability="Oasing" />
         </Target>
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Battleground" Amount="Self">
@@ -282,6 +283,7 @@ Spells you play cost [1:RESOURCES] less for each other spell you played this tur
         </Trigger>
         <Description>Permanent:
 All friendly creatures gain Mending.
+At the end of your turn, if friendly creature did not attack, remove all crippling counters and all poison counters from it.
 At the beginning of your turn, return Fleeting Oasis to its owner's hand.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Hav_051" DisplayName="Inexhaustible Mine" Faction="Haven" Cost="2" DestinyLevel="2" ID="547">
