@@ -26,16 +26,15 @@
 Whenever a friendly magic creature attacks, put the top card of opponent's library into their graveyard.
 At the beginning of your turn, return Shifting Sands to its owner's hand.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_002" DisplayName="Unraveled Fate" Faction="Academy" Cost="1" DestinyLevel="1" ID="529">
-        <Variable Type="TargetCount" ValueModifier="3">
-            <Target Zone="Graveyard" Side="Friendly" Amount="All">
-                <CardFilter IncludeCardID="For_Aca_002" />
-            </Target>
-        </Variable>
-        <Target Zone="Library" Side="Enemy" Amount="1" AmountVisible="Variable">
-            <Effect Type="MoveCardTo" Destination="Graveyard" />
-        </Target>
-        <Description>Look at the top X cards of opponent's library and choose one to put into their graveyard, where X is equal to 3 plus the number of cards named Unraveled Fate in your graveyard.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Aca_002" DisplayName="Unraveled Fate" Faction="Academy" Cost="1" DestinyLevel="3" ID="529">
+		<Ongoing Duration="Permanent" />
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+			<Target Zone="Library" Side="Enemy" Amount="1" AutoTakeFirstInputs="True">
+				<Effect Type="MoveCardTo" Destination="Graveyard" />
+			</Target>
+		</Trigger>
+        <Description>Permanent:
+At the beginning of your turn, put the top card of opponent's library into their graveyard.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Aca_003" DisplayName="Arcane Research" Faction="Academy" Cost="3" DestinyLevel="4" ID="530">
         <Target Zone="None" Side="Friendly">
@@ -104,48 +103,29 @@ At the beginning of your turn, return Shifting Sands to its owner's hand.</Descr
         </Target>
         <Description>Put the top X cards of opponent's library into their graveyard, where X is equal to the number of friendly magic creatures on the battleground.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_007" DisplayName="Conversion to the Void" Faction="Academy" Cost="1" DestinyLevel="1" ID="534">
-        <Target Zone="Hand" Side="Friendly" Amount="1" SkipNextTargetValidation="True">
-            <Effect Type="MoveCardTo" Destination="Library" />
-        </Target>
-        <Target Zone="Library" Side="Enemy" Amount="2" AmountVisible="4">
-            <Effect Type="MoveCardTo" Destination="Graveyard" />
-        </Target>
-        <Description>Take a card from your hand and put it on the top of your library. Look at the top 4 cards of opponent's library and choose 2 to put into their graveyard.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Aca_007" DisplayName="Conversion to the Void" Faction="Academy" Cost="1" DestinyLevel="1" ID="534">
+        <Target Zone="Library" Side="Enemy" Amount="3" AutoTakeFirstInputs="True" Cancelable="False">
+            <Effect Type="Banish" />
+         </Target>
+        <Description>Banish the top 3 cards of opponent's library.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_008" DisplayName="Rivalry" Faction="Academy" Cost="2" DestinyLevel="2" ID="535">
-        <Target Zone="None" Side="Friendly">
-            <Effect Type="ChoiceOption" />
-            <Subgroup>
-                <Target Zone="None" Side="Friendly">
-                    <Option Value="0" DisplayText="Draw a card." />
-                    <Effect Type="Draw" Value="1" />
-                </Target>
-                <Target Zone="None" Side="Friendly">
-                    <Option Value="1" DisplayText="Increase your [MAGIC] level." />
-                    <Variable Type="Level" LevelType="Magic" Side="Friendly" />
-                    <Variable2 Type="Level" LevelType="Magic" Side="Enemy" />
-                    <Condition Operator="LesserThan" ValueA="Variable" ValueB="Variable2" />
-                    <Effect Type="IncreaseLevel" Value="2" LevelType="Magic" />
-                </Target>
-            </Subgroup>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Aca_008" DisplayName="Rivalry" Faction="Academy" Cost="2" DestinyLevel="2" ID="535">
+        <Target Zone="Hero" Amount="All" Side="Enemy">
+            <Variable Type="Level" LevelType="Magic" Side="Friendly" />
+            <Variable2 Type="Level" LevelType="Magic" Side="Enemy" />
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="Variable2" />
+			<Effect Type="Damage" Value="2" />
         </Target>
-        <Description>Choose one: Draw a card OR If your [MAGIC] level is lower than opponent's, increase your [MAGIC] level by 2.</Description>
+        <Description>If your [MAGIC] level is higher than opponent's, deal 2 damage to enemy hero.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_009" DisplayName="Scrying Orb" Faction="Academy" Cost="3" DestinyLevel="3" ID="536">
-        <Variable Type="TargetCount" ValueModifier="5mi">
-            <Target Zone="Library" Side="Enemy" Amount="All" />
-        </Variable>
-        <Target Zone="Library" Side="Enemy" Amount="Variable" AmountVisible="5">
-            <Effect Type="Reorder" />
-        </Target>
-        <Description>Look at the top 5 cards of opponent's library and put them back in any order.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Aca_009" DisplayName="Scrying Orb" Faction="Academy" Cost="3" DestinyLevel="3" ID="536">
+		<Target Zone="Library" Side="Enemy" Amount="1" AmountVisible="3" >
+			<Effect Type="Play" Free="True" CancelDestination="Library" RequireLevel="True" Force="True" />
+		</Target>
+        <Description>Look at the top 3 cards of opponent's library and choose one for which you meet its level requirements. Play it for free.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Aca_010" DisplayName="Void Tainted Ritual" Faction="Academy" Cost="2" MightLevel="2" DestinyLevel="3" ID="537">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Aca_010" DisplayName="Void Tainted Ritual" Faction="Academy" Cost="2" MightLevel="2" DestinyLevel="3" ID="537">
         <Ongoing Duration="UntilEndOfTurn" />
-        <Target Zone="None" Side="Friendly" ForceExecute="True">
-            <Effect Type="Draw" Value="1" />
-        </Target>
         <Trigger Type="OnCardPlay" Side="Friendly">
             <CardFilter IncludeCardType="Unit" IncludeUnitType="Magic" />
             <Target Zone="Library" Side="Enemy" Amount="3" AutoTakeFirstInputs="True">
@@ -153,8 +133,7 @@ At the beginning of your turn, return Shifting Sands to its owner's hand.</Descr
             </Target>
         </Trigger>
         <Description>Until end of turn:
-Whenever you play a magic creature, put the top 3 cards of opponent's library into their graveyard.
-When Void Tainted Ritual enters the battleground, draw a card.</Description>
+Whenever you play a magic creature, put the top 3 cards of opponent's library into their graveyard.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Aca_011" DisplayName="Stolen Research" Faction="Academy" Cost="2" DestinyLevel="3" ID="538">
         <Target Zone="None" Side="Friendly">
@@ -290,10 +269,11 @@ Spells you play cost [1:RESOURCES] less for each other spell you played this tur
     <!--....................................................................-->
     <!-- Fortune - Haven -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Hav_050" DisplayName="Fleeting Oasis" Faction="Haven" Cost="2" DestinyLevel="2" ID="546">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Hav_050" DisplayName="Fleeting Oasis" Faction="Haven" Cost="2" DestinyLevel="2" ID="546">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
             <Effect Type="ModifyAbility" Ability="Mending" />
+			<Effect Type="ModifyAbility" Ability="Oasing" />
         </Target>
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Battleground" Amount="Self">
@@ -302,6 +282,7 @@ Spells you play cost [1:RESOURCES] less for each other spell you played this tur
         </Trigger>
         <Description>Permanent:
 All friendly creatures gain Mending.
+At the end of your turn, if friendly creature did not attack, remove all crippling counters and all poison counters from it.
 At the beginning of your turn, return Fleeting Oasis to its owner's hand.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Hav_051" DisplayName="Inexhaustible Mine" Faction="Haven" Cost="2" DestinyLevel="2" ID="547">
@@ -654,20 +635,13 @@ When Cosmic Singularity is discarded, banish it and shuffle both graveyards into
         <Description>Until your next turn:
 At the end of each player's turn, that player can deploy a non-unique creature for free. They must meet its level requirements.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Fortune" Name="For_Neu_055" DisplayName="Black Fang Extortion" Faction="Neutral" Cost="1" DestinyLevel="2" ID="571">
-        <Variable Type="CardPlayedCount" />
-        <PlayabilityCondition Operator="LesserThan" ValueA="Variable" ValueB="1" />
-        <Ongoing Duration="UntilYourNextTurn" />
-        <Target Zone="Hero" Amount="All" Side="Any">
-            <Variable Type="CardCost" UseCurrentTarget="True" />
-            <Condition Operator="LesserThan" ValueA="Variable" ValueB="3" />
-            <Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="3ma">
-                <CardFilter IncludeCardType="Unit|Spell|Fortune" />
-            </Effect>
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Fortune" Name="For_Neu_055" DisplayName="Black Fang Extortion" Faction="Neutral" Cost="2" DestinyLevel="3" ID="571">
+        <Ongoing Duration="Permanent" />
+		<Target Zone="Hero" Amount="All" Side="Any">
+            <Effect Type="GlobalEffect" GlobalEffectType="CantGainResources" />
         </Target>
-        <Description>Until your next turn:
-Cards that cost less than [3:RESOURCES] to play cost [3:RESOURCES] instead.
-Black Fang Extortion can only be played if you haven't played any cards this turn.</Description>
+        <Description>Permanent:
+Prevent [RESOURCES] gain from cards and abilities.</Description>
     </Card>
     <Card Rarity="Epic" Type="Fortune" Name="For_Neu_056" DisplayName="Time of Need" Faction="Neutral" Unique="True" Cost="7" MightLevel="2" MagicLevel="2" DestinyLevel="2" ID="572">
         <Target Zone="Library" Side="Friendly" Amount="1" RevealToOther="True">

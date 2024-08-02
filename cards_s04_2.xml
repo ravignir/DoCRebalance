@@ -497,17 +497,17 @@ Necropolis creatures at Tower of the Gardener gain Regenerate 2.</Description>
         <Description>Whenever a creature at Tower of the Smith attacks enemy hero, opponent discards a card at random.
 While an Inferno creature is at Tower of the Smith, players cannot draw cards outside of their supply phase.</Description>
     </Card>
-    <Card Rarity="Epic" Unique="True" Type="Building" Name="Bui_Neu_063" DisplayName="Tower of the Inventor" Faction="Neutral" Cost="3" MightLevel="3" ID="633">
+    <Card UseXmlDescription="True" Rarity="Epic" Unique="True" Type="Building" Name="Bui_Neu_063" DisplayName="Tower of the Inventor" Faction="Neutral" Cost="4" MightLevel="3" ID="633">
         <Target Zone="Battleground" CardType="Unit" Amount="Occupant">
             <CardFilter IncludeFaction="Haven" />
             <Effect Type="ModifyAbility" Ability="PreemptiveStrike" />
         </Target>
         <Trigger Type="OnThisPostAttacked">
-            <Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
-                <Effect Type="Damage" Value="3" />
+			<Target Zone="Battleground" Amount="All" Side="Enemy" CardType="Unit">
+				<Effect Type="Damage" Value="2"/>
             </Target>
         </Trigger>
-        <Description>Whenever a creature at Tower of the Inventor is attacked, it deals 3 damage to its attacker.
+        <Description>Whenever a creature at Tower of the Inventor is attacked, it deals 2 damage to all enemy creatures.
 Haven creatures at Tower of the Inventor gain Preemptive Strike.</Description>
     </Card>
     <Card Rarity="Epic" Unique="True" Type="Building" Name="Bui_Neu_064" DisplayName="Tower of the Elders" Faction="Neutral" Cost="3" MagicLevel="3" ID="634">
