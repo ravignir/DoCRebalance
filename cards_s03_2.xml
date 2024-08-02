@@ -26,16 +26,15 @@
 Whenever a friendly magic creature attacks, put the top card of opponent's library into their graveyard.
 At the beginning of your turn, return Shifting Sands to its owner's hand.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_002" DisplayName="Unraveled Fate" Faction="Academy" Cost="1" DestinyLevel="1" ID="529">
-        <Variable Type="TargetCount" ValueModifier="3">
-            <Target Zone="Graveyard" Side="Friendly" Amount="All">
-                <CardFilter IncludeCardID="For_Aca_002" />
-            </Target>
-        </Variable>
-        <Target Zone="Library" Side="Enemy" Amount="1" AmountVisible="Variable">
-            <Effect Type="MoveCardTo" Destination="Graveyard" />
-        </Target>
-        <Description>Look at the top X cards of opponent's library and choose one to put into their graveyard, where X is equal to 3 plus the number of cards named Unraveled Fate in your graveyard.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Aca_002" DisplayName="Unraveled Fate" Faction="Academy" Cost="1" DestinyLevel="3" ID="529">
+		<Ongoing Duration="Permanent" />
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+			<Target Zone="Library" Side="Enemy" Amount="1" AutoTakeFirstInputs="True">
+				<Effect Type="MoveCardTo" Destination="Graveyard" />
+			</Target>
+		</Trigger>
+        <Description>Permanent:
+At the beginning of your turn, put the top card of opponent's library into their graveyard.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Aca_003" DisplayName="Arcane Research" Faction="Academy" Cost="3" DestinyLevel="4" ID="530">
         <Target Zone="None" Side="Friendly">
