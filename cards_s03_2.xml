@@ -636,20 +636,13 @@ When Cosmic Singularity is discarded, banish it and shuffle both graveyards into
         <Description>Until your next turn:
 At the end of each player's turn, that player can deploy a non-unique creature for free. They must meet its level requirements.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Fortune" Name="For_Neu_055" DisplayName="Black Fang Extortion" Faction="Neutral" Cost="1" DestinyLevel="2" ID="571">
-        <Variable Type="CardPlayedCount" />
-        <PlayabilityCondition Operator="LesserThan" ValueA="Variable" ValueB="1" />
-        <Ongoing Duration="UntilYourNextTurn" />
-        <Target Zone="Hero" Amount="All" Side="Any">
-            <Variable Type="CardCost" UseCurrentTarget="True" />
-            <Condition Operator="LesserThan" ValueA="Variable" ValueB="3" />
-            <Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="3ma">
-                <CardFilter IncludeCardType="Unit|Spell|Fortune" />
-            </Effect>
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Fortune" Name="For_Neu_055" DisplayName="Black Fang Extortion" Faction="Neutral" Cost="2" DestinyLevel="3" ID="571">
+        <Ongoing Duration="Permanent" />
+		<Target Zone="Hero" Amount="All" Side="Any">
+            <Effect Type="GlobalEffect" GlobalEffectType="CantGainResources" />
         </Target>
-        <Description>Until your next turn:
-Cards that cost less than [3:RESOURCES] to play cost [3:RESOURCES] instead.
-Black Fang Extortion can only be played if you haven't played any cards this turn.</Description>
+        <Description>Permanent:
+Prevent [RESOURCES] gain from cards and abilities.</Description>
     </Card>
     <Card Rarity="Epic" Type="Fortune" Name="For_Neu_056" DisplayName="Time of Need" Faction="Neutral" Unique="True" Cost="7" MightLevel="2" MagicLevel="2" DestinyLevel="2" ID="572">
         <Target Zone="Library" Side="Friendly" Amount="1" RevealToOther="True">
