@@ -59,7 +59,7 @@
                 <Effect Type="Damage" Value="1" />
             </Target>
         </Trigger>
-	<Description>Whenever Expert Marksman attacks a creature on a front line, deal 1 damage to a creature on a back line on the same row.</Description>
+	<Description>Whenever Expert Marksman attacks a creature on a front line, deal 1 damage to a creature on a back line of the same row.</Description>
     </Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Hav_010" DisplayName="Vestal" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Cost="4" MightLevel="3" MagicLevel="2" Attack="1" Retaliate="1" HP="7" ID="49">
         <Ability Type="ImmuneToRetaliate" />
