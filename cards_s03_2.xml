@@ -389,7 +389,7 @@ At the beginning of your turn, return Garden of Ecstasy to its owner's hand.</De
 Whenever a creature dies, shuffle it into its owner's library instead.
 At the beginning of your turn, return Eternal Battlefield to its owner's hand.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Nec_051" DisplayName="Harvesting the Dead" Faction="Necropolis" Cost="0" DestinyLevel="1" ID="555">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Nec_051" DisplayName="Harvesting the Dead" Faction="Necropolis" Cost="5" DestinyLevel="5" ID="555">
 		<Ongoing Duration="UntilEndOfTurn" />
         <Variable Type="TargetCount" ValueModifier="1">
             <Target Zone="Graveyard" Side="Friendly" Amount="All">
