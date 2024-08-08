@@ -177,11 +177,19 @@
     <!--...............................................................................-->
     <!-- Creatures - Sanctuary -->
     <!--...............................................................................-->
-    <Card Rarity="Rare" Type="Unit" Name="Cre_San_060" DisplayName="Sayama Predator" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="0" HP="5" ID="608">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_San_060" DisplayName="Sayama Predator" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="0" HP="5" ID="608">
         <Target Zone="Hero" Amount="All" Side="Enemy">
             <Effect Type="GlobalEffect" GlobalEffectType="AmbushOnRelocate" />
         </Target>
-        <Description>Ambush ability of friendly creatures also triggers on relocation.</Description>
+        <Ability Type="Ambush" />
+        <Trigger Type="OnAmbush" Side="Enemy">
+            <Target Zone="Battleground" Amount="FromTrigger" CardType="Unit">
+                <Effect Type="Damage" Value="1" />
+            </Target>
+        </Trigger>
+        <Description>Ambush ability of friendly creatures also triggers on relocation.
+Ambush: Deal 1 damage to ambushed creature.
+(Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_San_061" DisplayName="Silver Bowl Spirit" Faction="Sanctuary" School="Water" SubType="Melee|Shooter" Race="Spirit" Cost="1" MightLevel="1" Attack="0" Retaliate="1" HP="4" ID="609">
         <Ability Type="Replaceable" />
