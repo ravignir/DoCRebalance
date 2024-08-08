@@ -111,7 +111,7 @@
         </Trigger>
         <Description>While opponent discarded a card this turn, Fate Bender gains +[2:ATK].</Description>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_061" DisplayName="Gated Demon" Faction="Inferno" SubType="Melee" Race="Demon|Maniac" Cost="2" MightLevel="2" DestinyLevel="2" Attack="2" Retaliate="0" HP="3" ID="605">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_061" DisplayName="Gated Demon" Faction="Inferno" SubType="Melee" Race="Demon|Tormentor" Cost="2" MightLevel="2" DestinyLevel="1" Attack="2" Retaliate="0" HP="3" ID="605">
         <Ability Type="Ambush" />
         <Trigger Type="OnAmbush" Side="Enemy">
             <Target Zone="Hand" Amount="1" Side="Enemy" Random="True">
