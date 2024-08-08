@@ -206,14 +206,11 @@ Ambush: Deal 1 damage to ambushed creature.
         <Description>For every 5 cards in your graveyard, Honor Bound Kami gains Honor 1.</Description>
 		<DescriptionChinese>本方墓地中每有5张牌，荣耀之神获得荣耀1。</DescriptionChinese>
 	</Card>
-  <Card NotLocalized="True" Rarity="Common" Type="Unit" Name="Cre_San_064" DisplayName="Sand Kame" Faction="Sanctuary" SubType="Melee" Race="Beast" Cost="5" MightLevel="5" Attack="4" Retaliate="4" HP="8" ID="680">
-    <Trigger Type="OnThisCardDeploy">
-      <Target Zone="Battleground" CardType="Unit" Side="Any" Amount="AllOther" ForceExecute="True">
-        <CardFilter ExcludeUnitType="Flyer"/>
-        <Effect Type="Damage" Value="1"/>
-      </Target>
-    </Trigger>
-    <Description>When [THIS] enters the battleground, deal 1 damage to all other not flying creatures</Description>
+  <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_San_064" DisplayName="Sand Kame" Faction="Sanctuary" SubType="Melee" Race="Beast" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="7" ID="680">
+        <Target Zone="Battleground" Amount="Self" CardType="Unit">
+            <Effect Type="ModifyDamage" Value="-1" />
+        </Target>
+    <Description>Remove 1 from all damage dealt to Sand Kame.</Description>
   </Card>
     <!--...............................................................................-->
     <!-- Creatures - Stronghold -->
