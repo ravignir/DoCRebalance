@@ -135,7 +135,7 @@ Friendly Priest creatures gain Combat Guard 1 and cannot be targeted.</Descripti
 Choose one: Target creature gains Sweep Attack OR target creature gains Attack Anywhere.
 When that creature destroys a creature for the first time in a turn, draw a card.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Inf_061" DisplayName="Pleasure in Pain" Faction="Inferno" Cost="1" DestinyLevel="2" ID="620">
+    <Card Rarity="Common" Type="Fortune" Name="For_Inf_061" DisplayName="Pleasure in Pain" Faction="Inferno" Cost="0" DestinyLevel="2" ID="620">
         <Ongoing Duration="UntilEndOfTurn" />
         <Trigger Type="OnCardDiscard" Side="Enemy">
             <Target Zone="None" Amount="Self">
