@@ -301,20 +301,18 @@ When an enemy creature attacks, opponent cannot deploy creatures.</Description>
 		</Target>
 		<Description>Creatures at Emperor's Wall gain Perfect Retaliation and gain +[1:RET] for each card named Emperor's Wall on the battleground.</Description>
 	</Card>
-	<Card NotLocalized="True" Rarity="Common" Type="Building" Name="Bui_Hav_072" DisplayName="Treasury" Faction="Haven" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="768" Unique="False">
-		<Variable Type="OccupantCount">
-			<CardFilter IncludeFaction="Haven"/>
-		</Variable>
+	<Card UseXmlDescription="True" Rarity="Common" Type="Building" Name="Bui_Hav_072" DisplayName="Treasury" Faction="Haven" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="768" Unique="False">
+		<Variable Type="OccupantCount" />
 		<Target Zone="Hero" Amount="All" Side="Friendly">
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-			<Effect Type="ModifyResourcesProduction" Value="1"/>
+			<Effect Type="ModifyResourcesProduction" Value="2"/>
 		</Target>
 		<!-- The following target is necessary to display the right value in the Income icon. -->
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
 			<Effect Type="ModifyAbility" Ability="Income" Value="2"/>
 		</Target>
-		<Description>Friendly haven creatures at Treasury gain +1 Income.</Description>
+		<Description>Friendly creatures at Treasury gain +2 Income.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Building - Inferno -->
