@@ -313,8 +313,8 @@ All creatures with Ambush get +[1:ATK] and +[1:RET].</Description>
 		</Target>
         <Description>Discard a non-creature card. Destroy target card of the same type on the battleground.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_061" DisplayName="Mana Burst" Faction="Neutral" Cost="1" DestinyLevel="2" ID="628">
-        <Ongoing Duration="UntilYourNextTurn" />
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_061" DisplayName="Mana Burst" Faction="Neutral" Cost="1" DestinyLevel="2" ID="628">
+        <Ongoing Duration="Permanent" />
         <Trigger Type="OnCardPlay" Side="Friendly">
             <CardFilter IncludeCardType="Spell" />
             <Target Zone="Hero" Amount="All" Side="Friendly">
@@ -327,8 +327,14 @@ All creatures with Ambush get +[1:ATK] and +[1:RET].</Description>
                 <Effect Type="Damage" Value="2" />
             </Target>
         </Trigger>
-        <Description>Until your next turn:
-Whenever a spell is played, deal 2 damage to that spell's controller's hero.</Description>
+        <Trigger Type="OnCardPlay" Side="Any">
+            <CardFilter IncludeCardType="Spell" />
+			<Target Zone="None" Amount="Self">
+				<Effect Type="Kill"/>
+			</Target>
+		</Trigger>
+        <Description>Permanent:
+Whenever a spell is played, deal 2 damage to that spell's controller's hero and destroy Mana Burst.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Rare" Type="Fortune" Name="For_Neu_062" DisplayName="The Price of the Void" Faction="Neutral" Cost="1" MagicLevel="0" DestinyLevel="2" ID="629">
         <Target Zone="Battleground" Amount="1">
