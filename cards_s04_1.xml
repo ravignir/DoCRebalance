@@ -111,7 +111,7 @@
         </Trigger>
         <Description>While opponent discarded a card this turn, Fate Bender gains +[2:ATK].</Description>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_061" DisplayName="Gated Demon" Faction="Inferno" SubType="Melee" Race="Demon|Maniac" Cost="2" MightLevel="2" DestinyLevel="2" Attack="2" Retaliate="0" HP="3" ID="605">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_061" DisplayName="Gated Demon" Faction="Inferno" SubType="Melee" Race="Demon|Tormentor" Cost="2" MightLevel="2" DestinyLevel="1" Attack="2" Retaliate="0" HP="3" ID="605">
         <Ability Type="Ambush" />
         <Trigger Type="OnAmbush" Side="Enemy">
             <Target Zone="Hand" Amount="1" Side="Enemy" Random="True">
@@ -177,11 +177,19 @@
     <!--...............................................................................-->
     <!-- Creatures - Sanctuary -->
     <!--...............................................................................-->
-    <Card Rarity="Rare" Type="Unit" Name="Cre_San_060" DisplayName="Sayama Predator" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="0" HP="5" ID="608">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_San_060" DisplayName="Sayama Predator" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="0" HP="5" ID="608">
         <Target Zone="Hero" Amount="All" Side="Enemy">
             <Effect Type="GlobalEffect" GlobalEffectType="AmbushOnRelocate" />
         </Target>
-        <Description>Ambush ability of friendly creatures also triggers on relocation.</Description>
+        <Ability Type="Ambush" />
+        <Trigger Type="OnAmbush" Side="Enemy">
+            <Target Zone="Battleground" Amount="FromTrigger" CardType="Unit">
+                <Effect Type="Damage" Value="1" />
+            </Target>
+        </Trigger>
+        <Description>Ambush ability of friendly creatures also triggers on relocation.
+Ambush: Deal 1 damage to ambushed creature.
+(Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_San_061" DisplayName="Silver Bowl Spirit" Faction="Sanctuary" School="Water" SubType="Melee|Shooter" Race="Spirit" Cost="1" MightLevel="1" Attack="0" Retaliate="1" HP="4" ID="609">
         <Ability Type="Replaceable" />
@@ -198,14 +206,11 @@
         <Description>For every 5 cards in your graveyard, Honor Bound Kami gains Honor 1.</Description>
 		<DescriptionChinese>本方墓地中每有5张牌，荣耀之神获得荣耀1。</DescriptionChinese>
 	</Card>
-  <Card NotLocalized="True" Rarity="Common" Type="Unit" Name="Cre_San_064" DisplayName="Sand Kame" Faction="Sanctuary" SubType="Melee" Race="Beast" Cost="5" MightLevel="5" Attack="4" Retaliate="4" HP="8" ID="680">
-    <Trigger Type="OnThisCardDeploy">
-      <Target Zone="Battleground" CardType="Unit" Side="Any" Amount="AllOther" ForceExecute="True">
-        <CardFilter ExcludeUnitType="Flyer"/>
-        <Effect Type="Damage" Value="1"/>
-      </Target>
-    </Trigger>
-    <Description>When [THIS] enters the battleground, deal 1 damage to all other not flying creatures</Description>
+  <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_San_064" DisplayName="Sand Kame" Faction="Sanctuary" SubType="Melee" Race="Beast" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="7" ID="680">
+        <Target Zone="Battleground" Amount="Self" CardType="Unit">
+            <Effect Type="ModifyDamage" Value="-1" />
+        </Target>
+    <Description>Remove 1 from all damage dealt to Sand Kame.</Description>
   </Card>
     <!--...............................................................................-->
     <!-- Creatures - Stronghold -->
@@ -219,7 +224,7 @@
         </Target>
         <Description>All friendly creatures with ambush gain +[1:ATK].</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_061" DisplayName="Suicide Goblin" Faction="Stronghold" SubType="Melee|Shooter" Race="Goblin|Warrior" Cost="2" MightLevel="3" Attack="2" Retaliate="0" HP="3" ID="611">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_061" DisplayName="Suicide Goblin" Faction="Stronghold" SubType="Melee|Shooter" Race="Goblin|Warrior" Cost="2" MightLevel="3" Attack="3" Retaliate="0" HP="3" ID="611">
         <Ability Type="Ambush" />
         <Trigger Type="OnAmbush" Side="Enemy">
             <Target Zone="Battleground" Amount="FromTrigger" CardType="Unit">
@@ -262,7 +267,7 @@
         </Trigger>
         <Description>When Raider enters the battleground, search your library for a unique building card and put it into your hand, then shuffle your library.</Description>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_061" DisplayName="Sand Shark" Faction="Neutral" SubType="Melee" Race="Beast" Cost="3" MightLevel="2" Attack="2" Retaliate="0" HP="3" ID="613">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_061" DisplayName="Sand Shark" Faction="Neutral" SubType="Melee" Race="Beast" Cost="3" MightLevel="2" Attack="2" Retaliate="0" HP="4" ID="613">
         <Ability Type="Ambush" />
         <Trigger Type="OnAmbush" Side="Enemy">
             <Target Zone="Battleground" Amount="FromTrigger" CardType="Unit">
@@ -272,7 +277,7 @@
         <Description>Ambush: Deal 1 damage to ambushed creature.
 (Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Neu_062" DisplayName="Soul Consuming Wraith" Faction="Neutral" School="Prime" SubType="Magic|Melee" Race="Spirit" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="3" Retaliate="0" HP="5" ID="614">
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Neu_062" DisplayName="Soul Consuming Wraith" Faction="Neutral" School="Prime" SubType="Magic|Melee" Race="Spirit" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="3" Retaliate="1" HP="6" ID="614">
         <Ability Type="ImmuneToRetaliate" />
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Graveyard" Amount="1" Side="Enemy" Cancelable="False">

@@ -389,7 +389,8 @@ At the beginning of your turn, return Garden of Ecstasy to its owner's hand.</De
 Whenever a creature dies, shuffle it into its owner's library instead.
 At the beginning of your turn, return Eternal Battlefield to its owner's hand.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Nec_051" DisplayName="Harvesting the Dead" Faction="Necropolis" Cost="5" DestinyLevel="3" ID="555">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Nec_051" DisplayName="Harvesting the Dead" Faction="Necropolis" Cost="5" DestinyLevel="5" ID="555">
+		<Ongoing Duration="UntilEndOfTurn" />
         <Variable Type="TargetCount" ValueModifier="1">
             <Target Zone="Graveyard" Side="Friendly" Amount="All">
                 <CardFilter IncludeCardID="For_Nec_051" />
@@ -397,15 +398,139 @@ At the beginning of your turn, return Eternal Battlefield to its owner's hand.</
         </Variable>
         <Variable2 Type="TargetCount">
             <Target Zone="Graveyard" Side="Friendly" Amount="All">
-                <CardFilter IncludeCardType="Unit" ExcludeUnique="True" IncludeFaction="Necropolis" />
+                <CardFilter IncludeCardType="Unit" BaseMaxCost="True" Value="5" IncludeFaction="Necropolis" />
             </Target>
         </Variable2>
-        <PlayabilityCondition Operator="LesserOrEqual" ValueA="Variable" ValueB="Variable2" />
-        <Target Zone="Graveyard" Side="Friendly" Amount="Variable">
-            <CardFilter IncludeCardType="Unit" ExcludeUnique="True" IncludeFaction="Necropolis" />
-            <Effect Type="MoveCardTo" Destination="Hand" />
-        </Target>
-        <Description>Take X target non-unique Necropolis creature cards from your graveyard and put them into your hand, where X is equal to 1 plus the number of cards named Harvesting the Dead in your graveyard.</Description>
+        <Variable3 Type="TargetCount">
+            <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="All" />
+        </Variable3>
+		<PlayabilityCondition Operator="And" ValueA="Condition" ValueB="Condition">
+			<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0" />
+			<Condition Operator="LesserOrEqual" ValueA="Variable3" ValueB="7" />
+		</PlayabilityCondition>
+		<Trigger Type="OnThisCardPlay">		
+			<Target Zone="Graveyard" Side="Friendly" Amount="1">
+				<CardFilter IncludeCardType="Unit" BaseMaxCost="True" Value="5" IncludeFaction="Necropolis" />
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="3" />
+				<Effect Type="Clone" Side="Friendly" />
+				<Effect Type="Banish" Side="Friendly" />
+			</Target>
+			<Target Zone="Battleground" CardType="Unit" Amount="FromEffect" Persistent="True">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1" />
+				<Effect Type="AddCounter" CounterType="Poison" Value="1" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisCardPlay">
+			<Target Zone="Graveyard" Side="Friendly" Amount="1">
+				<CardFilter IncludeCardType="Unit" BaseMaxCost="True" Value="5" IncludeFaction="Necropolis" />
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="3" />
+				<Effect Type="Clone" Side="Friendly" />
+				<Effect Type="Banish" Side="Friendly" />
+			</Target>
+			<Target Zone="Battleground" CardType="Unit" Amount="FromEffect" Persistent="True">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1" />
+				<Effect Type="AddCounter" CounterType="Poison" Value="1" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisCardPlay">
+			<Target Zone="Graveyard" Side="Friendly" Amount="1">
+				<CardFilter IncludeCardType="Unit" BaseMaxCost="True" Value="5" IncludeFaction="Necropolis" />
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="3" />
+				<Effect Type="Clone" Side="Friendly" />
+				<Effect Type="Banish" Side="Friendly" />
+			</Target>
+			<Target Zone="Battleground" CardType="Unit" Amount="FromEffect" Persistent="True">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1" />
+				<Effect Type="AddCounter" CounterType="Poison" Value="1" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisCardPlay">
+			<Target Zone="Graveyard" Side="Friendly" Amount="1">
+				<CardFilter IncludeCardType="Unit" BaseMaxCost="True" Value="5" IncludeFaction="Necropolis" />
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="3" />
+				<Effect Type="Clone" Side="Friendly" />
+				<Effect Type="Banish" Side="Friendly" />
+			</Target>
+			<Target Zone="Battleground" CardType="Unit" Amount="FromEffect" Persistent="True">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1" />
+				<Effect Type="AddCounter" CounterType="Poison" Value="1" />
+			</Target>	
+		</Trigger>
+		<Trigger Type="OnThisCardPlay">
+			<Target Zone="Graveyard" Side="Friendly" Amount="1">
+				<CardFilter IncludeCardType="Unit" BaseMaxCost="True" Value="5" IncludeFaction="Necropolis" />
+				<Condition Operator="EqualTo" ValueA="Variable" ValueB="3" />
+				<Effect Type="Clone" Side="Friendly" />
+				<Effect Type="Banish" Side="Friendly" />
+			</Target>
+			<Target Zone="Battleground" CardType="Unit" Amount="FromEffect" Persistent="True">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1" />
+				<Effect Type="AddCounter" CounterType="Poison" Value="1" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisCardPlay">
+			<Target Zone="Graveyard" Side="Friendly" Amount="1">
+				<CardFilter IncludeCardType="Unit" BaseMaxCost="True" Value="5" IncludeFaction="Necropolis" />
+				<Condition Operator="EqualTo" ValueA="Variable" ValueB="3" />
+				<Effect Type="Clone" Side="Friendly" />
+				<Effect Type="Banish" Side="Friendly" />
+			</Target>
+			<Target Zone="Battleground" CardType="Unit" Amount="FromEffect" Persistent="True">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1" />
+				<Effect Type="AddCounter" CounterType="Poison" Value="1" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisCardPlay">
+			<Target Zone="Graveyard" Side="Friendly" Amount="1">
+				<CardFilter IncludeCardType="Unit" BaseMaxCost="True" Value="5" IncludeFaction="Necropolis" />
+				<Condition Operator="EqualTo" ValueA="Variable" ValueB="3" />
+				<Effect Type="Clone" Side="Friendly" />
+				<Effect Type="Banish" Side="Friendly" />
+			</Target>
+			<Target Zone="Battleground" CardType="Unit" Amount="FromEffect" Persistent="True">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1" />
+				<Effect Type="AddCounter" CounterType="Poison" Value="1" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisCardPlay">
+			<Target Zone="Graveyard" Side="Friendly" Amount="1">
+				<CardFilter IncludeCardType="Unit" BaseMaxCost="True" Value="5" IncludeFaction="Necropolis" />
+				<Condition Operator="EqualTo" ValueA="Variable" ValueB="2" />
+				<Effect Type="Clone" Side="Friendly" />
+				<Effect Type="Banish" Side="Friendly" />
+			</Target>
+			<Target Zone="Battleground" CardType="Unit" Amount="FromEffect" Persistent="True">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1" />
+				<Effect Type="AddCounter" CounterType="Poison" Value="1" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisCardPlay">		
+			<Target Zone="Graveyard" Side="Friendly" Amount="1">
+				<CardFilter IncludeCardType="Unit" BaseMaxCost="True" Value="5" IncludeFaction="Necropolis" />
+				<Condition Operator="EqualTo" ValueA="Variable" ValueB="2" />
+				<Effect Type="Clone" Side="Friendly" />
+				<Effect Type="Banish" Side="Friendly" />
+			</Target>
+			<Target Zone="Battleground" CardType="Unit" Amount="FromEffect" Persistent="True">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1" />
+				<Effect Type="AddCounter" CounterType="Poison" Value="1" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisCardPlay">
+			<Target Zone="Graveyard" Side="Friendly" Amount="1">
+				<CardFilter IncludeCardType="Unit" BaseMaxCost="True" Value="5" IncludeFaction="Necropolis" />
+				<Condition Operator="EqualTo" ValueA="Variable" ValueB="1" />
+				<Effect Type="Clone" Side="Friendly" />
+				<Effect Type="Banish" Side="Friendly" />
+			</Target>
+			<Target Zone="Battleground" CardType="Unit" Amount="FromEffect" Persistent="True">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1" />
+				<Effect Type="AddCounter" CounterType="Poison" Value="1" />
+			</Target>
+		</Trigger>
+        <Description>Until end of turn.
+When Harvesting the Dead enters the battleground: 
+Banish target Necropolis creature card with a cost of 5 [RESOURCES] or less form your graveyard and deploy its copy as a token with 1 crippling and 1 poison counters on it. You can repeat this X times (up to 4), where X is equal to 1 plus the number of cards named Harvesting the Dead in your graveyard.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Nec_052" DisplayName="Death is not the End" Faction="Necropolis" Cost="3" DestinyLevel="3" ID="556">
         <Target Zone="Graveyard" Side="Friendly" Amount="1">
@@ -482,28 +607,23 @@ All Sanctuary creatures gain Honor 1.</Description>
     <!--....................................................................-->
     <!-- Fortune - Stronghold -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Str_050" DisplayName="Outraging Vision" Faction="Stronghold" Cost="5" DestinyLevel="3" ID="562">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Str_050" DisplayName="Outraging Vision" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="562">
         <Ongoing Duration="Permanent" />
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Battleground" Amount="Self">
                 <Effect Type="MoveCardTo" Destination="Hand" />
             </Target>
         </Trigger>
-        <Target Zone="Battleground" CardType="Unit" Amount="All">
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
             <!-- This Target is used only to display the correct feedback -->
             <CardFilter IncludeAbility="Enrage|Bloodthirst" />
         </Target>
-        <Target Zone="Battleground" CardType="Unit" Amount="All">
-            <CardFilter IncludeAbility="Enrage" />
-            <Effect Type="ModifyAbilityValue" Ability="Enrage" Value="1" />
-        </Target>
-        <Target Zone="Battleground" CardType="Unit" Amount="All">
-            <CardFilter IncludeAbility="Bloodthirst" />
-            <Effect Type="ModifyAbilityValue" Ability="Bloodthirst" Value="1" />
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+			<CardFilter IncludeCounter="Enrage"/>
+			<Effect Type="ModifyAbility" Ability="RageTouch"/>
         </Target>
         <Description>Permanent:
-All creatures with Enrage gain +1 to their Enrage value.
-All creatures with Bloodthirst gain +1 to their Bloodthirst value.
+Whenever a friendly creature with Enrage counters deals damage to a creature, that creature gains Cannot Attack until your next turn.
 At the beginning of your turn, return Outraging Vision to its owner's hand.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Str_051" DisplayName="Ancestral Guidance" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="563">

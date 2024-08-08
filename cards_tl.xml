@@ -584,4 +584,12 @@
         </Trigger>
     </TemplateEffect>
 
+    <TemplateEffect Name="RageTouch">
+        <Trigger Type="OnThisDamageUnit" Side="Enemy" DamageIncludeFlags="Attack">
+            <Target Zone="Battleground" CardType="Unit" Amount="FromTrigger" ForceExecute="True" Persistent="True">
+                <Effect Type="ModifyAbility" Ability="CannotAttack" Duration="UntilYourNextTurn" OwnerAbility="RageTouch"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+
 </Cards>
