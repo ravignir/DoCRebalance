@@ -266,12 +266,11 @@ When an enemy creature attacks, opponent cannot deploy creatures.</Description>
 		</Trigger>
 		<Description>Whenever a creature moves to Dervish's Tent, it gains Swift until end of turn.</Description>
 	</Card>
-	<Card Rarity="Common" Type="Building" Name="Bui_Aca_071" DisplayName="Spirit Gateway" Faction="Academy" Cost="1" MightLevel="1" MagicLevel="2" DestinyLevel="0" ID="764" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Common" Type="Building" Name="Bui_Aca_071" DisplayName="Spirit Gateway" Faction="Academy" Cost="1" MightLevel="1" MagicLevel="2" DestinyLevel="0" ID="764" Unique="False">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
-			<CardFilter IncludeUnitType="Shooter"/>
-			<Effect Type="ModifyAbility" Ability="Phased"/>
+			<Effect Type="ModifyAbility" Ability="Incorporeal"/>
 		</Target>
-		<Description>Shooter creatures at Spirit Gateway gain Phased.</Description>
+		<Description>Creatures at Spirit Gateway gain Incorporeal.</Description>
 	</Card>
 	<Card Rarity="Common" Type="Building" Name="Bui_Aca_072" DisplayName="Stele of House Anima" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="765" Unique="False">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
