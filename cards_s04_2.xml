@@ -233,7 +233,7 @@ Whenever a creature dies, heal 1 damage from your hero.</Description>
         </Target>
         <Description>Choose one: Relocate target creature OR Deal 2 damage to all immobilized creatures.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_San_061" DisplayName="United we Fight" Faction="Sanctuary" Cost="2" MightLevel="2" DestinyLevel="2" ID="624">
+    <Card Rarity="Uncommon" Type="Fortune" Name="For_San_061" DisplayName="United we Fight" Faction="Sanctuary" Cost="1" MightLevel="2" DestinyLevel="2" ID="624">
         <Ongoing Duration="UntilEndOfTurn" />
         <Target Zone="Hero" Amount="All" Side="Friendly">
             <Effect Type="GlobalEffect" GlobalEffectType="IgnoreRequirement">
