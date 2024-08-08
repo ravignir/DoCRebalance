@@ -607,28 +607,23 @@ All Sanctuary creatures gain Honor 1.</Description>
     <!--....................................................................-->
     <!-- Fortune - Stronghold -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Str_050" DisplayName="Outraging Vision" Faction="Stronghold" Cost="5" DestinyLevel="3" ID="562">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Str_050" DisplayName="Outraging Vision" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="562">
         <Ongoing Duration="Permanent" />
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Battleground" Amount="Self">
                 <Effect Type="MoveCardTo" Destination="Hand" />
             </Target>
         </Trigger>
-        <Target Zone="Battleground" CardType="Unit" Amount="All">
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
             <!-- This Target is used only to display the correct feedback -->
             <CardFilter IncludeAbility="Enrage|Bloodthirst" />
         </Target>
-        <Target Zone="Battleground" CardType="Unit" Amount="All">
-            <CardFilter IncludeAbility="Enrage" />
-            <Effect Type="ModifyAbilityValue" Ability="Enrage" Value="1" />
-        </Target>
-        <Target Zone="Battleground" CardType="Unit" Amount="All">
-            <CardFilter IncludeAbility="Bloodthirst" />
-            <Effect Type="ModifyAbilityValue" Ability="Bloodthirst" Value="1" />
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+			<CardFilter IncludeCounter="Enrage"/>
+			<Effect Type="ModifyAbility" Ability="RageTouch"/>
         </Target>
         <Description>Permanent:
-All creatures with Enrage gain +1 to their Enrage value.
-All creatures with Bloodthirst gain +1 to their Bloodthirst value.
+Whenever a friendly creature with Enrage counters deals damage to a creature, that creature gains Cannot Attack until your next turn.
 At the beginning of your turn, return Outraging Vision to its owner's hand.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Str_051" DisplayName="Ancestral Guidance" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="563">
