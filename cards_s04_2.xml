@@ -8,7 +8,7 @@
     <!--....................................................................-->
     <!-- Fortune - Academy -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Aca_060" DisplayName="Gazal's Sapience" Faction="Academy" Cost="6" MagicLevel="2" DestinyLevel="4" ID="615">
+    <Card Rarity="Common" Type="Fortune" Name="For_Aca_060" DisplayName="Gazal's Sapience" Faction="Academy" Cost="3" MagicLevel="2" DestinyLevel="4" ID="615">
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
@@ -32,7 +32,7 @@
         </Target>
         <Description>Choose one: Take target spell card in your graveyard and put it into your hand OR take all spell cards in your graveyard, put them into your library, shuffle your library and draw a card.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Aca_061" DisplayName="Crimson Bond" Faction="Academy" Cost="0" DestinyLevel="2" ID="616">
+    <Card Rarity="Uncommon" Type="Fortune" Name="For_Aca_061" DisplayName="Crimson Bond" Faction="Academy" Cost="1" DestinyLevel="2" ID="616">
         <Target Zone="Library" Side="Friendly" Amount="1" RevealToOther="True">
             <CardFilter IncludeCardType="Spell" IncludeOngoingType="Ongoing" IncludeEnchantUnit="True" />
             <Effect Type="MoveCardTo" Destination="Hand" />
