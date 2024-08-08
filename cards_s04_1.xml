@@ -227,7 +227,7 @@ Ambush: Deal 1 damage to ambushed creature.
         </Target>
         <Description>All friendly creatures with ambush gain +[1:ATK].</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_061" DisplayName="Suicide Goblin" Faction="Stronghold" SubType="Melee|Shooter" Race="Goblin|Warrior" Cost="2" MightLevel="3" Attack="2" Retaliate="0" HP="3" ID="611">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_061" DisplayName="Suicide Goblin" Faction="Stronghold" SubType="Melee|Shooter" Race="Goblin|Warrior" Cost="2" MightLevel="3" Attack="3" Retaliate="0" HP="3" ID="611">
         <Ability Type="Ambush" />
         <Trigger Type="OnAmbush" Side="Enemy">
             <Target Zone="Battleground" Amount="FromTrigger" CardType="Unit">
