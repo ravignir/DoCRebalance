@@ -57,23 +57,19 @@
 		<Description>While there is a friendly Wizard creature on the battleground, Loyal Rakshasa gains Sweep Attack.
 While Loyal Rakshasa is adjacent to a friendly Wizard creature, it gains +[2:ATK].</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_074" DisplayName="Crimson Apprentice" Faction="Academy" SubType="Magic|Shooter" Race="Human|Wizard" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="712" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Aca_074" DisplayName="Crimson Apprentice" Faction="Academy" SubType="Magic|Shooter" Race="Human|Wizard" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="712" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly">
 			<CardFilter IncludeRaces="Beastmen"/>
 			<Effect Type="ModifyAttack" Value="1"/>
-		</Target>
-		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
-			<CardFilter IncludeRaces="Beastmen"/>
 			<Effect Type="ModifyAbility" Ability="Charge"/>
 		</Target>
-		<Description>Beastman creatures adjacent to Crimson Apprentice gain +[1:ATK].
-Friendly Beastman creatures gain Charge.</Description>
+		<Description>Beastman creatures adjacent to Crimson Apprentice gain +[1:ATK] and Charge.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Haven -->
 	<!--...............................................................................-->
-	<Card Rarity="Common" Type="Unit" Name="Cre_Hav_070" DisplayName="Wolf Trainer" Faction="Haven" SubType="Melee" Race="Human|Mentor" Cost="1" MightLevel="1" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="0" HP="3" ID="713" Unique="False">
+	<Card Rarity="Common" Type="Unit" Name="Cre_Hav_070" DisplayName="Wolf Trainer" Faction="Haven" SubType="Melee" Race="Human|Mentor" Cost="1" MightLevel="1" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="1" HP="3" ID="713" Unique="False">
 		<Trigger Type="OnThisPostAttacked">
 			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
 				<Effect Type="Damage" Value="1"/>
@@ -133,7 +129,7 @@ Friendly Beastman creatures gain Charge.</Description>
 		<DescriptionRussian>Когда [THIS] выходит на поле битвы, снизьте свой уровень [MIGHT] на 1.</DescriptionRussian>
 		<DescriptionPortuguese>Quando Desova de Lava entrar no campo de batalha, diminua em 1 seu nível de [MIGHT].</DescriptionPortuguese>
 	</Card>
-	<Card Rarity="Rare" Type="Unit" Name="Cre_Inf_071" DisplayName="Thrall of Hatred" Faction="Inferno" SubType="Melee" Race="Demon" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="1" Attack="3" Retaliate="2" HP="4" ID="719" Unique="False">
+	<Card Rarity="Rare" Type="Unit" Name="Cre_Inf_071" DisplayName="Thrall of Hatred" Faction="Inferno" SubType="Melee" Race="Demon" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="1" Attack="2" Retaliate="2" HP="4" ID="719" Unique="False">
 		<Trigger Type="OnOtherUnitInGraveyard" Side="Friendly" ExecuteOncePerTransaction="True">
 			<CardFilter IncludeRaces="Demon"/>
 			<Target Zone="Hero" Amount="All" Side="Enemy">
@@ -142,7 +138,7 @@ Friendly Beastman creatures gain Charge.</Description>
 		</Trigger>
 		<Description>Whenever combat or an effect causes at least one friendly Demon to be put into a graveyard, deal 1 damage to enemy hero.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_072" DisplayName="Madcap Imp" Faction="Inferno" School="Fire" SubType="Magic|Flyer" Race="Demon|Imp" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="720" Unique="False">
+	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_072" DisplayName="Madcap Imp" Faction="Inferno" School="Fire" SubType="Magic|Flyer" Race="Demon|Imp" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="720" Unique="False">
 		<Ability Type="FireBurst" Value="3"/>
 		<Trigger Type="OnDeploy" Side="Enemy">
 			<Target Zone="BattlegroundPosition" Amount="FromTrigger"/>
@@ -252,7 +248,7 @@ Whenever Vampire Connoisseur attacks a creature with [1:ATK] or less, it deals 2
 	<!--...............................................................................-->
 	<!-- Creatures - Sanctuary -->
 	<!--...............................................................................-->
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_San_070" DisplayName="Nautilus" Faction="Sanctuary" SubType="Magic|Melee" Race="Beast" School="Water" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="0" Retaliate="1" HP="5" ID="730" Unique="False">
+	<Card Rarity="Uncommon" Type="Unit" Name="Cre_San_070" DisplayName="Nautilus" Faction="Sanctuary" SubType="Magic|Melee" Race="Beast" School="Water" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="0" Retaliate="1" HP="5" ID="730" Unique="False">
 		<Ability Type="CannotAttack"/>
 		<Target Zone="Battleground" Amount="Self">
 			<Variable Type="CardPreventedDamage"/>
