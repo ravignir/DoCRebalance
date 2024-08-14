@@ -172,9 +172,10 @@ While Loyal Rakshasa is adjacent to a friendly Wizard creature, it gains +[2:ATK
 	<!--...............................................................................-->
 	<!-- Creatures - Necropolis -->
 	<!--...............................................................................-->
-	<Card Rarity="Common" Type="Unit" Name="Cre_Nec_070" DisplayName="Necromancer Apprentice" Faction="Necropolis" SubType="Magic|Shooter" Race="Human|Wizard" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="1" Attack="1" Retaliate="0" HP="2" ID="723" Unique="False">
+	<Card Rarity="Common" Type="Unit" Name="Cre_Nec_070" DisplayName="Necromancer Apprentice" Faction="Necropolis" SubType="Magic|Shooter" Race="Human|Wizard" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="1" Attack="0" Retaliate="0" HP="2" ID="723" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
-		<Ability Type="Leadership" Value="1"/>
+		<Ability Type="MagicChannel" Value="1"/>
+		<Ability Type="Lucky" Value="1"/>
 	</Card>
 	<Card Rarity="Common" Type="Unit" Name="Cre_Nec_071" DisplayName="Newborn Vampire" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="1" MightLevel="1" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="0" HP="3" ID="724" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
