@@ -374,12 +374,13 @@ While there are fewer friendly creatures than enemy creatures on the battlegroun
 	<!-- Creatures - Neutral -->
 	<!--...............................................................................-->
 	<Card Rarity="Common" Type="Unit" Name="Cre_Neu_070" DisplayName="Loyal Hound" Faction="Neutral" SubType="Melee" Race="Hound" Cost="1" MightLevel="1" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="1" ID="743" Unique="False"/>
-	<Card Rarity="Common" Type="Unit" Name="Cre_Neu_071" DisplayName="Blind Seer" Faction="Neutral" SubType="Melee|Shooter" Race="Human|Seer" Cost="3" MightLevel="1" MagicLevel="0" DestinyLevel="2" Attack="1" Retaliate="1" HP="5" ID="744" Unique="False">
-		<Ability Type="ImmuneToRetaliate"/>
-		<Target Zone="Hero" Amount="All" Side="Any">
-			<Effect Type="GlobalEffect" GlobalEffectType="CantSearchLibrary"/>
-		</Target>
-		<Description>Players cannot search their library.</Description>
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_071" DisplayName="Blind Seer" Faction="Neutral" SubType="Melee|Shooter" Race="Human|Seer" Cost="3" MightLevel="1" MagicLevel="0" DestinyLevel="2" Attack="1" Retaliate="1" HP="4" ID="744" Unique="False">
+        <Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
+            <Target Zone="Battleground" CardType="Fortune" Amount="1" Side="Any" Cancelable="False">
+                <Effect Type="Kill" />
+            </Target>
+        </Trigger>
+		<Description>At the beginning of your turn, destroy target ongoing fortune.</Description>
 	</Card>
 	<Card Rarity="Epic" Type="Unit" Name="Cre_Neu_072" Unique="True" DisplayName="Damran, Chosen of the Thorns" Faction="Neutral" School="Earth" SchoolsAligned="True" SubType="Magic|Melee" Race="DarkElf" Cost="6" MightLevel="4" MagicLevel="3" DestinyLevel="0" Attack="3" Retaliate="3" HP="7" ID="745">
 		<Ability Type="EarthAligned"/>
