@@ -266,7 +266,7 @@ Whenever a friendly Vampire creature destroys a creature, it cannot be targeted 
 	<Card Rarity="Common" Type="Unit" Name="Cre_San_071" DisplayName="Shark Protector" Faction="Sanctuary" SubType="Melee" Race="Beastmen" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="0" Retaliate="3" HP="5" ID="731" Unique="False">
 		<Ability Type="PreemptiveStrike"/>
 	</Card>
-	<Card Rarity="Rare" Type="Unit" Name="Cre_San_072" DisplayName="Coral Ohyaku" Faction="Sanctuary" SubType="Magic|Melee|Shooter" Race="Naga|Warrior" School="Water" Cost="3" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="1" Retaliate="2" HP="5" ID="732" Unique="False">
+	<Card Rarity="Rare" Type="Unit" Name="Cre_San_072" DisplayName="Coral Ohyaku" Faction="Sanctuary" SubType="Magic|Melee|Shooter" Race="Naga|Priest" School="Water" Cost="3" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="1" Retaliate="2" HP="5" ID="732" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="Hypnotize"/>
 		<Ability Type="ForceDeploy"/>
