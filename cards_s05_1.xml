@@ -190,11 +190,11 @@ While Loyal Rakshasa is adjacent to a friendly Wizard creature, it gains +[2:ATK
 		</Target>
 		<Description>Putrid Dragon gains +[1:ATK] for each poison counter on enemy creatures.</Description>
 	</Card>
-	<Card Rarity="Rare" Type="Unit" Name="Cre_Nec_073" DisplayName="Death Lord" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="726" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Nec_073" DisplayName="Death Lord" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="726" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="LifeDrain" Value="2"/>
 		<Trigger Type="OnUnitKillUnit">
-			<CardFilter IncludeRaces="Vampire"/>
+			<CardFilter IncludeRaces="Vampire" Side="Friendly"/>
 			<Target Zone="Hero" Amount="All" Side="Friendly">
 				<Effect Type="Heal" Value="1"/>
 			</Target>
@@ -203,7 +203,7 @@ While Loyal Rakshasa is adjacent to a friendly Wizard creature, it gains +[2:ATK
 			<CardFilter IncludeRaces="Vampire"/>
 			<Effect Type="ModifyAbility" Ability="AttackWeakTwice"/>
 		</Target>
-		<Description>Whenever a Vampire creature destroys a creature, heal 1 damage from your Hero.
+		<Description>Whenever a friendly Vampire creature destroys a creature, heal 1 damage from your Hero.
 Whenever a friendly Vampire creature attacks a creature with [ATK] of 1 or less for the first time in a turn, it gains an additional attack.</Description>
 	</Card>
 	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Nec_074" DisplayName="Blood Ritualist" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="3" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="0" HP="5" ID="727" Unique="False">
