@@ -363,13 +363,13 @@ While there are fewer friendly creatures than enemy creatures on the battlegroun
 		</Trigger>
 		<Description>Whenever you use your hero ability to increase your [MIGHT] level, put 1 Enrage counter on Stormrage Hunter.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_077" DisplayName="Ancestral Champion" Faction="Stronghold" SubType="Melee" Race="Orc|Spirit" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="4" Retaliate="2" HP="5" ID="742" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Str_077" DisplayName="Ancestral Champion" Faction="Stronghold" SubType="Melee" Race="Orc|Spirit" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="4" Retaliate="3" HP="5" ID="742" Unique="False">
 		<Trigger Type="OnThisCardDeath">
 			<Target Zone="None" Side="Friendly">
-				<Effect Type="IncreaseLevel" Value="-2" LevelType="Might"/>
+				<Effect Type="IncreaseLevel" Value="-1" LevelType="Might"/>
 			</Target>
 		</Trigger>
-		<Description>When Ancestral Champion dies, decrease your [MIGHT] level by 2.</Description>
+		<Description>When Ancestral Champion dies, decrease your [MIGHT] level by 1.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Neutral -->
