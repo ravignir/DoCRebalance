@@ -184,6 +184,7 @@ While Loyal Rakshasa is adjacent to a friendly Wizard creature, it gains +[2:ATK
 	<Card Rarity="Epic" Type="Unit" Name="Cre_Nec_072" DisplayName="Putrid Dragon" Faction="Necropolis" School="Earth" SubType="Melee" Race="Zombie|Dragon" Cost="6" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="3" HP="8" ID="725" Unique="False">
 		<Ability Type="Infect" Value="2"/>
 		<Ability Type="InfectBlast" Value="2"/>
+		<Ability Type="AbsorbPoisonDamageHeal" />
 		<Target Zone="Battleground" Amount="Self">
 			<Variable Type="InPlayCounterCount" Side="Enemy" CounterType="Poison"/>
 			<Effect Type="ModifyAttack" Value="Variable"/>
