@@ -237,7 +237,7 @@ Whenever a friendly Vampire creature attacks a creature with [ATK] of 1 or less 
 				<CardFilter MaxAttack="True" Value="1" IncludeCardType="Unit"/>
 			</Effect>
 		</Target>
-		<Description>Whenever Vampire Connoisseur creature destroys a creature, heal all damage from it.
+		<Description>Whenever Vampire Connoisseur destroys a creature, heal all damage from it.
 Whenever Vampire Connoisseur attacks a creature with [1:ATK] or less, it deals 2 more attack damage.
 Whenever a friendly Vampire creature destroys a creature, it cannot be targeted until your next turn.</Description>
 	</Card>
