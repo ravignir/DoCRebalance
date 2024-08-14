@@ -96,17 +96,15 @@ While Loyal Rakshasa is adjacent to a friendly Wizard creature, it gains +[2:ATK
     </Target>
 		<Description>Friendly Human creatures at a building gain +[1:HEALTH] and Mending.</Description>
 	</Card>
-	<Card Rarity="Common" Type="Unit" Name="Cre_Hav_074" DisplayName="Falcon Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="717" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Hav_074" DisplayName="Falcon Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="717" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Target Zone="Battleground" Amount="Self">
 			<CardFilter IncludeOccupant="True"/>
 			<Effect Type="ModifyAttack" Value="1"/>
-		</Target>
-		<Target Zone="Battleground" Amount="Self">
-			<CardFilter IncludeOccupant="True"/>
 			<Effect Type="ModifyRetaliate" Value="2"/>
+			<Effect Type="ModifyAbility" Ability="PreemptiveStrike"/>
 		</Target>
-		<Description>While Falcon Marksman is at a building, it gains +[1:ATK] and +[2:RET].</Description>
+		<Description>While Falcon Marksman is at a building, it gains Preemptive Strike, +[1:ATK] and +[2:RET].</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Inferno -->
