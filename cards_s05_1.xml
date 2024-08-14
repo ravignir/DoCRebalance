@@ -160,14 +160,14 @@ While Loyal Rakshasa is adjacent to a friendly Wizard creature, it gains +[2:ATK
 		</Trigger>
 		<Description>When Maniac Taskmaster enters the battleground, if you control 3 or more Demon creatures, opponent discards a card at random.</Description>
 	</Card>
-	<Card Rarity="Common" Type="Unit" Name="Cre_Inf_074" DisplayName="Swelling Breeder" Faction="Inferno" SubType="Magic|Shooter" Race="Demon|Breeder" Cost="3" MightLevel="1" MagicLevel="2" DestinyLevel="0" Attack="1" Retaliate="1" HP="6" ID="722" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Inf_074" DisplayName="Swelling Breeder" Faction="Inferno" SubType="Magic|Shooter" Race="Demon|Breeder" Cost="3" MightLevel="1" MagicLevel="2" DestinyLevel="0" Attack="1" Retaliate="1" HP="6" ID="722" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="MagicChannel" Value="1"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly">
 			<CardFilter IncludeRaces="Breeder"/>
-			<Effect Type="ModifyAbility" Ability="MagicResist"/>
+			<Effect Type="ModifyAbility" Ability="SpellResist"/>
 		</Target>
-		<Description>Adjacent friendly Breeder creatures gain Magic Resist.</Description>
+		<Description>Adjacent friendly Breeder creatures gain Spell Resist.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Necropolis -->
