@@ -458,7 +458,7 @@ When a creature at Makeshift Shelter attacks or moves, destroy Makeshift Shelter
 		<Description>When Barricade enters the battleground, search your library for a card named Barricade, put it into your hand, then shuffle your library.
 Creatures at Barricade gain +[1:RET] for each building adjacent to it.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Building" Name="Bui_Neu_072" DisplayName="Training Ground" Faction="Neutral" Cost="3" MightLevel="1" MagicLevel="0" DestinyLevel="1" ID="778" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Building" Name="Bui_Neu_072" DisplayName="Training Ground" Faction="Neutral" Cost="3" MightLevel="1" MagicLevel="0" DestinyLevel="1" ID="778" Unique="False">
 		<Variable Type="OccupantCount"/>
 		<Trigger Type="OnHeroIncreaseMightLevel" Side="Friendly">
 			<Target Zone="None" Side="Friendly">
@@ -466,6 +466,11 @@ Creatures at Barricade gain +[1:RET] for each building adjacent to it.</Descript
 				<Effect Type="IncreaseLevel" Value="1" LevelType="Might"/>
 			</Target>
 		</Trigger>
-		<Description>Whenever you use your hero ability to increase your [MIGHT] level, if there is a creature at Training Ground, increase that level by 1 more.</Description>
+		<Trigger Type="OnHeroIncreaseMightLevel" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+				<Effect Type="AddCounter" Value="1" CounterType="Fierce"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever you use your hero ability to increase your [MIGHT] level, if there is a creature at Training Ground, increase that level by 1 more and put [1:ATK] counter on the creature at Training Ground.</Description>
 	</Card>
 </Cards>
