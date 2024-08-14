@@ -274,6 +274,7 @@ Whenever a friendly Vampire creature destroys a creature, it cannot be targeted 
 	</Card>
 	<Card Rarity="Epic" Type="Unit" Name="Cre_San_073" DisplayName="Lotus Empire Guard" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="6" MightLevel="6" MagicLevel="0" DestinyLevel="0" Attack="4" Retaliate="3" HP="8" ID="733" Unique="False">
 		<Ability Type="PreemptiveStrike"/>
+		<Ability Type="RangeReflect" Value="1"/>
 		<Target Zone="Battleground" Amount="Self">
 			<Effect Type="ModifyAbility" Ability="CannotTarget"/>
 		</Target>
