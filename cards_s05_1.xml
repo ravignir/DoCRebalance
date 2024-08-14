@@ -219,12 +219,17 @@ Whenever a friendly Vampire creature attacks a creature with [ATK] of 1 or less 
 		</Target>
 		<Description>All other friendly Vampire creatures gain Life Drain X, where X is equal to the number of friendly Vampire creatures on the battleground.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_075" DisplayName="Vampire Connoisseur" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="728" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Nec_075" DisplayName="Vampire Connoisseur" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="728" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
-		<Trigger Type="OnUnitKillUnit">
-			<CardFilter IncludeRaces="Vampire"/>
-			<Target Zone="Battleground" Amount="FromTrigger">
+		<Trigger Type="OnThisKillUnit">
+			<Target Zone="Battleground" Amount="Self">
 				<Effect Type="Heal" Value="infinite"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnUnitKillUnit">
+			<CardFilter IncludeRaces="Vampire" Side="Friendly"/>
+			<Target Zone="Battleground" Amount="FromTrigger" ForceExecute="True" Persistent="True">
+				<Effect Type="ModifyAbility" Ability="CannotTarget" Duration="UntilYourNextTurn"/>
 			</Target>
 		</Trigger>
 		<Target Zone="Battleground" Amount="Self">
@@ -232,8 +237,9 @@ Whenever a friendly Vampire creature attacks a creature with [ATK] of 1 or less 
 				<CardFilter MaxAttack="True" Value="1" IncludeCardType="Unit"/>
 			</Effect>
 		</Target>
-		<Description>Whenever a Vampire creature destroys a creature, heal all damage from it.
-Whenever Vampire Connoisseur attacks a creature with [1:ATK] or less, it deals 2 more attack damage.</Description>
+		<Description>Whenever Vampire Connoisseur creature destroys a creature, heal all damage from it.
+Whenever Vampire Connoisseur attacks a creature with [1:ATK] or less, it deals 2 more attack damage.
+Whenever a friendly Vampire creature destroys a creature, it cannot be targeted until your next turn.</Description>
 	</Card>
 	<Card Rarity="Common" Type="Unit" Name="Cre_Nec_076" DisplayName="Grave Warden" Faction="Necropolis" SubType="Magic|Shooter" Race="Lich" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="2" HP="7" ID="729" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
