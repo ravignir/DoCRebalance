@@ -308,7 +308,7 @@ While there are fewer friendly creatures than enemy creatures on the battlegroun
 	<Card Rarity="Common" Type="Unit" Name="Cre_Str_070" DisplayName="Goblin Mentor" Faction="Stronghold" SubType="Melee" Race="Goblin|Warrior" Cost="2" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="1" HP="3" ID="735" Unique="False">
 		<Ability Type="Leadership" Value="1"/>
 	</Card>
-	<Card Rarity="Epic" Type="Unit" Name="Cre_Str_071" DisplayName="Pao Warchief" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="3" HP="6" ID="736" Unique="False">
+	<Card Rarity="Epic" Type="Unit" Name="Cre_Str_071" DisplayName="Pao Warchief" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="3" HP="6" ID="736" Unique="False">
 		<Target Zone="Battleground" Amount="Self">
 			<Variable Type="Level" LevelType="Might" Side="Friendly"/>
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="9"/>
