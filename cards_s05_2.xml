@@ -407,7 +407,7 @@ If such creature dies in Boneyard, then banish it.
 	<!--....................................................................-->
 	<!-- Building - Stronghold -->
 	<!--....................................................................-->
-	<Card Rarity="Rare" Type="Building" Name="Bui_Str_070" DisplayName="Blood Ring" Faction="Stronghold" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="775" Unique="False">
+	<Card Rarity="Rare" Type="Building" Name="Bui_Str_070" DisplayName="Blood Ring" Faction="Stronghold" Cost="2" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="775" Unique="False">
 		<Trigger Type="OnOccupantCardDeath">
 			<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
 				<CardFilter IncludeAbility="Enrage"/>
@@ -439,16 +439,26 @@ If such creature dies in Boneyard, then banish it.
 		<Description>Creatures at Makeshift Shelter cannot be targeted. Prevent all attack damage dealt by melee creatures to creatures at Makeshift Shelter.
 When a creature at Makeshift Shelter attacks or moves, destroy Makeshift Shelter.</Description>
 	</Card>
-	<Card Rarity="Common" Type="Building" Name="Bui_Neu_071" DisplayName="Barricade" Faction="Neutral" Cost="1" MightLevel="1" MagicLevel="0" DestinyLevel="0" ID="777" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Common" Type="Building" Name="Bui_Neu_071" DisplayName="Barricade" Faction="Neutral" Cost="2" MightLevel="1" MagicLevel="0" DestinyLevel="0" ID="777" Unique="False">
 		<Variable Type="TargetCount">
 			<Target Zone="Battleground" CardType="Building" Amount="Self" Shape="AdjacentOnly"/>
 		</Variable>
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
 			<Effect Type="ModifyRetaliate" Value="Variable"/>
 		</Target>
-		<Description>Creatures at Barricade gain +[1:RET] for each building adjacent to it.</Description>
+		<Trigger Type="OnThisCardPlay">
+			<Target Zone="Library" Side="Friendly" CardType="Building" Amount="1" RevealToOther="True">
+				<CardFilter IncludeCardID="Bui_Neu_071"/>
+				<Effect Type="MoveCardTo" Destination="Hand"/>
+			</Target>
+			<Target Side="Friendly">
+				<Effect Type="Shuffle" CardHolder="Library"/>
+			</Target>
+		</Trigger>
+		<Description>When Barricade enters the battleground, search your library for a card named Barricade, put it into your hand, then shuffle your library.
+Creatures at Barricade gain +[1:RET] for each building adjacent to it.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Building" Name="Bui_Neu_072" DisplayName="Training Ground" Faction="Neutral" Cost="3" MightLevel="1" MagicLevel="0" DestinyLevel="1" ID="778" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Building" Name="Bui_Neu_072" DisplayName="Training Ground" Faction="Neutral" Cost="3" MightLevel="1" MagicLevel="0" DestinyLevel="1" ID="778" Unique="False">
 		<Variable Type="OccupantCount"/>
 		<Trigger Type="OnHeroIncreaseMightLevel" Side="Friendly">
 			<Target Zone="None" Side="Friendly">
@@ -456,6 +466,11 @@ When a creature at Makeshift Shelter attacks or moves, destroy Makeshift Shelter
 				<Effect Type="IncreaseLevel" Value="1" LevelType="Might"/>
 			</Target>
 		</Trigger>
-		<Description>Whenever you use your hero ability to increase your [MIGHT] level, if there is a creature at Training Ground, increase that level by 1 more.</Description>
+		<Trigger Type="OnHeroIncreaseMightLevel" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+				<Effect Type="AddCounter" Value="1" CounterType="Fierce"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever you use your hero ability to increase your [MIGHT] level, if there is a creature at Training Ground, increase that level by 1 more and put [1:ATK] counter on the creature at Training Ground.</Description>
 	</Card>
 </Cards>

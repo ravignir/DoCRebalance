@@ -100,11 +100,14 @@ Friendly Earth creatures on the front line gain Towering and Anchored.</Descript
 	<!--....................................................................-->
 	<!-- Spells - Fire -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Type="Spell" Name="Spe_Fir_070" DisplayName="Magma Burst" School="Fire" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="788" Unique="False">
-		<Target Zone="Battleground" CardType="Unit" Amount="1" Shape="SelfAndAdjacent">
-			<Effect Type="Damage" Value="2"/>
-		</Target>
-		<Description>Deal 2 damage to target creature and all adjacent creatures.</Description>
+	<Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Fir_070" DisplayName="Magma Burst" School="Fire" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="788" Unique="False">
+        <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy">
+            <Effect Type="Damage" Value="3"/>
+        </Target>
+        <Target Zone="None" CardType="Unit" Amount="Same" Shape="AdjacentOnly">
+            <Effect Type="Damage" Value="2" />
+        </Target>
+		<Description>Deal 3 damage to target creature and 2 damage to all adjacent creatures.</Description>
 		<ExtraDescription>(Also damage friendly units.)</ExtraDescription>
 	</Card>
 	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_071" DisplayName="Mass Inner Flame" School="Fire" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="789" Unique="False">
@@ -116,24 +119,27 @@ Friendly Earth creatures on the front line gain Towering and Anchored.</Descript
 		<Description>Until your next turn:
 All creatures gain +[1:ATK] and +[1:RET].</Description>
 	</Card>
-	<Card Rarity="Rare" Type="Spell" Name="Spe_Fir_072" DisplayName="Arkath's Wrath" School="Fire" Cost="5" MightLevel="0" MagicLevel="5" DestinyLevel="0" ID="790" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Fir_072" DisplayName="Arkath's Wrath" School="Fire" Cost="5" MightLevel="0" MagicLevel="5" DestinyLevel="0" ID="790" Unique="False">
 		<Target Zone="Battleground" CardType="Unit" Amount="All">
-			<Effect Type="Damage" Value="5" DamageFlags="Spell|Fire|Magic|Disintegrate"/>
+			<Variable Type="Level" Side="Friendly" LevelType="Magic"/>
+			<Effect Type="Damage" Value="Variable" DamageFlags="Spell|Fire|Magic|Disintegrate"/>
 		</Target>
-		<Description>Deal 5 damage to all creatures. If a creature dies this way, banish it instead.</Description>
+		<Description>Deal damage to all creatures equal to your [MAGIC] level. If a creature dies this way, banish it instead.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Light -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Type="Spell" Name="Spe_Lig_070" DisplayName="Cleanse" School="Light" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="791" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Lig_070" DisplayName="Cleanse" School="Light" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="791" Unique="False">
 		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Friendly">
 			<Variable Type="CardChildrenCount" UseCurrentTarget="True" ValueModifier="2x"/>
+			<Variable2 Type="CardChildrenCount" UseCurrentTarget="True"/>
 			<Effect Type="Heal" Value="Variable"/>
+			<Effect Type="AddCounter" CounterType="Fierce" Value="Variable2"/>
 		</Target>
 		<Target Zone="Battleground" Amount="Same">
 			<Effect Type="Cleanse"/>
 		</Target>
-		<Description>Destroy all ongoing spells on target friendly creature. Heal 2 damage from that creature for each spell destroyed this way.</Description>
+		<Description>Destroy all ongoing spells on target friendly creature. Heal 2 damage from that creature for each spell destroyed this way and put +[1:ATK] counter on it for each spell destroyed this way.</Description>
 	</Card>
 	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Lig_071" DisplayName="Avenging Shield" School="Light" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="792" Unique="False">
 		<Ongoing Duration="Permanent"/>

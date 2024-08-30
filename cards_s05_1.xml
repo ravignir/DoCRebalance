@@ -57,23 +57,19 @@
 		<Description>While there is a friendly Wizard creature on the battleground, Loyal Rakshasa gains Sweep Attack.
 While Loyal Rakshasa is adjacent to a friendly Wizard creature, it gains +[2:ATK].</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_074" DisplayName="Crimson Apprentice" Faction="Academy" SubType="Magic|Shooter" Race="Human|Wizard" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="712" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Aca_074" DisplayName="Crimson Apprentice" Faction="Academy" SubType="Magic|Shooter" Race="Human|Wizard" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="712" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly">
 			<CardFilter IncludeRaces="Beastmen"/>
 			<Effect Type="ModifyAttack" Value="1"/>
-		</Target>
-		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
-			<CardFilter IncludeRaces="Beastmen"/>
 			<Effect Type="ModifyAbility" Ability="Charge"/>
 		</Target>
-		<Description>Beastman creatures adjacent to Crimson Apprentice gain +[1:ATK].
-Friendly Beastman creatures gain Charge.</Description>
+		<Description>Beastman creatures adjacent to Crimson Apprentice gain +[1:ATK] and Charge.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Haven -->
 	<!--...............................................................................-->
-	<Card Rarity="Common" Type="Unit" Name="Cre_Hav_070" DisplayName="Wolf Trainer" Faction="Haven" SubType="Melee" Race="Human|Mentor" Cost="1" MightLevel="1" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="0" HP="3" ID="713" Unique="False">
+	<Card Rarity="Common" Type="Unit" Name="Cre_Hav_070" DisplayName="Wolf Trainer" Faction="Haven" SubType="Melee" Race="Human|Mentor" Cost="1" MightLevel="1" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="1" HP="3" ID="713" Unique="False">
 		<Trigger Type="OnThisPostAttacked">
 			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
 				<Effect Type="Damage" Value="1"/>
@@ -100,17 +96,15 @@ Friendly Beastman creatures gain Charge.</Description>
     </Target>
 		<Description>Friendly Human creatures at a building gain +[1:HEALTH] and Mending.</Description>
 	</Card>
-	<Card Rarity="Common" Type="Unit" Name="Cre_Hav_074" DisplayName="Falcon Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="717" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Hav_074" DisplayName="Falcon Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="717" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Target Zone="Battleground" Amount="Self">
 			<CardFilter IncludeOccupant="True"/>
 			<Effect Type="ModifyAttack" Value="1"/>
-		</Target>
-		<Target Zone="Battleground" Amount="Self">
-			<CardFilter IncludeOccupant="True"/>
 			<Effect Type="ModifyRetaliate" Value="2"/>
+			<Effect Type="ModifyAbility" Ability="PreemptiveStrike"/>
 		</Target>
-		<Description>While Falcon Marksman is at a building, it gains +[1:ATK] and +[2:RET].</Description>
+		<Description>While Falcon Marksman is at a building, it gains Preemptive Strike, +[1:ATK] and +[2:RET].</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Inferno -->
@@ -133,7 +127,7 @@ Friendly Beastman creatures gain Charge.</Description>
 		<DescriptionRussian>Когда [THIS] выходит на поле битвы, снизьте свой уровень [MIGHT] на 1.</DescriptionRussian>
 		<DescriptionPortuguese>Quando Desova de Lava entrar no campo de batalha, diminua em 1 seu nível de [MIGHT].</DescriptionPortuguese>
 	</Card>
-	<Card Rarity="Rare" Type="Unit" Name="Cre_Inf_071" DisplayName="Thrall of Hatred" Faction="Inferno" SubType="Melee" Race="Demon" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="1" Attack="3" Retaliate="2" HP="4" ID="719" Unique="False">
+	<Card Rarity="Rare" Type="Unit" Name="Cre_Inf_071" DisplayName="Thrall of Hatred" Faction="Inferno" SubType="Melee" Race="Demon" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="1" Attack="2" Retaliate="2" HP="4" ID="719" Unique="False">
 		<Trigger Type="OnOtherUnitInGraveyard" Side="Friendly" ExecuteOncePerTransaction="True">
 			<CardFilter IncludeRaces="Demon"/>
 			<Target Zone="Hero" Amount="All" Side="Enemy">
@@ -142,7 +136,7 @@ Friendly Beastman creatures gain Charge.</Description>
 		</Trigger>
 		<Description>Whenever combat or an effect causes at least one friendly Demon to be put into a graveyard, deal 1 damage to enemy hero.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_072" DisplayName="Madcap Imp" Faction="Inferno" School="Fire" SubType="Magic|Flyer" Race="Demon|Imp" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="720" Unique="False">
+	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_072" DisplayName="Madcap Imp" Faction="Inferno" School="Fire" SubType="Magic|Flyer" Race="Demon|Imp" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="720" Unique="False">
 		<Ability Type="FireBurst" Value="3"/>
 		<Trigger Type="OnDeploy" Side="Enemy">
 			<Target Zone="BattlegroundPosition" Amount="FromTrigger"/>
@@ -166,21 +160,22 @@ Friendly Beastman creatures gain Charge.</Description>
 		</Trigger>
 		<Description>When Maniac Taskmaster enters the battleground, if you control 3 or more Demon creatures, opponent discards a card at random.</Description>
 	</Card>
-	<Card Rarity="Common" Type="Unit" Name="Cre_Inf_074" DisplayName="Swelling Breeder" Faction="Inferno" SubType="Magic|Shooter" Race="Demon|Breeder" Cost="3" MightLevel="1" MagicLevel="2" DestinyLevel="0" Attack="1" Retaliate="1" HP="6" ID="722" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Inf_074" DisplayName="Swelling Breeder" Faction="Inferno" SubType="Magic|Shooter" Race="Demon|Breeder" Cost="3" MightLevel="1" MagicLevel="2" DestinyLevel="0" Attack="1" Retaliate="1" HP="6" ID="722" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="MagicChannel" Value="1"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly">
 			<CardFilter IncludeRaces="Breeder"/>
-			<Effect Type="ModifyAbility" Ability="MagicResist"/>
+			<Effect Type="ModifyAbility" Ability="SpellResist"/>
 		</Target>
-		<Description>Adjacent friendly Breeder creatures gain Magic Resist.</Description>
+		<Description>Adjacent friendly Breeder creatures gain Spell Resist.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Necropolis -->
 	<!--...............................................................................-->
-	<Card Rarity="Common" Type="Unit" Name="Cre_Nec_070" DisplayName="Necromancer Apprentice" Faction="Necropolis" SubType="Magic|Shooter" Race="Human|Wizard" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="1" Attack="1" Retaliate="0" HP="2" ID="723" Unique="False">
+	<Card Rarity="Common" Type="Unit" Name="Cre_Nec_070" DisplayName="Necromancer Apprentice" Faction="Necropolis" SubType="Magic|Shooter" Race="Human|Wizard" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="1" Attack="0" Retaliate="0" HP="2" ID="723" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
-		<Ability Type="Leadership" Value="1"/>
+		<Ability Type="MagicChannel" Value="1"/>
+		<Ability Type="Lucky" Value="1"/>
 	</Card>
 	<Card Rarity="Common" Type="Unit" Name="Cre_Nec_071" DisplayName="Newborn Vampire" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="1" MightLevel="1" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="0" HP="3" ID="724" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
@@ -189,17 +184,18 @@ Friendly Beastman creatures gain Charge.</Description>
 	<Card Rarity="Epic" Type="Unit" Name="Cre_Nec_072" DisplayName="Putrid Dragon" Faction="Necropolis" School="Earth" SubType="Melee" Race="Zombie|Dragon" Cost="6" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="3" HP="8" ID="725" Unique="False">
 		<Ability Type="Infect" Value="2"/>
 		<Ability Type="InfectBlast" Value="2"/>
+		<Ability Type="AbsorbPoisonDamageHeal" />
 		<Target Zone="Battleground" Amount="Self">
 			<Variable Type="InPlayCounterCount" Side="Enemy" CounterType="Poison"/>
 			<Effect Type="ModifyAttack" Value="Variable"/>
 		</Target>
 		<Description>Putrid Dragon gains +[1:ATK] for each poison counter on enemy creatures.</Description>
 	</Card>
-	<Card Rarity="Rare" Type="Unit" Name="Cre_Nec_073" DisplayName="Death Lord" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="726" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Nec_073" DisplayName="Death Lord" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="726" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="LifeDrain" Value="2"/>
 		<Trigger Type="OnUnitKillUnit">
-			<CardFilter IncludeRaces="Vampire"/>
+			<CardFilter IncludeRaces="Vampire" Side="Friendly"/>
 			<Target Zone="Hero" Amount="All" Side="Friendly">
 				<Effect Type="Heal" Value="1"/>
 			</Target>
@@ -208,28 +204,33 @@ Friendly Beastman creatures gain Charge.</Description>
 			<CardFilter IncludeRaces="Vampire"/>
 			<Effect Type="ModifyAbility" Ability="AttackWeakTwice"/>
 		</Target>
-		<Description>Whenever a Vampire creature destroys a creature, heal 1 damage from your Hero.
+		<Description>Whenever a friendly Vampire creature destroys a creature, heal 1 damage from your Hero.
 Whenever a friendly Vampire creature attacks a creature with [ATK] of 1 or less for the first time in a turn, it gains an additional attack.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_074" DisplayName="Blood Ritualist" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="3" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="0" HP="5" ID="727" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Nec_074" DisplayName="Blood Ritualist" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="3" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="0" HP="5" ID="727" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Variable Type="TargetCount">
 			<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
 				<CardFilter IncludeRaces="Vampire"/>
 			</Target>
 		</Variable>
-		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly" CantTargetSelf="True">
 			<CardFilter IncludeRaces="Vampire"/>
 			<Effect Type="ModifyAbility" Ability="LifeDrain" Value="Variable"/>
 		</Target>
-		<Description>All friendly Vampire creatures gain Life Drain X, where X is equal to the number of friendly Vampire creatures on the battleground.</Description>
+		<Description>All other friendly Vampire creatures gain Life Drain X, where X is equal to the number of friendly Vampire creatures on the battleground.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_075" DisplayName="Vampire Connoisseur" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="728" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Nec_075" DisplayName="Vampire Connoisseur" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="728" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
-		<Trigger Type="OnUnitKillUnit">
-			<CardFilter IncludeRaces="Vampire"/>
-			<Target Zone="Battleground" Amount="FromTrigger">
+		<Trigger Type="OnThisKillUnit">
+			<Target Zone="Battleground" Amount="Self">
 				<Effect Type="Heal" Value="infinite"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnUnitKillUnit">
+			<CardFilter IncludeRaces="Vampire" Side="Friendly"/>
+			<Target Zone="Battleground" Amount="FromTrigger" ForceExecute="True" Persistent="True">
+				<Effect Type="ModifyAbility" Ability="CannotTarget" Duration="UntilYourNextTurn"/>
 			</Target>
 		</Trigger>
 		<Target Zone="Battleground" Amount="Self">
@@ -237,8 +238,9 @@ Whenever a friendly Vampire creature attacks a creature with [ATK] of 1 or less 
 				<CardFilter MaxAttack="True" Value="1" IncludeCardType="Unit"/>
 			</Effect>
 		</Target>
-		<Description>Whenever a Vampire creature destroys a creature, heal all damage from it.
-Whenever Vampire Connoisseur attacks a creature with [1:ATK] or less, it deals 2 more attack damage.</Description>
+		<Description>Whenever Vampire Connoisseur destroys a creature, heal all damage from it.
+Whenever Vampire Connoisseur attacks a creature with [1:ATK] or less, it deals 2 more attack damage.
+Whenever a friendly Vampire creature destroys a creature, it cannot be targeted until your next turn.</Description>
 	</Card>
 	<Card Rarity="Common" Type="Unit" Name="Cre_Nec_076" DisplayName="Grave Warden" Faction="Necropolis" SubType="Magic|Shooter" Race="Lich" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="2" HP="7" ID="729" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
@@ -252,7 +254,7 @@ Whenever Vampire Connoisseur attacks a creature with [1:ATK] or less, it deals 2
 	<!--...............................................................................-->
 	<!-- Creatures - Sanctuary -->
 	<!--...............................................................................-->
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_San_070" DisplayName="Nautilus" Faction="Sanctuary" SubType="Magic|Melee" Race="Beast" School="Water" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="0" Retaliate="1" HP="5" ID="730" Unique="False">
+	<Card Rarity="Uncommon" Type="Unit" Name="Cre_San_070" DisplayName="Nautilus" Faction="Sanctuary" SubType="Magic|Melee" Race="Beast" School="Water" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="0" Retaliate="1" HP="5" ID="730" Unique="False">
 		<Ability Type="CannotAttack"/>
 		<Target Zone="Battleground" Amount="Self">
 			<Variable Type="CardPreventedDamage"/>
@@ -264,7 +266,7 @@ Whenever Vampire Connoisseur attacks a creature with [1:ATK] or less, it deals 2
 	<Card Rarity="Common" Type="Unit" Name="Cre_San_071" DisplayName="Shark Protector" Faction="Sanctuary" SubType="Melee" Race="Beastmen" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="0" Retaliate="3" HP="5" ID="731" Unique="False">
 		<Ability Type="PreemptiveStrike"/>
 	</Card>
-	<Card Rarity="Rare" Type="Unit" Name="Cre_San_072" DisplayName="Coral Ohyaku" Faction="Sanctuary" SubType="Magic|Melee|Shooter" Race="Naga|Warrior" School="Water" Cost="3" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="1" Retaliate="2" HP="5" ID="732" Unique="False">
+	<Card Rarity="Rare" Type="Unit" Name="Cre_San_072" DisplayName="Coral Ohyaku" Faction="Sanctuary" SubType="Magic|Melee|Shooter" Race="Naga|Priest" School="Water" Cost="3" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="1" Retaliate="2" HP="5" ID="732" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="Hypnotize"/>
 		<Ability Type="ForceDeploy"/>
@@ -272,6 +274,7 @@ Whenever Vampire Connoisseur attacks a creature with [1:ATK] or less, it deals 2
 	</Card>
 	<Card Rarity="Epic" Type="Unit" Name="Cre_San_073" DisplayName="Lotus Empire Guard" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="6" MightLevel="6" MagicLevel="0" DestinyLevel="0" Attack="4" Retaliate="3" HP="8" ID="733" Unique="False">
 		<Ability Type="PreemptiveStrike"/>
+		<Ability Type="RangeReflect" Value="1"/>
 		<Target Zone="Battleground" Amount="Self">
 			<Effect Type="ModifyAbility" Ability="CannotTarget"/>
 		</Target>
@@ -305,7 +308,7 @@ While there are fewer friendly creatures than enemy creatures on the battlegroun
 	<Card Rarity="Common" Type="Unit" Name="Cre_Str_070" DisplayName="Goblin Mentor" Faction="Stronghold" SubType="Melee" Race="Goblin|Warrior" Cost="2" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="1" HP="3" ID="735" Unique="False">
 		<Ability Type="Leadership" Value="1"/>
 	</Card>
-	<Card Rarity="Epic" Type="Unit" Name="Cre_Str_071" DisplayName="Pao Warchief" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="3" HP="6" ID="736" Unique="False">
+	<Card Rarity="Epic" Type="Unit" Name="Cre_Str_071" DisplayName="Pao Warchief" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="3" HP="6" ID="736" Unique="False">
 		<Target Zone="Battleground" Amount="Self">
 			<Variable Type="Level" LevelType="Might" Side="Friendly"/>
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="9"/>
@@ -360,24 +363,25 @@ While there are fewer friendly creatures than enemy creatures on the battlegroun
 		</Trigger>
 		<Description>Whenever you use your hero ability to increase your [MIGHT] level, put 1 Enrage counter on Stormrage Hunter.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_077" DisplayName="Ancestral Champion" Faction="Stronghold" SubType="Melee" Race="Orc|Spirit" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="4" Retaliate="2" HP="5" ID="742" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Str_077" DisplayName="Ancestral Champion" Faction="Stronghold" SubType="Melee" Race="Orc|Spirit" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="4" Retaliate="3" HP="5" ID="742" Unique="False">
 		<Trigger Type="OnThisCardDeath">
 			<Target Zone="None" Side="Friendly">
-				<Effect Type="IncreaseLevel" Value="-2" LevelType="Might"/>
+				<Effect Type="IncreaseLevel" Value="-1" LevelType="Might"/>
 			</Target>
 		</Trigger>
-		<Description>When Ancestral Champion dies, decrease your [MIGHT] level by 2.</Description>
+		<Description>When Ancestral Champion dies, decrease your [MIGHT] level by 1.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Neutral -->
 	<!--...............................................................................-->
-	<Card Rarity="Common" Type="Unit" Name="Cre_Neu_070" DisplayName="Loyal Hound" Faction="Neutral" SubType="Melee" Race="Hound" Cost="1" MightLevel="1" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="1" HP="2" ID="743" Unique="False"/>
-	<Card Rarity="Common" Type="Unit" Name="Cre_Neu_071" DisplayName="Blind Seer" Faction="Neutral" SubType="Melee|Shooter" Race="Human|Seer" Cost="3" MightLevel="1" MagicLevel="0" DestinyLevel="2" Attack="1" Retaliate="1" HP="5" ID="744" Unique="False">
-		<Ability Type="ImmuneToRetaliate"/>
-		<Target Zone="Hero" Amount="All" Side="Any">
-			<Effect Type="GlobalEffect" GlobalEffectType="CantSearchLibrary"/>
-		</Target>
-		<Description>Players cannot search their library.</Description>
+	<Card Rarity="Common" Type="Unit" Name="Cre_Neu_070" DisplayName="Loyal Hound" Faction="Neutral" SubType="Melee" Race="Hound" Cost="1" MightLevel="1" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="1" ID="743" Unique="False"/>
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_071" DisplayName="Blind Seer" Faction="Neutral" SubType="Melee|Shooter" Race="Human|Seer" Cost="3" MightLevel="1" MagicLevel="0" DestinyLevel="2" Attack="1" Retaliate="1" HP="4" ID="744" Unique="False">
+        <Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
+            <Target Zone="Battleground" CardType="Fortune" Amount="1" Side="Any" Cancelable="False">
+                <Effect Type="Kill" />
+            </Target>
+        </Trigger>
+		<Description>At the beginning of your turn, destroy target ongoing fortune.</Description>
 	</Card>
 	<Card Rarity="Epic" Type="Unit" Name="Cre_Neu_072" Unique="True" DisplayName="Damran, Chosen of the Thorns" Faction="Neutral" School="Earth" SchoolsAligned="True" SubType="Magic|Melee" Race="DarkElf" Cost="6" MightLevel="4" MagicLevel="3" DestinyLevel="0" Attack="3" Retaliate="3" HP="7" ID="745">
 		<Ability Type="EarthAligned"/>
