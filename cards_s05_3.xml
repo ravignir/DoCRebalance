@@ -110,7 +110,7 @@ Friendly Earth creatures on the front line gain Towering and Anchored.</Descript
 		<Description>Deal 3 damage to target creature and 2 damage to all adjacent creatures.</Description>
 		<ExtraDescription>(Also damage friendly units.)</ExtraDescription>
 	</Card>
-	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_071" DisplayName="Mass Inner Flame" School="Fire" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="789" Unique="False">
+	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_071" DisplayName="Mass Inner Flame" School="Fire" Cost="2" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="789" Unique="False">
 		<Ongoing Duration="UntilYourNextTurn"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="All">
 			<Effect Type="ModifyAttack" Value="1"/>
@@ -170,7 +170,7 @@ Friendly creatures at buildings cannot be targeted.</Description>
 		<Description>Enchant creature. Permanent:
 Enchanted creature becomes a magic creature and gains Magic Resist.</Description>
 	</Card>
-	<Card Rarity="Common" Type="Spell" Name="Spe_Pri_071" DisplayName="Counterspell" School="Prime" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="795" Unique="False">
+	<Card Rarity="Common" Type="Spell" Name="Spe_Pri_071" DisplayName="Counterspell" School="Prime" Cost="1" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="795" Unique="False">
 		<Ongoing Duration="Permanent"/>
 		<Trigger Type="OnCardPlay">
 			<CardFilter IncludeCardType="Spell" IncludeOngoingType="Ongoing"/>
