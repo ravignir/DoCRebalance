@@ -240,14 +240,19 @@ Whenever a friendly Mercenary creature deals combat damage, gain [2:RESOURCES].<
 		</Trigger>
 		<Description>Whenever a Construct creature at Foundry dies, increase your [RESOURCES] production by 1.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Aca_081" DisplayName="Elemental Nexus" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="867">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Building" Name="Bui_Aca_081" DisplayName="Elemental Nexus" Faction="Academy" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="867">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
-			<Effect Type="ModifyAbility" Ability="AirResist"/>
-			<Effect Type="ModifyAbility" Ability="EarthResist"/>
-			<Effect Type="ModifyAbility" Ability="FireResist"/>
-			<Effect Type="ModifyAbility" Ability="WaterResist"/>
+			<Effect Type="ModifyAbility" Ability="AirWard"/>
+			<Effect Type="ModifyAbility" Ability="EarthWard"/>
+			<Effect Type="ModifyAbility" Ability="FireWard"/>
+			<Effect Type="ModifyAbility" Ability="WaterWard"/>
 		</Target>
-		<Description>Creatures at Elemental Nexus gain Air Resist, Earth Resist, Fire Resist and Water Resist.</Description>
+        <Trigger Type="OnOccupantCardDeathByDamage" DamageIncludeFlags="Combat">
+            <Target Zone="None" Amount="Self">
+                <Effect Type="Kill" />
+            </Target>
+        </Trigger>
+		<Description>Creatures at Elemental Nexus gain Air Ward, Earth Ward, Fire Ward and Water Ward. When a creature at Elemental Nexus dies form combat damage, destroy Elemental Nexus.</Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Aca_082" DisplayName="Storm Terrace" Faction="Academy" Cost="2" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="868">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
