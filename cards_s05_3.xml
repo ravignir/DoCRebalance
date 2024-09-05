@@ -195,16 +195,16 @@ Magic damage from friendly sources cannot be prevented or reduced.</Description>
 	<!--....................................................................-->
 	<!-- Spells - Water -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Type="Spell" Name="Spe_Wat_070" DisplayName="Deadly Hail" School="Water" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="797" Unique="False">
+	<Card Rarity="Common" Type="Spell" Name="Spe_Wat_070" DisplayName="Deadly Hail" School="Water" Cost="2" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="797" Unique="False">
 		<Ongoing Duration="UntilYourNextTurn"/>
 		<Trigger Type="OnPostAttack">
 			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
-				<Effect Type="Damage" Value="1"/>
+				<Effect Type="Damage" Value="2"/>
 			</Target>
 		</Trigger>
 		<Trigger Type="OnMove">
 			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
-				<Effect Type="Damage" Value="1"/>
+				<Effect Type="Damage" Value="2"/>
 			</Target>
 		</Trigger>
 		<Description>Until your next turn:
