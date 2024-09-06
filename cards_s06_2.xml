@@ -263,12 +263,17 @@ Whenever a friendly Mercenary creature deals combat damage, gain [2:RESOURCES].<
         	</Trigger>
 		<Description>Creatures at Elemental Nexus gain Air Ward, Earth Ward, Fire Ward and Water Ward. When a creature at Elemental Nexus dies form combat damage, destroy Elemental Nexus.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Aca_082" DisplayName="Storm Terrace" Faction="Academy" Cost="2" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="868">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Aca_082" DisplayName="Storm Terrace" Faction="Academy" Cost="2" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="868">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
 			<CardFilter IncludeRaces="Construct"/>
-			<Effect Type="ModifyAbility" Ability="AreaBlast" Value="2"/>
+			<Effect Type="ModifyAbility" Ability="Shockwave" Value="2"/>
 		</Target>
-		<Description>Construct creatures at Storm Terrace gain Area Blast 2.</Description>
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<CardFilter ExcludeRaces="Construct"/>
+			<Effect Type="ModifyAbility" Ability="Shockwave" Value="1"/>
+		</Target>
+		<Description>Non-construct creatures at Storm Terrace gain Shockwave 1.
+Construct creatures at Storm Terrace gain Shockwave 2.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Building - Haven -->
