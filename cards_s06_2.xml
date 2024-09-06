@@ -231,15 +231,24 @@ Whenever a friendly Mercenary creature deals combat damage, gain [2:RESOURCES].<
 	<!--....................................................................-->
 	<!-- Building - Academy -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Aca_080" DisplayName="Foundry" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="866">
-		<Trigger Type="OnOccupantCardDeath">
-			<CardFilter IncludeRaces="Construct"/>
-			<Target Zone="None" Side="Friendly">
-				<Effect Type="GainResourcesProduction" Value="1"/>
-			</Target>
-		</Trigger>
-		<Description>Whenever a Construct creature at Foundry dies, increase your [RESOURCES] production by 1.</Description>
-	</Card>
+    	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Building" Name="Bui_Aca_080" DisplayName="Foundry" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="866">
+        	<Trigger Type="OnOccupantCardDeath">
+            		<CardFilter IncludeRaces="Construct"/>
+            		<Target Zone="None" Side="Friendly">
+                		<Effect Type="GainResourcesProduction" Value="1"/>
+            		</Target>
+        	</Trigger>
+        	<Trigger Type="OnTurnBegin" Side="Friendly">
+            		<Target Zone="Hero" Amount="All" Side="Friendly" ForceExecute="True" Persistent="True">
+                		<Variable Type="OccupantCount">
+                    			<CardFilter IncludeRaces="Construct"/>
+                		</Variable>
+                		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+                		<Effect Type="ModifyAbility" Ability="FoundryEffect" Duration="UntilEndOfTurn"/>
+            		</Target>
+        	</Trigger>
+        	<Description>Whenever a Construct creature at Foundry dies, increase your [RESOURCES] production by 1. At the begning of your turn, if there is a Construct creature at Foundry, the next Construct creature card costs [1:RESOURCES] less to play this turn.</Description>
+    	</Card>
 	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Building" Name="Bui_Aca_081" DisplayName="Elemental Nexus" Faction="Academy" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="867">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
 			<Effect Type="ModifyAbility" Ability="AirWard"/>
@@ -247,11 +256,11 @@ Whenever a friendly Mercenary creature deals combat damage, gain [2:RESOURCES].<
 			<Effect Type="ModifyAbility" Ability="FireWard"/>
 			<Effect Type="ModifyAbility" Ability="WaterWard"/>
 		</Target>
-        <Trigger Type="OnOccupantCardDeathByDamage" DamageIncludeFlags="Combat">
-            <Target Zone="None" Amount="Self">
-                <Effect Type="Kill" />
-            </Target>
-        </Trigger>
+        	<Trigger Type="OnOccupantCardDeathByDamage" DamageIncludeFlags="Combat">
+            		<Target Zone="None" Amount="Self">
+                		<Effect Type="Kill" />
+            		</Target>
+        	</Trigger>
 		<Description>Creatures at Elemental Nexus gain Air Ward, Earth Ward, Fire Ward and Water Ward. When a creature at Elemental Nexus dies form combat damage, destroy Elemental Nexus.</Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Aca_082" DisplayName="Storm Terrace" Faction="Academy" Cost="2" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="868">
