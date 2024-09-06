@@ -592,4 +592,16 @@
         </Trigger>
     </TemplateEffect>
 
+    <TemplateEffect Name="FoundryEffect">
+	<Target Zone="Hero" Amount="All" Side="Friendly">
+            <Variable Type="CardPlayedCount" Side="Friendly">
+                <CardFilter IncludeRaces="Construct"/>
+            </Variable>
+            <Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+			<Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="-1">
+				<CardFilter IncludeRaces="Construct"/>
+			</Effect>
+	</Target>
+    </TemplateEffect>
+
 </Cards>
