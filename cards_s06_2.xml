@@ -374,16 +374,12 @@ Whenever a creature at Fountain of Rejuvenation dies from combat damage, return 
 	<!--....................................................................-->
 	<!-- Building - Stronghold -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Str_080" DisplayName="Bloodpact Crucible" Faction="Stronghold" Cost="1" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="876">
-		<Trigger Type="OnTurnEnd" Side="Friendly">
-			<Target Zone="Battleground" Amount="Occupant">
-				<CardFilter IncludeAbility="Bloodthirst"/>
-				<Variable Type="UnitAttackCount" UseCurrentTarget="True"/>
-				<Condition Operator="EqualTo" ValueA="Variable" ValueB="0"/>
-				<Effect Type="AddCounter" CounterType="Enrage" Value="1"/>
-			</Target>
-		</Trigger>
-		<Description>At the end of your turn, if a creature with Bloodthirst is at Bloodpact Crucible and it didn't attack this turn, put 1 Enrage counter on that creature.</Description>
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Building" Name="Bui_Str_080" DisplayName="Bloodpact Crucible" Faction="Stronghold" Cost="1" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="876">
+		<Target Zone="Battleground" Amount="Occupant">
+			<CardFilter IncludeAbility="Bloodthirst"/>
+			<Effect Type="ModifyAbility" Ability="Bloodthirst" Value="1"/>
+		</Target>
+		<Description>Creatures with Bloodthirst at Bloodpact Crucible gain Bloodthirst 1.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Building - Neutral -->
