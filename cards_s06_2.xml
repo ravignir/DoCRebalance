@@ -318,11 +318,11 @@ Construct creatures at Storm Terrace gain Shockwave 2.</Description>
 		</Trigger>
 		<Description>When Recycling Chamber enters the battleground or when a friendly non-token Demon dies, deploy a Breeder melee-shooter token creature with [1:ATK]/[0:RET]/[1:HEALTH] and Stackable at Recycling Chamber if possible.</Description>
 	</Card>
-	<Card  Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Inf_081" DisplayName="Spawning Chamber" Faction="Inferno" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="872">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Inf_081" DisplayName="Spawning Chamber" Faction="Inferno" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="872">
 		<Variable Type="OccupantCount">
 			<CardFilter IncludeRaces="Breeder" IncludeAbility="Stackable"/>
 		</Variable>
-		<Trigger Type="OnTurnEnd" Side="Friendly">
+		<Trigger Type="OnTurnBegin" Side="Friendly">
 			<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
 				<Variable2 Type="CardStackSize" UseCurrentTarget="True"/>
 				<Condition Operator="And" ValueA="Condition" ValueB="Condition">
@@ -332,8 +332,7 @@ Construct creatures at Storm Terrace gain Shockwave 2.</Description>
 				<Effect Type="IncreaseStackSize" Value="Variable2"/>
 			</Target>
 		</Trigger>
-		<Description>At the end of your turn, if there is a Breeder stack with 10 or less size at Spawning Chamber, double its stack size.</Description>
-		<DescriptionChinese>当回合结束时，如果有叠数不大于10的巢魔堆叠处于产卵腔，其叠数翻倍。</DescriptionChinese>
+		<Description>At the beginning of your turn, if there is a Breeder stack with 10 or less size at Spawning Chamber, double its stack size.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Building - Necropolis -->
