@@ -143,14 +143,20 @@
 	<!--...............................................................................-->
 	<!-- Creatures - Inferno -->
 	<!--...............................................................................-->
-	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Inf_080" DisplayName="Channeling Breeder" Faction="Inferno" SubType="Magic|Melee" Race="Demon|Breeder" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="819">
-		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Inf_080" DisplayName="Channeling Breeder" Faction="Inferno" SubType="Magic|Melee" Race="Demon|Breeder" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="819">
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" Shape="AdjacentOnly">
+			<CardFilter IncludeRaces="Breeder" IncludeAbility="Stackable"/>
+			<Variable Type="CardStackSize" UseCurrentTarget="True"/>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+		</Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" Shape="AdjacentOnly">
 			<CardFilter IncludeRaces="Breeder" IncludeAbility="Stackable"/>
 			<Variable Type="CardStackSize" UseCurrentTarget="True"/>
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="3"/>
-			<Effect Type="ModifyAttack" Value="4"/>
+			<Effect Type="ModifyAttack" Value="3"/>
 		</Target>
-		<Description>All friendly Breeder stack with a size of 4 or more gain +[4:ATK].</Description>
+		<Description>Adjacent friendly Breeder stacks with a size of 2 or more gain +[1:ATK], and if their size is greater than 3, they gain additional +[3:ATK].</Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Inf_081" DisplayName="Osmotic Breeder" Faction="Inferno" SubType="Magic|Melee|Shooter" Race="Demon|Breeder" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="820">
 		<Variable Type="CardPlayedCount">
