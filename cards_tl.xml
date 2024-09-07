@@ -516,7 +516,7 @@
             <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
 				<Variable Type="UnitAttackCount"/>
 					<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
-				<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="1"/>
+				<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="1="/>
             </Target>
         </Trigger>
 		<Trigger Type="OnThisPostAttack">
