@@ -536,27 +536,17 @@
 
     <TemplateEffect Name="Turtling">
         <Trigger Type="OnTurnEnd" Side="Friendly">
-            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
-				<Variable Type="AbilityValue" Ability="Turtling" UseCurrentTarget="True" />
-				<Variable2 Type="AbilityValue" Ability="Turtling" UseCurrentTarget="True" ValueModifier="1" />				
-				<Variable3 Type="UnitAttackCount" />
-				<Condition Operator="And" ValueA="Condition" ValueB="Condition">
-					<Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
-					<Condition Operator="LesserThan" ValueA="Variable3" ValueB="1" />
-				</Condition>
-				<Effect Type="ModifyAbilityValue" Ability="Turtling" Value="Variable2" />
+            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">				
+				<Variable Type="UnitAttackCount" />
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
+				<Effect Type="ModifyAbilityValue" Ability="Turtling" Value="1=" />
             </Target>
         </Trigger>
         <Trigger Type="OnTurnEnd" Side="Friendly">
-            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
-				<Variable Type="AbilityValue" Ability="Turtling" UseCurrentTarget="True" />
-				<Variable2 Type="AbilityValue" Ability="Turtling" UseCurrentTarget="True" ValueModifier="-1.0x" />				
-				<Variable3 Type="UnitAttackCount" />
-				<Condition Operator="And" ValueA="Condition" ValueB="Condition">
-					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
-					<Condition Operator="GreaterThan" ValueA="Variable3" ValueB="0" />
-				</Condition>
-				<Effect Type="ModifyAbilityValue" Ability="Turtling" Value="Variable2" />
+            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">			
+				<Variable Type="UnitAttackCount" />
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+				<Effect Type="ModifyAbilityValue" Ability="Turtling" Value="0=" />
             </Target>
         </Trigger>
 		<Target Zone="Battleground" Amount="Self" Side="Friendly" ForceExecute="False" Persistent="False">
