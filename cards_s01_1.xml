@@ -263,7 +263,7 @@
     </Card>
     <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_021" DisplayName="Black Vulture" Faction="Neutral" SubType="Flyer" Race="Bird" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="2" ID="281">
         <Variable Type="DeadCardLastTurnCount" Side="Enemy">
-            <CardFilter Side="Friendly" />
+            <CardFilter Side="Friendly" IncludeCardType="Unit" />
         </Variable>        
         <Trigger Type="OnTurnBegin" Side="Friendly">    
                 <Target Zone="Battleground" CardType="Unit" Amount="Self" ForceExecute="True">
