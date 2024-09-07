@@ -187,7 +187,7 @@
 		</Trigger>
 		<Description>Whenever a spell from a school other than Dark or Fire is played, deal 1 damage to that spell's controller's Hero.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Inf_083" DisplayName="Breeder Matron" Faction="Inferno" SubType="Magic|Melee" Race="Demon|Breeder" Cost="5" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="0" Retaliate="2" HP="8" ID="822">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Unit" Name="Cre_Inf_083" DisplayName="Breeder Matron" Faction="Inferno" SubType="Magic|Melee" Race="Demon|Breeder" Cost="5" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="1" Retaliate="0" HP="8" ID="822">
 		<Variable Type="TargetCount">
 			<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
 				<CardFilter IncludeRaces="Breeder"/>
@@ -196,7 +196,10 @@
 		<Target Zone="Battleground" Amount="Self">
 			<Effect Type="ModifyAttack" Value="Variable"/>
 		</Target>
-		<Description>Breeder Matron's [ATK] is equal to the number of friendly battleground positions with at least one Breeder.</Description>
+		<Target Zone="Battleground" Amount="Self">
+			<Effect Type="ModifyRetaliate" Value="Variable"/>
+		</Target>
+		<Description>Breeder Matron gains +[1:ATK] and +[1:RET] for each friendly battleground positions with at least one Breeder.</Description>
 	</Card>
 	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Inf_084" DisplayName="Hatching Breeder" Faction="Inferno" SubType="Magic|Melee|Shooter" Race="Demon|Breeder" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="0" HP="3" ID="823">
 		<Trigger Type="OnThisCardDeath">
