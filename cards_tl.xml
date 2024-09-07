@@ -515,23 +515,23 @@
         <Trigger Type="OnTurnEnd" Side="Friendly">
             <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
 				<Variable Type="UnitAttackCount"/>
-					<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
 				<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="1="/>
             </Target>
         </Trigger>
-		<Trigger Type="OnThisPostAttack">
-			<Target Zone="Battleground" Amount="Self">
-				<Variable Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True"/>
-				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-				<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="0="/>
-			</Target>
-		</Trigger>
-		<Target Zone="Battleground" Amount="Self" Side="Friendly" ForceExecute="False" Persistent="False">
-			<Variable Type="AbilityValue" Ability="BattleDive"/>
+	<Trigger Type="OnThisPostAttack">
+		<Target Zone="Battleground" Amount="Self">
+			<Variable Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True"/>
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-				<Effect Type="ModifyAbility" Ability="AttackAnywhere" OwnerAbility="BattleDive"/>
-				<Effect Type="ModifyAttack" Value="2" OwnerAbility="BattleDive"/>
+			<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="0="/>
 		</Target>
+	</Trigger>
+	<Target Zone="Battleground" Amount="Self" Side="Friendly" ForceExecute="False" Persistent="False">
+		<Variable Type="AbilityValue" Ability="BattleDive"/>
+		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Effect Type="ModifyAbility" Ability="AttackAnywhere" OwnerAbility="BattleDive"/>
+			<Effect Type="ModifyAttack" Value="2" OwnerAbility="BattleDive"/>
+	</Target>
     </TemplateEffect>
 
     <TemplateEffect Name="Turtling">
