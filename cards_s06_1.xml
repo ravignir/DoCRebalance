@@ -346,14 +346,14 @@
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
 			<Effect Type="ModifyAbility" Ability="Charge"/>
 		</Target>
-        	<Trigger Type="OnThisPostDeadlyCombat">
+        	<Trigger Type="OnThisKillUnit">
 			<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
 			<CardFilter IncludeAbility="Bloodthirst"/>
 				<Effect Type="AddCounter" CounterType="Enrage" Value="1"/>
 			</Target>
         	</Trigger>
 		<Description>While there are 3 or more Enrage counters on Bloodtiger Warrior, it gains Charge.
-Whenever Bloodtiger Warrior attacks and destroys a creature, put 1 Enrage counter on all other friendly creatures with Bloodthirst.</Description>
+Whenever Bloodtiger Warrior destroys a creature, put 1 Enrage counter on all other friendly creatures with Bloodthirst.</Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Str_085" DisplayName="Bloodhydra Shaman" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="5" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="839">
 		<Ability Type="ImmuneToRetaliate"/>
