@@ -365,15 +365,20 @@
 		</Trigger>
 		<Description>When Bloodshark Warrior dies, if there are 3 or more Enrage counters on it, put 1 Enrage counter on all friendly creatures with Bloodthirst.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Str_087" DisplayName="Bloodmask Shaman" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="841">
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Str_087" DisplayName="Bloodmask Shaman" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="841">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="Bloodthirst" Value="1"/>
+		<Ability Type="Bloodmask" Value="0"/>
+		<Variable Type="AbilityValue" Ability="Bloodmask"/>
 		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
-			<Variable Type="CounterCount" CounterType="Enrage" UseCurrentTarget="True"/>
-			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
-			<Effect Type="ModifyAbility" Ability="CannotTarget"/>
+			<Variable2 Type="CounterCount" CounterType="Enrage" UseCurrentTarget="True"/>
+                		<Condition Operator="And" ValueA="Condition" ValueB="Condition">
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+                    			<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="2"/>
+                		</Condition>
+				<Effect Type="ModifyAbility" Ability="CannotTarget"/>
 		</Target>
-		<Description>Friendly creatures with 3 or more Enrage counters cannot be targeted.</Description>
+		<Description>During opponent's turn, friendly creatures with 3 or more Enrage counters cannot be targeted.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Neutral -->
