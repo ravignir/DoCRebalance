@@ -339,14 +339,21 @@
 		</Trigger>
 		<Description>The first time an Enrage counter is put on Bloodsnake Shaman in a turn, it deals 1 damage to all enemy creatures on the same row.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_084" DisplayName="Bloodtiger Warrior" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="838">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_084" DisplayName="Bloodtiger Warrior" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="838">
 		<Ability Type="Bloodthirst" Value="1"/>
 		<Target Zone="Battleground" Amount="Self">
 			<Variable Type="CounterCount" CounterType="Enrage"/>
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
 			<Effect Type="ModifyAbility" Ability="Charge"/>
 		</Target>
-		<Description>While there are 3 or more enrage counters on Bloodtiger Warrior, it gains Charge.</Description>
+        	<Trigger Type="OnThisPostDeadlyCombat">
+			<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<CardFilter IncludeAbility="Bloodthirst"/>
+				<Effect Type="AddCounter" CounterType="Enrage" Value="1"/>
+			</Target>
+        	</Trigger>
+		<Description>While there are 3 or more Enrage counters on Bloodtiger Warrior, it gains Charge.
+Whenever Bloodtiger Warrior attacks and destroys a creature, put 1 Enrage counter on all other friendly creatures with Bloodthirst.</Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Str_085" DisplayName="Bloodhydra Shaman" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="5" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="839">
 		<Ability Type="ImmuneToRetaliate"/>
