@@ -9,12 +9,15 @@
 	<!--....................................................................-->
 	<!-- Fortune - Academy -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Aca_080" DisplayName="Solder" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="848">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Fortune" Name="For_Aca_080" DisplayName="Solder" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="848">
 		<Target Zone="Graveyard" Side="Friendly" Amount="1" CardType="Unit">
 			<CardFilter IncludeRaces="Construct"/>
 			<Effect Type="MoveCardTo" Destination="Hand"/>
 		</Target>
-		<Description>Take target Construct creature card from your graveyard and put it into your hand.</Description>
+        	<Target Zone="None" Amount="Same" ForceExecute="True" Persistent="True">
+            		<Effect Type="ModifyCost" Value="-2" Duration="UntilEndOfTurn" />
+        	</Target>
+		<Description>Take target Construct creature card from your graveyard and put it into your hand. Until end of turn, this creature costs 2 less to play.</Description>
 	</Card>
 	<Card Rarity="Epic" Unique="True" Type="Fortune" Name="For_Aca_081" DisplayName="Titan Workforce" Faction="Academy" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="849">
 		<Ongoing Duration="Permanent"/>
