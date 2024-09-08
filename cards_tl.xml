@@ -588,4 +588,17 @@
 	</Target>
     </TemplateEffect>
 
+    <TemplateEffect Name="Bloodmask">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+            		<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+				<Effect Type="ModifyAbilityValue" Ability="Bloodmask" Value="1=" />
+            		</Target>
+        	</Trigger>
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+            		<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+				<Effect Type="ModifyAbilityValue" Ability="Bloodmask" Value="0=" />
+            		</Target>
+        	</Trigger>
+    </TemplateEffect>
+
 </Cards>
