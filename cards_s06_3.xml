@@ -24,15 +24,16 @@
 		<Description>Permanent:
 All creatures gain Swift.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Air_082" DisplayName="Wind Wall" School="Air" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="881">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Spell" Name="Spe_Air_082" DisplayName="Wind Wall" School="Air" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="881">
 		<Ongoing Duration="UntilYourNextTurn"/>
-		<Target Zone="Battleground" CardType="Unit" Amount="All">
-			<CardFilter IncludeUnitType="Shooter"/>
-			<Effect Type="ModifyAttack" Value="0.5xd"/>
-			<Effect Type="ModifyRetaliate" Value="0.5xd"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+			<Effect Type="ModifyAbility" Ability="AreaRangeReflect"/>
 		</Target>
-		<Description>Until your next turn:
-[ATK] and [RET] value of shooter creatures is halved, rounded down.</Description>
+		<Target Zone="None" Amount="Same">
+			<Effect Type="ModifyAbility" Ability="RangeReflect" Value="2"/>
+		</Target>
+		<Description>Enchant Creature. Until your next turn:
+Enchanted creature and all adjacent creatures gain Range Reflect 2.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Dark -->
