@@ -27,7 +27,7 @@ All creatures gain Swift.</Description>
 	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Spell" Name="Spe_Air_082" DisplayName="Wind Wall" School="Air" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="881">
 		<Ongoing Duration="UntilYourNextTurn"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="1">
-			<Effect Type="ModifyAbility" Ability="AreaRangeReflect"/>
+			<Effect Type="ModifyAbility" Ability="WindWallEffect"/>
 		</Target>
 		<Target Zone="None" Amount="Same">
 			<Effect Type="ModifyAbility" Ability="RangeReflect" Value="2"/>
