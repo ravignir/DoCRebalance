@@ -606,5 +606,13 @@
             <Effect Type="ModifyAbility" Ability="RangeReflect" Value="2" OwnerAbility="WindWallEffect"/>
         </Target>
     </TemplateEffect>
+	
+    <TemplateEffect Name="ExtraDD">
+	<Trigger Type="OnThisPostDeadlyCombat">
+            <Target Zone="Hero" Amount="All" Side="Enemy">
+                <Effect Type="Damage" Value="1" />
+            </Target>
+	</Trigger>
+    </TemplateEffect>
 
 </Cards>
