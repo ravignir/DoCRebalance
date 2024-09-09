@@ -88,21 +88,17 @@ At the beginning of opponent's turn, put 1 crippling counter on an enemy creatur
 		</Target>
 		<Description>Double the number of poison counters on all creatures.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Ear_082" DisplayName="Nature's Revenge" School="Earth" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="887">
-		<Variable Type="TargetCount">
-			<Target Zone="Battleground" CardType="Unit" Amount="All"/>
-		</Variable>
-		<Ongoing Duration="FromCondition">
-			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-		</Ongoing>
-		<Trigger Type="OnTurnBegin">
-			<Target Zone="Battleground" Amount="All" CardType="Unit">
-				<CardFilter IncludeOccupant="True"/>
-				<Effect Type="Damage" Value="2"/>
-			</Target>
-		</Trigger>
-		<Description>Permanent:
-At the beginning of each player's turn, deal 2 damage to all creatures at a building. When there are no creatures on the battleground, destroy Nature's Revenge.</Description>
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Ear_082" DisplayName="Nature's Revenge" School="Earth" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="887">
+		<Target Zone="Battleground" CardType="Unit" Amount="All">
+			<CardFilter IncludeOccupant="True"/>
+			<Effect Type="Damage" Value="2"/>
+			<Subgroup>
+				<Target Zone="Battleground" CardType="Building" Amount="All">
+					<Effect Type="Kill"/>
+				</Target>
+			</Subgroup>
+		</Target>
+		<Description>Deal 2 damage to all creatures at a building then destroy all buildings.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Fire -->
