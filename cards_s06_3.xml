@@ -112,13 +112,14 @@ At the beginning of opponent's turn, put 1 crippling counter on an enemy creatur
 		</Target>
 		<Description>Deal 3 damage to target creature and deal 2 damage to another target creature.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Fir_081" DisplayName="Collateral Damage" School="Fire" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="889">
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Fir_081" DisplayName="Collateral Damage" School="Fire" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="889">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="1" CardType="Unit">
 			<Effect Type="ModifyAbility" Ability="Tremple"/>
+			<Effect Type="ModifyAbility" Ability="ExtraDD"/>
 		</Target>
 		<Description>Enchant Creature. Permanent:
-Whenever enchanted creature attacks and destroys a creature, overkill damage is redirected to enemy Hero.</Description>
+Whenever enchanted creature attacks and destroys a creature, deal 1 damage and redirect any overkill damage to enemy Hero.</Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Fir_082" DisplayName="Ragefire" School="Fire" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="890">
 		<Ongoing Duration="Permanent"/>
