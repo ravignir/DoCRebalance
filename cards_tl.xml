@@ -601,4 +601,10 @@
         	</Trigger>
     </TemplateEffect>
 
+    <TemplateEffect Name="AreaRangeReflect">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly">
+            <Effect Type="ModifyAbility" Ability="RangeReflect" Value="2" OwnerAbility="AreaRangeReflect"/>
+        </Target>
+    </TemplateEffect>
+
 </Cards>
