@@ -601,9 +601,9 @@
         	</Trigger>
     </TemplateEffect>
 
-    <TemplateEffect Name="AreaRangeReflect">
+    <TemplateEffect Name="WindWallEffect">
         <Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly">
-            <Effect Type="ModifyAbility" Ability="RangeReflect" Value="2" OwnerAbility="AreaRangeReflect"/>
+            <Effect Type="ModifyAbility" Ability="RangeReflect" Value="2" OwnerAbility="WindWallEffect"/>
         </Target>
     </TemplateEffect>
 
