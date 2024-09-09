@@ -121,15 +121,15 @@ At the beginning of opponent's turn, put 1 crippling counter on an enemy creatur
 		<Description>Enchant Creature. Permanent:
 Whenever enchanted creature attacks and destroys a creature, deal 1 damage and redirect any overkill damage to enemy Hero.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Fir_082" DisplayName="Ragefire" School="Fire" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="890">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Fir_082" DisplayName="Ragefire" School="Fire" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="890">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
 			<CardFilter IncludeSchool="Fire"/>
-			<Effect Type="ModifyAbility" Ability="AreaBlast" Value="3"/>
+			<Effect Type="ModifyAbility" Ability="AreaBlast" Value="2"/>
 			<Effect Type="ModifyAttack" Value="1"/>
 		</Target>
 		<Description>Permanent:
-Friendly Fire creatures gain Area Blast 3 and +[1:ATK].</Description>
+Friendly Fire creatures gain Area Blast 2 and +[1:ATK].</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Light -->
