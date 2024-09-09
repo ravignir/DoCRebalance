@@ -38,7 +38,7 @@ Enchanted creature and all adjacent creatures gain Range Reflect 2.</Description
 	<!--....................................................................-->
 	<!-- Spells - Dark -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Dar_080" DisplayName="Cheap Death" School="Dark" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="882">
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Dar_080" DisplayName="Cheap Death" School="Dark" Cost="2" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="882">
 		<Target Zone="Battleground" CardType="Unit" Amount="1">
 			<Variable Type="CardAttack" UseCurrentTarget="True"/>
 			<Condition Operator="LesserThan" ValueA="Variable" ValueB="2"/>
