@@ -103,11 +103,14 @@ At the beginning of opponent's turn, put 1 crippling counter on an enemy creatur
 	<!--....................................................................-->
 	<!-- Spells - Fire -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Fir_080" DisplayName="Forked Firebolt" School="Fire" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="888">
-		<Target Zone="Battleground" Amount="2" CardType="Unit">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Spell" Name="Spe_Fir_080" DisplayName="Forked Firebolt" School="Fire" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="888">
+		<Target Zone="Battleground" Amount="1" CardType="Unit">
+			<Effect Type="Damage" Value="3"/>
+		</Target>
+		<Target Zone="Battleground" Amount="1" CardType="Unit" CantTargetPrevious="True">
 			<Effect Type="Damage" Value="2"/>
 		</Target>
-		<Description>Deal 2 damage to 2 target creatures.</Description>
+		<Description>Deal 3 damage to target creature and deal 2 damage to another target creature.</Description>
 	</Card>
 	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Fir_081" DisplayName="Collateral Damage" School="Fire" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="889">
 		<Ongoing Duration="Permanent"/>
