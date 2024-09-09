@@ -147,8 +147,14 @@
         <Ability Type="AreaBlast" Value="2" />
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Inf_012" DisplayName="Juggernaut" Faction="Inferno" SubType="Melee" Race="Demon|Juggernaut" Cost="3" MightLevel="3" Attack="4" Retaliate="3" HP="4" ID="27" />
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_015" DisplayName="Pit Fiend" Faction="Inferno" SubType="Melee" Race="Demon" Cost="4" MightLevel="4" Attack="3" Retaliate="2" HP="5" ID="28" School="Dark">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Inf_015" DisplayName="Pit Fiend" Faction="Inferno" SubType="Melee" Race="Demon" Cost="4" MightLevel="4" Attack="3" Retaliate="2" HP="5" ID="28" School="Dark">
         <Ability Type="AttackAnywhere" />
+		<Trigger Type="OnThisDamageUnit" Side="Enemy">
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger" ForceExecute="True" Persistent="True">
+				<Effect Type="PlayEffect" PlayEffectType="CannotHeal" Duration="UntilYourNextTurn"/>
+			</Target>
+		</Trigger>
+		<Description>When Pit Fiend deals damage to a creature, that creature cannot be healed until your next turn.</Description>
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Inf_014" DisplayName="Demented" Faction="Inferno" SubType="Melee" Race="Demon|Maniac" Cost="2" MightLevel="2" Attack="2" Retaliate="0" HP="3" ID="29">
         <Ability Type="ImmuneToRetaliate" />
