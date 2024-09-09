@@ -19,17 +19,31 @@
         	</Target>
 		<Description>Take target Construct creature card from your graveyard and put it into your hand. Until end of turn, this creature costs 2 less to play.</Description>
 	</Card>
-	<Card Rarity="Epic" Unique="True" Type="Fortune" Name="For_Aca_081" DisplayName="Titan Workforce" Faction="Academy" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="849">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="True" Type="Fortune" Name="For_Aca_081" DisplayName="Titan Workforce" Faction="Academy" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="3" ID="849">
 		<Ongoing Duration="Permanent"/>
 		<Variable Type="DeadCardThisTurnCount" Side="Any">
 			<CardFilter IncludeRaces="Construct" Side="Friendly"/>
 		</Variable>
+		<Variable2 Type="TargetCount">
+			<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+				<CardFilter IncludeRaces="Construct"/>
+			</Target>
+		</Variable2>
 		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
 			<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
 			<CardFilter IncludeRaces="Construct"/>
 			<Effect Type="PlayEffect" PlayEffectType="BounceOnDie"/>
 		</Target>
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+			<Effect Type="ModifyResourcesProduction" Value="Variable2"/>
+		</Target>
+		<!-- The following target is necessary to display the right value in the Income icon. -->
+		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+			<CardFilter IncludeRaces="Construct"/>
+			<Effect Type="ModifyAbility" Ability="Income" Value="1"/>
+		</Target>
 		<Description>Permanent:
+All friendly Construct creatures gain Income 1.
 The first time that one or more friendly Construct dies in a turn, return them to their owner's hand instead.</Description>
 	</Card>
 	<!--....................................................................-->
