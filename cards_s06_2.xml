@@ -26,7 +26,7 @@
 		</Variable>
 		<Variable2 Type="TargetCount">
 			<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
-				<CardFilter IncludeRaces="Construct"/>
+				<CardFilter IncludeRaces="Titan"/>
 			</Target>
 		</Variable2>
 		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
@@ -39,11 +39,11 @@
 		</Target>
 		<!-- The following target is necessary to display the right value in the Income icon. -->
 		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
-			<CardFilter IncludeRaces="Construct"/>
+			<CardFilter IncludeRaces="Titan"/>
 			<Effect Type="ModifyAbility" Ability="Income" Value="1"/>
 		</Target>
 		<Description>Permanent:
-All friendly Construct creatures gain Income 1.
+All friendly Titan creatures gain Income 1.
 The first time that one or more friendly Construct dies in a turn, return them to their owner's hand instead.</Description>
 	</Card>
 	<!--....................................................................-->
