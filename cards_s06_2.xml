@@ -155,15 +155,15 @@ At the beginning of your turn, deploy 2 Skeleton melee-shooter token creature wi
 		<Description>Permanent:
 Whenever a friendly Spy deals combat damage to enemy Hero, increase your [RESOURCES] production by 1.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_San_081" DisplayName="What Lies Below" Faction="Sanctuary" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="860">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Fortune" Name="For_San_081" DisplayName="What Lies Below" Faction="Sanctuary" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="860">
 		<Ongoing Duration="UntilYourNextTurn"/>
 		<Trigger Type="OnTurnBegin" Side="Enemy">
 			<Target Zone="Battleground" Amount="1" Side="Enemy" CardType="Unit" Cancelable="False">
-				<Effect Type="MoveCardTo" Destination="Hand"/>
+				<Effect Type="MoveCardTo" Destination="Library" Shuffle="True"/>
 			</Target>
 		</Trigger>
 		<Description>Until your next turn:
-At the beginning of opponent's turn, they must choose one creature they control and return it to its owner's hand.</Description>
+At the beginning of opponent's turn, they must choose one creature they control and shuffle it to its owner's library.</Description>
 	</Card>
 	<Card Rarity="Epic" Unique="True" Type="Fortune" Name="For_San_082" DisplayName="Dark Lotus Pond" Faction="Sanctuary" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="861">
 		<Variable Type="CardInHandCount" Side="Enemy"/>
