@@ -245,19 +245,27 @@ At beginning of your turn, move 1 crippling counter from Skeleton Servant to tar
 		</Trigger>
 		<Description>When a creature with a crippling counter dies, put a +[1:ATK] counter on Eternal Mentor.</Description>
 	</Card>
-	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_096" DisplayName="Eternal Archon" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="3" HP="8" ID="932" School="Dark">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_096" DisplayName="Eternal Archon" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="3" HP="8" ID="932" School="Dark">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="Crippling" Value="1"/>
+		<Ability Type="LifeDrain" Value="2" />
 		<Variable Type="TargetCount">
-			<Target Zone="Battleground" Amount="All" CardType="Unit">
+			<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Enemy">
 				<Variable2 Type="CounterCount" CounterType="Crippling" UseCurrentTarget="True"/>
 				<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0"/>
 			</Target>
 		</Variable>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Enemy">
+			<Variable Type="CounterCount" CounterType="Crippling" UseCurrentTarget="True"/>
+			<Variable2 Type="BaseCardCost" UseCurrentTarget="True"/>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="Variable2"/>
+			<Effect Type="ModifyAbility" Ability="Phased"/>
+		</Target>
 		<Target Zone="Battleground" Amount="Self">
 			<Effect Type="ModifyAttack" Value="Variable"/>
 		</Target>
-		<Description>Eternal Archon gains +[1:ATK] for each creatures with at least 1 crippling counter.</Description>
+		<Description>Eternal Archon gains +[1:ATK] for each enemy creature with at least 1 crippling counter.
+If the number of crippling counters on an enemy creature is greater than its cost, that creature gains Phased.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Sanctuary -->
