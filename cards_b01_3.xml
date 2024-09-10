@@ -82,8 +82,9 @@ When a creature is deployed, moves into, or is relocated to enchanted row, deal 
 At the beginning of each player's turn, deal 1 damage to all creatures. When there are no creatures on the battleground, destroy Immolation.</Description>
         <ExtraDescription>(Also damage friendly units.)</ExtraDescription>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Fir_006" DisplayName="Fire Shield" School="Fire" Cost="2" MagicLevel="2" ID="186">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Fir_006" DisplayName="Fire Shield" School="Fire" Cost="2" MagicLevel="2" ID="186">
         <Ongoing Duration="Permanent" />
+		<ModifyAbility Ability="FireResist"
         <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1" />
         <Trigger Type="OnEnchantedDamaged" DamageIncludeFlags="Attack">
@@ -92,7 +93,7 @@ At the beginning of each player's turn, deal 1 damage to all creatures. When the
             </Target>
         </Trigger>
         <Description>Enchant creature. Permanent:
-Whenever enchanted creature is attacked and dealt damage, Fire Shield deals the same amount of damage to the attacking creature.</Description>
+Enchanted creature gains Fire Resist. Whenever enchanted creature is attacked and dealt damage, Fire Shield deals the same amount of damage to the attacking creature.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_007" DisplayName="Frenzy" School="Fire" Cost="2" MagicLevel="2" ID="187">
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" />
@@ -168,13 +169,14 @@ Enemy shooter and flyer creatures gain Cannot Attack.</Description>
 Creatures on enchanted line gain Cannot Attack.
 When Cyclone enters the battleground, deal 1 damage to all creatures on enchanted line.</Description>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Air_011" DisplayName="Wind Shield" School="Air" Cost="1" MagicLevel="1" ID="195">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Air_011" DisplayName="Wind Shield" School="Air" Cost="1" MagicLevel="1" ID="195">
         <Ongoing Duration="Permanent" />
-        <Target Zone="Battleground" CardType="Unit" Amount="1">
+        <Target Zone="BattlegroundColumn" Amount="1">
+            <CardType Include="Unit" />
             <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Shooter" />
         </Target>
-        <Description>Enchant creature. Permanent:
-Combat damage dealt to enchanted creature by shooter creatures is halved, rounded down.</Description>
+        <Description>Enchant line. Permanent:
+Combat damage dealt to creatures on enchanted line by shooter creatures is halved, rounded down.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Air_006" DisplayName="Grounded" School="Air" Cost="2" MagicLevel="2" ID="196">
         <Target Zone="Battleground" CardType="Unit" Amount="All">
@@ -268,7 +270,7 @@ Enchanted creature gains +[1:ATK].</Description>
         <Description>Deal 3 damage to target creature and all adjacent creatures.</Description>
         <ExtraDescription>(Also damage friendly units.)</ExtraDescription>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Wat_008" DisplayName="Icy Weapon" School="Water" Cost="4" MagicLevel="4" ID="206">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Wat_008" DisplayName="Icy Weapon" School="Water" Cost="4" MagicLevel="3" ID="206">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAttack" Value="3" />
@@ -539,18 +541,25 @@ Heal all damage from all friendly creatures.</Description>
         </Target>
         <Description>Deal 3 damage to all creatures on target row.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Lig_006" DisplayName="Martyr" School="Light" Cost="3" MagicLevel="3" ID="233">
-        <Ongoing Duration="UntilDamagedAbsorbedAtEndOfTurn" SuicideParent="True" />
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Lig_006" DisplayName="Martyr" School="Light" Cost="3" MagicLevel="3" ID="233">
+        <Ongoing Duration="UntilDamagedAbsorbedAtEndOfTurn" />
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly">
           <Effect Type="ModifyAbility" Ability="Anchored" />
         </Target>
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
             <Effect Type="ModifyDamage" Value="0.0x" Side="Enemy" DamageIncludeFlags="All" />
         </Target>
+		<Trigger Type="OnThisDetach" >
+		<CardFilter SameGPID="True"/>
+            <Target Zone="Battleground" Amount="Parent">
+                <Effect Type="Banish"/>
+            </Target>
+        </Trigger>
         <Description>Enchant friendly creature. Permanent:
 Enchanted creature gains Anchored.
 Prevent all damage dealt to friendly creatures from sources you don't control.
-At end of turn, if damage was prevented in this way this turn, destroy enchanted creature.</Description>
+When Martyr leaves the battleground, banish enchanted creature.
+At end of turn, if damage was prevented in this way this turn, destroy Martyr.</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Spells - Prime -->
@@ -727,14 +736,14 @@ Enchanted creature gains Magic Shield.</Description>
         <Description>[2:RESOURCES]: Each player draws a card.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_014" DisplayName="Month of the Emerald Song" Faction="Neutral" Cost="3" ID="248">
-        <Ongoing Duration="UntilDeployThisTurn" />
-        <Target Zone="None" Side="Friendly" NeedActivation="True">
-            <Trigger Type="OnDeploy">
-                <Target Zone="None" Amount="FromTrigger" Persistent="True" ForceExecute="True">
-                    <Effect Type="ModifyMaxHp" Value="2" Duration="Permanent" />
-                </Target>
-            </Trigger>
-        </Target>
+       <Ongoing Duration="UntilDeployThisTurn"/>
+		<Target Zone="None" Side="Friendly" NeedActivation="True">
+		<Trigger Type="OnDeploy">
+		<Target Zone="None" Amount="FromTrigger" Persistent="True" ForceExecute="True">
+		<Effect Type="ModifyMaxHp" Value="2" Duration="Permanent"/>
+		</Target>
+		</Trigger>
+		</Target>
         <Description>[3:RESOURCES]: The next creature you deploy this turn gains +[2:HEALTH]</Description>
     </Card>
     <Card Rarity="Common" Type="Event" Name="Eve_Neu_006" DisplayName="Day of Fortune" Faction="Neutral" Cost="2" ID="249">
