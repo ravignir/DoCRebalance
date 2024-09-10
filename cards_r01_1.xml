@@ -11,11 +11,11 @@
 	<!--...............................................................................-->
 	<Card  Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Aca_100" DisplayName="Surging Golem" Faction="Academy" SubType="Magic|Shooter" Race="Construct|Golem" Cost="3" MightLevel="3" MagicLevel="3" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="1006" School="Prime">
 		<Ability Type="ImmuneToRetaliate"/>
-		<Ability Type="Shockwave" Value="2" />
-		<Ability Type="FocusedBlast" Value="1" />
+		<Ability Type="Shockwave" Value="2"/>
+		<Ability Type="FocusedBlast" Value="1"/>
 	</Card>
 	<Card  Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Aca_101" DisplayName="Manastorm Titan" Faction="Academy" SubType="Magic|Melee" Race="Construct|Titan" Cost="4" MightLevel="3" MagicLevel="3" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="1007" School="Prime">
-		<Ability Type="Shockwave" Value="2" />
+		<Ability Type="Shockwave" Value="2"/>
 		<Trigger Type="OnThisCardDeath">
 			<Target Zone="None" Side="Friendly">
 				<Effect Type="IncreaseLevel" Value="1" LevelType="Magic"/>
@@ -25,7 +25,7 @@
 	</Card>
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_102" DisplayName="Power Blast Titan" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Construct|Titan" Cost="4" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="1008">
 		<Ability Type="ImmuneToRetaliate"/>
-		<Ability Type="Shockwave" Value="2" />
+		<Ability Type="Shockwave" Value="2"/>
 		<Target Zone="Battleground" Amount="All" Side="Friendly">
 			<CardFilter IncludeRaces="Construct"/>
 			<Effect Type="ModifyAbility" Ability="TitanAttackTwice"/>
@@ -62,19 +62,19 @@
 	<Card  Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Hav_101" DisplayName="Griffin Captain" Faction="Haven" SubType="Flyer" Race="Human|Knight" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="2" HP="5" ID="1011">
 		<Ability Type="PerfectRetaliate"/>        
 		<Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly" Side="Friendly">
-			<CardFilter IncludeRaces="Human" />
-			<Effect Type="ModifyAbility" Ability="PerfectRetaliate" />
-			<Effect Type="ModifyRetaliate" Value="1" />
+			<CardFilter IncludeRaces="Human"/>
+			<Effect Type="ModifyAbility" Ability="PerfectRetaliate"/>
+			<Effect Type="ModifyRetaliate" Value="1"/>
         </Target>
 		<Description>Adjacent friendly human creatures gain +[1:RET] and Perfect Retaliation.</Description>
 	</Card>
 	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Hav_102" DisplayName="Blind Justicar" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="4" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="1012">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Trigger Type="OnThisCardDeploy">
-			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" />		
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly"/>		
 			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" >
 				<Variable Type="CardRetaliation" UseLastTarget="True"/> 
-				<Effect Type="Damage" Value="Variable" />
+				<Effect Type="Damage" Value="Variable"/>
 			</Target>
         </Trigger>
 		<Description>When [THIS] enter the battleground, choose a target friendly creature, deal damage to target enemy creature equal to the first creature's [RET].</Description>
@@ -83,7 +83,7 @@
 		<Ability Type="ImmuneToRetaliate"/> 
 		<Target Zone="Battleground" CardType="Unit" Amount="AllOther" Side="Friendly">
 			<CardFilter IncludeRaces="Human"/>
-			<Effect Type="ModifyAbility" Ability="AttackWithRetaliate" />
+			<Effect Type="ModifyAbility" Ability="AttackWithRetaliate"/>
         </Target>
 		<Description>All other friendly human creature's [ATK] is equal to its [RET] value.</Description>
 	</Card>
@@ -94,7 +94,7 @@
 		<Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Attack" Side="Friendly">
 			<CardFilter IncludeSchool="Dark"/>
 			<Target Zone="Battleground" CardType="Unit" Amount="Self">
-				<Effect Type="AddCounter" CounterType="Fierce" Value="1" />
+				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
 			</Target>
 		</Trigger>
 		<Description>Whenever a friendly dark creature attacks and destroy a creature, Put a +1 ATK counter on it.</Description>
@@ -142,7 +142,7 @@
 	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Nec_101" DisplayName="Necromancer Reinforcer" Faction="Necropolis"  SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="0" HP="6" ID="1019">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Trigger Type="OnPostAttackUnit" Side="Friendly">
-			<CardFilter IncludeAbility="Stackable" />
+			<CardFilter IncludeAbility="Stackable"/>
 			<Target Zone="Battleground" Amount="FromTrigger" CardType="Unit" ForceExecute="True">
 				<Effect Type="IncreaseStackSize" Value="1"/>
             </Target>
@@ -155,7 +155,7 @@
 			<Variable Type="AbilityValue" Ability="Infect" UseCurrentTarget="True"/>	
 			<CardFilter IncludeAbility="Infect"/>
 			<Effect Type="ModifyAbility" Ability="InfectBlast" Value="0"/>
-			<Effect Type="ModifyAbilityValue" Ability="InfectBlast" Value="Variable" />
+			<Effect Type="ModifyAbilityValue" Ability="InfectBlast" Value="Variable"/>
 		</Target>
 		<Description>Friendly creatures with Infect gain Infect Blast X, where X is equal to its Infect value.</Description>
 	</Card>
@@ -197,18 +197,18 @@
 	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_102" DisplayName="Shinobi Whisperer" Faction="Sanctuary" SubType="Shooter" Race="Naga|Spy" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="2" Attack="3" Retaliate="3" HP="7" ID="1024">
 		<Ability Type="ImmuneToRetaliate"/>				
 		<Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Attack" Side="Friendly" ExecuteOncePerTurn="True">	
-			<CardFilter IncludeRaces="Spy" />
+			<CardFilter IncludeRaces="Spy"/>
 			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" Cancelable="False">
-				<Effect Type="MoveCardTo" Destination="Hand" />
+				<Effect Type="MoveCardTo" Destination="Hand"/>
 			</Target>
 		</Trigger>
 		<Description>The first time a friendly Spy creature attacks and destroys a creature during your turn, return target enemy creature to its owner's hand</Description>
 	</Card>
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_103" DisplayName="Shinobi Gunshi" Faction="Sanctuary" SubType="Magic|Melee|Shooter" Race="Naga|Spy" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="3" Retaliate="2" HP="6" ID="1025" School="Water">
 		<Trigger Type="OnCardReturnToHandFromPlay" Side="Enemy">
-			<CardFilter IncludeCardType="Unit" />
+			<CardFilter IncludeCardType="Unit"/>
 			<Target Zone="None" Side="Friendly">
-                <Effect Type="Draw" Value="1" />
+                <Effect Type="Draw" Value="1"/>
             </Target>
 		</Trigger>
 		<Description>Whenever a card return to it's owner's hand from battle ground, draw a card.</Description>
@@ -228,7 +228,7 @@
 		</Target>
 		<Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly" Side="Friendly">
 			<CardFilter IncludeSchool="Earth"/>
-			<Effect Type="ModifyMaxHp" Value="1" />		
+			<Effect Type="ModifyMaxHp" Value="1"/>		
 		</Target>
 		<Description>Adjacent friendly Air creature gain +[1:ATK]. Adjacent friendly Earth creature gain +[1:HEALTH].</Description>
 	</Card>
@@ -244,183 +244,183 @@
 		<Ability Type="Enrage" Value="1"/>
 		<Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
-                <CardFilter IncludeAbility="Enrage" />
-                <Effect Type="AddCounter" CounterType="Enrage" Value="1" />
+                <CardFilter IncludeAbility="Enrage"/>
+                <Effect Type="AddCounter" CounterType="Enrage" Value="1"/>
             </Target>
         </Trigger>
 		<Description>At the beginning of your turn, put 1 enrage counter on all friendly creatures with Enrage.</Description>
 	</Card>
 	
 	
-	<ExistingCard Name="Cre_Aca_001" Rarity="Common" />
+	<ExistingCard Name="Cre_Aca_001" Rarity="Common"/>
     <!-- s03 - Dancing Dervish -->
-    <ExistingCard Name="Cre_Aca_005" Rarity="Common" />
+    <ExistingCard Name="Cre_Aca_005" Rarity="Common"/>
     <!-- s03 - Minotaur Brute -->
-    <ExistingCard Name="Cre_Aca_007" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Aca_007" Rarity="Uncommon"/>
     <!-- s03 - Enslaved Harpy -->
-	<ExistingCard Name="Cre_Aca_011" Rarity="Common" />
+	<ExistingCard Name="Cre_Aca_011" Rarity="Common"/>
     <!-- s03 - Unstable Djinn -->
-    <ExistingCard Name="Cre_Aca_014" Rarity="Common" />
+    <ExistingCard Name="Cre_Aca_014" Rarity="Common"/>
     <!-- s03 - Spinning Dervish -->
-    <ExistingCard Name="Cre_Aca_015" Rarity="Rare" />
+    <ExistingCard Name="Cre_Aca_015" Rarity="Rare"/>
     <!-- s03 - Blade Magee -->
-    <ExistingCard Name="Cre_Aca_017" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Aca_017" Rarity="Uncommon"/>
     <!-- s03 - Rakshasa Raja -->
-    <ExistingCard Name="Cre_Aca_024" Rarity="Common" />
+    <ExistingCard Name="Cre_Aca_024" Rarity="Common"/>
     <!-- s03 - Arcane Archer -->
-    <ExistingCard Name="Cre_Aca_025" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Aca_025" Rarity="Uncommon"/>
     <!-- s03 - Sellspell Djinn -->
-    <ExistingCard Name="Cre_Aca_028" Rarity="Rare" />
+    <ExistingCard Name="Cre_Aca_028" Rarity="Rare"/>
     <!-- s03 - Taweret Warrior -->
-    <ExistingCard Name="Cre_Aca_030" Rarity="Rare" />
+    <ExistingCard Name="Cre_Aca_030" Rarity="Rare"/>
     <!-- s03 - Void Sycophant -->
-    <ExistingCard Name="Cre_Aca_061" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Aca_061" Rarity="Uncommon"/>
     <!-- s04 - Insatiable Djinn -->
    
-	<ExistingCard Name="Cre_Hav_003" Rarity="Rare" />
+	<ExistingCard Name="Cre_Hav_003" Rarity="Rare"/>
     <!-- b01 - Celestial -->
-    <ExistingCard Name="Cre_Hav_004" Rarity="Rare" />
+    <ExistingCard Name="Cre_Hav_004" Rarity="Rare"/>
     <!-- b01 - Sun Crusader -->
-    <ExistingCard Name="Cre_Hav_006" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Hav_006" Rarity="Uncommon"/>
     <!-- b01 - Blazing Glory -->
-    <ExistingCard Name="Cre_Hav_010" Rarity="Rare" />
+    <ExistingCard Name="Cre_Hav_010" Rarity="Rare"/>
     <!-- b01 - Vestal -->
-    <ExistingCard Name="Cre_Hav_012" Rarity="Common" />
+    <ExistingCard Name="Cre_Hav_012" Rarity="Common"/>
     <!-- b01 - Imperial Sentinel -->
-    <ExistingCard Name="Cre_Hav_013" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Hav_013" Rarity="Uncommon"/>
     <!-- b01 - Warrior Seraph -->
-    <ExistingCard Name="Cre_Hav_014" Rarity="Common" />
+    <ExistingCard Name="Cre_Hav_014" Rarity="Common"/>
     <!-- s01 - Expert Marksman -->
-    <ExistingCard Name="Cre_Hav_017" Rarity="Common" />
+    <ExistingCard Name="Cre_Hav_017" Rarity="Common"/>
     <!-- s01 - Devoted Sister -->
-    <ExistingCard Name="Cre_Hav_018" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Hav_018" Rarity="Uncommon"/>
     <!-- s02 - Holy Praetorian -->
-    <ExistingCard Name="Cre_Hav_040" Rarity="Common" />
+    <ExistingCard Name="Cre_Hav_040" Rarity="Common"/>
     <!-- s02 - Wolf Guard -->
-    <ExistingCard Name="Cre_Hav_042" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Hav_042" Rarity="Uncommon"/>
     <!-- s02 - Griffin Mounted Spearman -->
-    <ExistingCard Name="Cre_Hav_047" Rarity="Common" />
+    <ExistingCard Name="Cre_Hav_047" Rarity="Common"/>
     <!-- s03 - Chosen of Elrath -->
     
-    <ExistingCard Name="Cre_Inf_003" Rarity="Rare" />
+    <ExistingCard Name="Cre_Inf_003" Rarity="Rare"/>
     <!-- b01 - Pit Lord -->
-    <ExistingCard Name="Cre_Inf_004" Rarity="Common" />
+    <ExistingCard Name="Cre_Inf_004" Rarity="Common"/>
     <!-- b01 - Gravid Breeder -->
-    <ExistingCard Name="Cre_Inf_008" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Inf_008" Rarity="Uncommon"/>
     <!-- b01 - Lacerator -->
-    <ExistingCard Name="Cre_Inf_009" Rarity="Rare" />
+    <ExistingCard Name="Cre_Inf_009" Rarity="Rare"/>
     <!-- b01 - Chaos Sorceress -->
-    <ExistingCard Name="Cre_Inf_010" Rarity="Rare" />
+    <ExistingCard Name="Cre_Inf_010" Rarity="Rare"/>
     <!-- b01 - Breeder Mother -->
-    <ExistingCard Name="Cre_Inf_015" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Inf_015" Rarity="Uncommon"/>
     <!-- b01 - Pit Fiend -->
-    <ExistingCard Name="Cre_Inf_016" Rarity="Common" />
+    <ExistingCard Name="Cre_Inf_016" Rarity="Common"/>
     <!-- b01 - Hell Hound -->
-    <ExistingCard Name="Cre_Inf_018" Rarity="Common" />
+    <ExistingCard Name="Cre_Inf_018" Rarity="Common"/>
     <!-- b01 - Tormentor -->
-    <ExistingCard Name="Cre_Inf_022" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Inf_022" Rarity="Uncommon"/>
     <!-- s01 - Hellfire Juggernaut -->
-    <ExistingCard Name="Cre_Inf_047" Rarity="Common" />
+    <ExistingCard Name="Cre_Inf_047" Rarity="Common"/>
     <!-- s02 - Ur-Khrag Enforcer -->
-    <ExistingCard Name="Cre_Inf_051" Rarity="Common" />
+    <ExistingCard Name="Cre_Inf_051" Rarity="Common"/>
     <!-- s03 - Demon Thrall -->
-    <ExistingCard Name="Cre_Inf_063" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Inf_063" Rarity="Uncommon"/>
     <!-- s04 - Soul-Consuming Efreet -->
     
-    <ExistingCard Name="Cre_Nec_007" Rarity="Rare" />
+    <ExistingCard Name="Cre_Nec_007" Rarity="Rare"/>
     <!-- b01 - Ghost Dragon -->
-    <ExistingCard Name="Cre_Nec_014" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Nec_014" Rarity="Uncommon"/>
     <!-- b01 - Ravenous Ghoul -->
-    <ExistingCard Name="Cre_Nec_015" Rarity="Common" />
+    <ExistingCard Name="Cre_Nec_015" Rarity="Common"/>
     <!-- b01 - Skeleton Spearman -->
-    <ExistingCard Name="Cre_Nec_018" Rarity="Common" />
+    <ExistingCard Name="Cre_Nec_018" Rarity="Common"/>
     <!-- b01 - Plague Skeleton -->
-    <ExistingCard Name="Cre_Nec_022" Rarity="Rare" />
+    <ExistingCard Name="Cre_Nec_022" Rarity="Rare"/>
     <!-- b01 - Fate Sealer -->
-    <ExistingCard Name="Cre_Nec_043" Rarity="Rare" />
+    <ExistingCard Name="Cre_Nec_043" Rarity="Rare"/>
     <!-- s02 - Living Nightmare -->
-    <ExistingCard Name="Cre_Nec_046" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Nec_046" Rarity="Uncommon"/>
     <!-- s02 - Dark Wood Hermit -->
-    <ExistingCard Name="Cre_Nec_050" Rarity="Common" />
+    <ExistingCard Name="Cre_Nec_050" Rarity="Common"/>
     <!-- s03 - Al-Betyl Ghoul -->
-    <ExistingCard Name="Cre_Nec_051" Rarity="Common" />
+    <ExistingCard Name="Cre_Nec_051" Rarity="Common"/>
     <!-- s03 - Rotting Zombie -->
-    <ExistingCard Name="Cre_Nec_052" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Nec_052" Rarity="Uncommon"/>
     <!-- s03 - Putrid Ghoul -->
-    <ExistingCard Name="Cre_Nec_053" Rarity="Common" />
+    <ExistingCard Name="Cre_Nec_053" Rarity="Common"/>
     <!-- s03 - Sahaar Mummy -->
-    <ExistingCard Name="Cre_Nec_054" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Nec_054" Rarity="Uncommon"/>
     <!-- s03 - Rotting Mummy -->
 
-    <ExistingCard Name="Cre_Neu_004" Rarity="Common" />
+    <ExistingCard Name="Cre_Neu_004" Rarity="Common"/>
     <!-- b01 - Rogue Mercenary -->
-    <ExistingCard Name="Cre_Neu_008" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Neu_008" Rarity="Uncommon"/>
     <!-- b01 - Helexian Librarian -->
-    <ExistingCard Name="Cre_Neu_010" Rarity="Common" />
+    <ExistingCard Name="Cre_Neu_010" Rarity="Common"/>
     <!-- b01 - Pao Hunter -->
-    <ExistingCard Name="Cre_Neu_011" Rarity="Common" />
+    <ExistingCard Name="Cre_Neu_011" Rarity="Common"/>
     <!-- b01 - Lesser Shadow Elemental -->
-	<ExistingCard Name="Cre_Neu_014" Rarity="Common" />
+	<ExistingCard Name="Cre_Neu_014" Rarity="Common"/>
     <!-- b01 - Lesser Earth Elemental -->
-    <ExistingCard Name="Cre_Neu_022" Rarity="Rare" />
+    <ExistingCard Name="Cre_Neu_022" Rarity="Rare"/>
     <!-- b01 - Blind Brother -->
-    <ExistingCard Name="Cre_Neu_025" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Neu_025" Rarity="Uncommon"/>
     <!-- s01 - Deep Mountain Turtle -->
-    <ExistingCard Name="Cre_Neu_040" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Neu_040" Rarity="Uncommon"/>
     <!-- s02 - Dark Wood Treant -->
-    <ExistingCard Name="Cre_Neu_043" Rarity="Common" />
+    <ExistingCard Name="Cre_Neu_043" Rarity="Common"/>
     <!-- s02 - Lesser Water Elemental -->
-    <ExistingCard Name="Cre_Neu_053" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Neu_053" Rarity="Uncommon"/>
     <!-- s03 - Cactus Thing -->
     
-    <ExistingCard Name="Cre_San_001" Rarity="Rare" />
+    <ExistingCard Name="Cre_San_001" Rarity="Rare"/>
     <!-- s01 - Naga Tactician -->
-    <ExistingCard Name="Cre_San_005" Rarity="Common" />
+    <ExistingCard Name="Cre_San_005" Rarity="Common"/>
     <!-- s01 - Kappa -->
-    <ExistingCard Name="Cre_San_006" Rarity="Common" />
+    <ExistingCard Name="Cre_San_006" Rarity="Common"/>
     <!-- s01 - Kirin -->
-    <ExistingCard Name="Cre_San_007" Rarity="Rare" />
+    <ExistingCard Name="Cre_San_007" Rarity="Rare"/>
     <!-- s01 - Sacred Kirin -->
-    <ExistingCard Name="Cre_San_009" Rarity="Common" />
+    <ExistingCard Name="Cre_San_009" Rarity="Common"/>
     <!-- s01 - Yuki-Onna -->
-    <ExistingCard Name="Cre_San_010" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_San_010" Rarity="Uncommon"/>
     <!-- s01 - Naga Warrior -->
-    <ExistingCard Name="Cre_San_011" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_San_011" Rarity="Uncommon"/>
     <!-- s01 - Pearl Priestess -->
-    <ExistingCard Name="Cre_San_017" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_San_017" Rarity="Uncommon"/>
     <!-- s01 - Kappa Shoya -->
-    <ExistingCard Name="Cre_San_021" Rarity="Common" />
+    <ExistingCard Name="Cre_San_021" Rarity="Common"/>
     <!-- s01 - Shanriya Guard -->
-    <ExistingCard Name="Cre_San_022" Rarity="Rare" />
+    <ExistingCard Name="Cre_San_022" Rarity="Rare"/>
     <!-- s01 - Shanriya Priestess -->
-    <ExistingCard Name="Cre_San_040" Rarity="Common" />
+    <ExistingCard Name="Cre_San_040" Rarity="Common"/>
     <!-- s02 - Waterfall Guardians -->
-    <ExistingCard Name="Cre_San_062" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_San_062" Rarity="Uncommon"/>
     <!-- s02 - Honor Bound Kami -->
     
-    <ExistingCard Name="Cre_Str_010" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Str_010" Rarity="Uncommon"/>
     <!-- b01 - Striking Fury-->
-    <ExistingCard Name="Cre_Str_012" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Str_012" Rarity="Uncommon"/>
     <!-- b01 - Jaguar Warrior -->
-    <ExistingCard Name="Cre_Str_015" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Str_015" Rarity="Uncommon"/>
     <!-- b01 - Centaur Marauder -->
-    <ExistingCard Name="Cre_Str_016" Rarity="Common" />
+    <ExistingCard Name="Cre_Str_016" Rarity="Common"/>
     <!-- b01 - Ranaar Mauler -->
-    <ExistingCard Name="Cre_Str_040" Rarity="Common" />
+    <ExistingCard Name="Cre_Str_040" Rarity="Common"/>
     <!-- s02 - Bramble Beast -->
-    <ExistingCard Name="Cre_Str_046" Rarity="Common" />
+    <ExistingCard Name="Cre_Str_046" Rarity="Common"/>
     <!-- s02 - Kitten Warrior -->
-    <ExistingCard Name="Cre_Str_050" Rarity="Common" />
+    <ExistingCard Name="Cre_Str_050" Rarity="Common"/>
     <!-- s03 - Coward Gnoll -->
-    <ExistingCard Name="Cre_Str_051" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Str_051" Rarity="Uncommon"/>
     <!-- s03 - Sahaar Marauder -->
-    <ExistingCard Name="Cre_Str_053" Rarity="Uncommon" />
+    <ExistingCard Name="Cre_Str_053" Rarity="Uncommon"/>
     <!-- s03 - Sahaar Harpy -->
-    <ExistingCard Name="Cre_Str_054" Rarity="Rare" />
+    <ExistingCard Name="Cre_Str_054" Rarity="Rare"/>
     <!-- s03 - Sahaar Hunter -->
-    <ExistingCard Name="Cre_Str_060" Rarity="Rare" />
+    <ExistingCard Name="Cre_Str_060" Rarity="Rare"/>
     <!-- s04 - Guerilla Master -->
-    <ExistingCard Name="Cre_Str_063" Rarity="Common" />
+    <ExistingCard Name="Cre_Str_063" Rarity="Common"/>
     <!-- s04 - Erg Hunter -->
     	
 </Cards>
