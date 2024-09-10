@@ -27,7 +27,7 @@
         <Ability Type="FlyerGuard" Value="2"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="Self">
             <Variable Type="TargetCount">
-                <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly" >
+                <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly">
 				<CardFilter IncludeUnitType="Flyer"/>
 				</Target>
             </Variable>
