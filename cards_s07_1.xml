@@ -200,25 +200,21 @@ When Eternal Apprentice attacks, put 1 crippling counter on all enemy creatures 
 		</Target>
 		<Description>Ancient Ghost gains +[1:ATK] for each adjacent Ghost creatures.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Nec_092" DisplayName="Skeleton Servant" Faction="Necropolis" SubType="Melee" Race="Skeleton" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="5" Retaliate="5" HP="7" ID="928" School="Dark">
-		<Variable Type="CounterCount" CounterType="Crippling"/>
-		<Trigger Type="OnThisCardDeploy">
-			<Target Zone="Battleground" Amount="Self">
-				<Effect Type="AddCounter" CounterType="Crippling" Value="4"/>
-			</Target>
-		</Trigger>
-		<Trigger Type="OnThisPreAttackUnit">
-			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-			<Target Zone="None" Amount="FromTrigger">
-				<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
-			</Target>
-			<Target Zone="Battleground" Amount="Self">
-				<Effect Type="RemoveCounter" CounterType="Crippling" Value="1"/>
-			</Target>
-		</Trigger>
-		<Description>When Skeleton Servant enters the battleground, put 4 crippling counters on it.
-Whenever Skeleton Servant attacks, move 1 crippling counter from Skeleton Servant to the attacked creature.</Description>
-	</Card>
+    	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Nec_092" DisplayName="Skeleton Servant" Faction="Necropolis" SubType="Melee" Race="Skeleton" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="5" Retaliate="5" HP="7" ID="928" School="Dark">
+        	<Trigger Type="OnThisCardDeploy">
+            		<Target Zone="Battleground" Amount="Self">
+                		<Effect Type="AddCounter" CounterType="Crippling" Value="4"/>
+            		</Target>
+        	</Trigger>
+        	<Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
+			<Target Zone="Battleground" Amount="Self"/>
+            		<Target Zone="Battleground" Amount="1" CardType="Unit" CantTargetPrevious="True" CantTargetSelf="True" Cancelable="False">
+                		<Effect Type="MoveCounter" CounterType="Crippling" Value="1"/>
+            		</Target>
+        	</Trigger>
+        	<Description>When Skeleton Servant enters the battleground, put 4 crippling counters on it.
+At beginning of your turn, move 1 crippling counter from Skeleton Servant to target creature.</Description>
+    	</Card>
 	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_093" DisplayName="Eternal Disciple" Faction="Necropolis" SubType="Magic|Melee" Race="Human|Wizard" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="929" School="Dark">
 		<Trigger Type="OnThisCardDeploy">
 			<Target Zone="Battleground" CardType="Unit" Amount="1" Cancelable="False">
