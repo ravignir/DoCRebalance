@@ -174,16 +174,19 @@ Adjacent dark creatures gain +[1:ATK].</Description>
 	<!--...............................................................................-->
 	<!-- Creatures - Necropolis -->
 	<!--...............................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_090" DisplayName="Eternal Apprentice" Faction="Necropolis" SubType="Magic|Melee" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="926" School="Dark">
-		<Ability Type="Crippling" Value="1"/>
-		<Trigger Type="OnTurnEnd" Side="Friendly">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_090" DisplayName="Eternal Apprentice" Faction="Necropolis" SubType="Magic|Melee" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="926" School="Dark">
+		<Trigger Type="OnThisCardDeploy">
 			<Target Zone="BattlegroundColumn" Amount="Self" Side="Enemy" CardType="Unit" BattlegroundPositionState="DontCare">
-				<Variable Type="UnitAttackCount"/>
-				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
 				<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
-			</Target>
+			</Target>		
 		</Trigger>
-		<Description>At the end of your turn, if Eternal Apprentice did not attack, put 1 crippling counters on all enemy creatures in the same row as Eternal Apprentice.</Description>
+		<Trigger Type="OnThisPreAttack">
+			<Target Zone="BattlegroundColumn" Amount="Self" Side="Enemy" CardType="Unit" BattlegroundPositionState="DontCare">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
+			</Target>		
+		</Trigger>
+		<Description>When Eternal Apprentice enters the battleground, put 1 crippling counter on all enemy creatures in the same row. 
+When Eternal Apprentice attacks, put 1 crippling counter on all enemy creatures in the same row as Eternal Apprentice.</Description>
 	</Card>
 	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_091" DisplayName="Ancient Ghost" Faction="Necropolis" School="Prime" SubType="Magic|Melee" Race="Ghost" Cost="1" MightLevel="1" MagicLevel="1" DestinyLevel="0" Attack="0" Retaliate="1" HP="3" ID="927">
 		<Ability Type="Incorporeal"/>
