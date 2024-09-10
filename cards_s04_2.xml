@@ -355,7 +355,7 @@ All creatures gain +[1:ATK] and +[1:RET] for each other creature with the same n
     <!--....................................................................-->
     <!-- Building - Academy -->
     <!--....................................................................-->
-    <Card Rarity="Uncommon" Type="Building" Name="Bui_Aca_060" DisplayName="Arcane Orb" Faction="Academy" Cost="2" MagicLevel="2" DestinyLevel="2" ID="650">
+    <Card Rarity="Uncommon" Type="Building" Name="Bui_Aca_060" DisplayName="Arcane Orb" Faction="Academy" Cost="2" MagicLevel="2" DestinyLevel="1" ID="650">
         <Target Zone="Battleground" CardType="Unit" Amount="Occupant">
             <Effect Type="ModifyAbility" Ability="MagicResist" />
         </Target>
