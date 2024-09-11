@@ -152,24 +152,15 @@
         <Description>Adjacent fire creatures gain +[1:ATK].
 Adjacent dark creatures gain +[1:ATK].</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Inf_093" DisplayName="Spell Stealer Heretic" Faction="Inferno" SubType="Magic|Melee" Race="Human|Wizard" Cost="6" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="2" Retaliate="0" HP="5" ID="924" School="Dark">
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Inf_093" DisplayName="Spell Stealer Heretic" Faction="Inferno" SubType="Magic|Melee" Race="Human|Wizard" Cost="3" MightLevel="3" MagicLevel="3" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="924" School="Dark">
 		<Trigger Type="OnThisCardDeploy">
 			<Target Zone="Graveyard" CardType="Spell" Side="Friendly" Amount="1">
 				<CardFilter IncludeSchool="Fire|Dark" IncludeOngoingType="Immediate"/>
 				<Effect Type="DetachLocation" Destination="Banish" Duration="Immediate" />
-				<Effect Type="Play" Free="True" RequireLevel="True" CancelDestination="Graveyard"/>
+				<Effect Type="Play" Free="False" RequireLevel="True" CancelDestination="Graveyard"/>
 			</Target>
 		</Trigger>
-		<Description>When Spell Stealer Heretic enters the battleground, you may take target instant dark or fire spell from your graveyard and play it for free. If you do, banish it afterwards.</Description>
-		<DescriptionEnglish>When Spell Stealer Heretic enters the battleground, you may take target instant dark or fire spell from your graveyard and play it for free. If you do, banish it afterwards.</DescriptionEnglish>
-		<DescriptionChinese>当窃魔异教徒进入战场时，你能从本方墓地中指定一张瞬发类暗系或火系的法术，并免费使用它。如果这样做了，则使用后驱逐该卡。</DescriptionChinese>
-		<DescriptionFrench>Quand l'Hérétique Vole-Sorts entre sur le champ de bataille, vous pouvez choisir dans votre cimetière un sort instantané de feu ou de ténèbres et le jouer gratuitement. Si vous le faites, bannissez-le juste après.</DescriptionFrench>
-		<DescriptionGerman>Beim Ausspielen von Zauber-Raubender Ketzer könnt Ihr einen unmittelbaren Dunkel- oder Feuer-Zauber von Eurem Friedhof auswählen und kostenlos spielen. Wenn Ihr das tut, wird die Karte anschließend verbannt.</DescriptionGerman>
-		<DescriptionPolish>Gdy Heretycki Złodziej Zaklęć wkracza na pole bitwy, możesz wybrać z cmentarza dowolne jednorazowe zaklęcie Magii Ognia lub Ciemności i zagrać nim za darmo. Jeśli to zrobisz zostanie ono później usunięta.</DescriptionPolish>		
-		<DescriptionItalian>Quando l'Eretica ruba incantesimi entra nel campo di battaglia, puoi prendere l'incantesimo dell'Oscurità o del Fuoco immediato bersaglio dal cimitero e giocarlo senza alcun costo. Se lo fai, dopo la espelli.</DescriptionItalian>
-		<DescriptionSpanish>En cuanto la hereje robahechizos entra en el campo de batalla, puedes elegir un hechizo inmediato de Oscuridad o de Fuego de tu cementerio para usarlo sin coste. si lo haces, queda desterrada después.</DescriptionSpanish>
-		<DescriptionRussian>Когда Еретик, вор заклинаний выходит на поле битвы, вы можете взять целевое мгновенное заклинание Тьмы или Огня со своего кладбища, Вы можете  разыграть эту карту бесплатно и после изгнать её.</DescriptionRussian>
-		<DescriptionPortuguese>Quando Herege Ladra de Feitiços entrar no campo de batalha, você pode pegar uma carta de feitiço imediato de Escuridão ou Fogo alvo de seu cemitério e jogá-la sem custo. O feitiço é banido em seguida.</DescriptionPortuguese>	
+		<Description>When Spell Stealer Heretic enters the battleground, you may take target instant Dark or Fire spell from your graveyard and play it. You must still meet its kevel requirements and pay the cost. If you do, banish that spell.</Description>	
 	</Card>
 	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Inf_094" DisplayName="Executioner Succubus" Faction="Inferno" SubType="Magic|Melee" Race="Demon|Succubus" Cost="6" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="925" School="Dark">
 		<Trigger Type="OnThisCardDeploy" Side="Friendly">
@@ -183,16 +174,19 @@ Adjacent dark creatures gain +[1:ATK].</Description>
 	<!--...............................................................................-->
 	<!-- Creatures - Necropolis -->
 	<!--...............................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_090" DisplayName="Eternal Apprentice" Faction="Necropolis" SubType="Magic|Melee" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="926" School="Dark">
-		<Ability Type="Crippling" Value="1"/>
-		<Trigger Type="OnTurnEnd" Side="Friendly">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_090" DisplayName="Eternal Apprentice" Faction="Necropolis" SubType="Magic|Melee" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="926" School="Dark">
+		<Trigger Type="OnThisCardDeploy">
 			<Target Zone="BattlegroundColumn" Amount="Self" Side="Enemy" CardType="Unit" BattlegroundPositionState="DontCare">
-				<Variable Type="UnitAttackCount"/>
-				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
 				<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
-			</Target>
+			</Target>		
 		</Trigger>
-		<Description>At the end of your turn, if Eternal Apprentice did not attack, put 1 crippling counters on all enemy creatures in the same row as Eternal Apprentice.</Description>
+		<Trigger Type="OnThisPreAttack">
+			<Target Zone="BattlegroundColumn" Amount="Self" Side="Enemy" CardType="Unit" BattlegroundPositionState="DontCare">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
+			</Target>		
+		</Trigger>
+		<Description>When Eternal Apprentice enters the battleground, put 1 crippling counter on all enemy creatures in the same row. 
+When Eternal Apprentice attacks, put 1 crippling counter on all enemy creatures in the same row as Eternal Apprentice.</Description>
 	</Card>
 	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_091" DisplayName="Ancient Ghost" Faction="Necropolis" School="Prime" SubType="Magic|Melee" Race="Ghost" Cost="1" MightLevel="1" MagicLevel="1" DestinyLevel="0" Attack="0" Retaliate="1" HP="3" ID="927">
 		<Ability Type="Incorporeal"/>
@@ -206,25 +200,21 @@ Adjacent dark creatures gain +[1:ATK].</Description>
 		</Target>
 		<Description>Ancient Ghost gains +[1:ATK] for each adjacent Ghost creatures.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Nec_092" DisplayName="Skeleton Servant" Faction="Necropolis" SubType="Melee" Race="Skeleton" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="5" Retaliate="5" HP="7" ID="928" School="Dark">
-		<Variable Type="CounterCount" CounterType="Crippling"/>
-		<Trigger Type="OnThisCardDeploy">
-			<Target Zone="Battleground" Amount="Self">
-				<Effect Type="AddCounter" CounterType="Crippling" Value="4"/>
-			</Target>
-		</Trigger>
-		<Trigger Type="OnThisPreAttackUnit">
-			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-			<Target Zone="None" Amount="FromTrigger">
-				<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
-			</Target>
-			<Target Zone="Battleground" Amount="Self">
-				<Effect Type="RemoveCounter" CounterType="Crippling" Value="1"/>
-			</Target>
-		</Trigger>
-		<Description>When Skeleton Servant enters the battleground, put 4 crippling counters on it.
-Whenever Skeleton Servant attacks, move 1 crippling counter from Skeleton Servant to the attacked creature.</Description>
-	</Card>
+    	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Nec_092" DisplayName="Skeleton Servant" Faction="Necropolis" SubType="Melee" Race="Skeleton" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="5" Retaliate="5" HP="7" ID="928" School="Dark">
+        	<Trigger Type="OnThisCardDeploy">
+            		<Target Zone="Battleground" Amount="Self">
+                		<Effect Type="AddCounter" CounterType="Crippling" Value="4"/>
+            		</Target>
+        	</Trigger>
+        	<Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
+			<Target Zone="Battleground" Amount="Self"/>
+            		<Target Zone="Battleground" Amount="1" CardType="Unit" CantTargetPrevious="True" CantTargetSelf="True" Cancelable="False">
+                		<Effect Type="MoveCounter" CounterType="Crippling" Value="1"/>
+            		</Target>
+        	</Trigger>
+        	<Description>When Skeleton Servant enters the battleground, put 4 crippling counters on it.
+At beginning of your turn, move 1 crippling counter from Skeleton Servant to target creature.</Description>
+    	</Card>
 	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_093" DisplayName="Eternal Disciple" Faction="Necropolis" SubType="Magic|Melee" Race="Human|Wizard" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="929" School="Dark">
 		<Trigger Type="OnThisCardDeploy">
 			<Target Zone="Battleground" CardType="Unit" Amount="1" Cancelable="False">
@@ -255,19 +245,27 @@ Whenever Skeleton Servant attacks, move 1 crippling counter from Skeleton Servan
 		</Trigger>
 		<Description>When a creature with a crippling counter dies, put a +[1:ATK] counter on Eternal Mentor.</Description>
 	</Card>
-	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_096" DisplayName="Eternal Archon" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="3" HP="8" ID="932" School="Dark">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_096" DisplayName="Eternal Archon" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="3" HP="8" ID="932" School="Dark">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="Crippling" Value="1"/>
+		<Ability Type="LifeDrain" Value="2" />
 		<Variable Type="TargetCount">
-			<Target Zone="Battleground" Amount="All" CardType="Unit">
+			<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Enemy">
 				<Variable2 Type="CounterCount" CounterType="Crippling" UseCurrentTarget="True"/>
 				<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0"/>
 			</Target>
 		</Variable>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Enemy">
+			<Variable Type="CounterCount" CounterType="Crippling" UseCurrentTarget="True"/>
+			<Variable2 Type="BaseCardCost" UseCurrentTarget="True"/>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="Variable2"/>
+			<Effect Type="ModifyAbility" Ability="Phased"/>
+		</Target>
 		<Target Zone="Battleground" Amount="Self">
 			<Effect Type="ModifyAttack" Value="Variable"/>
 		</Target>
-		<Description>Eternal Archon gains +[1:ATK] for each creatures with at least 1 crippling counter.</Description>
+		<Description>Eternal Archon gains +[1:ATK] for each enemy creature with at least 1 crippling counter.
+If the number of crippling counters on an enemy creature is greater than its cost, that creature gains Phased.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Sanctuary -->

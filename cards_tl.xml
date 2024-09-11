@@ -511,58 +511,42 @@
 		</Trigger>
     </TemplateEffect>
 
-	<TemplateEffect Name="BattleDive">
+    <TemplateEffect Name="BattleDive">
         <Trigger Type="OnTurnEnd" Side="Friendly">
             <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
-				<Variable Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True" />
-				<Variable2 Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True" ValueModifier="1"/>
-				<Variable3 Type="UnitAttackCount"/>
-				<Condition Operator="And" ValueA="Condition" ValueB="Condition">
-					<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
-					<Condition Operator="LesserThan" ValueA="Variable3" ValueB="1"/>
-				</Condition>
-				<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="Variable2"/>
+				<Variable Type="UnitAttackCount"/>
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+				<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="1="/>
             </Target>
         </Trigger>
-		<Trigger Type="OnThisPostAttack">
-			<Target Zone="Battleground" Amount="Self">
-				<Variable Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True" />
-				<Variable2 Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True" ValueModifier="-1.0x"/>
-				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-				<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="Variable2"/>
-			</Target>
-		</Trigger>
-		<Target Zone="Battleground" Amount="Self" Side="Friendly" ForceExecute="False" Persistent="False">
-			<Variable Type="AbilityValue" Ability="BattleDive" />
+	<Trigger Type="OnThisPostAttack">
+		<Target Zone="Battleground" Amount="Self">
+			<Variable Type="AbilityValue" Ability="BattleDive" UseCurrentTarget="True"/>
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-				<Effect Type="ModifyAbility" Ability="AttackAnywhere" OwnerAbility="BattleDive"/>
-				<Effect Type="ModifyAttack" Value="2" OwnerAbility="BattleDive"/>
+			<Effect Type="ModifyAbilityValue" Ability="BattleDive" Value="0="/>
 		</Target>
+	</Trigger>
+	<Target Zone="Battleground" Amount="Self" Side="Friendly" ForceExecute="False" Persistent="False">
+		<Variable Type="AbilityValue" Ability="BattleDive"/>
+		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Effect Type="ModifyAbility" Ability="AttackAnywhere" OwnerAbility="BattleDive"/>
+			<Effect Type="ModifyAttack" Value="2" OwnerAbility="BattleDive"/>
+	</Target>
     </TemplateEffect>
 
     <TemplateEffect Name="Turtling">
         <Trigger Type="OnTurnEnd" Side="Friendly">
-            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
-				<Variable Type="AbilityValue" Ability="Turtling" UseCurrentTarget="True" />
-				<Variable2 Type="AbilityValue" Ability="Turtling" UseCurrentTarget="True" ValueModifier="1" />				
-				<Variable3 Type="UnitAttackCount" />
-				<Condition Operator="And" ValueA="Condition" ValueB="Condition">
-					<Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
-					<Condition Operator="LesserThan" ValueA="Variable3" ValueB="1" />
-				</Condition>
-				<Effect Type="ModifyAbilityValue" Ability="Turtling" Value="Variable2" />
+            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">				
+				<Variable Type="UnitAttackCount" />
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
+				<Effect Type="ModifyAbilityValue" Ability="Turtling" Value="1=" />
             </Target>
         </Trigger>
         <Trigger Type="OnTurnEnd" Side="Friendly">
-            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
-				<Variable Type="AbilityValue" Ability="Turtling" UseCurrentTarget="True" />
-				<Variable2 Type="AbilityValue" Ability="Turtling" UseCurrentTarget="True" ValueModifier="-1.0x" />				
-				<Variable3 Type="UnitAttackCount" />
-				<Condition Operator="And" ValueA="Condition" ValueB="Condition">
-					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
-					<Condition Operator="GreaterThan" ValueA="Variable3" ValueB="0" />
-				</Condition>
-				<Effect Type="ModifyAbilityValue" Ability="Turtling" Value="Variable2" />
+            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">			
+				<Variable Type="UnitAttackCount" />
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+				<Effect Type="ModifyAbilityValue" Ability="Turtling" Value="0=" />
             </Target>
         </Trigger>
 		<Target Zone="Battleground" Amount="Self" Side="Friendly" ForceExecute="False" Persistent="False">
@@ -590,6 +574,45 @@
                 <Effect Type="ModifyAbility" Ability="CannotAttack" Duration="UntilYourNextTurn" OwnerAbility="RageTouch"/>
             </Target>
         </Trigger>
+    </TemplateEffect>
+
+    <TemplateEffect Name="FoundryEffect">
+	<Target Zone="Hero" Amount="All" Side="Friendly">
+            <Variable Type="CardPlayedCount" Side="Friendly">
+                <CardFilter IncludeRaces="Construct"/>
+            </Variable>
+            <Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+			<Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="-1">
+				<CardFilter IncludeRaces="Construct"/>
+			</Effect>
+	</Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="Bloodmask">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+            		<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+				<Effect Type="ModifyAbilityValue" Ability="Bloodmask" Value="1=" />
+            		</Target>
+        	</Trigger>
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+            		<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+				<Effect Type="ModifyAbilityValue" Ability="Bloodmask" Value="0=" />
+            		</Target>
+        	</Trigger>
+    </TemplateEffect>
+
+    <TemplateEffect Name="WindWallEffect">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly">
+            <Effect Type="ModifyAbility" Ability="RangeReflect" Value="2" OwnerAbility="WindWallEffect"/>
+        </Target>
+    </TemplateEffect>
+	
+    <TemplateEffect Name="ExtraDD">
+	<Trigger Type="OnThisPostDeadlyCombat">
+            <Target Zone="Hero" Amount="All" Side="Enemy">
+                <Effect Type="Damage" Value="1" />
+            </Target>
+	</Trigger>
     </TemplateEffect>
 
 </Cards>
