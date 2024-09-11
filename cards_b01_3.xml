@@ -84,6 +84,7 @@ At the beginning of each player's turn, deal 1 damage to all creatures. When the
     </Card>
     <Card Rarity="Common" Type="Spell" Name="Spe_Fir_006" DisplayName="Fire Shield" School="Fire" Cost="2" MagicLevel="2" ID="186">
         <Ongoing Duration="Permanent" />
+	<ModifyAbility Ability="FireResist" />
         <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1" />
         <Trigger Type="OnEnchantedDamaged" DamageIncludeFlags="Attack">
@@ -269,7 +270,7 @@ Enchanted creature gains +[1:ATK].</Description>
         <Description>Deal 3 damage to target creature and all adjacent creatures.</Description>
         <ExtraDescription>(Also damage friendly units.)</ExtraDescription>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Wat_008" DisplayName="Icy Weapon" School="Water" Cost="4" MagicLevel="4" ID="206">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Wat_008" DisplayName="Icy Weapon" School="Water" Cost="4" MagicLevel="3" ID="206">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAttack" Value="3" />
