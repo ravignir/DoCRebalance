@@ -256,7 +256,7 @@ Whenever a friendly creature dies, increase your [MIGHT] level by 1.</Descriptio
     <!--....................................................................-->
     <!--  Fortune - Neutral -->
     <!--....................................................................-->
-    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_040" DisplayName="Higher Learning" Faction="Neutral" Cost="4" MightLevel="2" MagicLevel="2" DestinyLevel="2" ID="412">
+    <Card NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Neu_040" DisplayName="Higher Learning" Faction="Neutral" Cost="4" MightLevel="2" MagicLevel="2" DestinyLevel="2" ID="412">
         <Target Zone="None" Side="Enemy">
 <Effect Type="ChoiceOption"/>
 <Subgroup>
@@ -323,7 +323,7 @@ Whenever a friendly creature dies, increase your [MIGHT] level by 1.</Descriptio
         </Target>
         <Description>Reveal the top card of your library. If you meet its level requirements, play it for free.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Rare" Type="Fortune" Name="For_Neu_045" DisplayName="Turncoats" Faction="Neutral" Cost="2" DestinyLevel="2" ID="417">
+    <Card NotLocalized="True" Rarity="Rare" Type="Fortune" Name="For_Neu_045" DisplayName="Turncoats" Faction="Neutral" Cost="2" DestinyLevel="2" ID="417">
         <Target Zone="None" Side="Enemy">
 <Effect Type="ChoiceOption"/>
 <Subgroup>
