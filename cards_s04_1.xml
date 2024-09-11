@@ -9,8 +9,9 @@
     <!--...............................................................................-->
     <!-- Creatures - Academy -->
     <!--...............................................................................-->
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_060" DisplayName="Spirit Traveller" Faction="Academy" School="Prime" SubType="Magic|Melee|Shooter" Race="Human|Wizard" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="0" HP="5" ID="600">
-        <Ability Type="Ambush" />
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_060" DisplayName="Spirit Traveller" Faction="Academy" School="Prime" SubType="Magic|Melee|Shooter" Race="Human|Wizard" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="2" Attack="1" Retaliate="0" HP="4" ID="600">
+        <Ability Type="ImmuneToRetaliate"/>
+	    <Ability Type="Ambush" />
         <Trigger Type="OnAmbush" Side="Enemy">
             <Target Zone="Library" Amount="2" Side="Enemy" AutoTakeFirstInputs="True">
                 <Effect Type="MoveCardTo" Destination="Graveyard" />
@@ -67,7 +68,7 @@
         </Target>
         <Description>While friendly Haven creatures have no damage, they gain +[1:ATK].</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_061" DisplayName="Vindicator" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="2" MightLevel="2" Attack="2" Retaliate="0" HP="5" ID="603">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_061" DisplayName="Vindicator" Faction="Haven" SubType="Melee" School="Light" Race="Human|Soldier" Cost="2" MightLevel="2" Attack="2" Retaliate="0" HP="5" ID="603">
         <Trigger Type="OnThisDamageUnit" Side="Enemy" DamageIncludeFlags="Combat">
             <Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
                 <Variable Type="CardAttack" UseCurrentTarget="True" />
@@ -90,14 +91,14 @@
         </Target>
         <Description>While Crusader Vanguard has no damage, it gains +[1:ATK] and +[1:RET].</Description>
     </Card>
-    <Card NotLocalized="True" Rarity="Uncommon" Type="Unit" Name="Cre_Hav_064" DisplayName="Angel of Mourning" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Angel" Cost="4" MightLevel="4" MagicLevel="2" Attack="2" Retaliate="3" HP="6" ID="671">
-        <Variable Type="TargetCount" ValueModifier="-0.2xu">
-            <Target Zone="Graveyard" Amount="All" Side="Friendly" />
-        </Variable>
-        <Target Zone="Hand" Amount="Self">
-            <Effect Type="ModifyCost" Value="Variable" />
-        </Target>
-        <Description>For every 5 cards in your graveyard, [THIS] cost [1:RESOURCES] less.</Description>
+    <Card NotLocalized="True" Rarity="Uncommon" Type="Unit" Name="Cre_Hav_064" DisplayName="Angel of Mourning" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Angel" Cost="3" MightLevel="3" MagicLevel="2" Attack="2" Retaliate="2" HP="6" ID="671">
+        <Trigger Type="OnUnitDeath" Side="Friendly">
+<CardFilter IncludeRaces="Human"/>
+<Target Zone="Hero" Amount="All" Side="Friendly">
+<Effect Type="Heal" Value="1"/>
+</Target>
+</Trigger>
+<Description>Whenever a friendly human creature dies, heal 1 damage from your hero.</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Creatures - Inferno -->
