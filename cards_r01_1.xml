@@ -177,7 +177,7 @@
 	<!--...............................................................................-->
 	<!-- Creatures - Sanctuary -->
 	<!--...............................................................................-->
-	<Card  Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_San_100" DisplayName="Ushio Naga" Faction="Sanctuary" SubType="Melee|Shooter" Race="Naga" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="1" Attack="1" Retaliate="1" HP="5" ID="1022" School="Water">
+	<Card  Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_San_100" DisplayName="Ushio Naga" Faction="Sanctuary" SubType="Melee|Shooter" Race="Naga|Priest" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="1" Attack="1" Retaliate="1" HP="5" ID="1022" School="Water">
 		<Ability Type="SwitchOther"/>
 		<Ability Type="MoveSwitch"/>		
 		<Description>You can move or deploy [THIS] on another friendly creature other than [THIS]. When you do, return that creature to its owner's hand.</Description>
@@ -240,15 +240,15 @@
 		</Target>
 		<Description>Friendly Earth creatures gain Regenerate 1 and Armor 1.</Description>
 	</Card>
-	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Str_103" DisplayName="Sahaar Raging Chieftain" Faction="Stronghold" SubType="Melee|Shooter" Race="Orc" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="1029" School="Air|Earth">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Str_103" DisplayName="Sahaar Raging Chieftain" Faction="Stronghold" SubType="Melee|Shooter" Race="Orc" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="1029" School="Air|Earth">
 		<Ability Type="Enrage" Value="1"/>
-		<Trigger Type="OnTurnBegin" Side="Friendly">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
             <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
                 <CardFilter IncludeAbility="Enrage" />
                 <Effect Type="AddCounter" CounterType="Enrage" Value="1" />
             </Target>
         </Trigger>
-		<Description>At the beginning of your turn, put 1 enrage counter on all friendly creatures with Enrage.</Description>
+		<Description>At the end of your turn, put 1 enrage counter on all friendly creatures with Enrage.</Description>
 	</Card>
 	
 	
