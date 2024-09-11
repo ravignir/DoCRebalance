@@ -100,7 +100,7 @@ Gain control of enchanted creature and relocate it to a valid battleground posit
         <Description>Enchant creature. Permanent:
 Remove 1 from all damage dealt to enchanted creature.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_051" DisplayName="Mass Earth Bound" School="Earth" Cost="4" MagicLevel="4" ID="580">
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_051" DisplayName="Mass Earth Bound" School="Earth" Cost="3" MagicLevel="3" ID="580">
         <Ongoing Duration="UntilYourNextTurn" />
         <Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
             <Effect Type="ModifyAbility" Ability="Anchored" />
