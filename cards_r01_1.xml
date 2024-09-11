@@ -232,13 +232,14 @@
 		</Target>
 		<Description>Adjacent friendly Air creature gain +[1:ATK]. Adjacent friendly Earth creature gain +[1:HEALTH].</Description>
 	</Card>
-	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Str_102" DisplayName="Bone Ancestor" Faction="Stronghold" SubType="Magic|Melee" Race="Orc|Spirit" Cost="5" MightLevel="5" MagicLevel="1" DestinyLevel="0" Attack="4" Retaliate="2" HP="7" ID="1028" School="Earth">
-		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Str_102" DisplayName="Bone Ancestor" Faction="Stronghold" SubType="Magic|Melee" Race="Orc|Spirit" Cost="5" MightLevel="5" MagicLevel="1" DestinyLevel="0" Attack="4" Retaliate="2" HP="7" ID="1028" School="Earth">
+		<Ability Type="Regeneration" Value="1"/>
+		<Target Zone="Battleground" Amount="All" Shape="AdjacentOnly" CardType="Unit" Side="Friendly">
 			<CardFilter IncludeSchool="Earth"/>
 			<Effect Type="ModifyAbility" Ability="Regenerate" Value="1"/>
 			<Effect Type="ModifyAbility" Ability="Armor" Value="1"/>
 		</Target>
-		<Description>Friendly Earth creatures gain Regenerate 1 and Armor 1.</Description>
+		<Description>Friendly adjacent Earth creatures gain Regenerate 1 and Armor 1.</Description>
 	</Card>
 	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Str_103" DisplayName="Sahaar Raging Chieftain" Faction="Stronghold" SubType="Melee|Shooter" Race="Orc" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="1029" School="Air|Earth">
 		<Ability Type="Enrage" Value="1"/>
