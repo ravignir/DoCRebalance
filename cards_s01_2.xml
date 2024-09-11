@@ -186,7 +186,7 @@ All enemy creatures gain Attack Anywhere and can only attack target creature if 
         <Description>Until your next turn:
 Friendly creatures gain +[X:ATK] and +[X:RET], where X is equal to their Honor value.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_San_004" DisplayName="Temple Tower" Faction="Sanctuary" Cost="2" DestinyLevel="2" ID="151">
+    <Card NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_San_004" DisplayName="Temple Tower" Faction="Sanctuary" Cost="2" DestinyLevel="2" ID="151">
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
