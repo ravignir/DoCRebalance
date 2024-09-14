@@ -153,14 +153,13 @@ Enchanted creature is Immobilized and gains Cannot Attack and Phased.</Descripti
 	</Card>
 	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Lig_082" DisplayName="Avenging Wings" School="Light" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="893">
 		<Ongoing Duration="Permanent"/>
-		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Friendly"/>
-		<Trigger Type="OnThisPostAttacked">
-			<Target Zone="Battleground" Amount="All" Side="Enemy" CardType="Unit">
-				<Effect Type="Damage" Value="2"/>
-			</Target>
-		</Trigger>
-		<Description>Enchant friendly creature. Permanent:
-Whenever enchanted creature is attacked, deal 2 damage to all enemy creatures.</Description>
+<Target Zone="Hero" Amount="All"/>
+<Trigger Type="OnPostAttack" Side="Enemy">
+<Target Zone="Battleground" Amount="FromTrigger" Side="Enemy" CardType="Unit">
+<Effect Type="Damage" Value="1"/>
+</Target>
+</Trigger>
+<Description> Permanent: Whenever an enemy creature attacks, deal 1 damage to it. </Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Prime -->
@@ -198,7 +197,7 @@ When an instant spell is about to be played, negate that spell and destroy Spell
 	<!--....................................................................-->
 	<!-- Spells - Water -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Wat_080" DisplayName="Spirit Wave" School="Water" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="897">
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Wat_080" DisplayName="Spirit Wave" School="Water" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="897">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="1" CardType="Unit"/>
 		<Trigger Type="OnCardDraw" Side="Friendly">
