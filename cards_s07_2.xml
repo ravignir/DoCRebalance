@@ -19,7 +19,7 @@
 		</Target>
 		<Description>Banish 2 target prime cards in your graveyard, then draw 2 cards.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Aca_091" DisplayName="Shifting Fates" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="1" DestinyLevel="2" ID="952">
+	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Aca_091" DisplayName="Shifting Fates" Faction="Academy" Cost="3" MightLevel="0" MagicLevel="1" DestinyLevel="2" ID="952">
 		<Target Zone="Graveyard" Amount="2" Side="Friendly" CardType="Unit">
 			<CardFilter IncludeSchool="Prime"/>
 			<Effect Type="MoveCardTo" Destination="Hand"/>
@@ -57,8 +57,8 @@
 		</Target>
 		<Description>Deal 5 damages to your hero, then draw 5 cards.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Inf_091" DisplayName="Ritual of the Dark Flame" Faction="Inferno" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="956">
-		<Ongoing Duration="UntilYourNextTurn"/>
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Fortune" Name="For_Inf_091" DisplayName="Ritual of the Dark Flame" Faction="Inferno" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="956">
+		<Ongoing Duration="Permanent"/>
 		<Variable Type="TargetCount">
 			<Target Zone="Graveyard" Amount="All" Side="Friendly">
 				<CardFilter IncludeSchool="Fire"/>
@@ -81,9 +81,13 @@
 			<Effect Type="ModifyAttack" Value="-1"/>
 			<Effect Type="ModifyRetaliate" Value="-1"/>
 		</Target>
-		<Description>Until your next turn:
-While you have a fire card in your graveyard, your creatures gains +[1:ATK] and +[1:RET].
-While you have a dark card in your graveyard, your opponent's creatures gains -[1:ATK] and -[1:RET].</Description>
+		<Trigger Type="OnUnitDeath" Side="Friendly">
+<CardFilter IncludeFaction="Inferno"/>
+<Target Zone="Battleground" Amount="Self">
+<Effect Type="Kill"/>
+</Target>
+</Trigger>
+<Description>Pernament: While you have a fire card in your graveyard, your creatures gains +[1:ATK] and +[1:RET]. While you have a dark card in your graveyard, your opponent's creatures gains -[1:ATK] and -[1:RET]. When a friendly Demon creature dies, destroy Ritual of the Dark Flame.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Fortune - Necropolis -->
@@ -220,7 +224,7 @@ Target Centaur creature and target Harpy creature gains +[2:ATK].</Description>
 		<Description>Until your next turn:
 Choose [0]Air[/0], [1]Earth[/1], [2]Fire[/2], [3]Water[/3], [4]Dark[/4], [5]Light[/5] or [6]Prime[/6]. Cards of the chosen school cannot be played.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Neu_091" DisplayName="Overwhelming Forces" Faction="Neutral" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="964">
+	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Neu_091" DisplayName="Overwhelming Forces" Faction="Neutral" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="964">
 		<Ongoing Duration="UntilEndOfTurn"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="All">
 			<CardFilter IncludeRaces="Mercenary"/>
