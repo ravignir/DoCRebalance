@@ -6,7 +6,7 @@
 	<!-- //	   ##   ##      ##      ##      ##         ## -->
 	<!-- //	#####   ##      #####   #####   #####   ##### -->
 	<!--....................................................................-->
-	<Card Rarity="NotPlayable" Unique="False" Type="Unit" Name="Tok_Neu_001" Token="True" ResourceName="s07_Spe_Ear_092" DisplayName="Nature Elemental" Faction="Neutral" SubType="Melee|Shooter" Race="Spirit" Cost="0" MightLevel="0" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="1005" School="Earth">
+	<Card Rarity="NotPlayable" Unique="False" Type="Unit" Name="Tok_Neu_001" Token="True" ResourceName="s07_Spe_Ear_092" DisplayName="Nature Elemental" Faction="Neutral" SubType="Magic|Melee|Shooter" Race="Spirit" Cost="0" MightLevel="0" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="1005" School="Earth">
 		<Ability Type="Infect" Value="1"/>
 	</Card>
 	<!--....................................................................-->
@@ -41,14 +41,17 @@ Friendly air creatures gains Shockwave 2.</Description>
 	<!--....................................................................-->
 	<!-- Spells - Dark -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Dar_090" DisplayName="Darkness Curse" School="Dark" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="985">
-		<Target Zone="Battleground" Amount="All" CardType="Unit">
-			<CardFilter ExcludeSchool="Dark"/>
-			<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
-		</Target>
-		<Description>Put a crippling counter on all non-dark creatures.</Description>
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Spell" Name="Spe_Dar_090" DisplayName="Darkness Curse" School="Dark" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="985">
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+<CardFilter ExcludeSchool="Dark"/>
+<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
+</Target>
+<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Enemy">
+<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
+</Target>
+<Description>Put a crippling counter on all enemy creatures and all friendly non-dark creatures.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Dar_091" DisplayName="Illusionary Nightmare" School="Dark" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="986">
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Dar_091" DisplayName="Illusionary Nightmare" School="Dark" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="986">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Enemy">
 			<CardFilter IncludeStatus="NoFriendlyAdjacent"/>
@@ -83,20 +86,20 @@ Enchanted creature gains +[3:HEALTH].</Description>
 		</Target>
 		<Description>Destroy target flyer creature.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Ear_092" DisplayName="Nature's Wrath" School="Earth" Cost="5" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="990">
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Ear_092" DisplayName="Nature's Wrath" School="Earth" Cost="5" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="990">
 		<Target Zone="BattlegroundPosition" Amount="2" Side="Friendly" BattlegroundPositionState="DontCare">
 			<Effect Type="PopulateStack" Name="s07_Tok_Neu_001"/>
 		</Target>
-		<Description>Deploy two Nature Elemental melee-shooter token creatures with [2:ATK]/[1:RET]/[5:HEALTH] and Infect 1 on two target valid friendly battleground positions.</Description>
+		<Description>Deploy two Nature Elemental magic melee-shooter token creatures with [2:ATK]/[1:RET]/[5:HEALTH] and Infect 1 on two target valid friendly battleground positions.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Fire -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Fir_090" DisplayName="Fire Splash" School="Fire" Cost="1" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="991">
-		<Target Zone="Battleground" CardType="Unit" Amount="1" Shape="SelfAndAdjacent">
-			<Effect Type="Damage" Value="1"/>
-		</Target>
-		<Description>Deal 1 damage to target creature and all adjacent creatures.</Description>
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Spell" Name="Spe_Fir_090" DisplayName="Fire Splash" School="Fire" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="991">
+		<Target Zone="BattlegroundPosition" CardType="Unit" Amount="1" Shape="SelfAndAdjacent">
+<Effect Type="Damage" Value="1"/>
+</Target>
+<Description>Choose target battleground position. Deal 1 damage to any creature at targeted position and all creatures adjacent to that position.</Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Fir_091" DisplayName="Fire Rain" School="Fire" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="992">
 		<Target Zone="BattlegroundColumn" CardType="Unit" Amount="2">
@@ -104,7 +107,7 @@ Enchanted creature gains +[3:HEALTH].</Description>
 		</Target>
 		<Description>Deal 3 damage to all creatures on 2 target rows.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Fir_092" DisplayName="Flaring Rage" School="Fire" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="993">
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Fir_092" DisplayName="Flaring Rage" School="Fire" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="993">
 		<Ongoing Duration="Permanent"/>
 		<Trigger Type="OnPreAttack">
 			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
@@ -151,7 +154,7 @@ Redirect all combat damage dealt to your creatures to enchanted creature instead
 		<Description>Permanent:
 Friendly prime creatures gains Magic Resist.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Pri_091" DisplayName="Dissolve" School="Prime" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="998">
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Pri_091" DisplayName="Dissolve" School="Prime" Cost="1" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="998">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Hero" Amount="All">
 			<Effect Type="GlobalEffect" GlobalEffectType="Deny">
