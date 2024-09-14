@@ -151,7 +151,7 @@ Friendly Fire creatures gain Area Blast 3 and +[1:ATK].</Description>
 		<Description>Enchant Creature. Permanent:
 Enchanted creature is Immobilized and gains Cannot Attack and Phased.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Lig_082" DisplayName="Avenging Wings" School="Light" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="893">
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Lig_082" DisplayName="Avenging Wings" School="Light" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="893">
 		<Ongoing Duration="Permanent"/>
 <Target Zone="Hero" Amount="All"/>
 <Trigger Type="OnPostAttack" Side="Enemy">
