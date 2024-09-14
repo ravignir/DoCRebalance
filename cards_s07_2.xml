@@ -296,12 +296,16 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 	<!--....................................................................-->
 	<!-- Building - Haven -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Hav_090" DisplayName="Holy Lighthouse" Faction="Haven" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="969">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Building" Name="Bui_Hav_090" DisplayName="Holy Lighthouse" Faction="Haven" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="969">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
 			<CardFilter IncludeFaction="Haven"/>
 			<Effect Type="ModifyAbility" Ability="DarkWard"/>
 		</Target>
-		<Description>Haven creatures at Holy Lighthouse gains Dark Ward.</Description>
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+<CardFilter IncludeSchool="Light"/>
+<Effect Type="ModifyAttack" Value="1"/>
+</Target>
+<Description>Haven creatures at Holy Lighthouse gains Dark Ward. Light creatures at Holy Lighthouse gain +[1:ATK].</Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Hav_091" DisplayName="Chapel of Elrath" Faction="Haven" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="970">
 		<Trigger Type="OnCardPlay" Side="Friendly">
@@ -332,7 +336,7 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 	<!--....................................................................-->
 	<!-- Building - Inferno -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Inf_090" DisplayName="Walls of Destruction" Faction="Inferno" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="972">
+	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Inf_090" DisplayName="Walls of Destruction" Faction="Inferno" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="972">
 		<Trigger Type="OnThisPostAttacked">
 			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
 				<Effect Type="Damage" Value="3"/>
@@ -340,17 +344,18 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 		</Trigger>
 		<Description>After the creature at Walls of Destruction is attacked, deal 3 damage to the attacking creature.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Inf_091" DisplayName="Heretic Library" Faction="Inferno" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="973">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Inf_091" DisplayName="Heretic Library" Faction="Inferno" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="973">
 		<Variable Type="OccupantCount">
-			<CardFilter IncludeSchool="Dark"/>
-		</Variable>
-		<Trigger Type="OnTurnBegin" Side="Friendly">
-			<Target Zone="Hero" Amount="All" Side="Enemy">
-				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-				<Effect Type="Damage" Value="1"/>
-			</Target>
-		</Trigger>
-		<Description>At the beginning of your turn, if there's a Dark creatures at Heretic Library, deal 1 damage to enemy hero.</Description>
+<CardFilter IncludeFaction="Inferno"/>
+</Variable>
+<Trigger Type="OnTurnBegin" Side="Friendly">
+<Target Zone="Graveyard" Amount="1" Side="Friendly">
+<CardFilter IncludeCardType="Fortune" IncludeFaction="Inferno"/>
+<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+<Effect Type="MoveCardTo" Destination="Hand"/>
+</Target>
+</Trigger>
+<Description>At the beginning of your turn, if an Inferno creature is at Heretic Library, take target forune card from your graveyard ad put it into your hand.</Description>
 	</Card>
 	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Inf_092" DisplayName="Throne of Ahribban" Faction="Inferno" Cost="4" MightLevel="2" MagicLevel="2" DestinyLevel="0" ID="974">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
@@ -363,9 +368,9 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 	<!--....................................................................-->
 	<!-- Building - Necropolis -->
 	<!--....................................................................-->
-	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Nec_090" DisplayName="Statue of the Spider Godess" Faction="Necropolis" Cost="2" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="975">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Nec_090" DisplayName="Statue of the Spider Godess" Faction="Necropolis" Cost="2" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="975">
 		<Variable Type="OccupantCount">
-			<CardFilter IncludeRaces="Namtaru"/>
+			<CardFilter IncludeRaces="Namtaru|Spider"/>
 		</Variable>
 		<Trigger Type="OnTurnBegin" Side="Friendly">
 			<Target Zone="Graveyard" Amount="1" CardType="Spell" Side="Friendly" Random="True">
@@ -374,7 +379,7 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 				<Effect Type="AttachOnOccupant"/>
 			</Target>
 		</Trigger>
-		<Description>At the beginning of your turn, if there's a Namtaru at Statue of the Spider Godess, take a valid enchant creature spell card at random from your graveyard and enchant it to the creature at Statue of the Spider Godess.</Description>
+		<Description>At the beginning of your turn, if there's a Namtaru or a Spider at Statue of the Spider Godess, take a valid enchant creature spell card at random from your graveyard and enchant it to the creature at Statue of the Spider Godess.</Description>
 		<!-- S07 NEW STUFF : AttachOnOccupant - Card effect used to attach a target card on the occupant of a building. -->
 	</Card>
 	<!--....................................................................-->
@@ -398,7 +403,7 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 	<!--....................................................................-->
 	<!-- Building - Stronghold -->
 	<!--....................................................................-->
-	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Str_090" DisplayName="Jungle Outpost" Faction="Stronghold" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="2" ID="978">
+	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Str_090" DisplayName="Jungle Outpost" Faction="Stronghold" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="2" ID="978">
 		<Trigger Type="OnThisPreAttackUnit">
 			<Target Zone="Battleground" Amount="Occupant">
 				<Variable Type="UnitAttackCount" UseCurrentTarget="True"/>
