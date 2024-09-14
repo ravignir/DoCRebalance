@@ -9,14 +9,18 @@
 	<!--....................................................................-->
 	<!-- Spells - Air -->
 	<!--....................................................................-->
-	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Air_070" DisplayName="Lightning Burst" School="Air" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="779" Unique="False">
-		<Target Zone="BattlegroundPosition" CardType="Unit" Amount="1" Shape="AdjacentOnly">
-			<Effect Type="Damage" Value="2"/>
-		</Target>
-		<Description>Choose target battleground position. Deal 2 damage to all creatures adjacent to that position.</Description>
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Air_070" DisplayName="Lightning Burst" School="Air" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="779" Unique="False">
+		<Target Zone="BattlegroundPosition" Amount="1" CardType="Unit" BattlegroundPositionState="NoUnit" Shape="AdjacentOnly">
+<Effect Type="Damage" Value="2"/>
+</Target>
+<Target Zone="BattlegroundPosition" Amount="1" CardType="Unit" BattlegroundPositionState="NoUnit" Shape="AdjacentOnly" CantTargetPrevious="True">
+<Effect Type="Damage" Value="2"/>
+</Target>
+<Description>Choose 2 target battleground positions with no creature. For each of those positions, deal 2 damage to all creatures adjacent to that position.</Description>
 	</Card>
-	<Card Rarity="Rare" Type="Spell" Name="Spe_Air_071" DisplayName="Lightning Curse" School="Air" Cost="2" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="780" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Air_071" DisplayName="Lightning Curse" School="Air" Cost="2" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="780" Unique="False">
 		<Ongoing Duration="Permanent"/>
+		<Effect ModifyAbility="Immobilized"/>
 		<Target Zone="Battleground" Amount="1" CardType="Unit"/>
 		<Trigger Type="OnDeployAdjacent">
 			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
@@ -24,9 +28,9 @@
 			</Target>
 		</Trigger>
 		<Description>Enchant Creature. Permanent:
-Whenever a creature is deployed on a battleground position adjacent to enchanted creature, deal 4 damage to it.</Description>
+Enchanted creature is immobilized. Whenever a creature is deployed on a battleground position adjacent to enchanted creature, deal 4 damage to it.</Description>
 	</Card>
-	<Card Rarity="Common" Type="Spell" Name="Spe_Air_072" DisplayName="Blessing of the Storm" School="Air" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="781" Unique="False">
+	<Card Rarity="Common" Type="Spell" Name="Spe_Air_072" DisplayName="Blessing of the Storm" School="Air" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="781" Unique="False">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="1" CardType="Unit">
 			<Effect Type="ModifyAbility" Ability="Swift"/>
@@ -38,15 +42,13 @@ Enchanted creature gains Swift and Charge.</Description>
 	<!--....................................................................-->
 	<!-- Spells - Dark -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Type="Spell" Name="Spe_Dar_070" DisplayName="Agonizing Purge" School="Dark" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="782" Unique="False">
-		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Enemy">
-			<Variable Type="CardChildrenCount" UseCurrentTarget="True" ValueModifier="5x"/>
-			<Effect Type="Damage" Value="Variable"/>
-			<Effect Type="Cleanse"/>
-		</Target>
-		<Description>Destroy all ongoing spells on target enemy creature. Deal 1 damage to that creature for each spell destroyed this way.</Description>
-	</Card>
-	<Card Rarity="Rare" Type="Spell" Name="Spe_Dar_071" DisplayName="Mutual Agony" School="Dark" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="783" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Dar_070" DisplayName="Agonizing Purge" School="Dark" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="782" Unique="False">
+		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Any">
+<Variable Type="CardChildrenCount" UseCurrentTarget="True" ValueModifier="5x"/>
+<Effect Type="Damage" Value="Variable"/>
+<Effect Type="Cleanse"/>
+</Target>
+<Description>Destroy all ongoing spells on target creature. Deal 5 damage to that creature for each spell destroyed this way.</Description>
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="1" CardType="Unit"/>
 		<Trigger Type="OnEnchantedCardDeath">
@@ -75,7 +77,7 @@ When enchanted creature dies, return it to its owner's hand instead.</Descriptio
 		</Target>
 		<Description>Put 2 poison counters on all creatures on target row.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_071" DisplayName="Earth Growth" School="Earth" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="786" Unique="False">
+	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_071" DisplayName="Earth Growth" School="Earth" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="786" Unique="False">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
 			<CardFilter IncludeSchool="Earth" IncludeFrontLine="True"/>
