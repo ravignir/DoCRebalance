@@ -112,7 +112,7 @@ Friendly Earth creatures on the front line gain Towering and Anchored.</Descript
 		<Description>Deal 3 damage to target creature and 2 damage to all adjacent creatures.</Description>
 		<ExtraDescription>(Also damage friendly units.)</ExtraDescription>
 	</Card>
-	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_071" DisplayName="Mass Inner Flame" School="Fire" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="789" Unique="False">
+	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_071" DisplayName="Mass Inner Flame" School="Fire" Cost="2" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="789" Unique="False">
 		<Ongoing Duration="UntilYourNextTurn"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="All">
 			<Effect Type="ModifyAttack" Value="1"/>
@@ -172,7 +172,7 @@ Friendly creatures at buildings cannot be targeted.</Description>
 		<Description>Enchant creature. Permanent:
 Enchanted creature becomes a magic creature and gains Magic Resist.</Description>
 	</Card>
-	<Card Rarity="Common" Type="Spell" Name="Spe_Pri_071" DisplayName="Counterspell" School="Prime" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="795" Unique="False">
+	<Card Rarity="Common" Type="Spell" Name="Spe_Pri_071" DisplayName="Counterspell" School="Prime" Cost="1" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="795" Unique="False">
 		<Ongoing Duration="Permanent"/>
 		<Trigger Type="OnCardPlay">
 			<CardFilter IncludeCardType="Spell" IncludeOngoingType="Ongoing"/>
@@ -197,30 +197,29 @@ Magic damage from friendly sources cannot be prevented or reduced.</Description>
 	<!--....................................................................-->
 	<!-- Spells - Water -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Type="Spell" Name="Spe_Wat_070" DisplayName="Deadly Hail" School="Water" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="797" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Wat_070" DisplayName="Deadly Hail" School="Water" Cost="2" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="797" Unique="False">
 		<Ongoing Duration="UntilYourNextTurn"/>
 		<Trigger Type="OnPostAttack">
 			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
-				<Effect Type="Damage" Value="1"/>
+				<Effect Type="Damage" Value="2"/>
 			</Target>
 		</Trigger>
 		<Trigger Type="OnMove">
 			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
-				<Effect Type="Damage" Value="1"/>
+				<Effect Type="Damage" Value="2"/>
 			</Target>
 		</Trigger>
 		<Description>Until your next turn:
-Whenever a creature attacks or moves, deal 1 damage to it.</Description>
+Whenever a creature attacks or moves, deal 2 damage to it.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Wat_071" DisplayName="Time Flow" School="Water" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="798" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Wat_071" DisplayName="Time Flow" School="Water" Cost="2" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="798" Unique="False">
 		<Ongoing Duration="Permanent"/>
     <Ability Type="Endurable"/>
     <Target Zone="Battleground" CardType="Unit" Amount="1">
-			<Effect Type="ModifyAbility" Ability="Immobilized"/>
 			<Effect Type="ModifyAbility" Ability="FortuneWard"/>
 		</Target>
 		<Description>Enchant creature. Permanent:
-Enchanted creature is Immobilized and gains Fortune Ward.</Description>
+Enchanted creature gains Fortune Ward.</Description>
 	</Card>
 	<Card Rarity="Rare" Type="Spell" Name="Spe_Wat_072" DisplayName="Water Flows Freely" School="Water" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="799" Unique="False">
 		<Ongoing Duration="Permanent"/>

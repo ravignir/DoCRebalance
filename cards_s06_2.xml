@@ -9,24 +9,41 @@
 	<!--....................................................................-->
 	<!-- Fortune - Academy -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Aca_080" DisplayName="Solder" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="848">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Fortune" Name="For_Aca_080" DisplayName="Solder" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="848">
 		<Target Zone="Graveyard" Side="Friendly" Amount="1" CardType="Unit">
 			<CardFilter IncludeRaces="Construct"/>
 			<Effect Type="MoveCardTo" Destination="Hand"/>
 		</Target>
-		<Description>Take target Construct creature card from your graveyard and put it into your hand.</Description>
+        	<Target Zone="None" Amount="Same" ForceExecute="True" Persistent="True">
+            		<Effect Type="ModifyCost" Value="-2" Duration="UntilEndOfTurn" />
+        	</Target>
+		<Description>Take target Construct creature card from your graveyard and put it into your hand. Until end of turn, this creature costs 2 less to play.</Description>
 	</Card>
-	<Card Rarity="Epic" Unique="True" Type="Fortune" Name="For_Aca_081" DisplayName="Titan Workforce" Faction="Academy" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="849">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="True" Type="Fortune" Name="For_Aca_081" DisplayName="Titan Workforce" Faction="Academy" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="3" ID="849">
 		<Ongoing Duration="Permanent"/>
 		<Variable Type="DeadCardThisTurnCount" Side="Any">
 			<CardFilter IncludeRaces="Construct" Side="Friendly"/>
 		</Variable>
+		<Variable2 Type="TargetCount">
+			<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+				<CardFilter IncludeRaces="Titan"/>
+			</Target>
+		</Variable2>
 		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
 			<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
 			<CardFilter IncludeRaces="Construct"/>
 			<Effect Type="PlayEffect" PlayEffectType="BounceOnDie"/>
 		</Target>
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+			<Effect Type="ModifyResourcesProduction" Value="Variable2"/>
+		</Target>
+		<!-- The following target is necessary to display the right value in the Income icon. -->
+		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+			<CardFilter IncludeRaces="Titan"/>
+			<Effect Type="ModifyAbility" Ability="Income" Value="1"/>
+		</Target>
 		<Description>Permanent:
+All friendly Titan creatures gain Income 1.
 The first time that one or more friendly Construct dies in a turn, return them to their owner's hand instead.</Description>
 	</Card>
 	<!--....................................................................-->
@@ -66,7 +83,7 @@ The first time that one or more friendly Construct dies in a turn, return them t
 		<Description>Permanent:
 If a fire spell would deal damage, it deals 2 more damage instead.</Description>
 	</Card>
-	<Card Rarity="Epic" Unique="True" Type="Fortune" Name="For_Inf_081" DisplayName="Soulfueled Pyre" Faction="Inferno" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="853">
+	<Card Rarity="Epic" Unique="True" Type="Fortune" Name="For_Inf_081" DisplayName="Soulfueled Pyre" Faction="Inferno" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="4" ID="853">
 		<Ongoing Duration="Repeatable"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" AllowDuplicate="True">
 			<CardFilter IncludeRaces="Maniac"/>
@@ -98,7 +115,7 @@ If a fire spell would deal damage, it deals 2 more damage instead.</Description>
 		</Target>
 		<Description>Destroy target friendly creature and deploy five Skeleton melee-shooter token creatures with [1:ATK]/[0:RET]/[1:HEALTH] and Stackable at that creature battleground position.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Nec_082" DisplayName="Undead Reinforcements" Faction="Necropolis" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="0" ID="856">
+	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Nec_082" DisplayName="Undead Reinforcements" Faction="Necropolis" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="1" ID="856">
 		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
 			<CardFilter IncludeRaces="Skeleton" IncludeAbility="Stackable"/>
 			<Effect Type="IncreaseStackSize" Value="1"/>
@@ -111,7 +128,7 @@ If a fire spell would deal damage, it deals 2 more damage instead.</Description>
 		</Target>
 		<Description>Deploy three Skeleton melee-shooter token creatures with [1:ATK]/ [0:RET]/ [1:HEALTH] and Stackable on each battleground position where a friendly creature died during your opponent's last turn.</Description>
 	</Card>
-	<Card Rarity="Epic" Unique="True" Type="Fortune" Name="For_Nec_084" DisplayName="Army of the Dead" Faction="Necropolis" Cost="4" MightLevel="2" MagicLevel="0" DestinyLevel="3" ID="858">
+	<Card Rarity="Epic" Unique="True" Type="Fortune" Name="For_Nec_084" DisplayName="Army of the Dead" Faction="Necropolis" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="3" ID="858">
 		<Ongoing Duration="Permanent"/>
 		<Trigger Type="OnTurnBegin" Side="Friendly">
 			<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
@@ -138,15 +155,15 @@ At the beginning of your turn, deploy 2 Skeleton melee-shooter token creature wi
 		<Description>Permanent:
 Whenever a friendly Spy deals combat damage to enemy Hero, increase your [RESOURCES] production by 1.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_San_081" DisplayName="What Lies Below" Faction="Sanctuary" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="860">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Fortune" Name="For_San_081" DisplayName="What Lies Below" Faction="Sanctuary" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="860">
 		<Ongoing Duration="UntilYourNextTurn"/>
 		<Trigger Type="OnTurnBegin" Side="Enemy">
 			<Target Zone="Battleground" Amount="1" Side="Enemy" CardType="Unit" Cancelable="False">
-				<Effect Type="MoveCardTo" Destination="Hand"/>
+				<Effect Type="MoveCardTo" Destination="Library" Shuffle="True"/>
 			</Target>
 		</Trigger>
 		<Description>Until your next turn:
-At the beginning of opponent's turn, they must choose one creature they control and return it to its owner's hand.</Description>
+At the beginning of opponent's turn, they must choose one creature they control and shuffle it to its owner's library.</Description>
 	</Card>
 	<Card Rarity="Epic" Unique="True" Type="Fortune" Name="For_San_082" DisplayName="Dark Lotus Pond" Faction="Sanctuary" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="861">
 		<Variable Type="CardInHandCount" Side="Enemy"/>
@@ -179,21 +196,23 @@ At the beginning of opponent's turn, they must choose one creature they control 
 	<!--....................................................................-->
 	<!-- Fortune - Stronghold -->
 	<!--....................................................................-->
-	<Card Rarity="Epic" Unique="True" Type="Fortune" Name="For_Str_080" DisplayName="Bloodscar Totem" Faction="Stronghold" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="862">
-		<Variable Type="CounterCount" CounterType="Enrage" UseCurrentTarget="True"/>
-		<Target Zone="Battleground" Amount="1" Side="Friendly" CardType="Unit">
-			<CardFilter IncludeAbility="Bloodthirst"/>
-			<Effect Type="FreezeVariable"/>
-			<Effect Type="Kill"/>
-		</Target>
-		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
-			<CardFilter IncludeAbility="Bloodthirst"/>
-			<Effect Type="AddCounter" CounterType="Enrage" Value="Variable"/>
-		</Target>
-		<Target Zone="None">
-			<Effect Type="FreezeVariable" Unfreeze="True"/>
-		</Target>
-		<Description>Destroy target friendly creature with Bloodthirst. Put a number of Enrage counters on all friendly creatures with Bloodthirst equal to the number of Enrage counters on the destroyed creature.</Description>
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="True" Type="Fortune" Name="For_Str_080" DisplayName="Bloodscar Totem" Faction="Stronghold" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="862">
+        	<Ongoing Duration="Permanent" />
+        	<Target Zone="Battleground" CardType="Unit" Amount="All">
+            		<!-- This Target is used only to display the correct feedback -->
+            		<CardFilter IncludeAbility="Enrage|Bloodthirst" />
+        	</Target>
+        	<Target Zone="Battleground" CardType="Unit" Amount="All">
+            		<CardFilter IncludeAbility="Enrage" />
+            		<Effect Type="ModifyAbilityValue" Ability="Enrage" Value="1" />
+        	</Target>
+        	<Target Zone="Battleground" CardType="Unit" Amount="All">
+            		<CardFilter IncludeAbility="Bloodthirst" />
+            		<Effect Type="ModifyAbilityValue" Ability="Bloodthirst" Value="1" />
+        	</Target>
+		<Description>Permanent:
+All creatures with Enrage gain +1 to their Enrage value.
+All creatures with Bloodthirst gain +1 to their Bloodthirst value.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!--  Fortune - Neutral -->
@@ -231,30 +250,49 @@ Whenever a friendly Mercenary creature deals combat damage, gain [2:RESOURCES].<
 	<!--....................................................................-->
 	<!-- Building - Academy -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Aca_080" DisplayName="Foundry" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="866">
-		<Trigger Type="OnOccupantCardDeath">
-			<CardFilter IncludeRaces="Construct"/>
-			<Target Zone="None" Side="Friendly">
-				<Effect Type="GainResourcesProduction" Value="1"/>
-			</Target>
-		</Trigger>
-		<Description>Whenever a Construct creature at Foundry dies, increase your [RESOURCES] production by 1.</Description>
-	</Card>
-	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Aca_081" DisplayName="Elemental Nexus" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="867">
+    	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Building" Name="Bui_Aca_080" DisplayName="Foundry" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="866">
+        	<Trigger Type="OnOccupantCardDeath">
+            		<CardFilter IncludeRaces="Construct"/>
+            		<Target Zone="None" Side="Friendly">
+                		<Effect Type="GainResourcesProduction" Value="1"/>
+            		</Target>
+        	</Trigger>
+        	<Trigger Type="OnTurnBegin" Side="Friendly">
+            		<Target Zone="Hero" Amount="All" Side="Friendly" ForceExecute="True" Persistent="True">
+                		<Variable Type="OccupantCount">
+                    			<CardFilter IncludeRaces="Construct"/>
+                		</Variable>
+                		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+                		<Effect Type="ModifyAbility" Ability="FoundryEffect" Duration="UntilEndOfTurn"/>
+            		</Target>
+        	</Trigger>
+        	<Description>Whenever a Construct creature at Foundry dies, increase your [RESOURCES] production by 1. At the begning of your turn, if there is a Construct creature at Foundry, the next Construct creature card costs [1:RESOURCES] less to play this turn.</Description>
+    	</Card>
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Building" Name="Bui_Aca_081" DisplayName="Elemental Nexus" Faction="Academy" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="867">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
-			<Effect Type="ModifyAbility" Ability="AirResist"/>
-			<Effect Type="ModifyAbility" Ability="EarthResist"/>
-			<Effect Type="ModifyAbility" Ability="FireResist"/>
-			<Effect Type="ModifyAbility" Ability="WaterResist"/>
+			<Effect Type="ModifyAbility" Ability="AirWard"/>
+			<Effect Type="ModifyAbility" Ability="EarthWard"/>
+			<Effect Type="ModifyAbility" Ability="FireWard"/>
+			<Effect Type="ModifyAbility" Ability="WaterWard"/>
 		</Target>
-		<Description>Creatures at Elemental Nexus gain Air Resist, Earth Resist, Fire Resist and Water Resist.</Description>
+        	<Trigger Type="OnOccupantCardDeathByDamage" DamageIncludeFlags="Combat">
+            		<Target Zone="None" Amount="Self">
+                		<Effect Type="Kill" />
+            		</Target>
+        	</Trigger>
+		<Description>Creatures at Elemental Nexus gain Air Ward, Earth Ward, Fire Ward and Water Ward. When a creature at Elemental Nexus dies form combat damage, destroy Elemental Nexus.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Aca_082" DisplayName="Storm Terrace" Faction="Academy" Cost="2" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="868">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Aca_082" DisplayName="Storm Terrace" Faction="Academy" Cost="2" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="868">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
 			<CardFilter IncludeRaces="Construct"/>
-			<Effect Type="ModifyAbility" Ability="AreaBlast" Value="2"/>
+			<Effect Type="ModifyAbility" Ability="Shockwave" Value="2"/>
 		</Target>
-		<Description>Construct creatures at Storm Terrace gain Area Blast 2.</Description>
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<CardFilter ExcludeRaces="Construct"/>
+			<Effect Type="ModifyAbility" Ability="Shockwave" Value="1"/>
+		</Target>
+		<Description>Non-construct creatures at Storm Terrace gain Shockwave 1.
+Construct creatures at Storm Terrace gain Shockwave 2.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Building - Haven -->
@@ -285,20 +323,25 @@ Whenever a friendly Mercenary creature deals combat damage, gain [2:RESOURCES].<
 	<!--....................................................................-->
 	<!-- Building - Inferno -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Inf_080" DisplayName="Recycling Chamber" Faction="Inferno" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="0" ID="871">
-		<Trigger Type="OnOccupantCardDeath">
-			<CardFilter IncludeRaces="Breeder" ExcludeToken="True"/>
-			<Target Zone="BattlegroundPosition" CardType="Unit" Amount="Self">
-				<Effect Type="PopulateStack" Name="s06_Tok_Inf_001" Value="2"/>
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Building" Name="Bui_Inf_080" DisplayName="Recycling Chamber" Faction="Inferno" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="1" ID="871">
+		<Trigger Type="OnThisCardBuild">
+			<Target Zone="Battleground" Amount="Self">
+				<Effect Type="PopulateStack" Name="s06_Tok_Inf_001"/>
 			</Target>
 		</Trigger>
-		<Description>Whenever a non-token Breeder creature at Recycling Chamber dies, deploy two Breeder melee-shooter token creatures with [1:ATK]/ [0:RET]/ [1:HEALTH] and Stackable at Recycling Chamber if possible.</Description>
+		<Trigger Type="OnUnitDeath">
+			<CardFilter IncludeRaces="Demon" ExcludeToken="True" Side="Friendly"/>
+			<Target Zone="BattlegroundPosition" CardType="Unit" Amount="Self">
+				<Effect Type="PopulateStack" Name="s06_Tok_Inf_001" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>When Recycling Chamber enters the battleground or when a friendly non-token Demon dies, deploy a Breeder melee-shooter token creature with [1:ATK]/[0:RET]/[1:HEALTH] and Stackable at Recycling Chamber if possible.</Description>
 	</Card>
-	<Card  Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Inf_081" DisplayName="Spawning Chamber" Faction="Inferno" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="872">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Inf_081" DisplayName="Spawning Chamber" Faction="Inferno" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="872">
 		<Variable Type="OccupantCount">
 			<CardFilter IncludeRaces="Breeder" IncludeAbility="Stackable"/>
 		</Variable>
-		<Trigger Type="OnTurnEnd" Side="Friendly">
+		<Trigger Type="OnTurnBegin" Side="Friendly">
 			<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
 				<Variable2 Type="CardStackSize" UseCurrentTarget="True"/>
 				<Condition Operator="And" ValueA="Condition" ValueB="Condition">
@@ -308,8 +351,7 @@ Whenever a friendly Mercenary creature deals combat damage, gain [2:RESOURCES].<
 				<Effect Type="IncreaseStackSize" Value="Variable2"/>
 			</Target>
 		</Trigger>
-		<Description>At the end of your turn, if there is a Breeder stack with 10 or less size at Spawning Chamber, double its stack size.</Description>
-		<DescriptionChinese>当回合结束时，如果有叠数不大于10的巢魔堆叠处于产卵腔，其叠数翻倍。</DescriptionChinese>
+		<Description>At the beginning of your turn, if there is a Breeder stack with 10 or less size at Spawning Chamber, double its stack size.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Building - Necropolis -->
@@ -328,11 +370,15 @@ Whenever a friendly Mercenary creature deals combat damage, gain [2:RESOURCES].<
 	<!--....................................................................-->
 	<!-- Building - Sanctuary -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_San_080" DisplayName="Fountain of Rejuvenation" Faction="Sanctuary" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="1" ID="874">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Building" Name="Bui_San_080" DisplayName="Fountain of Rejuvenation" Faction="Sanctuary" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="1" ID="874">
+		<Target Zone="Battleground" Amount="Occupant">
+			<Effect Type="ModifyAbility" Ability="Regenerate" Value="1"/>
+		</Target>
 		<Target Zone="Battleground" Amount="Occupant">
 			<Effect Type="PlayEffect" PlayEffectType="BounceOnDieFromCombat"/>
 		</Target>
-		<Description>Whenever a creature at Fountain of Rejuvenation dies from combat damage, return that creature to its owner's hand instead.</Description>
+		<Description>Creatures at Fountain of Rejuvenation gain Regenerate 1.
+Whenever a creature at Fountain of Rejuvenation dies from combat damage, return that creature to its owner's hand instead.</Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_San_081" DisplayName="Darkwater Pool" Faction="Sanctuary" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="875">
 		<Trigger Type="OnOccupantDamageHero" DamageIncludeFlags="Combat">
@@ -347,52 +393,48 @@ Whenever a friendly Mercenary creature deals combat damage, gain [2:RESOURCES].<
 	<!--....................................................................-->
 	<!-- Building - Stronghold -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Str_080" DisplayName="Bloodpact Crucible" Faction="Stronghold" Cost="1" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="876">
-		<Trigger Type="OnTurnEnd" Side="Friendly">
-			<Target Zone="Battleground" Amount="Occupant">
-				<CardFilter IncludeAbility="Bloodthirst"/>
-				<Variable Type="UnitAttackCount" UseCurrentTarget="True"/>
-				<Condition Operator="EqualTo" ValueA="Variable" ValueB="0"/>
-				<Effect Type="AddCounter" CounterType="Enrage" Value="1"/>
-			</Target>
-		</Trigger>
-		<Description>At the end of your turn, if a creature with Bloodthirst is at Bloodpact Crucible and it didn't attack this turn, put 1 Enrage counter on that creature.</Description>
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Building" Name="Bui_Str_080" DisplayName="Bloodpact Crucible" Faction="Stronghold" Cost="1" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="876">
+		<Target Zone="Battleground" Amount="Occupant">
+			<CardFilter IncludeAbility="Bloodthirst"/>
+			<Effect Type="ModifyAbility" Ability="Bloodthirst" Value="1"/>
+		</Target>
+		<Description>Creatures with Bloodthirst at Bloodpact Crucible gain Bloodthirst 1.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Building - Neutral -->
 	<!--....................................................................-->
-	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Neu_080" DisplayName="Elemental Spire" Faction="Neutral" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="877">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Neu_080" DisplayName="Elemental Spire" Faction="Neutral" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="877">
 		<Target Zone="Battleground" Amount="Occupant">
-			<CardFilter IncludeRaces="Spirit" IncludeSchool="Air"/>
+			<CardFilter IncludeSchool="Air"/>
 			<Effect Type="ModifyAbility" Ability="AirWard"/>
 		</Target>
 		<Target Zone="Battleground" Amount="Occupant">
-			<CardFilter IncludeRaces="Spirit" IncludeSchool="Fire"/>
+			<CardFilter IncludeSchool="Fire"/>
 			<Effect Type="ModifyAbility" Ability="FireWard"/>
 		</Target>
 		<Target Zone="Battleground" Amount="Occupant">
-			<CardFilter IncludeRaces="Spirit" IncludeSchool="Dark"/>
+			<CardFilter IncludeSchool="Dark"/>
 			<Effect Type="ModifyAbility" Ability="DarkWard"/>
 		</Target>
 		<Target Zone="Battleground" Amount="Occupant">
-			<CardFilter IncludeRaces="Spirit" IncludeSchool="Earth"/>
+			<CardFilter IncludeSchool="Earth"/>
 			<Effect Type="ModifyAbility" Ability="EarthWard"/>
 		</Target>
 		<Target Zone="Battleground" Amount="Occupant">
-			<CardFilter IncludeRaces="Spirit" IncludeSchool="Light"/>
+			<CardFilter IncludeSchool="Light"/>
 			<Effect Type="ModifyAbility" Ability="LightWard"/>
 		</Target>
 		<Target Zone="Battleground" Amount="Occupant">
-			<CardFilter IncludeRaces="Spirit" IncludeSchool="Prime"/>
+			<CardFilter IncludeSchool="Prime"/>
 			<Effect Type="ModifyAbility" Ability="PrimeWard"/>
 		</Target>
 		<Target Zone="Battleground" Amount="Occupant">
-			<CardFilter IncludeRaces="Spirit" IncludeSchool="Water"/>
+			<CardFilter IncludeSchool="Water"/>
 			<Effect Type="ModifyAbility" Ability="WaterWard"/>
 		</Target>
-		<Description>Spirit creatures at Elemental Spire gain Ward of their school type.</Description>
+		<Description>Creatures at Elemental Spire gain Ward of their school type.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Neu_081" DisplayName="War Banner" Faction="Neutral" Cost="4" MightLevel="5" MagicLevel="0" DestinyLevel="0" ID="878">
+	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Neu_081" DisplayName="War Banner" Faction="Neutral" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="1" ID="878">
 		<Variable Type="OccupantCount"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="All">
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>

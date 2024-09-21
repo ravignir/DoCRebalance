@@ -289,15 +289,15 @@ Choose one: Target creature gains Quick Attack OR Target creature gains Double A
         </Target>
         <Description>Destroy target friendly creature. Destroy target building, ongoing spell or fortune of equal or lower cost.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Str_062" DisplayName="Surprise Assault" Faction="Stronghold" Cost="1" DestinyLevel="1" ID="663">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Str_062" DisplayName="Surprise Assault" Faction="Stronghold" Cost="1" DestinyLevel="1" ID="663">
         <Ongoing Duration="UntilYourNextTurn" />
-        <Target Zone="Battleground" Amount="All" CardType="Unit">
+        <Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
             <CardFilter IncludeAbility="Ambush" />
             <Effect Type="ModifyAttack" Value="1" />
             <Effect Type="ModifyRetaliate" Value="1" />
         </Target>
         <Description>Until your next turn:
-All creatures with Ambush get +[1:ATK] and +[1:RET].</Description>
+All friendly creatures with Ambush get +[1:ATK] and +[1:RET].</Description>
     </Card>
     <!--....................................................................-->
     <!--  Fortune - Neutral -->

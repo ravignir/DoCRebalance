@@ -24,20 +24,21 @@
 		<Description>Permanent:
 All creatures gain Swift.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Air_082" DisplayName="Wind Wall" School="Air" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="881">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Spell" Name="Spe_Air_082" DisplayName="Wind Wall" School="Air" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="881">
 		<Ongoing Duration="UntilYourNextTurn"/>
-		<Target Zone="Battleground" CardType="Unit" Amount="All">
-			<CardFilter IncludeUnitType="Shooter"/>
-			<Effect Type="ModifyAttack" Value="0.5xd"/>
-			<Effect Type="ModifyRetaliate" Value="0.5xd"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+			<Effect Type="ModifyAbility" Ability="WindWallEffect"/>
 		</Target>
-		<Description>Until your next turn:
-[ATK] and [RET] value of shooter creatures is halved, rounded down.</Description>
+		<Target Zone="None" Amount="Same">
+			<Effect Type="ModifyAbility" Ability="RangeReflect" Value="2"/>
+		</Target>
+		<Description>Enchant Creature. Until your next turn:
+Enchanted creature and all adjacent creatures gain Range Reflect 2.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Dark -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Dar_080" DisplayName="Cheap Death" School="Dark" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="882">
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Dar_080" DisplayName="Cheap Death" School="Dark" Cost="2" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="882">
 		<Target Zone="Battleground" CardType="Unit" Amount="1">
 			<Variable Type="CardAttack" UseCurrentTarget="True"/>
 			<Condition Operator="LesserThan" ValueA="Variable" ValueB="2"/>
@@ -45,22 +46,20 @@ All creatures gain Swift.</Description>
 		</Target>
 		<Description>Destroy target creature with [1:ATK] or less.</Description>
 	</Card>
-	<Card NotLocalized="True" Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Dar_081" DisplayName="Flaying Darkness" School="Dark" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="883">
-    <Ongoing Duration="Permanent"/>
-    <Ability Type="Endurable" />
-    <Target Zone="Battleground" Amount="1" CardType="Unit">
-        <Variable Type="CardAttack" UseCurrentTarget="True"/>
-        <Condition Operator="LesserThan" ValueA="Variable" ValueB="3"/>
-       <Effect Type="ModifyAbility" Ability="CannotAttack">
-       </Effect>
-    </Target>
-    <Trigger Type="OnTurnBegin" Side="Friendly">
-      <Target Zone="Battleground" Amount="Self">
-        <Effect Type="AdjacentMovement" Side="Friendly" />
-      </Target>
-    </Trigger>
-    <Description>Enchant Creature. Permanent:
-      Creature with attack 2 or less gains Cannot Attack. At the start of owners turn [THIS] enchants an random adjacent creature from same side.</Description>
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Dar_081" DisplayName="Flaying Darkness" School="Dark" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="883">
+        	<Ongoing Duration="Permanent" />
+		<Ability Type="Endurable"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="1" />
+        	<Trigger Type="OnTurnBegin" Duration="Permanent">
+            		<Target Zone="Battleground" CardType="Unit" Amount="Parent">
+                		<Effect Type="AddCounter" CounterType="Crippling" Value="1" />
+            		</Target>
+            		<Target Zone="Battleground" Amount="Self">
+                		<Effect Type="AdjacentMovement" Side="Friendly" />
+            		</Target>
+        	</Trigger>
+    		<Description>Enchant creature. Permanent:
+At the beginning of each player's turn, put 1 crippling counter on enchanted creature. Then, if possible, Flaying Darkness enchants an random adjacent creature from same side.</Description>
 	</Card>
 	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Dar_082" DisplayName="Creeping Darkness" School="Dark" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="884">
 		<Ongoing Duration="Permanent"/>
@@ -89,48 +88,48 @@ At the beginning of opponent's turn, put 1 crippling counter on an enemy creatur
 		</Target>
 		<Description>Double the number of poison counters on all creatures.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Ear_082" DisplayName="Nature's Revenge" School="Earth" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="887">
-		<Variable Type="TargetCount">
-			<Target Zone="Battleground" CardType="Unit" Amount="All"/>
-		</Variable>
-		<Ongoing Duration="FromCondition">
-			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-		</Ongoing>
-		<Trigger Type="OnTurnBegin">
-			<Target Zone="Battleground" Amount="All" CardType="Unit">
-				<CardFilter IncludeOccupant="True"/>
-				<Effect Type="Damage" Value="2"/>
-			</Target>
-		</Trigger>
-		<Description>Permanent:
-At the beginning of each player's turn, deal 2 damage to all creatures at a building. When there are no creatures on the battleground, destroy Nature's Revenge.</Description>
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Ear_082" DisplayName="Nature's Revenge" School="Earth" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="887">
+		<Target Zone="Battleground" CardType="Unit" Amount="All">
+			<CardFilter IncludeOccupant="True"/>
+			<Effect Type="Damage" Value="2"/>
+			<Subgroup>
+				<Target Zone="Battleground" CardType="Building" Amount="All">
+					<Effect Type="Kill"/>
+				</Target>
+			</Subgroup>
+		</Target>
+		<Description>Deal 2 damage to all creatures at a building then destroy all buildings.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Fire -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Fir_080" DisplayName="Forked Firebolt" School="Fire" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="888">
-		<Target Zone="Battleground" Amount="2" CardType="Unit">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Spell" Name="Spe_Fir_080" DisplayName="Forked Firebolt" School="Fire" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="888">
+		<Target Zone="Battleground" Amount="1" CardType="Unit">
+			<Effect Type="Damage" Value="3"/>
+		</Target>
+		<Target Zone="Battleground" Amount="1" CardType="Unit" CantTargetPrevious="True">
 			<Effect Type="Damage" Value="2"/>
 		</Target>
-		<Description>Deal 2 damage to 2 target creatures.</Description>
+		<Description>Deal 3 damage to target creature and deal 2 damage to another target creature.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Fir_081" DisplayName="Collateral Damage" School="Fire" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="889">
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Fir_081" DisplayName="Collateral Damage" School="Fire" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="889">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="1" CardType="Unit">
 			<Effect Type="ModifyAbility" Ability="Tremple"/>
+			<Effect Type="ModifyAbility" Ability="ExtraDD"/>
 		</Target>
 		<Description>Enchant Creature. Permanent:
-Whenever enchanted creature attacks and destroys a creature, overkill damage is redirected to enemy Hero.</Description>
+Whenever enchanted creature attacks and destroys a creature, deal 1 damage and redirect any overkill damage to enemy Hero.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Fir_082" DisplayName="Ragefire" School="Fire" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="890">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Fir_082" DisplayName="Ragefire" School="Fire" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="890">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
 			<CardFilter IncludeSchool="Fire"/>
-			<Effect Type="ModifyAbility" Ability="AreaBlast" Value="3"/>
+			<Effect Type="ModifyAbility" Ability="AreaBlast" Value="2"/>
 			<Effect Type="ModifyAttack" Value="1"/>
 		</Target>
 		<Description>Permanent:
-Friendly Fire creatures gain Area Blast 3 and +[1:ATK].</Description>
+Friendly Fire creatures gain Area Blast 2 and +[1:ATK].</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Light -->
