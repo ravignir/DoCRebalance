@@ -91,9 +91,9 @@
         </Target>
         <Description>While Crusader Vanguard has no damage, it gains +[1:ATK] and +[1:RET].</Description>
     </Card>
-    <Card NotLocalized="True" Rarity="Uncommon" Type="Unit" Name="Cre_Hav_064" DisplayName="Angel of Mourning" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Angel" Cost="3" MightLevel="3" MagicLevel="2" Attack="2" Retaliate="2" HP="6" ID="671">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Hav_064" DisplayName="Angel of Mourning" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Angel" Cost="3" MightLevel="3" MagicLevel="2" Attack="2" Retaliate="2" HP="6" ID="671">
         <Trigger Type="OnUnitDeath" Side="Friendly">
-<CardFilter IncludeRaces="Human"/>
+<CardFilter IncludeRaces="Human" ExcludeToken="True"/>
 <Target Zone="Hero" Amount="All" Side="Friendly">
 <Effect Type="Heal" Value="1"/>
 </Target>
