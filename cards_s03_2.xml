@@ -673,23 +673,14 @@ Whenever you deploy a creature, that creature deals damage equal to its [ATK] to
 	</Target>
         <Description>Look at the top 5 cards of your library. Put 2 of them into your hand and the rest into your graveyard.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_051" DisplayName="Full Moon" Faction="Neutral" Cost="2" DestinyLevel="3" ID="567">
-        <Target Zone="Graveyard" Amount="All" CardType="Unit" Side="Friendly">
-            <Effect Type="MoveCardTo" Destination="Library" />
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_051" DisplayName="Full Moon" Faction="Neutral" Cost="1" MagicLevel="2" DestinyLevel="2" ID="567">
+	<Ongoing Duration="UntilYourNextTurn"/>
+        <Target Zone="Battleground" Amount="All" CardType="Unit">
+		<Effect Type="ModifyAbility" Ability="CannotTarget" Remove="True" />
         </Target>
-        <Target Side="Friendly">
-            <Effect Type="Shuffle" CardHolder="Library" />
-        </Target>
-        <Target Zone="Graveyard" Amount="All" CardType="Unit" Side="Enemy">
-            <Effect Type="MoveCardTo" Destination="Library" />
-        </Target>
-        <Target Side="Enemy">
-            <Effect Type="Shuffle" CardHolder="Library" />
-        </Target>
-	<Target Zone="None" Side="Friendly">
-		<Effect Type="Draw" Value="1"/>
-	</Target>
-        <Description>Take all creature cards in both graveyards and shuffle them into their owner's libraries. Draw a card.</Description>
+        <Description>Until your next turn:
+All creatures cannot gain "cannot be targeted".
+When Full Moon enters the battleground, all creatures lose "cannot be targeted".</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Neu_052" DisplayName="Second Chance" Faction="Neutral" Cost="3" DestinyLevel="3" ID="568">
         <Target Zone="Graveyard" Amount="1" Side="Friendly">
