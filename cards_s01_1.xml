@@ -48,9 +48,9 @@
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_020" DisplayName="Hellfire Imp" Faction="Inferno" School="Fire" SubType="Magic|Flyer" Race="Demon|Imp" Cost="2" MightLevel="2" MagicLevel="2" Attack="3" Retaliate="0" HP="2" ID="264">
         <Ability Type="FireBurst" Value="1"/>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_021" DisplayName="Hellfire Cerberus" Faction="Inferno" SubType="Shooter" Race="Demon|Hound" School="Fire" Cost="3" MightLevel="3" Attack="2" Retaliate="0" HP="3" ID="265">
-        <Ability Type="ImmuneToRetaliate"/>
-        <Ability Type="AttackAnywhere"/>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_021" DisplayName="Hellfire Cerberus" Faction="Inferno" SubType="Shooter" Race="Demon|Hound" School="Fire" Cost="3" MightLevel="2" Attack="2" Retaliate="0" HP="3" ID="265">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="AttackAnywhere" />
     </Card>
     <Card  Rarity="Rare" Type="Unit" Name="Cre_Inf_022" DisplayName="Hellfire Juggernaut" Faction="Inferno" School="Fire" SubType="Magic|Melee" Race="Demon|Juggernaut" Cost="4" MightLevel="5" MagicLevel="1" Attack="7" Retaliate="3" HP="3" ID="266">
         <Ability Type="FireBurst" Value="4"/>
@@ -76,8 +76,9 @@
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_021" DisplayName="Moonsilk Spinner" Faction="Necropolis" SubType="Melee|Shooter" Race="Spider" Cost="4" MightLevel="3" Attack="2" Retaliate="2" HP="6" ID="269">
         <Ability Type="Crippling" Value="2"/>
     </Card>
-    <Card Rarity="Epic" Type="Unit" Name="Cre_Nec_023" DisplayName="Vampire Assassin" Faction="Necropolis" SubType="Melee" Race="Vampire|Assassin" Cost="4" MightLevel="3" Attack="1" Retaliate="2" HP="4" ID="270">
-        <Trigger Type="OnThisDamageUnit" Side="Enemy" DamageIncludeFlags="Combat">
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Nec_023" DisplayName="Vampire Assassin" Faction="Necropolis" SubType="Melee" Race="Vampire|Assassin" Cost="4" MightLevel="3" Attack="1" Retaliate="1" HP="5" ID="270">
+        <Ability Type="PreemptiveStrike"/>
+	<Trigger Type="OnThisDamageUnit" Side="Enemy" DamageIncludeFlags="Combat">
             <Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
                 <Effect Type="Kill"/>
             </Target>
@@ -106,8 +107,8 @@
         <Ability Type="ImmuneToRetaliate"/>
         <Ability Type="Hypnotize"/>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_San_003" DisplayName="Kenshi" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="5" MightLevel="5" Attack="2" Retaliate="1" HP="4" ID="99">
-        <Ability Type="Honor" Value="2"/>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_San_003" DisplayName="Kenshi" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="5" MightLevel="5" Attack="2" Retaliate="1" HP="5" ID="99">
+        <Ability Type="Honor" Value="2" />
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_San_006" DisplayName="Kirin" Faction="Sanctuary" School="Water" SubType="Magic|Melee|Shooter" Race="Spirit" Cost="3" MightLevel="3" MagicLevel="1" Attack="2" Retaliate="1" HP="5" ID="100">
         <Ability Type="FocusedBlast" Value="2"/>
@@ -181,10 +182,10 @@
         </Target>
 		<Description>While there is enemy damaged creature on the battleground, Wanizame gains +[1:ATK].</Description>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_San_012" DisplayName="Shark Guard" Faction="Sanctuary" SubType="Melee" Race="Beastmen|Warrior" Cost="1" MightLevel="1" Attack="2" Retaliate="1" HP="2" ID="94"/>
-    <Card Rarity="Common" Type="Unit" Name="Cre_San_015" DisplayName="Spring Spirit" Faction="Sanctuary" School="Water" SubType="Magic|Melee" Race="Spirit" Cost="2" MightLevel="2" MagicLevel="1" Attack="2" Retaliate="2" HP="4" ID="97"/>
-    <Card Rarity="Common" Type="Unit" Name="Cre_San_020" DisplayName="White Fox" Faction="Sanctuary" SubType="Melee" Race="Fox|Spirit" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="3" ID="272">
-        <Ability Type="Lucky" Value="1"/>
+    <Card Rarity="Common" Type="Unit" Name="Cre_San_012" DisplayName="Shark Guard" Faction="Sanctuary" SubType="Melee" Race="Beastmen|Warrior" Cost="1" MightLevel="1" Attack="2" Retaliate="1" HP="2" ID="94" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_San_015" DisplayName="Spring Spirit" Faction="Sanctuary" School="Water" SubType="Magic|Melee" Race="Spirit" Cost="2" MightLevel="2" MagicLevel="1" Attack="2" Retaliate="2" HP="4" ID="97" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_San_020" DisplayName="White Fox" Faction="Sanctuary" SubType="Melee" Race="Fox|Spirit" Cost="2" MightLevel="2" DestinyLevel="1" Attack="2" Retaliate="0" HP="4" ID="272">
+        <Ability Type="Lucky" Value="1" />
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_San_021" DisplayName="Shanriya Guard" Faction="Sanctuary" School="Water" SubType="Magic|Melee|Shooter" Race="Naga|Warrior" Cost="3" MightLevel="3" MagicLevel="1" Attack="2" Retaliate="0" HP="4" ID="273">
         <Ability Type="ImmuneToRetaliate"/>
@@ -196,21 +197,21 @@
         <Ability Type="Hypnotize"/>
 		<Ability Type="FrozenTouch"/>
     </Card>
-    <Card Rarity="Epic" Type="Unit" Name="Cre_San_023" DisplayName="Deep Mountain Yeti" Faction="Sanctuary" SubType="Melee" Race="Yeti" Cost="5" MightLevel="5" Attack="2" Retaliate="0" HP="6" ID="275">
+    <Card Rarity="Epic" Type="Unit" Name="Cre_San_023" DisplayName="Deep Mountain Yeti" Faction="Sanctuary" SubType="Melee" Race="Yeti" Cost="5" MightLevel="5" Attack="0" Retaliate="0" HP="7" ID="275">
         <Target Zone="Battleground" CardType="Unit" Amount="Self">
             <Variable Type="TargetCount">
-                <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy"/>
+                <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Any" />
             </Variable>
             <Effect Type="ModifyAttack" Value="Variable"/>
             <Effect Type="ModifyRetaliate" Value="Variable"/>
         </Target>
-        <Description>Deep Mountain Yeti gains +[1:ATK] and +[1:RET] for each enemy creature.</Description>
+        <Description>Deep Mountain Yeti gains +[1:ATK] and +[1:RET] for each creature on the battleground.</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Creatures - Stronghold -->
     <!--...............................................................................-->
     <Card Rarity="Common" Type="Unit" Name="Cre_Str_020" DisplayName="Blackskull Warchanter" Faction="Stronghold" SubType="Melee" Race="Orc" Cost="1" MightLevel="1" Attack="0" Retaliate="0" HP="2" ID="276">
-        <Trigger Type="OnTurnEnd" Side="Friendly">
+        <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
                 <CardFilter IncludeAbility="Enrage"/>
                 <Effect Type="AddCounter" CounterType="Enrage" Value="1"/>
@@ -290,10 +291,10 @@ Players cannot search their library.</Description>
         <Ability Type="FireHeal"/>
         <Ability Type="FireBurst" Value="2"/>
     </Card>
-    <Card Rarity="Epic" Type="Unit" Name="Cre_Neu_024" DisplayName="Shi-No-Shi" Faction="Neutral" SubType="Magic|Flyer" Race="Wyvern" Unique="True" Cost="8" MightLevel="6" MagicLevel="2" Attack="6" Retaliate="6" HP="6" ID="284">
-        <Ability Type="Charge"/>
-        <Ability Type="DarkWard"/>
-        <Ability Type="ShuffleOnEnterGraveyard"/>
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Neu_024" DisplayName="Shi-No-Shi" Faction="Neutral" SubType="Magic|Flyer" Race="Wyvern" Unique="True" Cost="7" MightLevel="6" MagicLevel="2" Attack="6" Retaliate="6" HP="6" ID="284">
+        <Ability Type="Charge" />
+        <Ability Type="DarkWard" />
+        <Ability Type="ShuffleOnEnterGraveyard" />
         <Description>When Shi-No-Shi is put into your graveyard, shuffle it into your library instead.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Neu_025" DisplayName="Deep Mountain Turtle" Faction="Neutral" School="Earth" SubType="Melee" Race="Beast" Cost="3" MightLevel="3" Attack="1" Retaliate="3" HP="5" ID="333">

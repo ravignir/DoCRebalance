@@ -36,6 +36,7 @@
     <!--....................................................................-->
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Dar_040" DisplayName="Cursed Chains" School="Dark" Cost="3" MagicLevel="3" ID="421">
         <Ongoing Duration="Permanent" />
+	<Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1" />
         <Trigger Type="OnEnchantedTurnBegin">
             <Target Zone="Hero" Amount="ParentHero">
@@ -54,12 +55,11 @@ At the beginning of enchanted creature's controller's turn, deal 1 damage to the
         <Description>Until your next turn:
 Creatures with no adjacent friendly creature gain Cannot Attack.</Description>
     </Card>
-    <Card NotLocalized="True" Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Dar_042" DisplayName="The Silent Death" School="Dark" Cost="5" MagicLevel="4" ID="423">
+    <Card NotLocalized="True" Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Dar_042" DisplayName="The Silent Death" School="Dark" Cost="4" MagicLevel="4" ID="423">
         <Ongoing Duration="Permanent" />
       <Target Zone="Battleground" CardType="Unit" Amount="1">
         <Effect Type="ModifyAbility" Ability="CannotAttack" />
-        <Effect Type="ModifyAbility" Ability="Phased" />
-        <Effect Type="ModifyAbility" Ability="Immobilized" />
+	<Effect Type="ModifyAbility" Ability="CannotTarget"/>
       </Target>
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Battleground" Amount="Self">
@@ -73,7 +73,7 @@ Creatures with no adjacent friendly creature gain Cannot Attack.</Description>
         </Trigger>
         <Description>
           Enchant Creature. Permanent:
-          Enchanted creature is Immobilized and gains Cannot Attack and Phased. At the beginning of your turn, destroy enchanted creature and return The Silent Death to its owner's hand.</Description>
+          Enchanted creature cannot be targeted and gains Cannot Attack. At the beginning of your turn, destroy enchanted creature and return The Silent Death to its owner's hand.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Spells - Earth -->
@@ -119,6 +119,7 @@ Damage dealt to friendly melee creatures in the front line is halved, rounded do
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_041" DisplayName="Fiery Rage" School="Fire" Cost="2" MagicLevel="2" ID="428">
         <Ongoing Duration="Permanent" />
+	<Ability Type="Endurable"/>
         <Target Zone="Battleground" Side="Any" Amount="1" CardType="Unit">
             <Effect Type="ModifyAttack" Value="1" />
             <Effect Type="ModifyAbility" Ability="Berserk" />
@@ -126,12 +127,12 @@ Damage dealt to friendly melee creatures in the front line is halved, rounded do
         <Description>Enchant creature. Permanent:
 Enchanted creature gains +[1:ATK] and Berserk.</Description>
     </Card>
-    <Card Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Fir_042" DisplayName="The Forbidden Flame" School="Fire" Cost="5" MagicLevel="3" ID="429">
+    <Card UseXmlDescription="True" Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Fir_042" DisplayName="The Forbidden Flame" School="Fire" Cost="5" MagicLevel="3" ID="429">
         <Target Zone="Battleground" Side="Any" Amount="All" CardType="Unit">
             <Variable Type="Level" LevelType="Magic" ValueModifier="2.0x" Side="Friendly" />
-            <Effect Type="Damage" Value="Variable" />
+            <Effect Type="Damage" Value="Variable" DamageFlags="Spell|Fire|Magic|Enforced" />
         </Target>
-        <Description>Deal damage to all creatures equal to double your [MAGIC] level.</Description>
+        <Description>Deal damage to all creatures equal to double your [MAGIC] level. This damage cannot be prevented or reduced.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Spells - Light -->

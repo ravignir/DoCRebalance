@@ -16,8 +16,8 @@
         </Target>
         <Description>Choose 2 target friendly creatures. Relocate each of them to the other's position. New positions must be valid.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Air_031" DisplayName="Storm Arrows" School="Air" Cost="2" MagicLevel="3" ID="308">
-        <Ongoing Duration="UntilEndOfTurn"/>
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Air_031" DisplayName="Storm Arrows" School="Air" Cost="2" MagicLevel="2" ID="308">
+        <Ongoing Duration="UntilEndOfTurn" />
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
             <CardFilter IncludeUnitType="Shooter"/>
             <Effect Type="ModifyAbility" Ability="AttackAnywhere"/>
@@ -171,7 +171,7 @@ When Purity enters the battleground, remove all counters from all creatures.</De
     <!--....................................................................-->
     <!-- Spells - Prime -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Pri_030" DisplayName="Negate Magic" School="Prime" Cost="2" MagicLevel="1" ID="322">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Pri_030" DisplayName="Negate Magic" School="Prime" Cost="1" MagicLevel="2" ID="322">
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="RemoveCounter" CounterType="Any" Value="Infinite"/>
             <Effect Type="Cleanse"/>
@@ -195,17 +195,17 @@ When Purity enters the battleground, remove all counters from all creatures.</De
     <!-- Spells - Water -->
     <!--....................................................................-->
     <Card Rarity="Common" Type="Spell" Name="Spe_Wat_030" DisplayName="Water Wall" School="Water" Cost="2" MagicLevel="2" ID="325">
-        <Ongoing Duration="UntilYourNextTurn"/>
-        <Target Zone="Battleground" CardType="Unit" Amount="All">
-            <Variable Type="CardAttack" UseCurrentTarget="True"/>
-            <Condition Operator="LesserThan" ValueA="Variable" ValueB="3"/>
-            <Effect Type="ModifyAbility" Ability="CannotAttack" EvaluationOrder="Last"/>
+        <Target Zone="BattlegroundPosition" Shape="Self" CardType="Unit" Amount="1">
+            <Effect Type="Damage" Value="3" />
         </Target>
-        <Description>Until your next turn:
-Creatures with [ATK] of 2 or less gain Cannot Attack.</Description>
+        <Description>Choose target battleground position. Deal 3 damage to any creature at targeted position.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Wat_031" DisplayName="Monsoon" School="Water" Cost="2" MagicLevel="3" ID="326">
-        <Ongoing Duration="Permanent"/>
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Wat_031" DisplayName="Monsoon" School="Water" Cost="2" MagicLevel="3" ID="326">
+        <Ongoing Duration="Permanent" />
+        <Target Zone="Battleground" Amount="All" CardType="Unit">
+	<CardFilter IncludeSchool="Water"/>
+	<Effect ModifyAbility="Regeneration" Value="1"/>
+	</Target>
         <Target Zone="Battleground" Amount="All">
             <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Fire|Spell"/>
         </Target>
@@ -213,7 +213,8 @@ Creatures with [ATK] of 2 or less gain Cannot Attack.</Description>
             <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Earth|Spell"/>
         </Target>
         <Description>Permanent:
-Fire and earth spells deal half damage, rounded down.</Description>
+Fire and earth spells deal half damage, rounded down.
+	All Water creatures gain Regenerate 1.</Description>
     </Card>
     <Card Rarity="Rare" Type="Spell" Name="Spe_Wat_032" DisplayName="Clashing Tides" School="Water" Cost="4" MagicLevel="3" ID="327">
         <Target Zone="BattlegroundLine" CardType="Unit" Amount="1" Side="Enemy">

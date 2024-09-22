@@ -308,7 +308,7 @@ While there are fewer friendly creatures than enemy creatures on the battlegroun
 	<Card Rarity="Common" Type="Unit" Name="Cre_Str_070" DisplayName="Goblin Mentor" Faction="Stronghold" SubType="Melee" Race="Goblin|Warrior" Cost="2" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="1" HP="3" ID="735" Unique="False">
 		<Ability Type="Leadership" Value="1"/>
 	</Card>
-	<Card Rarity="Epic" Type="Unit" Name="Cre_Str_071" DisplayName="Pao Warchief" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="3" HP="6" ID="736" Unique="False">
+	<Card Rarity="Epic" Type="Unit" Name="Cre_Str_071" DisplayName="Pao Warchief" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="3" HP="6" ID="736" Unique="False">
 		<Target Zone="Battleground" Amount="Self">
 			<Variable Type="Level" LevelType="Might" Side="Friendly"/>
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="9"/>
@@ -321,7 +321,16 @@ While there are fewer friendly creatures than enemy creatures on the battlegroun
 		</Target>
 		<Description>While your [MIGHT] level is 10 or more, Pao Warchief gains +[3:ATK] and Quick Attack.</Description>
 	</Card>
-	<Card Rarity="Common" Type="Unit" Name="Cre_Str_072" DisplayName="Pao Wrecker" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="6" MightLevel="6" MagicLevel="0" DestinyLevel="0" Attack="6" Retaliate="5" HP="8" ID="737" Unique="False"/>
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Str_072" DisplayName="Pao Wrecker" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="6" MightLevel="6" MagicLevel="0" DestinyLevel="0" Attack="5" Retaliate="4" HP="8" ID="737" Unique="False">
+		<Trigger Type="OnThisCardDeploy">
+<Target Zone="Battleground" CardType="Unit" Amount="1" Cancelable="True"/>
+<Target Zone="Battleground" CardType="Unit" Amount="Same">
+<Variable Type="Level" LevelType="Might" ValueModifier="0.5xd" Side="Friendly"/>
+<Effect Type="Damage" Value="Variable"/>
+</Target>
+</Trigger>
+<Description> When Pao Wrecker enters the battleground, you may deal damage to target creature equal to half of your [MIGHT] level, rounded down. </Description>
+	</Card>
 	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_073" DisplayName="Pao Veteran" Faction="Stronghold" SubType="Melee|Shooter" Race="Orc|Warrior" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="738" Unique="False">
 		<Target Zone="Battleground" Amount="All" CardType="Unit">
 			<CardFilter IncludeRaces="Warrior"/>
@@ -331,14 +340,16 @@ While there are fewer friendly creatures than enemy creatures on the battlegroun
 		</Target>
 		<Description>Whenever a Warrior creature attacks a non-Warrior creature, it deals 1 more attack damage.</Description>
 	</Card>
-	<Card Rarity="Common" Type="Unit" Name="Cre_Str_074" DisplayName="Warbound Cyclops" Faction="Stronghold" SubType="Melee" Race="Cyclops|Warrior" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="1" HP="7" ID="739" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Str_074" DisplayName="Warbound Cyclops" Faction="Stronghold" SubType="Melee|Shooter" Race="Cyclops|Warrior" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="0" Retaliate="1" HP="7" ID="739" Unique="False">
 		<Trigger Type="OnOtherPostAttack" Side="Friendly">
 			<CardFilter IncludeRaces="Warrior"/>
 			<Target Zone="Battleground" Amount="Self" ForceExecute="True">
 				<Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+				<Effect Type="ModifyRetaliate" Value="1" Duration="UntilEndOfTurn"/>
 			</Target>
 		</Trigger>
-		<Description>Whenever another friendly Warrior creature attacks, Warbound Cyclops gains +[1:ATK] until end of turn.</Description>
+		<Ability Type="DoubleAttack"/>
+	<Description>Whenever another friendly Warrior creature attacks, Warbound Cyclops gains +[1:ATK] and +[1:RET] until end of turn.</Description>
 	</Card>
 	<Card Rarity="Common" Type="Unit" Name="Cre_Str_075" DisplayName="Stormrage Warrior" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="0" HP="6" ID="740" Unique="False">
 		<Ability Type="Enrage" Value="1"/>

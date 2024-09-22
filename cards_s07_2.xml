@@ -19,7 +19,7 @@
 		</Target>
 		<Description>Banish 2 target prime cards in your graveyard, then draw 2 cards.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Aca_091" DisplayName="Shifting Fates" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="1" DestinyLevel="2" ID="952">
+	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Aca_091" DisplayName="Shifting Fates" Faction="Academy" Cost="3" MightLevel="0" MagicLevel="1" DestinyLevel="2" ID="952">
 		<Target Zone="Graveyard" Amount="2" Side="Friendly" CardType="Unit">
 			<CardFilter IncludeSchool="Prime"/>
 			<Effect Type="MoveCardTo" Destination="Hand"/>
@@ -57,8 +57,8 @@
 		</Target>
 		<Description>Deal 5 damages to your hero, then draw 5 cards.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Inf_091" DisplayName="Ritual of the Dark Flame" Faction="Inferno" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="956">
-		<Ongoing Duration="UntilYourNextTurn"/>
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Fortune" Name="For_Inf_091" DisplayName="Ritual of the Dark Flame" Faction="Inferno" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="956">
+		<Ongoing Duration="Permanent"/>
 		<Variable Type="TargetCount">
 			<Target Zone="Graveyard" Amount="All" Side="Friendly">
 				<CardFilter IncludeSchool="Fire"/>
@@ -81,9 +81,13 @@
 			<Effect Type="ModifyAttack" Value="-1"/>
 			<Effect Type="ModifyRetaliate" Value="-1"/>
 		</Target>
-		<Description>Until your next turn:
-While you have a fire card in your graveyard, your creatures gains +[1:ATK] and +[1:RET].
-While you have a dark card in your graveyard, your opponent's creatures gains -[1:ATK] and -[1:RET].</Description>
+		<Trigger Type="OnUnitDeath" Side="Friendly">
+<CardFilter IncludeFaction="Inferno"/>
+<Target Zone="Battleground" Amount="Self">
+<Effect Type="Kill"/>
+</Target>
+</Trigger>
+<Description>Pernament: While you have a fire card in your graveyard, your creatures gains +[1:ATK] and +[1:RET]. While you have a dark card in your graveyard, your opponent's creatures gains -[1:ATK] and -[1:RET]. When a friendly Demon creature dies, destroy Ritual of the Dark Flame.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Fortune - Necropolis -->
@@ -220,7 +224,7 @@ Target Centaur creature and target Harpy creature gains +[2:ATK].</Description>
 		<Description>Until your next turn:
 Choose [0]Air[/0], [1]Earth[/1], [2]Fire[/2], [3]Water[/3], [4]Dark[/4], [5]Light[/5] or [6]Prime[/6]. Cards of the chosen school cannot be played.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Neu_091" DisplayName="Overwhelming Forces" Faction="Neutral" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="964">
+	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Neu_091" DisplayName="Overwhelming Forces" Faction="Neutral" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="964">
 		<Ongoing Duration="UntilEndOfTurn"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="All">
 			<CardFilter IncludeRaces="Mercenary"/>
@@ -296,12 +300,16 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 	<!--....................................................................-->
 	<!-- Building - Haven -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Hav_090" DisplayName="Holy Lighthouse" Faction="Haven" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="969">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Building" Name="Bui_Hav_090" DisplayName="Holy Lighthouse" Faction="Haven" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="969">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
 			<CardFilter IncludeFaction="Haven"/>
 			<Effect Type="ModifyAbility" Ability="DarkWard"/>
 		</Target>
-		<Description>Haven creatures at Holy Lighthouse gains Dark Ward.</Description>
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+<CardFilter IncludeSchool="Light"/>
+<Effect Type="ModifyAttack" Value="1"/>
+</Target>
+<Description>Haven creatures at Holy Lighthouse gains Dark Ward. Light creatures at Holy Lighthouse gain +[1:ATK].</Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Hav_091" DisplayName="Chapel of Elrath" Faction="Haven" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="970">
 		<Trigger Type="OnCardPlay" Side="Friendly">
@@ -332,7 +340,7 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 	<!--....................................................................-->
 	<!-- Building - Inferno -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Inf_090" DisplayName="Walls of Destruction" Faction="Inferno" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="972">
+	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Inf_090" DisplayName="Walls of Destruction" Faction="Inferno" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="972">
 		<Trigger Type="OnThisPostAttacked">
 			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
 				<Effect Type="Damage" Value="3"/>
@@ -340,17 +348,18 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 		</Trigger>
 		<Description>After the creature at Walls of Destruction is attacked, deal 3 damage to the attacking creature.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Inf_091" DisplayName="Heretic Library" Faction="Inferno" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="973">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Inf_091" DisplayName="Heretic Library" Faction="Inferno" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="973">
 		<Variable Type="OccupantCount">
-			<CardFilter IncludeSchool="Dark"/>
-		</Variable>
-		<Trigger Type="OnTurnBegin" Side="Friendly">
-			<Target Zone="Hero" Amount="All" Side="Enemy">
-				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-				<Effect Type="Damage" Value="1"/>
-			</Target>
-		</Trigger>
-		<Description>At the beginning of your turn, if there's a Dark creatures at Heretic Library, deal 1 damage to enemy hero.</Description>
+<CardFilter IncludeFaction="Inferno"/>
+</Variable>
+<Trigger Type="OnTurnBegin" Side="Friendly">
+<Target Zone="Graveyard" Amount="1" Side="Friendly">
+<CardFilter IncludeCardType="Fortune" IncludeFaction="Inferno"/>
+<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+<Effect Type="MoveCardTo" Destination="Hand"/>
+</Target>
+</Trigger>
+<Description>At the beginning of your turn, if an Inferno creature is at Heretic Library, take target forune card from your graveyard ad put it into your hand.</Description>
 	</Card>
 	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Inf_092" DisplayName="Throne of Ahribban" Faction="Inferno" Cost="4" MightLevel="2" MagicLevel="2" DestinyLevel="0" ID="974">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
@@ -363,9 +372,9 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 	<!--....................................................................-->
 	<!-- Building - Necropolis -->
 	<!--....................................................................-->
-	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Nec_090" DisplayName="Statue of the Spider Godess" Faction="Necropolis" Cost="2" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="975">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Nec_090" DisplayName="Statue of the Spider Godess" Faction="Necropolis" Cost="2" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="975">
 		<Variable Type="OccupantCount">
-			<CardFilter IncludeRaces="Namtaru"/>
+			<CardFilter IncludeRaces="Namtaru|Spider"/>
 		</Variable>
 		<Trigger Type="OnTurnBegin" Side="Friendly">
 			<Target Zone="Graveyard" Amount="1" CardType="Spell" Side="Friendly" Random="True">
@@ -374,7 +383,7 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 				<Effect Type="AttachOnOccupant"/>
 			</Target>
 		</Trigger>
-		<Description>At the beginning of your turn, if there's a Namtaru at Statue of the Spider Godess, take a valid enchant creature spell card at random from your graveyard and enchant it to the creature at Statue of the Spider Godess.</Description>
+		<Description>At the beginning of your turn, if there's a Namtaru or a Spider at Statue of the Spider Godess, take a valid enchant creature spell card at random from your graveyard and enchant it to the creature at Statue of the Spider Godess.</Description>
 		<!-- S07 NEW STUFF : AttachOnOccupant - Card effect used to attach a target card on the occupant of a building. -->
 	</Card>
 	<!--....................................................................-->
@@ -398,7 +407,7 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 	<!--....................................................................-->
 	<!-- Building - Stronghold -->
 	<!--....................................................................-->
-	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Str_090" DisplayName="Jungle Outpost" Faction="Stronghold" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="2" ID="978">
+	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Str_090" DisplayName="Jungle Outpost" Faction="Stronghold" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="2" ID="978">
 		<Trigger Type="OnThisPreAttackUnit">
 			<Target Zone="Battleground" Amount="Occupant">
 				<Variable Type="UnitAttackCount" UseCurrentTarget="True"/>

@@ -20,7 +20,7 @@
     <Card Rarity="Common" Type="Unit" Name="Cre_Aca_003" DisplayName="Rakshasa" Faction="Academy" SubType="Melee" Race="Beastmen|Lion" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="5" ID="458">
         <Ability Type="Evade" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_004" DisplayName="Dragon Golem" Faction="Academy" School="Prime" SubType="Magic|Melee" Race="Dragon|Construct" Cost="5" MightLevel="3" MagicLevel="5" Attack="3" Retaliate="1" HP="7" ID="459">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_004" DisplayName="Dragon Golem" Faction="Academy" School="Prime" SubType="Magic|Melee" Race="Dragon|Construct" Cost="5" MightLevel="3" MagicLevel="4" Attack="3" Retaliate="1" HP="7" ID="459">
         <Trigger Type="OnThisCardDeploy">
             <Target Zone="Graveyard" Side="Friendly" Amount="1" Random="True" Cancelable="False">
                 <CardFilter IncludeCardType="Spell" ExcludeUnique="True" />
@@ -270,20 +270,20 @@ While there is a friendly wizard on battle ground, [THIS] gain Swift. </Descript
         </Trigger>
         <Description>The first time a card is put into opponent's graveyard from their library during a turn, draw a card.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Aca_031" DisplayName="Void Shade" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Void|Spirit" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="0" HP="4" ID="486">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Aca_031" DisplayName="Void Shade" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Void|Spirit" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="0" HP="4" ID="486">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="Anchored" />
         <Trigger Type="OnThisCardDeploy">
-            <Target Zone="Library" Side="Enemy" Amount="3" AutoTakeFirstInputs="True" Cancelable="False">
+            <Target Zone="Library" Side="Enemy" Amount="2" AutoTakeFirstInputs="True" Cancelable="False">
                 <Effect Type="MoveCardTo" Destination="Graveyard" />
             </Target>
         </Trigger>
         <Trigger Type="OnThisCardLeavePlay">
-            <Target Zone="Library" Side="Enemy" Amount="3" AutoTakeFirstInputs="True" Cancelable="False">
+            <Target Zone="Library" Side="Enemy" Amount="2" AutoTakeFirstInputs="True" Cancelable="False">
                 <Effect Type="MoveCardTo" Destination="Graveyard" />
             </Target>
         </Trigger>
-        <Description>When Void Shade enters or leaves the battleground, put the top 3 cards of opponent's library into their graveyard.</Description>
+        <Description>When Void Shade enters or leaves the battleground, put the top 2 cards of opponent's library into their graveyard.</Description>
     </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Aca_032" DisplayName="Hasafah, the Unseen Arrow" Faction="Academy" School="Dark" SubType="Magic|Shooter" Race="Elf|Marksman" Unique="True" Cost="4" MightLevel="3" MagicLevel="1" Attack="2" Retaliate="2" HP="6" ID="487">
         <Ability Type="ImmuneToRetaliate" />
@@ -563,7 +563,7 @@ While Crusader Chaplain has no damage, it cannot be targeted.</Description>
         </Target>
         <Description>While Demon Thrall has no adjacent friendly creature, it gains Cannot Attack.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_052" DisplayName="Frenzied Maniac" Faction="Inferno" SubType="Melee" Race="Demon|Maniac" Cost="2" MightLevel="3" Attack="3" Retaliate="3" HP="3" ID="500">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Inf_052" DisplayName="Frenzied Maniac" Faction="Inferno" SubType="Melee" Race="Demon|Maniac" Cost="2" MightLevel="3" Attack="3" Retaliate="3" HP="3" ID="500">
         <Trigger Type="OnTurnEnd" Side="Friendly">
             <Target Zone="Hero" Amount="All" Side="Friendly">
                 <Variable Type="UnitAttackCount" />
@@ -571,7 +571,12 @@ While Crusader Chaplain has no damage, it cannot be targeted.</Description>
                 <Effect Type="Damage" Value="2" />
             </Target>
         </Trigger>
-        <Description>At the end of your turn, if Frenzied Maniac did not attack this turn, deal 2 damage to your hero.</Description>
+	<Trigger Type="OnThisKillUnit">
+<Target Zone="Hero" Side="Enemy" Amount="All">
+<Effect Type="Damage" Value="1"/>
+</Target>
+</Trigger>
+<Description>At the end of your turn, if Frenzied Maniac did not attack this turn, deal 2 damage to your hero. Whenever Frenzied Maniac destroys a creature, deal 1 damage to opponent's hero.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_053" DisplayName="Imp Jester" Faction="Inferno" SubType="Flyer" Race="Demon|Imp" Cost="2" MightLevel="1" DestinyLevel="1" Attack="2" Retaliate="1" HP="2" ID="501">
         <Target Zone="Battleground" Amount="Self">
@@ -687,7 +692,7 @@ Putrid Ghoul's [ATK] is equal to the number of poison counters on friendly creat
         <Description>At the end of your turn, put 1 poison counter on Rotting Mummy.
 When Rotting Mummy dies with poison counters on it, put the same number of poison counters on other random creatures.</Description>
 	</Card>
-    <Card Rarity="Epic" Type="Unit" Name="Cre_Nec_055" DisplayName="Damran, the Tainted" Faction="Necropolis" School="Earth" SubType="Melee" Race="DarkElf" Unique="True" Cost="5" MightLevel="4" Attack="3" Retaliate="3" HP="7" ID="509">
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Nec_055" DisplayName="Damran, the Tainted" Faction="Necropolis" School="Earth" SubType="Melee" Race="DarkElf" Unique="True" Cost="4" MightLevel="4" Attack="3" Retaliate="1" HP="7" ID="509">
         <Ability Type="Infect" Value="2" />
         <Trigger Type="OnThisCardDeploy">
             <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" CantTargetSelf="True" ForceExecute="True" Persistent="True" Cancelable="False">
@@ -750,7 +755,7 @@ When Rotting Mummy dies with poison counters on it, put the same number of poiso
         </Trigger>
         <Description>Whenever another friendly Sanctuary creature is returned to your hand, that creature costs [2:RESOURCES] less to play until end of turn.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_San_054" DisplayName="Sayama Dune Prowler" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="4" MightLevel="4" Attack="3" Retaliate="1" HP="4" ID="514">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_San_054" DisplayName="Sayama Dune Prowler" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="4" MightLevel="4" Attack="3" Retaliate="0" HP="5" ID="514">
         <Ability Type="Outmaneuver" />
         <Ability Type="Ambush" />
         <Trigger Type="OnAmbush" Side="Enemy">
@@ -853,7 +858,18 @@ When Rotting Mummy dies with poison counters on it, put the same number of poiso
 Ambush: Deal 2 Fire damage to ambushed creature.
 (Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_051" DisplayName="Sahaar Bedouin" Faction="Neutral" SubType="Melee" Race="Human" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="4" ID="523" />
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_051" DisplayName="Sahaar Bedouin" Faction="Neutral" SubType="Melee" Race="Human" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="5" ID="523" >
+	    <Trigger Type="OnThisCardDeploy">
+<Target Zone="Library" Side="Friendly">
+<Effect Type="Shuffle" CardHolder="Library"/>
+</Target>
+<Target Zone="Library" Side="Friendly" Amount="1">
+<Effect Type="MoveCardTo" Destination="Library"/>
+<CardFilter IncludeFaction="Neutral"/>
+</Target>
+</Trigger>
+<Description> When Sahaar Bedouin enters the battleground, search your library for a Neutral card, then shuffle your library and put that card on the top of your library. </Description>
+    </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_052" DisplayName="Soothsayer" Faction="Neutral" SubType="Melee" Race="Human" Cost="2" MightLevel="1" DestinyLevel="2" Attack="1" Retaliate="0" HP="1" ID="524">
         <Trigger Type="OnThisCardDeploy">
             <Target Zone="Library" Side="Friendly" Amount="1" RevealToOther="True">

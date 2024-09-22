@@ -19,10 +19,10 @@
 		</Trigger>
 		<Description>When Captive Djinn enters the battleground, you may banish target non-unique ongoing spell or fortune.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Aca_091" DisplayName="Surging Djinn" Faction="Academy" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="3" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="912" School="Prime">
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Aca_091" DisplayName="Surging Djinn" Faction="Academy" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="3" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="1" HP="7" ID="912" School="Prime">
 		<Trigger Type="OnThisCardDeath">
 			<Target Zone="None" Side="Friendly">
-				<Effect Type="IncreaseLevel" Value="-2" LevelType="Magic"/>
+				<Effect Type="IncreaseLevel" Value="-1" LevelType="Magic"/>
 			</Target>
 		</Trigger>
 		<Description>When Surging Djinn dies, decrease your [MAGIC] level by 2.</Description>
@@ -54,7 +54,7 @@
 		</Trigger>
 		<Description>At the end of your turn, if Arcane Master Djinn did not attack, draw a card.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Aca_094" DisplayName="Embers Elemental" Faction="Academy" SubType="Magic|Melee" Race="Spirit" Cost="2" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="1" HP="4" ID="915" School="Fire|Earth">
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Aca_094" DisplayName="Embers Elemental" Faction="Academy" SubType="Magic|Melee" Race="Spirit" Cost="2" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="0" HP="4" ID="915" School="Fire|Earth">
 		<Target Zone="Battleground" Amount="AllOther" CardType="Unit" Side="Friendly">
 			<CardFilter IncludeSchool="Fire|Earth"/>
 			<Effect Type="ModifyAttack" Value="1"/>
@@ -66,12 +66,12 @@
 	<!--...............................................................................-->
 	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Hav_090" DisplayName="Warding Inquisitor" Faction="Haven" SubType="Magic|Shooter" Race="Human|Priest" Cost="5" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="916" School="Light">
 		<Ability Type="ImmuneToRetaliate"/>
-		<Trigger Type="OnThisCardDeploy">
-			<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" ForceExecute="True" Persistent="True">
-				<Effect Type="ModifyAbility" Ability="EnemySpellWard" Duration="UntilYourNextTurn"/>
-			</Target>
-		</Trigger>
-		<Description>When Warding Inquisitor entres the battleground, all friendly creature gain Enemy Spell Ward until your next turn.</Description>
+<Trigger Type="OnThisCardDeploy">
+<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="SelfAndAdjacent" ForceExecute="True" Persistent="True">
+<Effect Type="ModifyAbility" Ability="EnemySpellWard" Duration="UntilYourNextTurn"/>
+</Target>
+</Trigger>
+	<Description> When Warding Inquisitor enters the battleground, it and adjacent friendly creatures gain Enemy Spell Ward until your next turn. </Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Hav_091" DisplayName="Blessing Inquisitor" Faction="Haven" SubType="Magic|Melee|Shooter" Race="Human|Priest" Cost="4" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="3" HP="7" ID="917" School="Light">
 		<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly">
@@ -94,7 +94,7 @@
 	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Hav_093" DisplayName="Lesser Glory" Faction="Haven" SubType="Magic|Flyer" Race="Spirit" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="1" Retaliate="1" HP="6" ID="919" School="Light">
 		<Description></Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Hav_094" DisplayName="Wolf Priest" Faction="Haven" SubType="Magic|Melee" Race="Human|Priest" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="1" Retaliate="3" HP="6" ID="920" School="Light">
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Hav_094" DisplayName="Wolf Priest" Faction="Haven" SubType="Magic|Melee" Race="Human|Priest" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="1" Retaliate="2" HP="6" ID="920" School="Light">
 		<Ability Type="PreemptiveStrike"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly">
 			<CardFilter IncludeRaces="Human"/>
@@ -188,7 +188,7 @@ Adjacent dark creatures gain +[1:ATK].</Description>
 		<Description>When Eternal Apprentice enters the battleground, put 1 crippling counter on all enemy creatures in the same row. 
 When Eternal Apprentice attacks, put 1 crippling counter on all enemy creatures in the same row as Eternal Apprentice.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_091" DisplayName="Ancient Ghost" Faction="Necropolis" School="Prime" SubType="Magic|Melee" Race="Ghost" Cost="1" MightLevel="1" MagicLevel="1" DestinyLevel="0" Attack="0" Retaliate="1" HP="3" ID="927">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_091" DisplayName="Ancient Ghost" Faction="Necropolis" School="Prime" SubType="Magic|Melee" Race="Ghost" Cost="1" MightLevel="1" MagicLevel="1" DestinyLevel="0" Attack="1" Retaliate="0" HP="2" ID="927">
 		<Ability Type="Incorporeal"/>
 		<Variable Type="TargetCount">
 			<Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly">
@@ -197,8 +197,9 @@ When Eternal Apprentice attacks, put 1 crippling counter on all enemy creatures 
 		</Variable>
 		<Target Zone="Battleground" Amount="Self">
 			<Effect Type="ModifyAttack" Value="Variable"/>
+			<Effect Type="ModifyRetaliate" Value="Variable"/>
 		</Target>
-		<Description>Ancient Ghost gains +[1:ATK] for each adjacent Ghost creatures.</Description>
+		<Description>Ancient Ghost gains +[1:ATK] and +[1:RET] for each adjacent Ghost creatures.</Description>
 	</Card>
     	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Nec_092" DisplayName="Skeleton Servant" Faction="Necropolis" SubType="Melee" Race="Skeleton" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="5" Retaliate="5" HP="7" ID="928" School="Dark">
         	<Trigger Type="OnThisCardDeploy">
@@ -303,7 +304,7 @@ If the number of crippling counters on an enemy creature is greater than its cos
 		</Trigger>
 		<Description>When Shogun comes into play, you may have it deal 2 damage to target creature and all adjacent creatures.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_San_094" DisplayName="Shark Bodyguard" Faction="Sanctuary" SubType="Magic|Melee" Race="Beastmen" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="937">
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_San_094" DisplayName="Shark Bodyguard" Faction="Sanctuary" SubType="Magic|Melee" Race="Beastmen" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="937">
 		<Trigger Type="OnMove" Side="Enemy">
 			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
 				<Effect Type="Damage" Value="1"/>
@@ -320,11 +321,11 @@ If the number of crippling counters on an enemy creature is greater than its cos
 	<!--...............................................................................-->
 	<!-- Creatures - Stronghold -->
 	<!--...............................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_090" DisplayName="Pao Harpy" Faction="Stronghold" SubType="Flyer" Race="Harpy" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="1" HP="3" ID="938">
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_090" DisplayName="Pao Harpy" Faction="Stronghold" SubType="Flyer" Race="Harpy" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="0" HP="3" ID="938">
 		<Ability Type="AttackAnywhere"/>
 		<Description></Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_091" DisplayName="Juvenile Centaur" Faction="Stronghold" SubType="Shooter" Race="Centaur" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="0" HP="4" ID="939">
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_091" DisplayName="Juvenile Centaur" Faction="Stronghold" SubType="Shooter" Race="Centaur" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="0" HP="5" ID="939">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Variable Type="TargetCount">
 			<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
@@ -337,17 +338,15 @@ If the number of crippling counters on an enemy creature is greater than its cos
 		</Target>
 		<Description>While there is another friendly Centaur creature on the battleground, Juvenile Centaur gains Attack Anywhere.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_092" DisplayName="Pao Scout" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="1" HP="4" ID="940">
-		<Variable Type="TargetCount">
-			<Target Zone="BattlegroundColumn" Amount="Self" Side="Enemy" CardType="Unit" BattlegroundPositionState="DontCare"/>
-		</Variable>
-		<Target Zone="Battleground" Amount="Self">
-			<Condition Operator="EqualTo" ValueA="Variable" ValueB="0"/>
-			<Effect Type="ModifyAttack" Value="1"/>
-		</Target>
-		<Description>While there is no enemy creatures on the same row as Pao Scout, Pao Scout gains +[1:ATK].</Description>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_092" DisplayName="Pao Scout" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="1" HP="5" ID="940">
+		<Trigger Type="OnThisPreAttackHero">
+<Target Zone="None" Side="Friendly">
+<Effect Type="IncreaseLevel" Value="1" LevelType="Might"/>
+</Target>
+</Trigger>
+<Description>Whenever Pao Scout deals combat damage to enemy hero, increase your [MIGHT] level by 1.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_093" DisplayName="Centaur Sharpshooter" Faction="Stronghold" SubType="Shooter" Race="Centaur" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="941">
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_093" DisplayName="Centaur Sharpshooter" Faction="Stronghold" SubType="Shooter" Race="Centaur" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="941">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="AttackAnywhere"/>
 		<Target Zone="Battleground" Amount="Self">
@@ -360,7 +359,7 @@ If the number of crippling counters on an enemy creature is greater than its cos
 		<Ability Type="QuickAttack"/>
 		<Description></Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Str_095" DisplayName="Elder Centaur" Faction="Stronghold" SubType="Melee" Race="Centaur" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="943">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Str_095" DisplayName="Elder Centaur" Faction="Stronghold" SubType="Melee" Race="Centaur" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="943">
 		<Ability Type="MagicResist"/>
 		<Variable Type="TargetCount">
 			<Target Zone="BattlegroundColumn" Amount="Self" Side="Enemy" CardType="Unit" BattlegroundPositionState="DontCare"/>
@@ -369,15 +368,33 @@ If the number of crippling counters on an enemy creature is greater than its cos
 			<Condition Operator="EqualTo" ValueA="Variable" ValueB="0"/>
 			<Effect Type="ModifyAttack" Value="1"/>
 		</Target>
-		<Description>While there is no enemy creatures on the same row as Elder Centaur, Elder Centaur gains +[1:ATK].</Description>
+		<Variable2 Type="TargetCount">
+<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+<CardFilter IncludeRaces="Centaur"/>
+</Target>
+</Variable2>
+<Target Zone="Battleground" Amount="Self">
+<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="1"/>
+<Effect Type="ModifyAbility" Ability="Charge"/>
+</Target>
+<Description> While there is another friendly Centaur creature on the battleground, Elder Centaur gains Charge. While there is no enemy creatures on the same row as Elder Centaur, Elder Centaur gains +[1:ATK].</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Str_096" DisplayName="Centaur Chieftain" Faction="Stronghold" SubType="Shooter" Race="Centaur" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="944">
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Str_096" DisplayName="Centaur Chieftain" Faction="Stronghold" SubType="Shooter" Race="Centaur" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="944">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
 			<CardFilter IncludeAbility="AttackAnywhere"/>
 			<Effect Type="ModifyAttack" Value="1"/>
 		</Target>
-		<Description>Friendly creatures with Attack Anywhere gain +[1:ATK].</Description>
+		<Variable Type="TargetCount">
+<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+<CardFilter IncludeRaces="Harpy"/>
+</Target>
+</Variable>
+<Target Zone="Battleground" Amount="Self">
+<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
+<Effect Type="ModifyAbility" Ability="AttackAnywhere"/>
+</Target>
+<Description>While there is friendly Harpy creature on the battleground, Centaur Chieftain gains Attack Anywhere. Friendly creatures with Attack Anywhere gain +[1:ATK].</Description>
 	</Card>
 	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Str_097" DisplayName="Mother Harpy" Faction="Stronghold" SubType="Flyer" Race="Harpy" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="945" School="Air">
 		<Ability Type="AttackAnywhere"/>
@@ -390,15 +407,16 @@ If the number of crippling counters on an enemy creature is greater than its cos
 	<!--...............................................................................-->
 	<!-- Creatures - Neutral -->
 	<!--...............................................................................-->
-	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Neu_090" DisplayName="Agyn Mercenary" Faction="Neutral" SubType="Melee" Race="Human|Mercenary" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="0" Retaliate="3" HP="7" ID="946">
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Neu_090" DisplayName="Agyn Mercenary" Faction="Neutral" SubType="Melee" Race="Human|Mercenary" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="0" Retaliate="3" HP="8" ID="946">
 		<Variable Type="Resources" Side="Friendly" ValueModifier="0.5xd"/>
+		<Variable2 Type="Resources" Side="Friendly" ValueModifier="0.5xu"/>
 		<Target Zone="Battleground" Amount="Self">
 			<Effect Type="ModifyAbility" Ability="AttackCost" Value="Variable"/>
 		</Target>
 		<Target Zone="Battleground" Amount="Self">
-			<Effect Type="ModifyAttack" Value="Variable"/>
+			<Effect Type="ModifyAttack" Value="Variable2"/>
 		</Target>
-		<Description>Agyn Mercenary's [ATK] is equal to half your [RESOURCES] rounded down. After Agyn Mercenary attacks, pay half of your [RESOURCES], rounded down.</Description>
+		<Description>Agyn Mercenary's [ATK] is equal to half your [RESOURCES] rounded up. After Agyn Mercenary attacks, pay half of your [RESOURCES], rounded down.</Description>
 		<!-- S07 NEW STUFF : AttackCost - This ability has been created to reflect the mercenary behavior (Refactor). Previous mercenaries now use this ability too. -->
 	</Card>
 	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Neu_091" DisplayName="Bursting Fire Elemental" Faction="Neutral" SubType="Magic|Shooter" Race="Spirit" Cost="4" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="0" HP="5" ID="947" School="Fire">

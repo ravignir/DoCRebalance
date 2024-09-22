@@ -87,13 +87,24 @@ At the beginning of your turn, return [THIS] to its owner's hand.</Description>
 Choose one: creature OR spell OR fortune.
 Whenever opponent plays a card of this type, they discard a card.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Inf_041" DisplayName="Halls of Inertia" Faction="Inferno" Cost="2" DestinyLevel="2" ID="397">
-        <Ongoing Duration="UntilYourNextTurn" />
-        <Target Zone="Hero" Amount="All" Side="Any">
-            <Effect Type="GlobalEffect" GlobalEffectType="CantDrawAdditional" />
-        </Target>
-        <Description>Until your next turn:
-Players cannot draw cards outside of their supply phase.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Inf_041" DisplayName="Halls of Inertia" Faction="Inferno" Cost="3" DestinyLevel="2" ID="397">
+        <Ongoing Duration="Permanent"/>
+	<Target Zone="Battleground" Side="Enemy" Amount="1" CardType="Unit">
+		</Target>
+	<Target Zone="Battleground" Side="Enemy" Amount="Same" CardType="Unit">
+	<Variable Type="TargetCount" >
+        <Target Zone="Battleground" Side="Friendly" Amount="All" CardType="Unit"/>
+	</Variable>
+	<Variable2 Type="TargetCount" >
+		<Target Zone="Battleground" Side="Enemy" Amount="All" CardType="Unit"/>
+	</Variable2>
+	<Condition ValueA="Variable2" ValueB="Variable" Operator="LesserThan"/>
+		<Effect Type="ModifyAbility" Ability="CannotAttack"/>
+		<Effect Type="ModifyAbility" Ability="Phased"/>
+		<Effect Type="ModifyAbility" Ability="Immobilized"/>
+		</Target>
+        <Description>Attach to enemy creature. Permanent:
+While you control more creatures than your opponent, target creature is immobilized and gains Cannot Attack and Phased.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Inf_042" DisplayName="Void Judgment" Faction="Inferno" Cost="2" DestinyLevel="2" ID="398">
         <Target Zone="Graveyard" Side="Friendly" Amount="All">
@@ -173,7 +184,7 @@ Players cannot draw cards outside of their supply phase.</Description>
         </Target>
         <Description>Look at the top 3 cards of your library and choose one to put into your hand. Put the other two at the bottom of your library.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_San_041" DisplayName="Scrying Pool" Faction="Sanctuary" Cost="2" DestinyLevel="2" ID="405">
+    <Card Rarity="Uncommon" Type="Fortune" Name="For_San_041" DisplayName="Scrying Pool" Faction="Sanctuary" Cost="0" DestinyLevel="2" ID="405">
         <Variable Type="TargetCount" ValueModifier="5mi">
             <Target Zone="Library" Side="Friendly" Amount="All" />
         </Variable>
@@ -182,17 +193,17 @@ Players cannot draw cards outside of their supply phase.</Description>
         </Target>
         <Description>Look at the top 5 cards of your library and put them back in any order.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_San_042" DisplayName="Spy Report" Faction="Sanctuary" Cost="2" DestinyLevel="2" ID="406">
-        <Target Zone="Library" Side="Enemy" Amount="All">
-            <Effect Type="Look" />
-        </Target>
-        <Target Side="Enemy">
-            <Effect Type="Shuffle" CardHolder="Library" />
-        </Target>
-        <Target Zone="None" Side="Friendly">
-            <Effect Type="Draw" Value="1" />
-        </Target>
-        <Description>Look through opponent's library, then shuffle it. Draw a card.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_San_042" DisplayName="Spy Report" Faction="Sanctuary" Cost="1" DestinyLevel="2" ID="406">
+<Target Side="Enemy">
+<Effect Type="Shuffle" CardHolder="Library"/>
+</Target>
+<Target Zone="Library" Side="Enemy" Amount="1">
+<Effect Type="MoveCardTo" Destination="Library" Bottom="True"/>
+</Target>
+<Target Zone="None" Side="Friendly">
+<Effect Type="Draw" Value="1"/>
+</Target>
+<Description>Search opponent's library for a card, then shuffle their library and put that card at the bottom of it. Draw a card.</Description>
     </Card>
     <Card Rarity="Rare" Type="Fortune" Name="For_San_043" DisplayName="Battle Trance" Faction="Sanctuary" Cost="2" DestinyLevel="2" ID="407">
         <Target Side="Friendly">
@@ -206,11 +217,18 @@ Players cannot draw cards outside of their supply phase.</Description>
     <!--....................................................................-->
     <!-- Fortune - Stronghold -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Str_041" DisplayName="Orc Armory" Faction="Stronghold" Cost="3" DestinyLevel="2" ID="409">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Str_041" DisplayName="Orc Armory" Faction="Stronghold" Cost="3" DestinyLevel="2" ID="409">
         <Target Zone="None" Side="Friendly">
-            <Effect Type="IncreaseLevel" Value="2" LevelType="Might" />
-        </Target>
-        <Description>Increase your [MIGHT] level by 2.</Description>
+<Effect Type="IncreaseLevel" Value="2" LevelType="Might"/>
+</Target>
+<Target Zone="Hero" Amount="All" Side="Enemy">
+<Variable Type="Level" LevelType="Might">
+<Target Zone="Hero" Side="Friendly" Amount="All"/>
+</Variable>
+<Condition Operator="GreaterThan" ValueA="Variable" ValueB="7"/>
+<Effect Type="Damage" Value="2"/>
+</Target>
+<Description>Increase your [MIGHT] level by 2, then if your [MIGHT] level is 10 or higher, deal 2 damage to enemy hero.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Str_042" DisplayName="Stampede" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="410">
         <Variable Type="CardPlayedCount">
@@ -238,17 +256,35 @@ Whenever a friendly creature dies, increase your [MIGHT] level by 1.</Descriptio
     <!--....................................................................-->
     <!--  Fortune - Neutral -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_040" DisplayName="Higher Learning" Faction="Neutral" Cost="4" DestinyLevel="2" ID="412">
-        <Target Zone="None" Side="Friendly">
-            <Effect Type="IncreaseLevel" Value="1" LevelType="Might" />
-        </Target>
-        <Target Zone="None" Side="Friendly">
-            <Effect Type="IncreaseLevel" Value="1" LevelType="Magic" />
-        </Target>
-        <Target Zone="None" Side="Friendly">
-            <Effect Type="IncreaseLevel" Value="1" LevelType="Destiny" />
-        </Target>
-        <Description>Increase your [MIGHT], [MAGIC] and [DESTINY] levels by 1.</Description>
+    <Card NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Neu_040" DisplayName="Higher Learning" Faction="Neutral" Cost="4" MightLevel="2" MagicLevel="2" DestinyLevel="2" ID="412">
+        <Target Zone="None" Side="Enemy">
+<Effect Type="ChoiceOption"/>
+<Subgroup>
+<Target Zone="None" Side="Enemy">
+<Variable Type="Level" Side="Enemy" LevelType="Might"/>
+<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+<Option Value="0" DisplayText="Decrease [MIGHT] level."/>
+<Effect Type="IncreaseLevel" Value="5ma" LevelType="Might"/>
+</Target>
+<Target Zone="None" Side="Enemy">
+<Variable Type="Level" Side="Enemy" LevelType="Magic"/>
+<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+<Option Value="1" DisplayText="Decrease [MAGIC] level."/>
+<Effect Type="IncreaseLevel" Value="5ma" LevelType="Magic"/>
+</Target>
+<Target Zone="None" Side="Enemy">
+<Variable Type="Level" Side="Enemy" LevelType="Destiny"/>
+<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+<Option Value="2" DisplayText="Decrease [DESTINY] level."/>
+<Effect Type="IncreaseLevel" Value="5ma" LevelType="Destiny"/>
+</Target>
+<Target Zone="None" Side="Friendly">
+<Option Value="3" DisplayText="Draw a card."/>
+<Effect Type="Draw" Value="1"/>
+</Target>
+</Subgroup>
+</Target>
+<Description> Choose one: Draw a card OR Increase your [MIGHT], [MAGIC] or [DESTINY] level to 5.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Neu_041" DisplayName="Forgotten Cave" Faction="Neutral" Cost="3" DestinyLevel="2" ID="413">
         <Target Zone="None" Side="Friendly">
@@ -287,10 +323,33 @@ Whenever a friendly creature dies, increase your [MIGHT] level by 1.</Descriptio
         </Target>
         <Description>Reveal the top card of your library. If you meet its level requirements, play it for free.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Fortune" Name="For_Neu_045" DisplayName="Turncoats" Faction="Neutral" Cost="2" DestinyLevel="2" ID="417">
-        <Target Zone="None" Side="Any">
-            <Effect Type="GainResourcesProduction" Value="-1" />
-        </Target>
-        <Description>Decrease both player's [RESOURCES] production by 1.</Description>
+    <Card NotLocalized="True" Rarity="Rare" Type="Fortune" Name="For_Neu_045" DisplayName="Turncoats" Faction="Neutral" Cost="2" DestinyLevel="2" ID="417">
+        <Target Zone="None" Side="Enemy">
+<Effect Type="ChoiceOption"/>
+<Subgroup>
+<Target Zone="None" Side="Enemy">
+<Variable Type="Level" Side="Enemy" LevelType="Might"/>
+<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+<Option Value="0" DisplayText="Decrease [MIGHT] level."/>
+<Effect Type="IncreaseLevel" Value="-1" LevelType="Might"/>
+</Target>
+<Target Zone="None" Side="Enemy">
+<Variable Type="Level" Side="Enemy" LevelType="Magic"/>
+<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+<Option Value="1" DisplayText="Decrease [MAGIC] level."/>
+<Effect Type="IncreaseLevel" Value="-1" LevelType="Magic"/>
+</Target>
+<Target Zone="None" Side="Enemy">
+<Variable Type="Level" Side="Enemy" LevelType="Destiny"/>
+<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+<Option Value="2" DisplayText="Decrease [DESTINY] level."/>
+<Effect Type="IncreaseLevel" Value="-1" LevelType="Destiny"/>
+</Target>
+</Subgroup>
+</Target>
+<Target Zone="None" Side="Friendly">
+<Effect Type="Draw" Value="1"/>
+</Target>
+<Description>Decrease opponent's [MIGHT], [MAGIC] or [DESTINY] level by one. Draw a card.</Description>
     </Card>
 </Cards>

@@ -575,6 +575,14 @@
             </Target>
         </Trigger>
     </TemplateEffect>
+	
+<TemplateEffect Name="SpellWard">
+	<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+		<Effect Type="PlayEffect" PlayEffectType="Ward" OwnerAbility="SpellWard">
+		<CardFilter IncludeCardType="Spell"/>
+		</Effect>
+	</Target>
+</TemplateEffect>
 
     <TemplateEffect Name="FoundryEffect">
 	<Target Zone="Hero" Amount="All" Side="Friendly">

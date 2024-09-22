@@ -117,7 +117,7 @@ While no friendly melee creature has attacked in a turn, all friendly creatures 
         </Target>
         <Description>Destroy target friendly creature. Take target creature of lower cost from your graveyard and deploy it for free.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Nec_031" DisplayName="Ariana's Lair" Faction="Necropolis" Cost="2" DestinyLevel="2" ID="292">
+    <Card Rarity="Common" Type="Fortune" Name="For_Nec_031" DisplayName="Ariana's Lair" Faction="Necropolis" Cost="1" DestinyLevel="2" ID="292">
         <Target Zone="Hand" Side="Friendly" Amount="1">
             <CardType Include="Unit"/>
             <Effect Type="MoveCardTo" Destination="Graveyard"/>
@@ -186,7 +186,7 @@ All enemy creatures gain Attack Anywhere and can only attack target creature if 
         <Description>Until your next turn:
 Friendly creatures gain +[X:ATK] and +[X:RET], where X is equal to their Honor value.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_San_004" DisplayName="Temple Tower" Faction="Sanctuary" Cost="2" DestinyLevel="2" ID="151">
+    <Card NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_San_004" DisplayName="Temple Tower" Faction="Sanctuary" Cost="2" DestinyLevel="2" ID="151">
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption"/>
             <Subgroup>
@@ -206,22 +206,22 @@ Friendly creatures gain +[X:ATK] and +[X:RET], where X is equal to their Honor v
                     <Effect Type="ChoiceOption"/>
                     <Subgroup>
                         <Target Zone="None" Side="Friendly">
-                            <Option Value="0" DisplayText="Increase [MIGHT] level."/>
-                            <Effect Type="IncreaseLevel" Value="1" LevelType="Might"/>
+                            <Option Value="0" DisplayText="Increase [MIGHT] level." />
+                            <Effect Type="IncreaseLevel" Value="2" LevelType="Might" />
                         </Target>
                         <Target Zone="None" Side="Friendly">
-                            <Option Value="1" DisplayText="Increase [MAGIC] level."/>
-                            <Effect Type="IncreaseLevel" Value="1" LevelType="Magic"/>
+                            <Option Value="1" DisplayText="Increase [MAGIC] level." />
+                            <Effect Type="IncreaseLevel" Value="2" LevelType="Magic" />
                         </Target>
                         <Target Zone="None" Side="Friendly">
-                            <Option Value="2" DisplayText="Increase [DESTINY] level."/>
-                            <Effect Type="IncreaseLevel" Value="1" LevelType="Destiny"/>
+                            <Option Value="2" DisplayText="Increase [DESTINY] level." />
+                            <Effect Type="IncreaseLevel" Value="2" LevelType="Destiny" />
                         </Target>
                     </Subgroup>
                 </Target>
             </Subgroup>
         </Target>
-        <Description>Choose one: Draw a card OR If there are less friendly creatures than enemy creatures on the battleground, increase your [MIGHT], [MAGIC] or [DESTINY] level by 1.</Description>
+        <Description>Choose one: Draw a card OR If there are less friendly creatures than enemy creatures on the battleground, increase your [MIGHT], [MAGIC] or [DESTINY] level by 2.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_San_005" DisplayName="Hidden Temple" Faction="Sanctuary" Cost="1" DestinyLevel="1" ID="152">
         <Ongoing Duration="UntilEndOfTurn"/>
@@ -282,13 +282,14 @@ Two target enemy creatures gain Cannot Attack.</Description>
     <!--....................................................................-->
     <!-- Fortune - Stronghold -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Str_030" DisplayName="Ritual of the Blood Feathers" Faction="Stronghold" Cost="1" DestinyLevel="2" ID="297">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Str_030" DisplayName="Ritual of the Blood Feathers" Faction="Stronghold" Cost="1" DestinyLevel="2" ID="297">
         <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1">
-            <Variable Type="CounterCount" CounterType="Any" UseCurrentTarget="True"/>
-            <Effect Type="Heal" Value="Variable"/>
-            <Effect Type="RemoveCounter" CounterType="Any" Value="Variable"/>
+            <Variable Type="CounterCount" CounterType="Any" UseCurrentTarget="True" />
+		<Condition ValueA="Variable" ValueB="0" Operator="GreaterThan"/>
+            	<Effect Type="Heal" Value="Infinite" />
+            	<Effect Type="RemoveCounter" CounterType="Any" Value="Variable" />
         </Target>
-        <Description>Remove all counters from target friendly creature. Heal that creature for an amount of damage equal to the number of counters removed this way.</Description>
+        <Description>Remove all counters from target friendly creature. Heal all damage from target friendly creature with any counters.</Description>
     </Card>
     <Card  Rarity="Common" Type="Fortune" Name="For_Str_032" DisplayName="Call of the Bloodhorn" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="299">
         <Ongoing Duration="Permanent"/>
@@ -309,8 +310,8 @@ When a friendly creatue with Enrage or Bloodthirst dies, destroy Call of the Blo
 本方生物在攻击后其激怒指示物不会被移除。
 当一个本方拥有激怒或嗜血的生物死亡时，消灭[THIS]。</DescriptionChinese>
    </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Str_031" DisplayName="Surprise Attack" Faction="Stronghold" Cost="3" DestinyLevel="3" ID="298">
-        <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly"/>
+    <Card Rarity="Uncommon" Type="Fortune" Name="For_Str_031" DisplayName="Surprise Attack" Faction="Stronghold" Cost="2" DestinyLevel="3" ID="298">
+        <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" />
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy">
             <Variable Type="CardAttack" UseLastTarget="True"/>
             <Effect Type="Damage" Value="Variable"/>

@@ -82,17 +82,20 @@ When a creature is deployed, moves into, or is relocated to enchanted row, deal 
 At the beginning of each player's turn, deal 1 damage to all creatures. When there are no creatures on the battleground, destroy Immolation.</Description>
         <ExtraDescription>(Also damage friendly units.)</ExtraDescription>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Fir_006" DisplayName="Fire Shield" School="Fire" Cost="2" MagicLevel="2" ID="186">
-        <Ongoing Duration="Permanent"/>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Fir_006" DisplayName="Fire Shield" School="Fire" Cost="2" MagicLevel="2" ID="186">
+        <Ongoing Duration="Permanent" />
+		 <Target Zone="Battleground" CardType="Unit" Amount="1">
+            <Effect Type="ModifyAbility" Ability="FireResist" />
+        </Target>
         <Ability Type="Endurable"/>
-        <Target Zone="Battleground" CardType="Unit" Amount="1"/>
+        <Target Zone="Battleground" CardType="Unit" Amount="Same"/>
         <Trigger Type="OnEnchantedDamaged" DamageIncludeFlags="Attack">
             <Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
                 <Effect Type="Damage" Value="FromTrigger"/>
             </Target>
         </Trigger>
         <Description>Enchant creature. Permanent:
-Whenever enchanted creature is attacked and dealt damage, Fire Shield deals the same amount of damage to the attacking creature.</Description>
+Enchanted creature gains Fire Resist. Whenever enchanted creature is attacked and dealt damage, Fire Shield deals the same amount of damage to the attacking creature.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_007" DisplayName="Frenzy" School="Fire" Cost="2" MagicLevel="2" ID="187">
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy"/>
@@ -269,8 +272,8 @@ Enchanted creature gains +[1:ATK].</Description>
         <Description>Deal 3 damage to target creature and all adjacent creatures.</Description>
         <ExtraDescription>(Also damage friendly units.)</ExtraDescription>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Wat_008" DisplayName="Icy Weapon" School="Water" Cost="4" MagicLevel="4" ID="206">
-        <Ongoing Duration="Permanent"/>
+    <Card Rarity="Common" Type="Spell" Name="Spe_Wat_008" DisplayName="Icy Weapon" School="Water" Cost="4" MagicLevel="3" ID="206">
+        <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAttack" Value="3"/>
         </Target>

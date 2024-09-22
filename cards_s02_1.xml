@@ -36,8 +36,8 @@
         </Target>
 		<Description>Griffin Knight gains +[1:ATK] for each adjacent friendly flyer creature.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Hav_044" DisplayName="Immaculate Glory" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Spirit" Cost="5" MightLevel="4" MagicLevel="2" Attack="3" Retaliate="3" HP="7" ID="349">
-        <Ability Type="DarkWard"/>
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Hav_044" DisplayName="Immaculate Glory" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Spirit" Cost="4" MightLevel="4" MagicLevel="2" Attack="3" Retaliate="2" HP="7" ID="349">
+        <Ability Type="DarkWard" />
         <Target Zone="Battleground" CardType="Unit" Amount="Self">
             <Effect Type="PlayEffect" PlayEffectType="CannotPutCounter" Duration="Static"/>
         </Target>
@@ -121,8 +121,16 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
         <Ability Type="CannotAttack"/>
         <Ability Type="Regenerate" Value="1"/>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_041" DisplayName="Skeleton Archer" Faction="Necropolis" SubType="Shooter" Race="Skeleton" Cost="3" MightLevel="2" Attack="2" Retaliate="2" HP="5" ID="358">
-        <Ability Type="ImmuneToRetaliate"/>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_041" DisplayName="Skeleton Archer" Faction="Necropolis" SubType="Shooter" Race="Skeleton" Cost="3" MightLevel="2" Attack="2" Retaliate="1" HP="4" ID="358">
+        <Ability Type="ImmuneToRetaliate" />
+	<Ability Type="Ambush" />
+		<Trigger Type="OnAmbush" Side="Enemy">
+			<Target Zone="Battleground" Amount="FromTrigger" CardType="Unit">
+			<Effect Type="AddCounter" CounterType="Poison" Value="1"/>
+			</Target>
+		</Trigger>
+	<Description>Ambush: Put 1 poison counter on ambushed creature.
+(Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Nec_042" DisplayName="Untamed Wraith" Faction="Necropolis" School="Prime" SubType="Magic|Flyer" Race="Ghost" Cost="3" MightLevel="3" MagicLevel="1" Attack="2" Retaliate="2" HP="4" ID="360">
         <Ability Type="Incorporeal"/>
@@ -260,11 +268,20 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
         <Ability Type="Anchored"/>
     </Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Neu_045" DisplayName="Void Keeper" Faction="Neutral" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="1" HP="5" ID="380">
-        <Ability Type="ImmuneToRetaliate"/>
-        <Target Zone="Battleground" CardType="Unit" Amount="AllOther">
-            <Effect Type="PlayEffect" PlayEffectType="BanishOnDie"/>
+        <Ability Type="ImmuneToRetaliate" />
+        <Variable Type="TargetCount" MustBeTargetable="True">
+	<Trigger Type="OnTurnEnd" Side="Friendly">
+        <Target Zone="Graveyard" Amount="1" Side="Enemy">
+            <Effect Type="Banish"  />
         </Target>
-        <Description>Whenever another creature dies, banish it instead.</Description>
+	</Trigger>
+	<Trigger Type="OnTurnEnd" Side="Friendly">
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+		<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+		<Effect Type="Damage" Value="1"/>
+		</Target>
+	</Trigger>
+        <Description>At the end of your turn, banish a random card from enemy graveyard. If you can't, deal 1 damage to enemy Hero.</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Creatures - Other -->
