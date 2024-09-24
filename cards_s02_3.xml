@@ -174,7 +174,7 @@ At the beginning of your turn, take a non-unique creature card at random from yo
         </Target>
         <Description>Return target ongoing spell or fortune to its owner's hand.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Pri_041" DisplayName="Fate Twister" School="Prime" Cost="4" MagicLevel="3" DestinyLevel="2" ID="434">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Pri_041" DisplayName="Fate Twister" School="Prime" Cost="3" MagicLevel="4" DestinyLevel="1" ID="434">
         <Target Zone="Hand" Amount="1" Side="Enemy">
             <CardFilter IncludeCardType="Fortune" />
             <Effect Type="Play" Free="True" CancelDestination="Graveyard" />
