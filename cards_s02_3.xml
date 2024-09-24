@@ -174,12 +174,12 @@ At the beginning of your turn, take a non-unique creature card at random from yo
         </Target>
         <Description>Return target ongoing spell or fortune to its owner's hand.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Pri_041" DisplayName="Fate Twister" School="Prime" Cost="4" MagicLevel="3" DestinyLevel="2" ID="434">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Pri_041" DisplayName="Fate Twister" School="Prime" Cost="4" MagicLevel="3" DestinyLevel="2" ID="434">
         <Target Zone="Hand" Amount="1" Side="Enemy">
-            <CardFilter IncludeCardType="Fortune" ExcludeUnique="True" />
+            <CardFilter IncludeCardType="Fortune" />
             <Effect Type="Play" Free="True" CancelDestination="Graveyard" />
         </Target>
-        <Description>Look at opponent's hand and choose a non-unique fortune card from it. You can play this fortune for free. If you don't, put that card into opponent's graveyard.</Description>
+        <Description>Look at opponent's hand and choose a fortune card from it. You can play this fortune for free. If you don't, put that card into opponent's graveyard.</Description>
     </Card>
     <Card NotLocalized="True" Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Pri_042" DisplayName="The Gate to Nowhere" School="Prime" Cost="3" MagicLevel="3" ID="435">
         <Ongoing Duration="Permanent" />
