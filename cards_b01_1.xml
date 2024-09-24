@@ -394,6 +394,7 @@ Whenever opponent plays a card, they discard a card.</Description>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Str_008" DisplayName="Panther Warrior" Faction="Stronghold" School="Air" SubType="Melee" Race="Orc|Warrior" Cost="6" MightLevel="6" Attack="3" Retaliate="3" HP="5" ID="88">
         <Ability Type="QuickAttack"/>
         <Ability Type="Charge"/>
+	<Ability Type="Swift"/>
     </Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Str_006" DisplayName="Enraged Cyclops" Faction="Stronghold" SubType="Shooter" Race="Cyclops" Cost="7" MightLevel="6" Attack="4" Retaliate="2" HP="7" ID="89">
         <Ability Type="ImmuneToRetaliate"/>
