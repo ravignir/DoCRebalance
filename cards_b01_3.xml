@@ -561,12 +561,12 @@ At end of turn, if damage was prevented in this way this turn, destroy Martyr.</
     <!--...............................................................................-->
     <!-- Spells - Prime -->
     <!--...............................................................................-->
-    <Card Rarity="Rare" Type="Spell" Name="Spe_Pri_007" DisplayName="Spell Twister" School="Prime" Cost="4" MagicLevel="4" ID="234">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Pri_007" DisplayName="Spell Twister" School="Prime" Cost="3" MagicLevel="5" ID="234">
         <Target Zone="Hand" Amount="1" Side="Enemy">
-            <CardFilter IncludeCardType="Spell" ExcludeUnique="True"/>
+            <CardFilter IncludeCardType="Spell"/>
             <Effect Type="Play" Free="True" CancelDestination="Graveyard"/>
         </Target>
-        <Description>Look at opponent's hand and choose a non-unique spell card from it. You can play this spell for free. If you don't, put that card into opponent's graveyard.</Description>
+        <Description>Look at opponent's hand and choose a spell card from it. You can play this spell for free. If you don't, put that card into opponent's graveyard.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Pri_006" DisplayName="Soul Syphon" School="Prime" Cost="2" MagicLevel="2" ID="235">
         <Target Zone="Hand" CardType="Spell" Amount="1" Side="Friendly" CantTargetSelf="True">
