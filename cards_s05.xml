@@ -96,19 +96,25 @@
 	<!--...............................................................................-->
 	<!-- Heroes Necropolis -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_Nec_008" DisplayName="Sveltana, Hierophant of the Spider Queen" Faction="Necropolis" School="Dark|Air" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="20" ID="703">
-		<Description>Ongoing: All friendly creatures with Incorporeal gain +[1:HEALTH].</Description>
-        <Target Zone="None" Side="Friendly">
-            <Effect Type="ChoiceOption" />
-            <Subgroup>
-                <TemplateEffect Name="HeroAbilities" />
-                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
-            </Subgroup>
-        </Target>
-        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
-            <CardFilter IncludeAbility="Incorporeal" />
-            <Effect Type="ModifyMaxHp" Value="1" Duration="Permanent" />
-        </Target>
+	<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Nec_008" DisplayName="Sveltana, Hierophant of the Spider Queen" Faction="Necropolis" School="Dark|Air" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="20" ID="703">
+		<Description>If your [MIGHT] level is 4 or more and your [MAGIC] level is 4 or more, all friendly creatures with Incorporeal gain +[1:HEALTH].</Description>
+        	<Target Zone="None" Side="Friendly">
+            		<Effect Type="ChoiceOption" />
+            	<Subgroup>
+                	<TemplateEffect Name="HeroAbilities" />
+                	<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            	</Subgroup>
+        	</Target>
+        	<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+			<CardFilter IncludeAbility="Incorporeal" />
+			<Variable Type="Level" Side="Friendly" LevelType="Might" />
+        		<Variable2 Type="Level" Side="Friendly" LevelType="Magic" />
+        		<Condition Operator="And" ValueA="Condition" ValueB="Condition">
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="3" />
+                		<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="3" />
+            		</Condition>
+        		<Effect Type="ModifyMaxHp" Value="1" Duration="Permanent" />
+        	</Target>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Sanctuary -->
