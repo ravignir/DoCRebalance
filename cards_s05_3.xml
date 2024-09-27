@@ -123,10 +123,10 @@ All creatures gain +[1:ATK] and +[1:RET].</Description>
 	</Card>
 	<Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Fir_072" DisplayName="Arkath's Wrath" School="Fire" Cost="5" MightLevel="0" MagicLevel="5" DestinyLevel="0" ID="790" Unique="False">
 		<Target Zone="Battleground" CardType="Unit" Amount="All">
-			<Variable Type="Level" Side="Friendly" LevelType="Magic"/>
-			<Effect Type="Damage" Value="Variable" DamageFlags="Spell|Fire|Magic|Disintegrate"/>
+			<Effect Type="Damage" Value="3" DamageFlags="Spell|Fire|Magic|Enforced|Disintegrate"/>
+			<Effect Type="Damage" Value="2" DamageFlags="Spell|Fire|Magic|Disintegrate"/>
 		</Target>
-		<Description>Deal damage to all creatures equal to your [MAGIC] level. If a creature dies this way, banish it instead.</Description>
+		<Description>Deal 3 damage that cannot be prevented or reduced, and 2 damage to all creatures. If a creature dies this way, banish it instead.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Light -->

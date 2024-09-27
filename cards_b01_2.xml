@@ -440,14 +440,19 @@ All friendly creatures gain Attack Anywhere.</Description>
     <!--...............................................................................-->
     <!-- Fortune - Neutral -->
     <!--...............................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Neu_002" DisplayName="Ambush Spot" Faction="Neutral" Cost="1" DestinyLevel="1" ID="161">
-        <Ongoing Duration="UntilEndOfTurn"/>
-        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
-            <CardFilter IncludeUnitType="Melee|Flyer"/>
-            <Effect Type="ModifyAbility" Ability="AttackBackLine"/>
-        </Target>
-        <Description>Until end of turn:
-Melee and flyer creatures can attack creatures on the back line.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Neu_002" DisplayName="Ambush Spot" Faction="Neutral" Cost="1" DestinyLevel="2" ID="161">
+        <Ongoing Duration="Permanent" />
+        <Trigger Type="OnCardPlay" Side="Enemy">
+	<CardFilter IncludeCardType="Unit"/>
+            	<Target Zone="Battleground" Amount="FromTrigger" Side="Enemy" CardType="Unit">
+                	<Effect Type="Damage" Value="3"/>
+            	</Target>
+		<Target Zone="None" Amount="Self">
+			<Effect Type="Kill"/>
+		</Target>
+        </Trigger>
+        <Description>Permanent:
+When opponent plays a creature, deal 3 damage to it and destroy Ambush Spot.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Neu_017" DisplayName="Altar of Shadows" Faction="Neutral" Cost="3" DestinyLevel="3" ID="162">
         <Variable Type="CardPlayedCount"/>

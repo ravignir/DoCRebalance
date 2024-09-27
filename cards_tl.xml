@@ -623,4 +623,16 @@
 	</Trigger>
     </TemplateEffect>
 
+    <TemplateEffect Name="NahlaEffect">
+        <Target Zone="Battleground" Amount="Self">
+            <Variable Type="TargetCount" UseCurrentTarget="True">
+                <Target Zone="Battleground" CardType="Unit" Amount="self" Side="Friendly" Shape="AdjacentOnly">
+                    <CardFilter IncludeRaces="Wizard"/>
+                </Target>
+            </Variable>
+            <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+            <Effect Type="ModifyAttack" Value="1"/>
+        </Target>
+    </TemplateEffect>
+
 </Cards>

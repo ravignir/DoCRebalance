@@ -9,20 +9,40 @@
     <!--....................................................................-->
     <!-- Fortune - Haven -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Hav_040" DisplayName="Elrath's Blessing" Faction="Haven" Cost="2" DestinyLevel="2" ID="392">
-        <Variable Type="HeroHP" Side="Friendly" />
-        <PlayabilityCondition Operator="LesserThan" ValueA="Variable" ValueB="6" />
-        <Target Zone="Hero" Amount="All" Side="Friendly">
-            <Effect Type="Heal" Value="5" />
-        </Target>
-        <Description>Heal 5 damage from your hero.
-Elrath's Blessing can only be played if your hero's remaining health is 5 or less.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Hav_040" DisplayName="Elrath's Blessing" Faction="Haven" Cost="2" DestinyLevel="3" ID="392">
+		<Ongoing Duration="Permanent"/>
+		<Variable Type="HeroHP" Side="Friendly"/>
+		<Variable2 Type="TargetCount" ValueModifier="1">
+			<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+				<CardFilter IncludeRaces="Angel"/>
+			</Target>
+		</Variable2>
+		<Trigger Type="OnDamageHero">
+			<Target Zone="Hero" Amount="All" Side="Friendly">
+				<Condition Operator="EqualTo" ValueA="Variable" ValueB="1"/>
+				<Effect Type="Heal" Value="Variable2"/>
+			</Target>
+			<Target Zone="None" Amount="Self">
+				<Condition Operator="EqualTo" ValueA="Variable" ValueB="1"/>
+				<Effect Type="Kill"/>
+			</Target>			
+		</Trigger>
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+            		<Effect Type="ModifyAbility" Ability="SurviveOnce"/>
+        	</Target>
+        <Description>Pemanent:
+While your hero has 2 remaining health or more, when its health drops to 0 or less, set its remaining health to 1.
+When your hero health drops to 1, destroy Elrath's Blessing and heal X damage from your hero, where X is equal to 1 plus the number of friendly Angel creatures on the battleground.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Hav_041" DisplayName="Sister's Tent" Faction="Haven" Cost="2" DestinyLevel="2" ID="393">
-        <Target Zone="Graveyard" Side="Friendly" CardType="Unit" Amount="1">
-            <Effect Type="MoveCardTo" Destination="Library" />
-        </Target>
-        <Description>Take target creature card from your graveyard and put it on top of your library.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Hav_041" DisplayName="Sister's Tent" Faction="Haven" Cost="2" DestinyLevel="2" ID="393">
+		<Ongoing Duration="Permanent" />
+		<Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" Cancelable="False">
+				<Effect Type="Heal" Value="3"/>
+			</Target>
+		</Trigger>
+        <Description>Permanent:
+At the beginning of your turn, heal 3 damage from target friendly creature.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Hav_042" DisplayName="Strength in Numbers" Faction="Haven" Cost="2" DestinyLevel="2" ID="394">
         <Target Zone="Hero" Amount="All" Side="Friendly">

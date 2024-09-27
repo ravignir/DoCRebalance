@@ -208,13 +208,15 @@ While there is a friendly wizard on battle ground, [THIS] gain Swift. </Descript
         <Description>Whenever Void-Tainted Djinn destroys a creature, put the top 5 cards of opponent's library into their graveyard.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Aca_024" DisplayName="Arcane Archer" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Human|Archer|Wizard" Cost="4" MightLevel="3" MagicLevel="2" Attack="3" Retaliate="2" HP="6" ID="479">
-        <Ability Type="ImmuneToRetaliate" />
-        <Trigger Type="OnThisDamageUnit" Side="Enemy" DamageIncludeFlags="Attack">
-            <Target Zone="Battleground" CardType="Unit" Amount="FromTrigger" ForceExecute="True" Persistent="True">
-                <Effect Type="ModifyAbility" Ability="CannotTarget" Remove="True" Duration="UntilEndOfTurn" />
-            </Target>
-        </Trigger>
-		<Description>Whenever Arcane Archer deals combat damage to a creature, that creature loses "cannot be targeted" if it had it, and cannot gain "cannot be targeted" until end of turn.</Description>
+        <Ability Type="ImmuneToRetaliate"/>
+	<Trigger Type="OnThisPostDeadlyCombat">
+		<Target Zone="Hero" Amount="All" Side="Friendly" ForceExecute="True" Persistent="True">
+			<Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="-1" Duration="UntilPlayCardThisTurn">
+				<CardFilter IncludeCardType="Spell"/>
+			</Effect>
+		</Target>		
+	</Trigger>
+	<Description>Whenever Arcane Archer attacks and destroys a creature, your next spell costs [1:RESOURCES] less to play.</Description>
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Aca_025" DisplayName="Sellspell Djinn" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Spirit|Djinn" Cost="3" MightLevel="3" MagicLevel="2" Attack="3" Retaliate="3" HP="5" ID="480">
         <Ability Type="ImmuneToRetaliate" />

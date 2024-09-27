@@ -331,15 +331,22 @@ While there are fewer friendly creatures than enemy creatures on the battlegroun
 </Trigger>
 <Description> When Pao Wrecker enters the battleground, you may deal damage to target creature equal to half of your [MIGHT] level, rounded down. </Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_073" DisplayName="Pao Veteran" Faction="Stronghold" SubType="Melee|Shooter" Race="Orc|Warrior" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="738" Unique="False">
-		<Target Zone="Battleground" Amount="All" CardType="Unit">
-			<CardFilter IncludeRaces="Warrior"/>
-			<Effect Type="PlayEffect" PlayEffectType="AttackBonus" Value="1">
-				<CardFilter ExcludeRaces="Warrior" IncludeCardType="Unit"/>
-			</Effect>
-		</Target>
-		<Description>Whenever a Warrior creature attacks a non-Warrior creature, it deals 1 more attack damage.</Description>
-	</Card>
+    	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Str_073" DisplayName="Pao Veteran" Faction="Stronghold" SubType="Melee|Shooter" Race="Orc|Warrior" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="738" Unique="False">
+        	<Variable Type="Level" LevelType="Might" Side="Friendly"/>
+        	<Target Zone="Battleground" Amount="All" CardType="Unit">
+            	<CardFilter IncludeRaces="Warrior" Side="Friendly"/>
+            		<Effect Type="PlayEffect" PlayEffectType="AttackBonus" Value="1">
+                		<CardFilter IncludeCardType="Unit"/>
+           	 	</Effect>
+        	</Target>
+        	<Target Zone="Battleground" Amount="All" CardType="Unit">
+		<CardFilter IncludeRaces="Warrior" Side="Friendly"/>
+            		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="9"/>
+            		<Effect Type="ModifyAbility" Ability="PerfectAttack"/>
+        	</Target>
+        	<Description>Whenever a friendly Warrior creature attacks a creature, it deals 1 more attack damage.
+While your [MIGHT] level is 10 or more, damage dealt by friendly Warrior creatures cannot be prevented or reduced.</Description>
+    	</Card>
 	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Str_074" DisplayName="Warbound Cyclops" Faction="Stronghold" SubType="Melee|Shooter" Race="Cyclops|Warrior" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="0" Retaliate="1" HP="7" ID="739" Unique="False">
 		<Trigger Type="OnOtherPostAttack" Side="Friendly">
 			<CardFilter IncludeRaces="Warrior"/>
