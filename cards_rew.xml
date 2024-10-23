@@ -330,7 +330,7 @@ At the beginning of your turn, you may destroy target creature with a cost of [2
                 <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
             </Subgroup>
         </Target>
-        <Trigger Type="OnTurnBegin" Side="Friendly">
+        <Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
             <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" ForceExecute="True">
                 <Variable Type="Level" Side="Friendly" LevelType="Might"/>
                 <Variable2 Type="Level" Side="Friendly" LevelType="Magic"/>
