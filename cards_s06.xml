@@ -115,7 +115,7 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 	<!--...............................................................................-->
 	<!-- Heroes Sanctuary -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_San_009" DisplayName="Mukao" Faction="Sanctuary" School="Dark|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="806">
+	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_San_009" DisplayName="Mukao" Faction="Sanctuary" School="Dark|Water" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="20" ID="806">
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>
@@ -124,20 +124,16 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 				<Target Zone="None" Side="Friendly">
 					<Variable Type="Resources" Side="Friendly"/>
 					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
-					<Option Value="4" DisplayText="[2:RESOURCE]: Look at opponent's hand. Draw a card."/>
+					<Option Value="4" DisplayText="[2:RESOURCES]: Look at opponent's hand. Put a card on top."/>
 					<Effect Type="GainResources" Value="-2" Duration="Immediate"/>
 				</Target>
-				<Target Zone="Hand" Amount="All" Side="Enemy">
+				<Target Zone="Hand" Side="Enemy" Amount="1">
 					<Option Value="4"/>
-					<Effect Type="Look" Duration="Immediate"/>
-				</Target>
-				<Target Zone="None" Side="Friendly">
-					<Option Value="4"/>
-					<Effect Type="Draw" Value="1" Duration="Immediate"/>
+					<Effect Type="MoveCardTo" Destination="Library" Duration="Immediate" />
 				</Target>
 			</Subgroup>
 		</Target>
-		<Description>[2:RESOURCES]: Look at opponent's hand. Draw a card.</Description>
+		<Description>[2:RESOURCES]: Look at opponent's hand and choose a card from it. Opponent puts that card on the top of their library.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Stronghold -->
