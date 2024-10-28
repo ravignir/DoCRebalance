@@ -86,14 +86,31 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 	<!--...............................................................................-->
 	<!-- Heroes Necropolis -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_Nec_009" DisplayName="Mother Namtaru, Asha's Nightmare" Faction="Necropolis" School="Earth|Prime|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="805">
-		<Target Zone="None" Side="Friendly">
-			<Effect Type="ChoiceOption"/>
-			<Subgroup>
-				<TemplateEffect Name="HeroAbilities"/>
-				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
-			</Subgroup>
-		</Target>
+	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Nec_009" DisplayName="Mother Namtaru, Asha's Nightmare" Faction="Necropolis" School="Earth|Prime|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="805">
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+				<Target Zone="None" Side="Friendly">
+					<Variable Type="Resources" Side="Friendly"/>
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
+					<Option Value="4" DisplayText="[2:RESOURCES]: Banish spell. Namtaru gain Sell Resist." />
+					<Effect Type="GainResources" Value="-2" Duration="Immediate"/>
+				</Target>
+                <Target Zone="Graveyard" Amount="1" Side="Friendly">
+                    <CardFilter IncludeCardType="Spell" />
+                    <Option Value="4" />
+                    <Effect Type="Banish" Duration="Immediate" />
+                </Target>
+                <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="All" NeedActivation="True">
+				<CardFilter IncludeRaces="Namtaru" />
+                    <Option Value="4" />
+                    <Effect Type="ModifyAbility" Ability="SpellResist" Duration="UntilYourNextTurn" />
+                </Target>
+            </Subgroup>
+        </Target>
+		<Description>[2:RESOURCES]: Banish target spell card from your graveyard. Until your next turn, all friendly Namtaru creatures gain Spell Resist.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Sanctuary -->
