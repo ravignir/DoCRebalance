@@ -165,7 +165,7 @@ Whenever a friendly Spy deals combat damage to enemy Hero, increase your [RESOUR
 		<Description>Until your next turn:
 At the beginning of opponent's turn, they must choose one creature they control and shuffle it to its owner's library.</Description>
 	</Card>
-	<Card Rarity="Epic" Unique="True" Type="Fortune" Name="For_San_082" DisplayName="Dark Lotus Pond" Faction="Sanctuary" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="861">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="True" Type="Fortune" Name="For_San_082" DisplayName="Dark Lotus Pond" Faction="Sanctuary" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="861">
 		<Variable Type="CardInHandCount" Side="Enemy"/>
 		<Target Zone="None">
 			<Effect Type="FreezeVariable"/>
@@ -191,7 +191,7 @@ At the beginning of opponent's turn, they must choose one creature they control 
 				</Target>
 			</Subgroup>
 		</Target>
-		<Description>Shuffle opponent's hand into their library, then put 4 cards from their library into their graveyard. Opponent draw a number of cards equal to the number of card previously in their hand.</Description>
+		<Description>Shuffle opponent's hand into their library, then choose 4 cards from their library. Among the chosen cards, banish all non-unique cards and put all unique cards into their graveyard. Opponent draw a number of cards equal to the number of card previously in their hand.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Fortune - Stronghold -->
