@@ -239,7 +239,7 @@ Choose [0]Air[/0], [1]Earth[/1], [2]Fire[/2], [3]Water[/3], [4]Dark[/4], [5]Ligh
 All friendly mercenaries gain +[1:ATK] for each other friendly mercenaries on the battleground.</Description>
 		<!-- S07 NEW STUFF : ResourcesProduction - Variable to compute at runtime the resources production of a player. -->
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Neu_092" DisplayName="Magic Deal" Faction="Neutral" Cost="3" MightLevel="0" MagicLevel="1" DestinyLevel="2" ID="965">
+	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Neu_092" DisplayName="Magic Deal" Faction="Neutral" Cost="2" MightLevel="0" MagicLevel="1" DestinyLevel="2" ID="965">
 		<Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1">
 			<CardFilter IncludeUnitType="Magic"/>
 			<Effect Type="Kill"/>

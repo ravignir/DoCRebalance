@@ -169,12 +169,12 @@ Friendly prime creatures gains Magic Resist.</Description>
 		<Description>Permanent:
 When a magic creature is about to be played, negate that creature and then destroy Dissolve.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Pri_092" DisplayName="Magic Steal" School="Prime" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="999">
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Pri_092" DisplayName="Magic Steal" School="Prime" Cost="4" MightLevel="1" MagicLevel="4" DestinyLevel="0" ID="999">
 		<Target Zone="Hand" Amount="1" Side="Enemy">
-			<CardFilter IncludeCardType="Unit" IncludeUnitType="Magic" ExcludeUnique="True"/>
+			<CardFilter IncludeCardType="Unit" IncludeUnitType="Magic"/>
 			<Effect Type="Play" Free="True" CancelDestination="Graveyard"/>
 		</Target>
-		<Description>Look at opponent's hand and choose a non-unique magic creature card from it. You can play this creature for free. If you don't, put that card in opponent's graveyard.</Description>
+		<Description>Look at opponent's hand and choose a magic creature card from it. You can play this creature for free. If you don't, put that card in opponent's graveyard.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Water -->

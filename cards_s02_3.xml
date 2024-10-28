@@ -46,16 +46,17 @@
         <Description>Enchant creature. Permanent:
 At the beginning of enchanted creature's controller's turn, deal 1 damage to their Hero.</Description>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Dar_041" DisplayName="Intimidation" School="Dark" Cost="2" MagicLevel="2" ID="422">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Dar_041" DisplayName="Intimidation" School="Dark" Cost="2" MagicLevel="2" ID="422">
         <Ongoing Duration="UntilYourNextTurn" />
-        <Target Zone="Battleground" CardType="Unit" Side="Any" Amount="All">
-            <CardFilter IncludeStatus="NoFriendlyAdjacent" />
-            <Effect Type="ModifyAbility" Ability="CannotAttack" />
+        <Target Zone="Battleground" CardType="Unit" Amount="All">
+            <Variable Type="CardCost" UseCurrentTarget="True" />
+            <Condition Operator="LesserThan" ValueA="Variable" ValueB="3" />
+            <Effect Type="ModifyAbility" Ability="CannotAttack" EvaluationOrder="Last" />
         </Target>
         <Description>Until your next turn:
-Creatures with no adjacent friendly creature gain Cannot Attack.</Description>
+Enemy creatures with a cost of [2:RESOURCES] or less gain Cannot Attack.</Description>
     </Card>
-    <Card NotLocalized="True" Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Dar_042" DisplayName="The Silent Death" School="Dark" Cost="4" MagicLevel="4" ID="423">
+    <Card UseXmlDescription="True" Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Dar_042" DisplayName="The Silent Death" School="Dark" Cost="4" MagicLevel="4" ID="423">
         <Ongoing Duration="Permanent" />
       <Target Zone="Battleground" CardType="Unit" Amount="1">
         <Effect Type="ModifyAbility" Ability="CannotAttack" />
@@ -174,12 +175,12 @@ At the beginning of your turn, take a non-unique creature card at random from yo
         </Target>
         <Description>Return target ongoing spell or fortune to its owner's hand.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Pri_041" DisplayName="Fate Twister" School="Prime" Cost="4" MagicLevel="3" DestinyLevel="2" ID="434">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Pri_041" DisplayName="Fate Twister" School="Prime" Cost="3" MagicLevel="4" DestinyLevel="1" ID="434">
         <Target Zone="Hand" Amount="1" Side="Enemy">
-            <CardFilter IncludeCardType="Fortune" ExcludeUnique="True" />
+            <CardFilter IncludeCardType="Fortune" />
             <Effect Type="Play" Free="True" CancelDestination="Graveyard" />
         </Target>
-        <Description>Look at opponent's hand and choose a non-unique fortune card from it. You can play this fortune for free. If you don't, put that card into opponent's graveyard.</Description>
+        <Description>Look at opponent's hand and choose a fortune card from it. You can play this fortune for free. If you don't, put that card into opponent's graveyard.</Description>
     </Card>
     <Card NotLocalized="True" Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Pri_042" DisplayName="The Gate to Nowhere" School="Prime" Cost="3" MagicLevel="3" ID="435">
         <Ongoing Duration="Permanent" />

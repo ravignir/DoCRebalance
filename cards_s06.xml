@@ -9,36 +9,38 @@
 	<!--...............................................................................-->
 	<!-- Heroes Academy -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_Aca_009" DisplayName="Nahla" Faction="Academy" School="Prime|Fire" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="802">
-		<Target Zone="None" Side="Friendly">
-			<Effect Type="ChoiceOption"/>
-			<Subgroup>
-				<TemplateEffect Name="HeroAbilities"/>
-				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
-				<Target Zone="None" Side="Friendly">
-					<Variable Type="Resources" Side="Friendly"/>
-					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
-					<Option Value="4" DisplayText="[3:RESOURCES]: Heal all friendly Beastmen and they gains +1 [ATK]."/>
-					<Effect Type="GainResources" Value="-3" Duration="Immediate"/>
-				</Target>
-				<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
-					<Option Value="4"/>
-					<CardFilter IncludeRaces="Beastmen"/>
-					<Effect Type="Heal" Value="infinite" Duration="Immediate"/>
-				</Target>
-				<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" NeedActivation="True">
-					<Option Value="4"/>
-					<CardFilter IncludeRaces="Beastmen"/>
-					<Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
-				</Target>
-			</Subgroup>
-		</Target>
-		<Description>[3:RESOURCES]: Heal all damage from all friendly Beastman creatures and they gain +[1:ATK] until end of turn.</Description>
-	</Card>
+    	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Aca_009" DisplayName="Nahla" Faction="Academy" School="Prime|Fire" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="802">
+        	<Target Zone="None" Side="Friendly">
+            		<Effect Type="ChoiceOption"/>
+            	<Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+                <Target Zone="None" Side="Friendly">
+                    <Variable Type="Resources" Side="Friendly"/>
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
+                    <Option Value="4" DisplayText="[3:RESOURCES]: Heal all Beastmen, +1 [ATK] to adjacent to Wizard."/>
+                    <Effect Type="GainResources" Value="-3" Duration="Immediate"/>
+                </Target>
+                <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+                    <Option Value="4"/>
+                    <CardFilter IncludeRaces="Beastmen"/>
+                    <Effect Type="Heal" Value="infinite" Duration="Immediate"/>
+                </Target>
+                <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" NeedActivation="True">
+                    <Option Value="4"/>
+                    <CardFilter IncludeRaces="Beastmen"/>
+                    <Effect Type="ModifyAbility" Ability="NahlaEffect" Duration="UntilEndOfTurn"/>
+                </Target>
+            	</Subgroup>
+        	</Target>
+        	<Description>[3:RESOURCES]: Heal all damage from all friendly Beastman creatures.
+Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK] until end of turn.</Description>
+    	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Haven -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_Hav_009" DisplayName="Slava" Faction="Haven" School="Air|Fire|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="803">
+	<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Hav_009" DisplayName="Slava" Faction="Haven" School="Air|Fire|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="803">
+		<Description>At the beginning of your turn, if your [MIGHT] level is 4 or more and your [MAGIC] level is 4 or more, target friendly creature gains Combat Guard 1 until your next turn.</Description>
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>
@@ -46,6 +48,17 @@
 				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
 			</Subgroup>
 		</Target>
+        	<Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
+            		<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" ForceExecute="True">
+                	<Variable Type="Level" Side="Friendly" LevelType="Might" />
+                	<Variable2 Type="Level" Side="Friendly" LevelType="Magic" />
+                	<Condition Operator="And" ValueA="Condition" ValueB="Condition">
+                    		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="3" />
+                    		<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="3" />
+                	</Condition>
+                		<Effect Type="ModifyAbility" Ability="CombatGuard" Value="1" Duration="UntilYourNextTurn" />
+            		</Target>
+        	</Trigger>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Inferno -->
