@@ -193,10 +193,10 @@ While you control more creatures than your opponent, target creature is immobili
 						</Target>
 					</Subgroup>
 				</Target>
-                <Target Zone="Graveyard" Side="Enemy" Amount="Variable2" CardType="Unit">
+                		<Target Zone="Graveyard" Side="Enemy" Amount="Variable2" CardType="Unit">
 					<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0"/>
-                    <Option Value="1" DisplayText="Enemy Graveyard"/>
-                    <Effect Type="Banish"/>
+                    			<Option Value="1" DisplayText="Enemy Graveyard"/>
+                    			<Effect Type="Banish"/>
 					<Subgroup>
 						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
 							<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0"/>
