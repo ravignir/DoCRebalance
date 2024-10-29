@@ -181,15 +181,15 @@ While you control more creatures than your opponent, target creature is immobili
 					<Subgroup>
 						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
 							<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-							<Effect Type="PopulateStack" Name="b01_Tok_Nec_001"/>
+							<Effect Type="PopulateStack" Name="Tok_Nec_001"/>
 						</Target>
 						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
 							<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
-							<Effect Type="PopulateStack" Name="b01_Tok_Nec_001"/>
+							<Effect Type="PopulateStack" Name="Tok_Nec_001"/>
 						</Target>
 						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
 							<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
-							<Effect Type="PopulateStack" Name="b01_Tok_Nec_001"/>
+							<Effect Type="PopulateStack" Name="Tok_Nec_001"/>
 						</Target>
 					</Subgroup>
 				</Target>
@@ -200,15 +200,15 @@ While you control more creatures than your opponent, target creature is immobili
 					<Subgroup>
 						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
 							<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0"/>
-							<Effect Type="PopulateStack" Name="b01_Tok_Nec_001"/>
+							<Effect Type="PopulateStack" Name="Tok_Nec_001"/>
 						</Target>
 						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
 							<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="1"/>
-							<Effect Type="PopulateStack" Name="b01_Tok_Nec_001"/>
+							<Effect Type="PopulateStack" Name="Tok_Nec_001"/>
 						</Target>
 						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
 							<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="2"/>
-							<Effect Type="PopulateStack" Name="b01_Tok_Nec_001"/>
+							<Effect Type="PopulateStack" Name="Tok_Nec_001"/>
 						</Target>
 					</Subgroup>
 				</Target>				
