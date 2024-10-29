@@ -161,14 +161,60 @@ While you control more creatures than your opponent, target creature is immobili
         </Target>
         <Description>Destroy target friendly creature. Heal 3 damage from your hero.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Nec_041" DisplayName="Rite of Necromantic Restoration" Faction="Necropolis" Cost="1" DestinyLevel="1" ID="401">
-        <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1">
-            <Effect Type="Kill" />
+    <Card NotLocalized="True" UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_041" DisplayName="Rite of Necromantic Restoration" Faction="Necropolis" Cost="2" DestinyLevel="3" ID="401">
+        <Variable Type="TargetCount" ValueModifier="3mi">
+            <Target Zone="Graveyard" Side="Friendly"  Amount="All" CardType="Unit"/>
+        </Variable>
+        <Variable2 Type="TargetCount" ValueModifier="3mi">
+            <Target Zone="Graveyard" Side="Enemy"  Amount="All" CardType="Unit"/>
+        </Variable2>
+        <Target Zone="None">
+            <Effect Type="FreezeVariable"/>
         </Target>
-        <Target Zone="Battleground" Side="Any" CardType="Unit" Amount="1" CantTargetPrevious="True">
-            <Effect Type="Heal" Value="infinite" />
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>			
+				<Target Zone="Graveyard" Side="Friendly" Amount="Variable" CardType="Unit">
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+					<Option Value="0" DisplayText="Friendly Graveyard"/>
+					<Effect Type="Banish"/>
+					<Subgroup>
+						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+							<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+							<Effect Type="PopulateStack" Name="b01_Tok_Nec_001"/>
+						</Target>
+						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+							<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
+							<Effect Type="PopulateStack" Name="b01_Tok_Nec_001"/>
+						</Target>
+						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+							<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
+							<Effect Type="PopulateStack" Name="b01_Tok_Nec_001"/>
+						</Target>
+					</Subgroup>
+				</Target>
+                <Target Zone="Graveyard" Side="Enemy" Amount="Variable2" CardType="Unit">
+					<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0"/>
+                    <Option Value="1" DisplayText="Enemy Graveyard"/>
+                    <Effect Type="Banish"/>
+					<Subgroup>
+						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+							<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0"/>
+							<Effect Type="PopulateStack" Name="b01_Tok_Nec_001"/>
+						</Target>
+						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+							<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="1"/>
+							<Effect Type="PopulateStack" Name="b01_Tok_Nec_001"/>
+						</Target>
+						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+							<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="2"/>
+							<Effect Type="PopulateStack" Name="b01_Tok_Nec_001"/>
+						</Target>
+					</Subgroup>
+				</Target>				
+            </Subgroup>
         </Target>
-        <Description>Destroy target friendly creature. Heal all damage from another target creature.</Description>
+        <Description>Banish 3 creature cards from a graveyard of your choice. Deploy a Skeleton melee-shooter token creature with [1:ATK]/[0:RET]/[1:HEALTH] and stackable for each creature card banished this way.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Nec_042" DisplayName="Early Grave" Faction="Necropolis" Cost="1" DestinyLevel="3" ID="402">
         <Target Zone="Library" Side="Friendly" Amount="1">
