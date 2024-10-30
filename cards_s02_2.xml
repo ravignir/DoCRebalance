@@ -152,14 +152,23 @@ While you control more creatures than your opponent, target creature is immobili
     <!--....................................................................-->
     <!-- Fortune - Necropolis -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Nec_040" DisplayName="Consume Minions" Faction="Necropolis" Cost="2" DestinyLevel="2" ID="400">
-        <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1">
-            <Effect Type="Kill" />
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_040" DisplayName="Consume Minions" Faction="Necropolis" Cost="1" DestinyLevel="3" ID="400">
+	<Variable Type="Resources" Side="Friendly"/>
+	<Variable2 Type="CardCost" UseParent="True"/>
+	<Variable3 Type="HeroHP" Side="Friendly"/>
+	<Ongoing Duration="Repeatable"/>
+        <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1" AllowDuplicate="True">
+		<CardFilter ExcludeToken="True"/>
+		<Condition Operator="And" ValueA="Condition" ValueB="Condition">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="Variable2"/>
+			<Condition Operator="LesserThan" ValueA="Variable3" ValueB="20"/>
+		</Condition>
+		<Effect Type="ModifyAbility" Ability="Consumed"/>
+            	<Effect Type="ModifyDuration" NewDuration="FromCondition">
+                	<Condition Operator="GreaterThan" ValueA="Variable3" ValueB="99"/>
+            	</Effect>
         </Target>
-        <Target Zone="Hero" Amount="All" Side="Friendly">
-            <Effect Type="Heal" Value="3" />
-        </Target>
-        <Description>Destroy target friendly creature. Heal 3 damage from your hero.</Description>
+        <Description>Put target friendly non-token creature into graveyard, pay [1:RESOURCES] and heal 3 damage from your hero. You can repeat this as many times as you want, unless you have enough resources to pay Consume Minions cost or your hero's health reaches 20.</Description>
     </Card>
     <Card NotLocalized="True" UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_041" DisplayName="Rite of Necromantic Restoration" Faction="Necropolis" Cost="2" DestinyLevel="3" ID="401">
         <Variable Type="TargetCount" ValueModifier="3mi">
