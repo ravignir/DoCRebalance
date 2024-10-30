@@ -641,4 +641,15 @@
         </Target>
     </TemplateEffect>
 
+    <TemplateEffect Name="Consumed">
+	<Trigger Type="OnThisCardDeath">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="GainResources" Value="-1"/>
+		</Target>
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+			<Effect Type="Heal" Value="3"/>
+		</Target>
+        </Trigger>
+    </TemplateEffect>
+
 </Cards>
