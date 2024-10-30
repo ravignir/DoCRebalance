@@ -250,14 +250,34 @@ While you control more creatures than your opponent, target creature is immobili
     <!--....................................................................-->
     <!-- Fortune - Sanctuary -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_San_040" DisplayName="Hall of Fortune" Faction="Sanctuary" Cost="1" DestinyLevel="2" ID="404">
-        <Target Zone="Library" Side="Friendly" Amount="1" AmountVisible="3">
-            <Effect Type="MoveCardTo" Destination="Hand" />
-        </Target>
-        <Target Zone="Library" Side="Friendly" Amount="2" AutoTakeFirstInputs="True" InputOnExec="True">
-            <Effect Type="MoveCardTo" Destination="Library" Bottom="True" />
-        </Target>
-        <Description>Look at the top 3 cards of your library and choose one to put into your hand. Put the other two at the bottom of your library.</Description>
+    <Card NotLocalized="True" UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_San_040" DisplayName="Hall of Fortune" Faction="Sanctuary" Cost="1" DestinyLevel="2" ID="404">
+		<Target Zone="None" Side="Friendly">
+			<Variable Type="TargetCount">
+				<Target Zone="Library" Amount="All" Side="Enemy"/>
+			</Variable>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Subgroup>
+				<Target Zone="Library" Side="Friendly" Amount="1" AmountVisible="3">
+					<Effect Type="MoveCardTo" Destination="Hand"/>
+				</Target>
+				<Target Zone="None" Side="Friendly">
+					<Effect Type="ChoiceOption"/>
+					<Subgroup>
+						<Target Zone="Library" Side="Friendly" Amount="2" AmountVisible="2">
+							<Option Value="0" DisplayText="Put the other two at the bottom."/>
+							<Effect Type="MoveCardTo" Destination="Library" Bottom="True"/>
+						</Target>
+						<Target Zone="Library" Side="Friendly" Amount="2" AmountVisible="2">
+							<Variable2 Type="Level" Side="Friendly" LevelType="Destiny"/>
+							<Option Value="1" DisplayText="[4:DESTINY]: Put the other two on the top."/>
+							<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="3"/>
+							<Effect Type="MoveCardTo" Destination="Library"/>
+						</Target>
+					</Subgroup>
+				</Target>
+			</Subgroup>
+		</Target>
+        <Description>Look at the top 3 cards of your library and choose one to put into your hand. You may put the other two at the bottom of your library in any order OR if your [DESTINY] level is 4 or more, you may put them on the top of your library in any order.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_San_041" DisplayName="Scrying Pool" Faction="Sanctuary" Cost="0" DestinyLevel="2" ID="405">
         <Variable Type="TargetCount" ValueModifier="5mi">
