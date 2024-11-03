@@ -296,13 +296,13 @@ If the number of crippling counters on an enemy creature is greater than its cos
 		<Ability Type="Hypnotize"/>
 		<!-- S07 NEW STUFF : OnUnitDamaged - A simple trigger triggered whenever a creature is damaged. -->
 	</Card>
-	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_093" DisplayName="Shogun" Faction="Sanctuary" SubType="Magic|Melee" Race="Naga" Cost="6" MightLevel="4" MagicLevel="3" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="936" School="Water">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_093" DisplayName="Shogun" Faction="Sanctuary" SubType="Magic|Melee" Race="Naga" Cost="6" MightLevel="4" MagicLevel="3" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="936" School="Water">
 		<Trigger Type="OnThisCardDeploy">
-			<Target Zone="Battleground" CardType="Unit" Amount="1" Shape="SelfAndAdjacent" Cancelable="True">
+			<Target Zone="BattlegroundPosition" CardType="Unit" Amount="1" Shape="SelfAndAdjacent" Cancelable="True">
 				<Effect Type="Damage" Value="2"/>
 			</Target>
 		</Trigger>
-		<Description>When Shogun comes into play, you may have it deal 2 damage to target creature and all adjacent creatures.</Description>
+		<Description>When Shogun enters the battleground, you may choose target battleground position. Deal 2 damage to any creature at targeted position and to all adjacent creatures.</Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_San_094" DisplayName="Shark Bodyguard" Faction="Sanctuary" SubType="Magic|Melee" Race="Beastmen" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="937">
 		<Trigger Type="OnMove" Side="Enemy">
