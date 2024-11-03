@@ -40,7 +40,7 @@
 	<!--...............................................................................-->
 	<!-- Heroes Haven -->
 	<!--...............................................................................-->
-	<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Hav_010" DisplayName="Anton" Faction="Haven" School="Air|Light" MightLevel="1" MagicLevel="0" DestinyLevel="2" HP="20" ID="906">
+	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Hav_010" DisplayName="Anton" Faction="Haven" School="Air|Light" MightLevel="1" MagicLevel="0" DestinyLevel="2" HP="20" ID="906">
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>
