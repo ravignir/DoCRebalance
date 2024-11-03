@@ -73,15 +73,15 @@ The first time that one or more friendly Construct dies in a turn, return them t
 	<!--...................................................................-->
 	<!-- Fortune - Inferno -->
 	<!--...................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Inf_080" DisplayName="Empowered Spell" Faction="Inferno" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="2" ID="852">
-		<Ongoing Duration="UntilYourNextTurn"/>
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Fortune" Name="For_Inf_080" DisplayName="Empowered Spell" Faction="Inferno" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="3" ID="852">
+		<Ongoing Duration="Permanent"/>
 		<Target Zone="Hero" Amount="All" Side="Any">
-			<Effect Type="GlobalEffect" GlobalEffectType="ModifyDamage" Value="2">
-				<CardFilter IncludeCardType="Spell" IncludeSchool="Fire"/>
+			<Effect Type="GlobalEffect" GlobalEffectType="ModifyDamage" Value="1">
+				<CardFilter IncludeCardType="Spell" IncludeOngoingType="Immediate"/>
 			</Effect>
 		</Target>
 		<Description>Permanent:
-If a fire spell would deal damage, it deals 2 more damage instead.</Description>
+If an instant spell would deal damage, it deals 1 more damage instead.</Description>
 	</Card>
 	<Card Rarity="Epic" Unique="True" Type="Fortune" Name="For_Inf_081" DisplayName="Soulfueled Pyre" Faction="Inferno" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="4" ID="853">
 		<Ongoing Duration="Repeatable"/>
