@@ -49,7 +49,7 @@
 			<Target Zone="None" Side="Friendly">
 				<Variable Type="Resources" Side="Friendly"/>
 				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
-				<Option Value="4" DisplayText="[3:RESOURCE] Increase the size of 2 target friendly stacks by 1."/>
+				<Option Value="4" DisplayText="[3:RESOURCE] Increase size of 2 stacks."/>
 				<Effect Type="GainResources" Value="-3" Duration="Immediate"/>
 			</Target>
 			<Target Zone="Battleground" CardType="Unit" Amount="2" Side="Friendly">
