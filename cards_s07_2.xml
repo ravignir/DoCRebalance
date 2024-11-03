@@ -195,17 +195,15 @@ All enemy creatures gains -[2:ATK].</Description>
 	<!--....................................................................-->
 	<!-- Fortune - Stronghold -->
 	<!--....................................................................-->
-	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Str_090" DisplayName="Beastman Warcry" Faction="Stronghold" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="962">
-		<Target Zone="Battleground" Amount="1" CardType="Unit" ForceExecute="True" Persistent="True">
-			<CardFilter IncludeRaces="Centaur"/>
-			<Effect Type="ModifyAttack" Value="2" Duration="UntilEndOfTurn"/>
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Str_090" DisplayName="Beastman Warcry" Faction="Stronghold" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="962">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Target Zone="Battleground" Amount="2" CardType="Unit" ForceExecute="True" Persistent="True">
+			<CardFilter IncludeRaces="Centaur|Harpy"/>
+			<Effect Type="ModifyAttack" Value="2"/>
+			<Effect Type="ModifyRetaliate" Value="2"/>
 		</Target>
-		<Target Zone="Battleground" Amount="1" CardType="Unit" ForceExecute="True" Persistent="True" AllowDuplicate="True">
-			<CardFilter IncludeRaces="Harpy"/>
-			<Effect Type="ModifyAttack" Value="2" Duration="UntilEndOfTurn"/>
-		</Target>
-		<Description>Until end of turn:
-Target Centaur creature and target Harpy creature gains +[2:ATK].</Description>
+		<Description>Until your next turn:
+Target Centaur or Harpy creature and target Centaur or Harpy creature gain +[2:ATK] and +[2:RET].</Description>
 	</Card>
 	<!--....................................................................-->
 	<!--  Fortune - Neutral -->
