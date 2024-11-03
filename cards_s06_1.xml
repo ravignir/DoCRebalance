@@ -428,12 +428,17 @@ At the end of your turn, if there are 3 or more Enrage counters on Bloodshark Wa
 		<Ability Type="AttackCost" Value="1"/>
 		<Description>To attack with Mercenary Archer, you must pay [1:RESOURCES].</Description>
 	</Card>
-	<Card Rarity="Epic" Unique="True" Type="Unit" Name="Cre_Neu_083" DisplayName="Raya, Chosen of the Waves" Faction="Neutral" School="Water" SchoolsAligned="True" SubType="Magic|Shooter" Race="Naga|Priest" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="845">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="True" Type="Unit" Name="Cre_Neu_083" DisplayName="Raya, Chosen of the Waves" Faction="Neutral" School="Water" SchoolsAligned="True" SubType="Magic|Shooter" Race="Naga|Priest" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="845">
 		<Ability Type="WaterAligned"/>
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="FortuneWard"/>
 		<Ability Type="FrozenTouch"/>
 		<Ability Type="Hypnotize"/>
+        	<Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="Self">
+            		<Effect Type="ModifyAbility" Ability="Berserk" Remove="True" />
+            		<Effect Type="ModifyAbility" Ability="CannotAttack" Remove="True" />
+        	</Target>
+		<Description>Raya, Chosen of the Waves cannot be prevented form attacking and is unaffected by Berserk.</Description>
 	</Card>
 	<Card Rarity="Epic" Unique="True" Type="Unit" Name="Cre_Neu_084" DisplayName="Hikyu, Chosen of the Flames" Faction="Neutral" School="Fire" SchoolsAligned="True" SubType="Magic|Melee" Race="Human|Warrior" Cost="6" MightLevel="5" MagicLevel="1" DestinyLevel="0" Attack="4" Retaliate="2" HP="7" ID="846">
 		<Ability Type="FireAligned"/>
