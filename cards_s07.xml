@@ -9,7 +9,7 @@
 	<!--...............................................................................-->
 	<!-- Heroes Academy -->
 	<!--...............................................................................-->
-	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Aca_010" DisplayName="Elisabeth" Faction="Academy" School="Dark|Light|Earth" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="905">
+	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Aca_010" DisplayName="Elisabeth" Faction="Academy" School="Dark|Light|Earth" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="905">
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>
