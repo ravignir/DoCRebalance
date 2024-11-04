@@ -370,7 +370,7 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
 				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
 			</Target>
         </Trigger>
-        <Description>Whenever Blackskull Spellsmasher attacks, you may destroy target ongoing spell. If you do, put a +[1:ATTACK] counter on Blackskull Spellsmasher.</Description>
+        <Description>Whenever Blackskull Spellsmasher attacks, you may have it destroy target ongoing spell. If you do, put a +[1:ATK] counter on Blackskull Spellsmasher.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_048" DisplayName="Blackskull Crusher" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="5" MightLevel="5" Attack="3" Retaliate="2" HP="7" ID="390">
         <Ability Type="EnemySpellWard"/>
