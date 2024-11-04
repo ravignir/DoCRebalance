@@ -145,7 +145,7 @@
             </Subgroup>
         </Target>
     </Card>
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Inf_003" DisplayName="Kal-Azaar, Invoker of Agony" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="8">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Inf_003" DisplayName="Kal-Azaar, Invoker of Agony" Faction="Inferno" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="18" ID="8">
         <School Name="Fire"/>
         <School Name="Dark"/>
         <School Name="Prime"/>
