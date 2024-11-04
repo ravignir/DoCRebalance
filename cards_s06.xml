@@ -39,7 +39,7 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 	<!--...............................................................................-->
 	<!-- Heroes Haven -->
 	<!--...............................................................................-->
-	<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Hav_009" DisplayName="Slava" Faction="Haven" School="Air|Fire|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="803">
+	<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Hav_009" DisplayName="Slava" Faction="Haven" School="Air|Fire|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="803">
 		<Description>At the beginning of your turn, if your [MIGHT] level is 4 or more and your [MAGIC] level is 4 or more, target friendly creature gains Combat Guard 1 until your next turn.</Description>
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
@@ -86,7 +86,7 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 	<!--...............................................................................-->
 	<!-- Heroes Necropolis -->
 	<!--...............................................................................-->
-	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Nec_009" DisplayName="Mother Namtaru, Asha's Nightmare" Faction="Necropolis" School="Earth|Prime|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="805">
+	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Nec_009" DisplayName="Mother Namtaru, Asha's Nightmare" Faction="Necropolis" School="Earth|Prime|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="805">
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
