@@ -656,14 +656,14 @@ Enchanted creature gains Magic Shield.</Description>
     <!-- //	##      ##  #   ##      #  ##    ##        ## -->
     <!-- //	#####     ##    #####   #   #    ##     ##### -->
     <!--...............................................................................-->
-    <Card Rarity="Rare" Type="Event" Name="Eve_Neu_002" DisplayName="Market of Wonders" Faction="Neutral" Cost="3" ID="243">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Event" Name="Eve_Neu_002" DisplayName="Market of Wonders" Faction="Neutral" Cost="3" ID="243">
         <Target Zone="Library" Side="Friendly" Amount="1" AmountVisible="3">
             <Effect Type="MoveCardTo" Destination="Hand"/>
         </Target>
         <Target Zone="Library" Side="Friendly" Amount="2" AutoTakeFirstInputs="True" InputOnExec="True">
             <Effect Type="MoveCardTo" Destination="Graveyard"/>
         </Target>
-        <Description>[5:RESOURCES]: Look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.</Description>
+        <Description>[3:RESOURCES]: Look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.</Description>
     </Card>
     <Card Rarity="Rare" Type="Event" Name="Eve_Neu_011" DisplayName="Week of the Mercenaries" Faction="Neutral" Cost="3" ID="244">
         <Ongoing Duration="UntilEndOfTurn"/>
