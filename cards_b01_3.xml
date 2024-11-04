@@ -732,16 +732,11 @@ Enchanted creature gains Magic Shield.</Description>
         </Target>
         <Description>[2:RESOURCES]: Each player draws a card.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_014" DisplayName="Month of the Emerald Song" Faction="Neutral" Cost="3" ID="248">
-        <Ongoing Duration="UntilDeployThisTurn"/>
-        <Target Zone="None" Side="Friendly" NeedActivation="True">
-            <Trigger Type="OnDeploy">
-                <Target Zone="None" Amount="FromTrigger" Persistent="True" ForceExecute="True">
-                    <Effect Type="ModifyMaxHp" Value="2" Duration="Permanent"/>
-                </Target>
-            </Trigger>
-        </Target>
-        <Description>[3:RESOURCES]: The next creature you deploy this turn gains +[2:HEALTH]</Description>
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Event" Name="Eve_Neu_014" DisplayName="Month of the Emerald Song" Faction="Neutral" Cost="4" ID="248">
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" Persistent="True" ForceExecute="True" NeedActivation="True">
+			<Effect Type="ModifyMaxHp" Value="1" Duration="Permanent"/>
+		</Target>
+        <Description>[4:RESOURCES]: All friendly creatures gain +[1:HEALTH].</Description>
     </Card>
     <Card Rarity="Common" Type="Event" Name="Eve_Neu_006" DisplayName="Day of Fortune" Faction="Neutral" Cost="2" ID="249">
         <Target Zone="Hand" Side="Friendly" Amount="1">
