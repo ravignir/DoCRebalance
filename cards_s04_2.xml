@@ -437,7 +437,7 @@ All creatures gain +[1:ATK] and +[1:RET] for each other creature with the same n
     <!--....................................................................-->
     <!-- Building - Sanctuary -->
     <!--....................................................................-->
-    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Building" Name="Bui_San_060" DisplayName="Hidden Dojo" Faction="Sanctuary" Cost="3" MightLevel="2" DestinyLevel="2" ID="654">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Building" Name="Bui_San_060" DisplayName="Hidden Dojo" Faction="Sanctuary" Cost="2" MightLevel="2" DestinyLevel="2" ID="654">
         <Target Zone="Battleground" CardType="Unit" Amount="Occupant">
             <Effect Type="ModifyAbility" Ability="Honor" Value="1" />
         </Target>
