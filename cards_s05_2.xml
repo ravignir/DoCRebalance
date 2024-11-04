@@ -9,7 +9,7 @@
 	<!--....................................................................-->
 	<!-- Fortune - Academy -->
 	<!--....................................................................-->
-	<Card Rarity="Uncommon" Type="Fortune" Name="For_Aca_070" DisplayName="Circle of Nine" Faction="Academy" Cost="3" MightLevel="0" MagicLevel="1" DestinyLevel="3" ID="748" Unique="False">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Aca_070" DisplayName="Circle of Nine" Faction="Academy" Cost="3" MightLevel="0" MagicLevel="1" DestinyLevel="3" ID="748" Unique="False">
 		<Ongoing Duration="FromCondition"/>
 		<Variable Type="HeroHP"/>
 		<Condition ValueA="Variable" ValueB="99" Operator="LesserThan"/>
