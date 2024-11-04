@@ -9,7 +9,7 @@
     <!--...............................................................................-->
     <!-- Heroes Sanctuary -->
     <!--...............................................................................-->
-    <Card Rarity="Heroic" Type="Hero" Name="Her_San_004" DisplayName="Takana Osore, Champion of the Tides" Faction="Sanctuary" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="13">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_San_004" DisplayName="Takana Osore, Champion of the Tides" Faction="Sanctuary" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="22" ID="13">
         <School Name="Water"/>
         <Description>Ongoing: All friendly creatures with Honor gain +[1:ATK].</Description>
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
