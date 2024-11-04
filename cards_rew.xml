@@ -302,7 +302,7 @@ At the beginning of your turn, you may destroy target creature with a cost of [2
     <!--...............................................................................-->
     <!-- Heroes Stronghold -->
     <!--...............................................................................-->
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_005" DisplayName="Crag Hack" Faction="Stronghold" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="21">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_005" DisplayName="Crag Hack" Faction="Stronghold" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="22" ID="21">
         <School Name="Earth"/>
         <Description>[0:RESOURCES]: Neutral creatures cost [1:RESOURCES] less to play until end of turn.</Description>
         <Target Zone="None" Side="Friendly">
