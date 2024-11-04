@@ -224,7 +224,7 @@
             </Subgroup>
         </Target>
     </Card>
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Nec_003" DisplayName="Mother Namtaru, Invoker of Death" Faction="Necropolis" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="12">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Nec_003" DisplayName="Mother Namtaru, Invoker of Death" Faction="Necropolis" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="18" ID="12">
         <School Name="Dark"/>
         <School Name="Water"/>
         <School Name="Prime"/>
