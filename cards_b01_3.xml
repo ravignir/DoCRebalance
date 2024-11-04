@@ -34,7 +34,7 @@
         <Description>Deal 10 damage to all creatures.</Description>
         <ExtraDescription>(Also damage friendly units.)</ExtraDescription>
     </Card>
-    <Card NotLocalized="True" Rarity="Common" Type="Spell" Name="Spe_Fir_004" DisplayName="Fire Trap" School="Fire" Cost="1" MagicLevel="3" ID="184">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Fir_004" DisplayName="Fire Trap" School="Fire" Cost="1" MagicLevel="3" ID="184">
       <Ongoing Duration="Permanent"/>
       <Target Zone="BattlegroundColumn" Amount="1"/>
       <Trigger Type="OnDeployThisRow">
@@ -61,8 +61,7 @@
           <Effect Type="Kill"/>
         </Target>
       </Trigger>
-        <Description>
-          Enchant row. Permanent:
+        <Description>Enchant row. Permanent:
 When a creature is deployed, moves into, or is relocated to enchanted row, deal 3 damage to it, and to all adjacent creatures. Then destroy Fire Trap.</Description>
     </Card>
     <Card Rarity="Rare" Type="Spell" Name="Spe_Fir_002" DisplayName="Immolation" School="Fire" Cost="4" MagicLevel="4" ID="185">
