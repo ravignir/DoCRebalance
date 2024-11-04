@@ -359,7 +359,7 @@ Whenever opponent plays a card, they discard a card.</Description>
     <Card Rarity="Common" Type="Unit" Name="Cre_Str_005" DisplayName="Centaur Archer" Faction="Stronghold" SubType="Shooter" Race="Centaur|Archer" Cost="3" MightLevel="3" Attack="3" Retaliate="2" HP="4" ID="79">
         <Ability Type="ImmuneToRetaliate"/>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Str_007" DisplayName="Dreamwalker" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="3" MightLevel="3" MagicLevel="1" Attack="1" Retaliate="0" HP="3" ID="80">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Str_007" DisplayName="Dreamwalker" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="3" MightLevel="3" MagicLevel="1" Attack="1" Retaliate="0" HP="4" ID="80">
         <Ability Type="ImmuneToRetaliate"/>
         <Ability Type="Enrage" Value="2"/>
     </Card>
