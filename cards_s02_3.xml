@@ -252,11 +252,11 @@ All friendly creatures gain +[1:ATK] and Fortune Ward.</Description>
         </Target>
         <Description>[1:RESOURCES] : Until your next turn, target creature cannot be targeted.</Description>
     </Card>
-    <Card Rarity="Common" Type="Event" Name="Eve_Neu_041" DisplayName="Hail Storm" Cost="3" Faction="Neutral" ID="440">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Event" Name="Eve_Neu_041" DisplayName="Hail Storm" Cost="3" Faction="Neutral" ID="440">
         <Target Zone="Battleground" CardType="Unit" Amount="All" NeedActivation="True">
             <Effect Type="Damage" Value="1" />
         </Target>
-        <Description>[4:RESOURCES]: Deal 1 damage to all creatures.</Description>
+        <Description>[3:RESOURCES]: Deal 1 damage to all creatures.</Description>
     </Card>
     <Card  Rarity="Uncommon" Type="Event" Name="Eve_Neu_042" DisplayName="Conscription Day" Cost="2" Faction="Neutral" ID="441">
         <Target Zone="None" Side="Any">
