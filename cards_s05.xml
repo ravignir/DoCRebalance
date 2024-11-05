@@ -100,7 +100,7 @@
 	<!--...............................................................................-->
 	<!-- Heroes Necropolis -->
 	<!--...............................................................................-->
-	<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Nec_008" DisplayName="Sveltana, Hierophant of the Spider Queen" Faction="Necropolis" School="Dark|Air" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="20" ID="703">
+	<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Nec_008" DisplayName="Sveltana, Hierophant of the Spider Queen" Faction="Necropolis" School="Dark|Air" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="19" ID="703">
 		<Description>If your [MIGHT] level is 4 or more and your [MAGIC] level is 4 or more, all friendly creatures with Incorporeal gain +[1:HEALTH].</Description>
         	<Target Zone="None" Side="Friendly">
             		<Effect Type="ChoiceOption" />
