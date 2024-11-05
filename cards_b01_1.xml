@@ -456,7 +456,7 @@ Whenever opponent plays a card, they discard a card.</Description>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_014" DisplayName="Lesser Earth Elemental" Faction="Neutral" School="Earth" SubType="Magic|Melee" Race="Spirit" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="3" HP="6" ID="117" >
 	    <Ability Type="Regeneration" Value="1"/>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_011" DisplayName="Lesser Shadow Elemental" Faction="Neutral" School="Dark" SubType="Magic|Melee" Race="Spirit" Cost="3" MightLevel="2" MagicLevel="1" Attack="1" Retaliate="1" HP="4" ID="118">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_011" DisplayName="Lesser Shadow Elemental" Faction="Neutral" School="Dark" SubType="Magic|Melee" Race="Spirit" Cost="3" MightLevel="2" MagicLevel="1" Attack="1" Retaliate="0" HP="4" ID="118">
         <Ability Type="Incorporeal" />
 	<Ability Type="Crippling" Value="1"/>
     </Card>
