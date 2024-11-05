@@ -121,7 +121,7 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
         <Ability Type="CannotAttack"/>
         <Ability Type="Regenerate" Value="1"/>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_041" DisplayName="Skeleton Archer" Faction="Necropolis" SubType="Shooter" Race="Skeleton" Cost="3" MightLevel="2" Attack="2" Retaliate="1" HP="4" ID="358">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Nec_041" DisplayName="Skeleton Archer" Faction="Necropolis" SubType="Shooter" Race="Skeleton" Cost="3" MightLevel="2" Attack="2" Retaliate="1" HP="4" ID="358">
         <Ability Type="ImmuneToRetaliate" />
 	<Ability Type="Ambush" />
 		<Trigger Type="OnAmbush" Side="Enemy">
