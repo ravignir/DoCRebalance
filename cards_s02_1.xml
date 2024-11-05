@@ -14,7 +14,7 @@
         <Ability Type="Retribution"/>	
 		<Ability Type="PerfectRetaliate"/>	
     </Card>
-    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Hav_041" DisplayName="Griffin Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="4" MightLevel="4" Attack="3" Retaliate="3" HP="6" ID="346">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Hav_041" DisplayName="Griffin Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="4" MightLevel="4" Attack="3" Retaliate="2" HP="6" ID="346">
         <Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="PerfectAttack"/>
         <Ability Type="PerfectRetaliate" DontShowIcon="True"/>
@@ -267,20 +267,22 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
         <Ability Type="Towering"/>
         <Ability Type="Anchored"/>
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Neu_045" DisplayName="Void Keeper" Faction="Neutral" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="1" HP="5" ID="380">
-        <Ability Type="ImmuneToRetaliate" />
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Neu_045" DisplayName="Void Keeper" Faction="Neutral" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="1" HP="5" ID="380">
+        <Ability Type="ImmuneToRetaliate"/>
         <Variable Type="TargetCount" MustBeTargetable="True">
-	<Trigger Type="OnTurnEnd" Side="Friendly">
-        <Target Zone="Graveyard" Amount="1" Side="Enemy">
-            <Effect Type="Banish"  />
-        </Target>
-	</Trigger>
-	<Trigger Type="OnTurnEnd" Side="Friendly">
-		<Target Zone="Hero" Amount="All" Side="Friendly">
-		<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
-		<Effect Type="Damage" Value="1"/>
-		</Target>
-	</Trigger>
+            <Target Zone="Graveyard" Side="Friendly" Amount="All" />
+        </Variable>
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Target Zone="Graveyard" Amount="1" Side="Enemy">
+				<Effect Type="Banish"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Target Zone="Hero" Amount="All" Side="Friendly">
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
         <Description>At the end of your turn, banish a random card from enemy graveyard. If you can't, deal 1 damage to enemy Hero.</Description>
     </Card>
     <!--...............................................................................-->
@@ -368,7 +370,7 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
 				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
 			</Target>
         </Trigger>
-        <Description>Whenever Blackskull Spellsmasher attacks, you may destroy target ongoing spell. If you do, put a +[1:ATTACK] counter on Blackskull Spellsmasher.</Description>
+        <Description>Whenever Blackskull Spellsmasher attacks, you may have it destroy target ongoing spell. If you do, put a +[1:ATK] counter on Blackskull Spellsmasher.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_048" DisplayName="Blackskull Crusher" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="5" MightLevel="5" Attack="3" Retaliate="2" HP="7" ID="390">
         <Ability Type="EnemySpellWard"/>

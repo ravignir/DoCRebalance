@@ -12,15 +12,14 @@
 	<!--....................................................................-->
 	<!-- Spells - Air -->
 	<!--....................................................................-->
-	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Air_090" DisplayName="Blast of Wind" School="Air" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="982">
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Air_090" DisplayName="Blast of Wind" School="Air" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="982">
 		<Ongoing Duration="UntilYourNextTurn"/>
 		<Target Zone="Battleground" Amount="1" CardType="Unit">
 			<Effect Type="ModifyAbility" Ability="AreaCannotAttack"/>
-			<Effect Type="ModifyAbility" Ability="Anchored"/>
+			<Effect Type="ModifyAbility" Ability="AreaAnchored"/>
 		</Target>
 		<Description>Enchant creature. Until your next turn:
-Enchanted creature gains Anchored.
-Enchanted creature and all adjacent creatures gain Cannot Attack.</Description>
+Enchanted creature and all adjacent creatures gain Cannot Attack and Anchored.</Description>
 		<!-- S07 NEW STUFF : AreaCannotAttack - Create a ability is the easiest way to give CannotAttack to a creature and its adjacent creature, see cards_tl.xml, the ability works like a "guard" ability. -->
 	</Card>
 	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Air_091" DisplayName="Wind Arrows" School="Air" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="983">

@@ -152,23 +152,74 @@ While you control more creatures than your opponent, target creature is immobili
     <!--....................................................................-->
     <!-- Fortune - Necropolis -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Nec_040" DisplayName="Consume Minions" Faction="Necropolis" Cost="2" DestinyLevel="2" ID="400">
-        <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1">
-            <Effect Type="Kill" />
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_040" DisplayName="Consume Minions" Faction="Necropolis" Cost="1" DestinyLevel="2" ID="400">
+	<Variable Type="Resources" Side="Friendly"/>
+	<Variable2 Type="CardCost" UseParent="True"/>
+	<Ongoing Duration="Repeatable"/>
+        <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1" AllowDuplicate="True">
+		<CardFilter ExcludeToken="True"/>
+		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="Variable2"/>
+		<Effect Type="ModifyAbility" Ability="Consumed"/>
+            	<Effect Type="ModifyDuration" NewDuration="FromCondition">
+                	<Condition Operator="GreaterThan" ValueA="Variable" ValueB="99"/>
+            	</Effect>
         </Target>
-        <Target Zone="Hero" Amount="All" Side="Friendly">
-            <Effect Type="Heal" Value="3" />
-        </Target>
-        <Description>Destroy target friendly creature. Heal 3 damage from your hero.</Description>
+        <Description>Put target friendly non-token creature into graveyard, pay [1:RESOURCES] and heal 3 damage from your hero. You can repeat this as many times as you want, unless you have enough [RESOURCES] to pay Consume Minions cost.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Nec_041" DisplayName="Rite of Necromantic Restoration" Faction="Necropolis" Cost="1" DestinyLevel="1" ID="401">
-        <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1">
-            <Effect Type="Kill" />
+    <Card NotLocalized="True" UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_041" DisplayName="Rite of Necromantic Restoration" Faction="Necropolis" Cost="2" DestinyLevel="3" ID="401">
+        <Variable Type="TargetCount" ValueModifier="3mi">
+            <Target Zone="Graveyard" Side="Friendly"  Amount="All" CardType="Unit"/>
+        </Variable>
+        <Variable2 Type="TargetCount" ValueModifier="3mi">
+            <Target Zone="Graveyard" Side="Enemy"  Amount="All" CardType="Unit"/>
+        </Variable2>
+        <Target Zone="None">
+            <Effect Type="FreezeVariable"/>
         </Target>
-        <Target Zone="Battleground" Side="Any" CardType="Unit" Amount="1" CantTargetPrevious="True">
-            <Effect Type="Heal" Value="infinite" />
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>			
+				<Target Zone="Graveyard" Side="Friendly" Amount="Variable" CardType="Unit">
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+					<Option Value="0" DisplayText="Friendly Graveyard"/>
+					<Effect Type="Banish"/>
+					<Subgroup>
+						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+							<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+							<Effect Type="PopulateStack" Name="Tok_Nec_001"/>
+						</Target>
+						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+							<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
+							<Effect Type="PopulateStack" Name="Tok_Nec_001"/>
+						</Target>
+						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+							<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
+							<Effect Type="PopulateStack" Name="Tok_Nec_001"/>
+						</Target>
+					</Subgroup>
+				</Target>
+                		<Target Zone="Graveyard" Side="Enemy" Amount="Variable2" CardType="Unit">
+					<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0"/>
+                    			<Option Value="1" DisplayText="Enemy Graveyard"/>
+                    			<Effect Type="Banish"/>
+					<Subgroup>
+						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+							<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0"/>
+							<Effect Type="PopulateStack" Name="Tok_Nec_001"/>
+						</Target>
+						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+							<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="1"/>
+							<Effect Type="PopulateStack" Name="Tok_Nec_001"/>
+						</Target>
+						<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+							<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="2"/>
+							<Effect Type="PopulateStack" Name="Tok_Nec_001"/>
+						</Target>
+					</Subgroup>
+				</Target>				
+            </Subgroup>
         </Target>
-        <Description>Destroy target friendly creature. Heal all damage from another target creature.</Description>
+        <Description>Banish 3 creature cards from a graveyard of your choice. Deploy a Skeleton melee-shooter token creature with [1:ATK]/[0:RET]/[1:HEALTH] and stackable for each creature card banished this way.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Nec_042" DisplayName="Early Grave" Faction="Necropolis" Cost="1" DestinyLevel="3" ID="402">
         <Target Zone="Library" Side="Friendly" Amount="1">
@@ -195,14 +246,34 @@ While you control more creatures than your opponent, target creature is immobili
     <!--....................................................................-->
     <!-- Fortune - Sanctuary -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_San_040" DisplayName="Hall of Fortune" Faction="Sanctuary" Cost="1" DestinyLevel="2" ID="404">
-        <Target Zone="Library" Side="Friendly" Amount="1" AmountVisible="3">
-            <Effect Type="MoveCardTo" Destination="Hand" />
-        </Target>
-        <Target Zone="Library" Side="Friendly" Amount="2" AutoTakeFirstInputs="True" InputOnExec="True">
-            <Effect Type="MoveCardTo" Destination="Library" Bottom="True" />
-        </Target>
-        <Description>Look at the top 3 cards of your library and choose one to put into your hand. Put the other two at the bottom of your library.</Description>
+    <Card NotLocalized="True" UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_San_040" DisplayName="Hall of Fortune" Faction="Sanctuary" Cost="1" DestinyLevel="2" ID="404">
+		<Target Zone="None" Side="Friendly">
+			<Variable Type="TargetCount">
+				<Target Zone="Library" Amount="All" Side="Enemy"/>
+			</Variable>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Subgroup>
+				<Target Zone="Library" Side="Friendly" Amount="1" AmountVisible="3">
+					<Effect Type="MoveCardTo" Destination="Hand"/>
+				</Target>
+				<Target Zone="None" Side="Friendly">
+					<Effect Type="ChoiceOption"/>
+					<Subgroup>
+						<Target Zone="Library" Side="Friendly" Amount="2" AmountVisible="2">
+							<Option Value="0" DisplayText="Put the other two at the bottom."/>
+							<Effect Type="MoveCardTo" Destination="Library" Bottom="True"/>
+						</Target>
+						<Target Zone="Library" Side="Friendly" Amount="2" AmountVisible="2">
+							<Variable2 Type="Level" Side="Friendly" LevelType="Destiny"/>
+							<Option Value="1" DisplayText="[4:DESTINY]: Put the other two on the top."/>
+							<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="3"/>
+							<Effect Type="MoveCardTo" Destination="Library"/>
+						</Target>
+					</Subgroup>
+				</Target>
+			</Subgroup>
+		</Target>
+        <Description>Look at the top 3 cards of your library and choose one to put into your hand. You may put the other two at the bottom of your library in any order OR if your [DESTINY] level is 4 or more, you may put them on the top of your library in any order.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_San_041" DisplayName="Scrying Pool" Faction="Sanctuary" Cost="0" DestinyLevel="2" ID="405">
         <Variable Type="TargetCount" ValueModifier="5mi">

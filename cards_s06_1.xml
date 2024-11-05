@@ -366,7 +366,7 @@ Whenever Bloodtiger Warrior destroys a creature, put 1 Enrage counter on all oth
 		</Target>
 		<Description>While there are 3 or more Enrage counters on Bloodhydra Shaman, it gains Sweep Attack.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Str_086" DisplayName="Bloodshark Warrior" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="840">
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Str_086" DisplayName="Bloodshark Warrior" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="840">
 		<Ability Type="Bloodthirst" Value="1"/>
 		<Trigger Type="OnThisCardDeath">
 			<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
@@ -376,7 +376,21 @@ Whenever Bloodtiger Warrior destroys a creature, put 1 Enrage counter on all oth
 				<Effect Type="AddCounter" CounterType="Enrage" Value="1"/>
 			</Target>
 		</Trigger>
-		<Description>When Bloodshark Warrior dies, if there are 3 or more Enrage counters on it, put 1 Enrage counter on all friendly creatures with Bloodthirst.</Description>
+        	<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Target Zone="Battleground" Amount="Self">
+				<Variable Type="CounterCount" CounterType="Enrage"/>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
+				<Effect Type="AddCounter" CounterType="Enrage" Value="-1"/>
+			</Target>
+            		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" CantTargetSelf="True">
+                		<CardFilter IncludeAbility="Bloodthirst" />
+				<Variable Type="CounterCount" CounterType="Enrage" UseLastTarget="True"/>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
+                		<Effect Type="AddCounter" CounterType="Enrage" Value="1"/>
+            		</Target>
+        	</Trigger>
+		<Description>When Bloodshark Warrior dies, if there are 3 or more Enrage counters on it, put 1 Enrage counter on all friendly creatures with Bloodthirst.
+At the end of your turn, if there are 3 or more Enrage counters on Bloodshark Warrior, it loses 1 Enrage counter, then put 1 Enrage counter on all other friendly creatures with Bloodthirst.</Description>
 	</Card>
 	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Str_087" DisplayName="Bloodmask Shaman" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="841">
 		<Ability Type="ImmuneToRetaliate"/>
@@ -414,12 +428,17 @@ Whenever Bloodtiger Warrior destroys a creature, put 1 Enrage counter on all oth
 		<Ability Type="AttackCost" Value="1"/>
 		<Description>To attack with Mercenary Archer, you must pay [1:RESOURCES].</Description>
 	</Card>
-	<Card Rarity="Epic" Unique="True" Type="Unit" Name="Cre_Neu_083" DisplayName="Raya, Chosen of the Waves" Faction="Neutral" School="Water" SchoolsAligned="True" SubType="Magic|Shooter" Race="Naga|Priest" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="845">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="True" Type="Unit" Name="Cre_Neu_083" DisplayName="Raya, Chosen of the Waves" Faction="Neutral" School="Water" SchoolsAligned="True" SubType="Magic|Shooter" Race="Naga|Priest" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="845">
 		<Ability Type="WaterAligned"/>
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="FortuneWard"/>
 		<Ability Type="FrozenTouch"/>
 		<Ability Type="Hypnotize"/>
+        	<Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="Self">
+            		<Effect Type="ModifyAbility" Ability="Berserk" Remove="True" />
+            		<Effect Type="ModifyAbility" Ability="CannotAttack" Remove="True" />
+        	</Target>
+		<Description>Raya, Chosen of the Waves cannot be prevented form attacking and is unaffected by Berserk.</Description>
 	</Card>
 	<Card Rarity="Epic" Unique="True" Type="Unit" Name="Cre_Neu_084" DisplayName="Hikyu, Chosen of the Flames" Faction="Neutral" School="Fire" SchoolsAligned="True" SubType="Magic|Melee" Race="Human|Warrior" Cost="6" MightLevel="5" MagicLevel="1" DestinyLevel="0" Attack="4" Retaliate="2" HP="7" ID="846">
 		<Ability Type="FireAligned"/>

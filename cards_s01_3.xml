@@ -201,11 +201,11 @@ When Purity enters the battleground, remove all counters from all creatures.</De
         <Description>Choose target battleground position. Deal 3 damage to any creature at targeted position.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Wat_031" DisplayName="Monsoon" School="Water" Cost="2" MagicLevel="3" ID="326">
-        <Ongoing Duration="Permanent" />
-        <Target Zone="Battleground" Amount="All" CardType="Unit">
-	<CardFilter IncludeSchool="Water"/>
-	<Effect ModifyAbility="Regeneration" Value="1"/>
-	</Target>
+        <Ongoing Duration="Permanent"/>
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Any">
+			<CardFilter IncludeSchool="Water"/>
+            <Effect Type="ModifyAbility" Ability="Regenerate" Value="1"/>
+        </Target>
         <Target Zone="Battleground" Amount="All">
             <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Fire|Spell"/>
         </Target>
@@ -214,7 +214,7 @@ When Purity enters the battleground, remove all counters from all creatures.</De
         </Target>
         <Description>Permanent:
 Fire and earth spells deal half damage, rounded down.
-	All Water creatures gain Regenerate 1.</Description>
+All Water creatures gain Regenerate 1.</Description>
     </Card>
     <Card Rarity="Rare" Type="Spell" Name="Spe_Wat_032" DisplayName="Clashing Tides" School="Water" Cost="4" MagicLevel="3" ID="327">
         <Target Zone="BattlegroundLine" CardType="Unit" Amount="1" Side="Enemy">

@@ -66,7 +66,7 @@
             </Subgroup>
         </Target>
     </Card>
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Aca_004" DisplayName="Myranda, Blademage Champion" Faction="Academy" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="20" ID="447">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Aca_004" DisplayName="Myranda, Blademage Champion" Faction="Academy" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="19" ID="447">
         <School Name="Air" />
         <School Name="Prime" />
         <Description>[3:RESOURCES]: Relocate target friendly magic creature.</Description>

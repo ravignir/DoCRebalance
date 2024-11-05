@@ -80,7 +80,7 @@
     <!--...............................................................................-->
     <!-- Heros - Haven -->
     <!--...............................................................................-->
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Hav_005" DisplayName="Kieran, Knight of Negation" Faction="Haven" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="20" ID="256">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Hav_005" DisplayName="Kieran, Knight of Negation" Faction="Haven" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="19" ID="256">
         <School Name="Light"/>
         <School Name="Prime"/>
         <Description>[0:RESOURCES] Deal 1 damage to every creature that dealt combat damage to Kieran, Knight of Negation during your opponent's last turn.</Description>
@@ -252,7 +252,7 @@ At the beginning of your turn, you may destroy target creature with a cost of [2
     <!--...............................................................................-->
     <!-- Heroes Sanctuary -->
     <!--...............................................................................-->
-    <Card Rarity="Heroic" Type="Hero" Name="Her_San_005" DisplayName="Akane, Mourner of Lost Memories" Faction="Sanctuary" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="20" ID="258">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_San_005" DisplayName="Akane, Mourner of Lost Memories" Faction="Sanctuary" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="19" ID="258">
         <School Name="Air"/>
         <School Name="Prime"/>
         <Description>[1:RESOURCES]: Remove all counters and destroy all ongoing spells on target creature.</Description>
@@ -302,8 +302,8 @@ At the beginning of your turn, you may destroy target creature with a cost of [2
     <!--...............................................................................-->
     <!-- Heroes Stronghold -->
     <!--...............................................................................-->
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_005" DisplayName="Crag Hack" Faction="Stronghold" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="21">
-        <School Name="Earth"/>
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_005" DisplayName="Crag Hack" Faction="Stronghold" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="21" ID="21">
+        <School Name="Air"/>
         <Description>[0:RESOURCES]: Neutral creatures cost [1:RESOURCES] less to play until end of turn.</Description>
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption"/>
@@ -319,7 +319,7 @@ At the beginning of your turn, you may destroy target creature with a cost of [2
             </Subgroup>
         </Target>
     </Card>
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_007" DisplayName="Zouleika, Renegade Wizard" Faction="Stronghold" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="20" ID="455">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_007" DisplayName="Zouleika, Renegade Wizard" Faction="Stronghold" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="19" ID="455">
         <School Name="Air"/>
         <School Name="Earth"/>
         <Description>At the beginning of your turn, if your [MIGHT] level is 5 or more and your [MAGIC] level is 4 or more, target friendly creature gains Magic Resist until your next turn.</Description>

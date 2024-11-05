@@ -62,15 +62,23 @@ Whenever you play a creature, if Memory Lapse is in your graveyard, take it and 
     <!--....................................................................-->
     <!-- Fortune - Haven -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Hav_060" DisplayName="Prayer for the Departed" Faction="Haven" Cost="2" DestinyLevel="2" ID="617">
-        <Target Zone="Graveyard" Side="Friendly" CardType="Unit" Amount="All">
-            <CardFilter IncludeStatus="InHolderSinceYourLastTurn" />
-            <Effect Type="MoveCardTo" Destination="Library" Bottom="True" />
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Hav_060" DisplayName="Prayer for the Departed" Faction="Haven" Cost="2" DestinyLevel="3" ID="617">
+        <Target Zone="Graveyard" Amount="All" CardType="Unit" Side="Friendly">
+            <Effect Type="MoveCardTo" Destination="Library" />
+        </Target>
+        <Target Side="Friendly">
+            <Effect Type="Shuffle" CardHolder="Library" />
+        </Target>
+        <Target Zone="Graveyard" Amount="All" CardType="Unit" Side="Enemy">
+            <Effect Type="MoveCardTo" Destination="Library" />
+        </Target>
+        <Target Side="Enemy">
+            <Effect Type="Shuffle" CardHolder="Library" />
         </Target>
         <Target Zone="None" Side="Friendly">
             <Effect Type="Draw" Value="1" />
         </Target>
-        <Description>Take all creature cards put into your graveyard since the end of your last turn and put them at the bottom of your library. Draw a card.</Description>
+        <Description>Take all creature cards in both graveyards and shuffle them into their owner's libraries. Draw a card.</Description>
     </Card>
     <Card UseXmlDescription="True" NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Hav_061" DisplayName="Morgan's Inspiration" Faction="Haven" Cost="3" DestinyLevel="3" ID="618">
         <Ongoing Duration="UntilEndOfTurn" />
@@ -429,7 +437,7 @@ All creatures gain +[1:ATK] and +[1:RET] for each other creature with the same n
     <!--....................................................................-->
     <!-- Building - Sanctuary -->
     <!--....................................................................-->
-    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Building" Name="Bui_San_060" DisplayName="Hidden Dojo" Faction="Sanctuary" Cost="3" MightLevel="2" DestinyLevel="2" ID="654">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Building" Name="Bui_San_060" DisplayName="Hidden Dojo" Faction="Sanctuary" Cost="2" MightLevel="2" DestinyLevel="2" ID="654">
         <Target Zone="Battleground" CardType="Unit" Amount="Occupant">
             <Effect Type="ModifyAbility" Ability="Honor" Value="1" />
         </Target>

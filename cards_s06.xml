@@ -39,7 +39,7 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 	<!--...............................................................................-->
 	<!-- Heroes Haven -->
 	<!--...............................................................................-->
-	<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Hav_009" DisplayName="Slava" Faction="Haven" School="Air|Fire|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="803">
+	<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Hav_009" DisplayName="Slava" Faction="Haven" School="Air|Fire|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="19" ID="803">
 		<Description>At the beginning of your turn, if your [MIGHT] level is 4 or more and your [MAGIC] level is 4 or more, target friendly creature gains Combat Guard 1 until your next turn.</Description>
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
@@ -63,7 +63,7 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 	<!--...............................................................................-->
 	<!-- Heroes Inferno -->
 	<!--...............................................................................-->
-	<Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Inf_009" DisplayName="Jezebeth" Faction="Inferno" School="Dark|Fire|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="804">
+	<Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Inf_009" DisplayName="Jezebeth" Faction="Inferno" School="Dark|Fire|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="19" ID="804">
     <Description>[1:RESOURCES]: Deploy a Breeder melee-shooter token creature with [1:ATK]/ [0:RET]/ [1:HEALTH] and Stackable.</Description>
     <Target Zone="None" Side="Friendly">
       <Effect Type="ChoiceOption"/>
@@ -86,19 +86,36 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 	<!--...............................................................................-->
 	<!-- Heroes Necropolis -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_Nec_009" DisplayName="Mother Namtaru, Asha's Nightmare" Faction="Necropolis" School="Earth|Prime|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="805">
-		<Target Zone="None" Side="Friendly">
-			<Effect Type="ChoiceOption"/>
-			<Subgroup>
-				<TemplateEffect Name="HeroAbilities"/>
-				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
-			</Subgroup>
-		</Target>
+	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Nec_009" DisplayName="Mother Namtaru, Asha's Nightmare" Faction="Necropolis" School="Earth|Prime|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="19" ID="805">
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+				<Target Zone="None" Side="Friendly">
+					<Variable Type="Resources" Side="Friendly"/>
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
+					<Option Value="4" DisplayText="[2:RESOURCES]: Banish spell. Namtaru gain Sell Resist." />
+					<Effect Type="GainResources" Value="-2" Duration="Immediate"/>
+				</Target>
+                <Target Zone="Graveyard" Amount="1" Side="Friendly">
+                    <CardFilter IncludeCardType="Spell" />
+                    <Option Value="4" />
+                    <Effect Type="Banish" Duration="Immediate" />
+                </Target>
+                <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="All" NeedActivation="True">
+				<CardFilter IncludeRaces="Namtaru" />
+                    <Option Value="4" />
+                    <Effect Type="ModifyAbility" Ability="SpellResist" Duration="UntilYourNextTurn" />
+                </Target>
+            </Subgroup>
+        </Target>
+		<Description>[2:RESOURCES]: Banish target spell card from your graveyard. Until your next turn, all friendly Namtaru creatures gain Spell Resist.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Sanctuary -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_San_009" DisplayName="Mukao" Faction="Sanctuary" School="Dark|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="806">
+	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_San_009" DisplayName="Mukao" Faction="Sanctuary" School="Dark|Water" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="19" ID="806">
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>
@@ -106,21 +123,17 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
 				<Target Zone="None" Side="Friendly">
 					<Variable Type="Resources" Side="Friendly"/>
-					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
-					<Option Value="4" DisplayText="[2:RESOURCE]: Look at opponent's hand. Draw a card."/>
-					<Effect Type="GainResources" Value="-2" Duration="Immediate"/>
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+					<Option Value="4" DisplayText="[1:RESOURCES]: Look at opponent's hand. Put a card on top."/>
+					<Effect Type="GainResources" Value="-1" Duration="Immediate"/>
 				</Target>
-				<Target Zone="Hand" Amount="All" Side="Enemy">
+				<Target Zone="Hand" Side="Enemy" Amount="1">
 					<Option Value="4"/>
-					<Effect Type="Look" Duration="Immediate"/>
-				</Target>
-				<Target Zone="None" Side="Friendly">
-					<Option Value="4"/>
-					<Effect Type="Draw" Value="1" Duration="Immediate"/>
+					<Effect Type="MoveCardTo" Destination="Library" Duration="Immediate" />
 				</Target>
 			</Subgroup>
 		</Target>
-		<Description>[2:RESOURCES]: Look at opponent's hand. Draw a card.</Description>
+		<Description>[2:RESOURCES]: Look at opponent's hand and choose a card from it. Opponent puts that card on the top of their library.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Stronghold -->

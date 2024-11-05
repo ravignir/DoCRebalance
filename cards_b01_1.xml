@@ -61,7 +61,7 @@
         </Trigger>
 	<Description>Whenever Expert Marksman attacks a creature on a front line, deal 1 damage to a creature on a back line of the same row.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Hav_010" DisplayName="Vestal" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Cost="4" MightLevel="3" MagicLevel="2" Attack="1" Retaliate="1" HP="8" ID="49">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Hav_010" DisplayName="Vestal" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Cost="4" MightLevel="3" MagicLevel="2" Attack="1" Retaliate="1" HP="7" ID="49">
         <Ability Type="ImmuneToRetaliate" />
         <Trigger Type="OnCardPlay" Side="Friendly" >
 		<CardFilter IncludeCardType="Spell" IncludeSchool="Light"/>
@@ -359,7 +359,7 @@ Whenever opponent plays a card, they discard a card.</Description>
     <Card Rarity="Common" Type="Unit" Name="Cre_Str_005" DisplayName="Centaur Archer" Faction="Stronghold" SubType="Shooter" Race="Centaur|Archer" Cost="3" MightLevel="3" Attack="3" Retaliate="2" HP="4" ID="79">
         <Ability Type="ImmuneToRetaliate"/>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Str_007" DisplayName="Dreamwalker" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="3" MightLevel="3" MagicLevel="1" Attack="1" Retaliate="0" HP="3" ID="80">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Str_007" DisplayName="Dreamwalker" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="3" MightLevel="3" MagicLevel="1" Attack="1" Retaliate="0" HP="4" ID="80">
         <Ability Type="ImmuneToRetaliate"/>
         <Ability Type="Enrage" Value="2"/>
     </Card>
@@ -456,24 +456,24 @@ Whenever opponent plays a card, they discard a card.</Description>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_014" DisplayName="Lesser Earth Elemental" Faction="Neutral" School="Earth" SubType="Magic|Melee" Race="Spirit" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="3" HP="6" ID="117" >
 	    <Ability Type="Regeneration" Value="1"/>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_011" DisplayName="Lesser Shadow Elemental" Faction="Neutral" School="Dark" SubType="Magic|Melee" Race="Spirit" Cost="3" MightLevel="2" MagicLevel="1" Attack="1" Retaliate="1" HP="4" ID="118">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_011" DisplayName="Lesser Shadow Elemental" Faction="Neutral" School="Dark" SubType="Magic|Melee" Race="Spirit" Cost="3" MightLevel="2" MagicLevel="1" Attack="1" Retaliate="0" HP="4" ID="118">
         <Ability Type="Incorporeal" />
 	<Ability Type="Crippling" Value="1"/>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_015" DisplayName="Angry Wyvern" Faction="Neutral" SubType="Flyer" Race="Wyvern" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="7" ID="119" >
-	    <Description>At the beginning of your turn, you may destroy target friendly creature. If you do, heal all damage from Angry Wyvern and put +[1:ATK] counter on it. </Description>
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Neu_015" DisplayName="Angry Wyvern" Faction="Neutral" SubType="Flyer" Race="Wyvern" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="7" ID="119" >
+	<Description>At the beginning of your turn, you may destroy target friendly creature. If you do, heal all damage from Angry Wyvern and put +[1:ATK] counter on it. </Description>
 	<Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
-		<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" Cancelable="True">
+		<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" Cancelable="True" CantTargetSelf="True">
 			<Effect Type="Kill"/>
+				<Subgroup>
+					<Target Zone="Battleground" Amount="Self">
+						<Effect Type="Heal" Value="Infinite"/>
+						<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
+					</Target>
+				</Subgroup>
 		</Target>
 	</Trigger>
-	<Trigger Type="OnThisKillUnit" Side="Friendly" ExecuteOncePerTurn="True">
-		<Target Zone="Battleground" Amount="Self">
-			<Effect Type="Heal" Value="Infinite"/>
-			<Effect Type="ModifyAttack" Value="1"/>
-		</Target>
-	</Trigger>
-	</Card>
+    </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Neu_004" DisplayName="Rogue Mercenary" Faction="Neutral" SubType="Melee" Race="Human|Mercenary" Cost="2" MightLevel="2" Attack="2" Retaliate="2" HP="4" ID="120">
         <Description>To attack with Rogue Mercenary, you must pay [1:RESOURCES].</Description>
         <Ability Type="AttackCost" Value="1"/>

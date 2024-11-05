@@ -87,17 +87,22 @@ When enchanted creature dies, return it to its owner's hand instead.</Descriptio
 		<Description>Permanent:
 Friendly Earth creatures on the front line gain Towering and Anchored.</Description>
 	</Card>
-	<Card Rarity="Rare" Type="Spell" Name="Spe_Ear_072" DisplayName="Fissure" School="Earth" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="787" Unique="False">
-		<Target Zone="Battleground" CardType="Unit" Amount="All">
-			<CardFilter IncludeOccupant="True"/>
-			<Effect Type="Damage" Value="2"/>
-			<Subgroup>
-				<Target Zone="Battleground" CardType="Building" Amount="All">
-					<Effect Type="Kill"/>
-				</Target>
-			</Subgroup>
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Ear_072" DisplayName="Fissure" School="Earth" Cost="6" MightLevel="0" MagicLevel="6" DestinyLevel="0" ID="787" Unique="False">
+		<Target Zone="BattlegroundColumn" Amount="1"/>
+		<Target Zone="None" Amount="Same">
+		<CardFilter IncludeCardType="Unit"/>
+			<Effect Type="Damage" Value="5"/>
 		</Target>
-		<Description>Deal 2 damage to all creatures at a building then destroy all buildings.</Description>
+		<Target Zone="None" Amount="Same">
+		<CardFilter IncludeCardType="Unit" IncludeOccupant="True"/>
+			<Effect Type="Kill"/>
+		</Target>
+		<Target Zone="None" Amount="Same">
+		<CardFilter IncludeCardType="Building"/>
+			<Effect Type="Kill"/>
+		</Target>
+		<Description>Deal 5 damage to all creatures on target row.
+Destroy all creatures at a building on target row then destroy all buildings on target row.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Fire -->
