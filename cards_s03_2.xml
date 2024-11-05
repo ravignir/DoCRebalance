@@ -650,20 +650,19 @@ At the beginning of your turn, return Outraging Vision to its owner's hand.</Des
 <Description>Attach to creature. Until end of turn:
 Target melee creature gains + [4:ATK] and Charge. After the creature attacks, destroy it.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Str_052" DisplayName="Desperate Assault" Faction="Stronghold" Cost="2" MightLevel="4" DestinyLevel="4" ID="564">
-		<Ongoing Duration="UntilEndOfTurn"/>
-        <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1">
-		<CardFilter IncludeUnitType="Melee"/>
-			<Effect Type="ModifyAttack" Value="4"/>
-			<Effect Type="ModifyAbility" Ability="Charge"/>
-		</Target>
-        <Trigger Type="OnThisPostAttack">
-			<Target Zone="Battleground" CardType="Unit" Amount="Parent">
-				<Effect Type="Kill"/>
-			</Target>
+    <Card Rarity="Rare" Type="Fortune" Name="For_Str_053" DisplayName="Rushing Assault" Faction="Stronghold" Cost="3" DestinyLevel="3" ID="565">
+        <Ongoing Duration="UntilEndOfTurn" />
+        <Trigger Type="OnDeploy" DamageIncludeFlags="Combat" UseTriggererAsInitiator="True">
+            <Target Zone="Battleground" Side="Enemy" CardType="Unit" Amount="2" CantTargetPrevious="True" Random="True">
+				<CardFilter IncludeColumn="True" Value="Variable3">
+					<Variable3 Type="CardColumn"/>
+				</CardFilter>
+                <Variable Type="CardAttack" FromTrigger="True" />
+                <Effect Type="Damage" Value="Variable" />
+            </Target>
         </Trigger>
-<Description>Attach to creature. Until end of turn:
-Target melee creature gains + [4:ATK] and Charge. After the creature attacks, destroy it.</Description>
+        <Description>Until end of turn:
+Whenever you deploy a creature, that creature deals damage equal to its [ATK] to all enemy creatures on the same row.</Description>
     </Card>
     <!--....................................................................-->
     <!--  Fortune - Neutral -->
