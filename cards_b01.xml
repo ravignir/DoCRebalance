@@ -8,7 +8,7 @@
     <!--...............................................................................-->
     <!-- Heros - Haven-->
     <!--...............................................................................-->
-    <Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Hav_004" DisplayName="Siegfried, Champion of Faith" Faction="Haven" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="21" ID="1">
+    <Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Hav_004" DisplayName="Siegfried, Champion of Faith" Faction="Haven" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="1">
         <School Name="Light"/>
         <Description>If your [MIGHT] level is 5 or more and your [DESTINY] level is 2 or more, all non-token melee creatures you deploy gain +[1:HEALTH].</Description>
 		<DescriptionChinese>如果你的[MIGHT]等级不小于5，[DESTINY]等级不小于2，你部署的所有非衍生近战生物获得+[1:HEALTH]。</DescriptionChinese>
@@ -89,7 +89,7 @@
     <!--...............................................................................-->
     <!-- Heros - Inferno-->
     <!--...............................................................................-->
-    <Card  Rarity="Heroic" Type="Hero" Name="Her_Inf_004" DisplayName="Xorm, Champion of the Abyss" Faction="Inferno" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="21" ID="5">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Inf_004" DisplayName="Xorm, Champion of the Abyss" Faction="Inferno" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="5">
         <School Name="Fire"/>
         <Description>[2:RESOURCES]: All friendly melee creatures in your front line gain +[1:ATK] until end of turn.</Description>
 		<DescriptionChinese>[2:RESOURCES]:本方前列的所有近战生物获得+[1:ATK]，直到回合结束。</DescriptionChinese>
@@ -169,7 +169,7 @@
     <!--...............................................................................-->
     <!-- Heros - Necropolis-->
     <!--...............................................................................-->
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Nec_004" DisplayName="Fleshbane, Champion of the Misshapen" Faction="Necropolis" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="21" ID="9">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Nec_004" DisplayName="Fleshbane, Champion of the Misshapen" Faction="Necropolis" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="9">
         <School Name="Dark"/>
         <Description>[3:RESOURCES]: Take target Vampire creature card with a requirement of 3 [MIGHT] or less from your graveyard and deploy it for free.</Description>
 		<Target Zone="None" Side="Friendly">
@@ -265,7 +265,7 @@
     <!--...............................................................................-->
     <!-- Heroes Stronghold -->
     <!--...............................................................................-->
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_004" DisplayName="Acamas, Champion of the Bloodhorn" Faction="Stronghold" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="21" ID="17">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_004" DisplayName="Acamas, Champion of the Bloodhorn" Faction="Stronghold" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="17">
         <School Name="Earth"/>
         <Description>[0:RESOURCES]: Deal 1 damage to all friendly creatures with Enrage. They gain +[1:ATK] until end of turn.</Description>
         <Target Zone="None" Side="Friendly">
