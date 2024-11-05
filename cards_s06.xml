@@ -39,7 +39,7 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 	<!--...............................................................................-->
 	<!-- Heroes Haven -->
 	<!--...............................................................................-->
-	<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Hav_009" DisplayName="Slava" Faction="Haven" School="Air|Fire|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="803">
+	<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Hav_009" DisplayName="Slava" Faction="Haven" School="Air|Fire|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="19" ID="803">
 		<Description>At the beginning of your turn, if your [MIGHT] level is 4 or more and your [MAGIC] level is 4 or more, target friendly creature gains Combat Guard 1 until your next turn.</Description>
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
@@ -63,7 +63,7 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 	<!--...............................................................................-->
 	<!-- Heroes Inferno -->
 	<!--...............................................................................-->
-	<Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Inf_009" DisplayName="Jezebeth" Faction="Inferno" School="Dark|Fire|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="804">
+	<Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Inf_009" DisplayName="Jezebeth" Faction="Inferno" School="Dark|Fire|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="19" ID="804">
     <Description>[1:RESOURCES]: Deploy a Breeder melee-shooter token creature with [1:ATK]/ [0:RET]/ [1:HEALTH] and Stackable.</Description>
     <Target Zone="None" Side="Friendly">
       <Effect Type="ChoiceOption"/>
@@ -86,7 +86,7 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 	<!--...............................................................................-->
 	<!-- Heroes Necropolis -->
 	<!--...............................................................................-->
-	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Nec_009" DisplayName="Mother Namtaru, Asha's Nightmare" Faction="Necropolis" School="Earth|Prime|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="805">
+	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Nec_009" DisplayName="Mother Namtaru, Asha's Nightmare" Faction="Necropolis" School="Earth|Prime|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="19" ID="805">
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
@@ -115,7 +115,7 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 	<!--...............................................................................-->
 	<!-- Heroes Sanctuary -->
 	<!--...............................................................................-->
-	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_San_009" DisplayName="Mukao" Faction="Sanctuary" School="Dark|Water" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="20" ID="806">
+	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_San_009" DisplayName="Mukao" Faction="Sanctuary" School="Dark|Water" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="19" ID="806">
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>
