@@ -162,14 +162,19 @@ Adjacent dark creatures gain +[1:ATK].</Description>
 		</Trigger>
 		<Description>When Spell Stealer Heretic enters the battleground, you may take target instant Dark or Fire spell from your graveyard and play it. You must still meet its kevel requirements and pay the cost. If you do, banish that spell.</Description>	
 	</Card>
-	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Inf_094" DisplayName="Executioner Succubus" Faction="Inferno" SubType="Magic|Melee" Race="Demon|Succubus" Cost="6" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="925" School="Dark">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Inf_094" DisplayName="Executioner Succubus" Faction="Inferno" SubType="Magic|Melee" Race="Demon|Succubus" Cost="6" MightLevel="4" MagicLevel="3" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="925" School="Dark">
 		<Trigger Type="OnThisCardDeploy" Side="Friendly">
-			<Target Zone="Battleground" Amount="1" Cancelable="True">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Cancelable="True"/>	
+			<Target Zone="Battleground" CardType="Unit" Amount="Same" ValidateFilterOnExecute="True">
 				<CardFilter IncludeCardType="Unit" Damaged="True"/>
 				<Effect Type="Kill"/>
 			</Target>
+			<Target Zone="Battleground" CardType="Unit" Amount="Same" ValidateFilterOnExecute="True">
+				<CardFilter IncludeCardType="Unit" Damaged="False"/>
+				<Effect Type="Damage" Value="2"/>
+			</Target>	
 		</Trigger>
-		<Description>When Executioner Succubus enters the battleground, destroy target damaged creature.</Description>
+		<Description>When Executioner Succubus enters the battleground, destroy target damaged creature or deal 2 damage to target creature that has no damage.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Necropolis -->
