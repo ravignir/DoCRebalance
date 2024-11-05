@@ -687,12 +687,12 @@ Enchanted creature gains Magic Shield.</Description>
         </Target>
         <Description>[3:RESOURCES]: Until end of turn, play with the top card of your library revealed. While that card is a creature card, all friendly creatures gain +[1:ATK]. Otherwise, all enemy creatures gain +[1:RET].</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_003" DisplayName="Week of Taxes" Faction="Neutral" ID="245">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Event" Name="Eve_Neu_003" DisplayName="Week of Taxes" Faction="Neutral" ID="245">
       <Ongoing Duration="Permanent"/>
       <Target Zone="Battleground" Amount="All"/>
       <!-- Hack to add a permanent feedback -->
       <Trigger Type="OnCardPlay" Side="Friendly">
-          <CardFilter IncludeCardType="Fortune"/>
+          <CardFilter IncludeCardType="Fortune" ExcludeCardID="For_Neu_000"/>
           <Target Zone="Hero" Amount="All" Side="Friendly" InputOnExec="True">
               <Variable Type="Resources" Side="Friendly"/>
               <Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
@@ -704,7 +704,8 @@ Enchanted creature gains Magic Shield.</Description>
               <Effect Type="GainResources" Value="-1"/>
           </Target>
       </Trigger>
-      <Description>Ongoing: Whenever you play a fortune, pay [1:RESOURCES]. If you can't, deal 1 damage to your hero.</Description>
+      <Description>Ongoing: Whenever you play a fortune, pay [1:RESOURCES]. If you can't, deal 1 damage to your hero.
+The effect does not affect Dragon Crystal.</Description>
   </Card>
   <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_007" DisplayName="Mana Storm" Faction="Neutral" ID="246">
     <Ongoing Duration="Permanent"/>
