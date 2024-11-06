@@ -125,7 +125,8 @@
 <Effect Type="Kill"/>
 </Target>
 </Trigger>
-<Description>Pernament: While you have a fire card in your graveyard, your creatures gains +[1:ATK] and +[1:RET]. While you have a dark card in your graveyard, your opponent's creatures gains -[1:ATK] and -[1:RET]. When a friendly Demon creature dies, destroy Ritual of the Dark Flame.</Description>
+<Description>Pernament:
+While you have a fire card in your graveyard, your creatures gains +[1:ATK] and +[1:RET]. While you have a dark card in your graveyard, your opponent's creatures gains -[1:ATK] and -[1:RET]. When a friendly Demon creature dies, destroy Ritual of the Dark Flame.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Fortune - Necropolis -->
