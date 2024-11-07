@@ -206,46 +206,27 @@
             </Subgroup>
         </Target>
     </Card>
-<Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_Nec_007" DisplayName="Siham, Spirit Severer" Faction="Necropolis" MightLevel="1" MagicLevel="0" DestinyLevel="2" HP="20" ID="453">
-        <School Name="Dark"/>
-        <School Name="Earth"/>
-        <Description>If your [MIGHT] level is 5 or more and your [DESTINY] level is 4 or more:
-At the beginning of your turn, you may destroy target creature with a cost of [2:RESOURCES] or less. If you do, heal 1 damage from Siham, Spirit Severer.</Description>
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Nec_007" DisplayName="Siham, Spirit Severer" Faction="Necropolis" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="453">
+        <School Name="Dark" />
+        <School Name="Earth" />
+        <Description>At the beginning of your turn, if your [MIGHT] level is 5 or more and your [DESTINY] level is 4 or more, destroy target creature with a cost of [2:RESOURCES] or less.</Description>
         <Target Zone="None" Side="Friendly">
-            <Effect Type="ChoiceOption"/>
+            <Effect Type="ChoiceOption" />
             <Subgroup>
-                <TemplateEffect Name="HeroAbilities"/>
+                <TemplateEffect Name="HeroAbilities" />
                 <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
             </Subgroup>
         </Target>
-        <Variable Type="Level" Side="Friendly" LevelType="Might"/>
-                <Variable2 Type="Level" Side="Friendly" LevelType="Destiny"/>
-        <Variable3 Type="TargetCount">
-            <Target Zone="Battleground" Amount="All" Side="Any" CardType="Unit" MustBeTargetable="True" >
-                <CardFilter BaseMaxCost="True" Value="2" IncludeCardType="Unit"/>
-            </Target>
-            </Variable3>
         <Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
-            <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any" Cancelable="True">
+            <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any" Cancelable="False">
+                <Variable Type="Level" Side="Friendly" LevelType="Might" />
+                <Variable2 Type="Level" Side="Friendly" LevelType="Destiny" />
                 <Condition Operator="And" ValueA="Condition" ValueB="Condition">
-                    <Condition Operator="GreaterThan" ValueA="Variable3" ValueB="0"/>
-                <Condition Operator="And" ValueA="Condition" ValueB="Condition">
-                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="4"/>
-                    <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="3"/>
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="4" />
+                    <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="3" />
                 </Condition>
-                </Condition>
-                <CardFilter BaseMaxCost="True" Value="2" IncludeCardType="Unit"/>
-                <Effect Type="Kill" EvaluationOrder="First"/>
-            </Target>
-            <Target Zone="Hero" Amount="All" Side="Friendly" Cancelable="False">
-            <Condition Operator="And" ValueA="Condition" ValueB="Condition">
-                    <Condition Operator="GreaterThan" ValueA="Variable3" ValueB="0"/>
-                <Condition Operator="And" ValueA="Condition" ValueB="Condition">
-                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="4"/>
-                    <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="3"/>
-                </Condition>
-                </Condition>
-                <Effect Type="Heal" Value="1" EvaluationOrder="Last"/>
+                <CardFilter BaseMaxCost="True" Value="2" IncludeCardType="Unit" />
+                <Effect Type="Kill" />
             </Target>
         </Trigger>
     </Card>
