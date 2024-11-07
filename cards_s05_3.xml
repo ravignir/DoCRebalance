@@ -88,10 +88,10 @@ When enchanted creature dies, return it to its owner's hand instead.</Descriptio
 Friendly Earth creatures on the front line gain Towering and Anchored.</Description>
 	</Card>
 	<Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Ear_072" DisplayName="Fissure" School="Earth" Cost="6" MightLevel="0" MagicLevel="6" DestinyLevel="0" ID="787" Unique="False">
-		<Target Zone="BattlegroundColumn" Amount="1"/>
+		<Target Zone="BattlegroundLine" Amount="1"/>
 		<Target Zone="None" Amount="Same">
 		<CardFilter IncludeCardType="Unit"/>
-			<Effect Type="Damage" Value="5"/>
+			<Effect Type="Damage" Value="4"/>
 		</Target>
 		<Target Zone="None" Amount="Same">
 		<CardFilter IncludeCardType="Unit" IncludeOccupant="True"/>
@@ -101,8 +101,8 @@ Friendly Earth creatures on the front line gain Towering and Anchored.</Descript
 		<CardFilter IncludeCardType="Building"/>
 			<Effect Type="Kill"/>
 		</Target>
-		<Description>Deal 5 damage to all creatures on target row.
-Destroy all creatures at a building on target row then destroy all buildings on target row.</Description>
+		<Description>Deal 4 damage to all creatures on target line.
+Destroy all creatures at a building on the target line then destroy all buildings on the target line.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Fire -->
