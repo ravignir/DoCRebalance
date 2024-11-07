@@ -348,15 +348,14 @@ While there are fewer friendly creatures than enemy creatures on the battlegroun
 While your [MIGHT] level is 10 or more, damage dealt by friendly Warrior creatures cannot be prevented or reduced.</Description>
     	</Card>
 	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Str_074" DisplayName="Warbound Cyclops" Faction="Stronghold" SubType="Melee|Shooter" Race="Cyclops|Warrior" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="0" Retaliate="1" HP="7" ID="739" Unique="False">
+		<Ability Type="DoubleAttack"/>
 		<Trigger Type="OnOtherPostAttack" Side="Friendly">
 			<CardFilter IncludeRaces="Warrior"/>
 			<Target Zone="Battleground" Amount="Self" ForceExecute="True">
 				<Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
-				<Effect Type="ModifyRetaliate" Value="1" Duration="UntilEndOfTurn"/>
 			</Target>
 		</Trigger>
-		<Ability Type="DoubleAttack"/>
-	<Description>Whenever another friendly Warrior creature attacks, Warbound Cyclops gains +[1:ATK] and +[1:RET] until end of turn.</Description>
+	<Description>Whenever another friendly Warrior creature attacks, Warbound Cyclops gains +[1:ATK] until end of turn.</Description>
 	</Card>
 	<Card Rarity="Common" Type="Unit" Name="Cre_Str_075" DisplayName="Stormrage Warrior" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="0" HP="6" ID="740" Unique="False">
 		<Ability Type="Enrage" Value="1"/>
