@@ -343,13 +343,13 @@ If the number of crippling counters on an enemy creature is greater than its cos
 		</Target>
 		<Description>While there is another friendly Centaur creature on the battleground, Juvenile Centaur gains Attack Anywhere.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_092" DisplayName="Pao Scout" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="1" HP="5" ID="940">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_092" DisplayName="Pao Scout" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="1" HP="5" ID="940">
 		<Trigger Type="OnThisPreAttackHero">
-<Target Zone="None" Side="Friendly">
-<Effect Type="IncreaseLevel" Value="1" LevelType="Might"/>
-</Target>
-</Trigger>
-<Description>Whenever Pao Scout deals combat damage to enemy hero, increase your [MIGHT] level by 1.</Description>
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="IncreaseLevel" Value="1" LevelType="Might"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever Pao Scout deals combat damage to enemy hero, increase your [MIGHT] level by 1.</Description>
 	</Card>
 	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_093" DisplayName="Centaur Sharpshooter" Faction="Stronghold" SubType="Shooter" Race="Centaur" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="941">
 		<Ability Type="ImmuneToRetaliate"/>
