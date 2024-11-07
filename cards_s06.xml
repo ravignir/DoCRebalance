@@ -133,7 +133,7 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 				</Target>
 			</Subgroup>
 		</Target>
-		<Description>[2:RESOURCES]: Look at opponent's hand and choose a card from it. Opponent puts that card on the top of their library.</Description>
+		<Description>[1:RESOURCES]: Look at opponent's hand and choose a card from it. Opponent puts that card on the top of their library.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Stronghold -->
