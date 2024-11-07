@@ -438,7 +438,7 @@ At the end of your turn, if there are 3 or more Enrage counters on Bloodshark Wa
             		<Effect Type="ModifyAbility" Ability="Berserk" Remove="True" />
             		<Effect Type="ModifyAbility" Ability="CannotAttack" Remove="True" />
         	</Target>
-		<Description>Raya, Chosen of the Waves cannot be prevented form attacking and is unaffected by Berserk.</Description>
+		<Description>Raya, Chosen of the Waves cannot be prevented from attacking and is unaffected by Berserk.</Description>
 	</Card>
 	<Card Rarity="Epic" Unique="True" Type="Unit" Name="Cre_Neu_084" DisplayName="Hikyu, Chosen of the Flames" Faction="Neutral" School="Fire" SchoolsAligned="True" SubType="Magic|Melee" Race="Human|Warrior" Cost="6" MightLevel="5" MagicLevel="1" DestinyLevel="0" Attack="4" Retaliate="2" HP="7" ID="846">
 		<Ability Type="FireAligned"/>
