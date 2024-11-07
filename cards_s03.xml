@@ -9,7 +9,7 @@
     <!--...............................................................................-->
     <!-- Heroes Academy -->
     <!--...............................................................................-->
-    <Card  Rarity="Heroic" Type="Hero" Name="Her_Aca_001" DisplayName="Gazal, Lady of Secrets" Faction="Academy" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="444">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Aca_001" DisplayName="Gazal, Lady of Secrets" Faction="Academy" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="444">
         <School Name="Prime" />
         <School Name="Light" />
         <Description>[1:RESOURCES]: Until end of turn, whenever an effect causes cards to go from your opponent's library to their graveyard, draw a card.</Description>
