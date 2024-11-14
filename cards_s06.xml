@@ -115,7 +115,7 @@ Friendly Beastman creatures adjacent to a friendly Wizard creature gain +[1:ATK]
 	<!--...............................................................................-->
 	<!-- Heroes Sanctuary -->
 	<!--...............................................................................-->
-	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_San_009" DisplayName="Mukao" Faction="Sanctuary" School="Dark|Water" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="19" ID="806">
+	<Card NotLocalized="True" UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_San_009" DisplayName="Mukao" Faction="Sanctuary" School="Dark|Water" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="806">
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>
