@@ -123,7 +123,7 @@
 	<!--...............................................................................-->
 	<!-- Heroes Sanctuary -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_San_008" DisplayName="Kenage, Master Strategist" Faction="Sanctuary" School="Light|Earth" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="704">
+	<Card Rarity="Heroic" Type="Hero" Name="Her_San_008" DisplayName="Kenage, Master Strategist" Faction="Sanctuary" School="Light|Earth" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="19" ID="704">
 		<Description>[1:RESOURCES]: Naga creatures in your hand cost [3:RESOURCES].</Description>
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
