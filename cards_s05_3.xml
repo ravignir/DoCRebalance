@@ -48,7 +48,7 @@ Enchanted creature gains Swift and Charge.</Description>
 			<Effect Type="Damage" Value="Variable"/>
 			<Effect Type="Cleanse"/>
 		</Target>
-		<Description>Destroy all ongoing spells on target creature. Deal 5 damage to that creature for each spell destroyed this way.</Description>
+		<Description>Destroy all ongoing spells and fortunes on target creature. Deal 5 damage to that creature for each card destroyed this way.</Description>
 	</Card>
 	<Card Rarity="Rare" Type="Spell" Name="Spe_Dar_071" DisplayName="Mutual Agony" School="Dark" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="783" Unique="False">
 		<Ongoing Duration="Permanent"/>
@@ -148,7 +148,7 @@ All creatures gain +[1:ATK] and +[1:RET].</Description>
 		<Target Zone="Battleground" Amount="Same">
 			<Effect Type="Cleanse"/>
 		</Target>
-		<Description>Destroy all ongoing spells on target friendly creature. Heal 2 damage from that creature for each spell destroyed this way and put +[1:ATK] counter on it for each spell destroyed this way.</Description>
+		<Description>Destroy all ongoing spells and fortunes on target friendly creature. Heal 2 damage from that creature for each card destroyed this way and put +[1:ATK] counter on it for each card destroyed this way.</Description>
 	</Card>
 	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Lig_071" DisplayName="Avenging Shield" School="Light" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="792" Unique="False">
 		<Ongoing Duration="Permanent"/>
