@@ -458,10 +458,11 @@ When opponent plays a creature, deal 3 damage to it and destroy Ambush Spot.</De
         <Variable Type="CardPlayedCount"/>
         <PlayabilityCondition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
         <Ongoing Duration="UntilYourNextTurn"/>
-        <Target Zone="Hero" Amount="All" Side="Friendly">
+        <Target Zone="Hero" Amount="All" Side="Friendly" CantTargetSelf="True">
 			<Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="1">
+				<CardFilter IncludeCardType="Unit|Spell|Fortune|Building"/>
 			</Effect>
-		</Target>
+	</Target>
         <Target Zone="Battleground" CardType="Unit" Side="Enemy" Amount="All">
             <Effect Type="ModifyAbility" Ability="CannotAttack"/>
         </Target>
