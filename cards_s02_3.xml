@@ -246,7 +246,7 @@ All friendly creatures gain +[1:ATK] and Fortune Ward.</Description>
     <!-- //	##      ##  #   ##      #  ##    ##        ## -->
     <!-- //	#####     ##    #####   #   #    ##     ##### -->
     <!--....................................................................-->
-    <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_040" DisplayName="Day of the Sanctuary" Cost="0" Faction="Neutral" ID="439">
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Event" Name="Eve_Neu_040" DisplayName="Day of the Sanctuary" Cost="0" Faction="Neutral" ID="439">
         <Target Zone="Battleground" CardType="Unit" Amount="1" ForceExecute="True" Persistent="True">
             <Effect Type="ModifyAbility" Ability="CannotTarget" Duration="UntilYourNextTurn" />
         </Target>
