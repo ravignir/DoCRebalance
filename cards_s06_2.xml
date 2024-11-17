@@ -385,15 +385,22 @@ Whenever a creature at Fountain of Rejuvenation dies from combat damage, return 
 			<CardFilter IncludeRaces="Spy"/>
 			<Effect Type="ModifyAbility" Ability="Unblockable"/>
 		</Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<CardFilter IncludeRaces="Spy"/>
+			<Effect Type="PlayEffect" PlayEffectType="AttackBonus" Value="-1">
+				<CardFilter IncludeCardType="Hero"/>
+			</Effect>
+		</Target>
 		<Target Zone="Hero" Amount="All" Side="Enemy">
             		<Variable Type="OccupantCount">
-				<CardFilter IncludeFaction="Sanctuary"/>
+			<CardFilter IncludeRaces="Spy"/>
 			</Variable>
             		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
 			<Effect Type="GlobalEffect" GlobalEffectType="RevealHand"/>
 		</Target>
-		<Description>While a Sanctuary creature is at Darkwater Pool, opponent plays with their hand revealed.
-Spy creatures at Darkwater Pool can attack enemy hero even if there are creatures in front of them.</Description>
+		<Description>While a Spy creature is at Darkwater Pool, opponent plays with their hand revealed.
+Spy creatures at Darkwater Pool can attack enemy hero even if there are creatures in front of them.
+Whenever a Spy Creature at Darkwater Pool attacks enemy hero, it deals 1 less attack damage.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Building - Stronghold -->
