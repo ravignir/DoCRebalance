@@ -124,7 +124,7 @@
     <!--...............................................................................-->
     <!-- Heros - Inferno -->
     <!--...............................................................................-->
-    <Card UseXmlDescription="True" NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Inf_005" DisplayName="Phrias, Prince of Annihilation" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="257">
+    <Card UseXmlDescription="True" NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Inf_005" DisplayName="Phrias, Prince of Annihilation" Faction="Inferno" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="19" ID="257">
         <School Name="Fire"/>
         <School Name="Prime"/>
         <Description>[2:RESOURCES]: Target friendly creature gains Sweep Attack or Attack Anywhere until end of turn.</Description>
@@ -233,10 +233,10 @@
     <!--...............................................................................-->
     <!-- Heroes Sanctuary -->
     <!--...............................................................................-->
-    <Card Rarity="Heroic" Type="Hero" Name="Her_San_005" DisplayName="Akane, Mourner of Lost Memories" Faction="Sanctuary" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="19" ID="258">
+    <Card UseXmlDescription="True" Rarity="Heroic" Type="Hero" Name="Her_San_005" DisplayName="Akane, Mourner of Lost Memories" Faction="Sanctuary" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="19" ID="258">
         <School Name="Air"/>
         <School Name="Prime"/>
-        <Description>[1:RESOURCES]: Remove all counters and destroy all ongoing spells on target creature.</Description>
+        <Description>[1:RESOURCES]: Remove all counters and destroy all ongoing spells and fortunes on target creature.</Description>
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption"/>
             <Subgroup>
