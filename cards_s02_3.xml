@@ -250,7 +250,7 @@ All friendly creatures gain +[1:ATK] and Fortune Ward.</Description>
         <Target Zone="Battleground" CardType="Unit" Amount="1" ForceExecute="True" Persistent="True">
             <Effect Type="ModifyAbility" Ability="CannotTarget" Duration="UntilYourNextTurn" />
         </Target>
-        <Description>[1:RESOURCES] : Until your next turn, target creature cannot be targeted.</Description>
+        <Description>[0:RESOURCES]: Until your next turn, target creature cannot be targeted.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Common" Type="Event" Name="Eve_Neu_041" DisplayName="Hail Storm" Cost="3" Faction="Neutral" ID="440">
         <Target Zone="Battleground" CardType="Unit" Amount="All" NeedActivation="True">
