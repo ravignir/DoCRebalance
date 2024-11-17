@@ -44,11 +44,13 @@ Enchanted creature gains Swift and Charge.</Description>
 	<!--....................................................................-->
 	<Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Dar_070" DisplayName="Agonizing Purge" School="Dark" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="782" Unique="False">
 		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Any">
-<Variable Type="CardChildrenCount" UseCurrentTarget="True" ValueModifier="5x"/>
-<Effect Type="Damage" Value="Variable"/>
-<Effect Type="Cleanse"/>
-</Target>
-<Description>Destroy all ongoing spells on target creature. Deal 5 damage to that creature for each spell destroyed this way.</Description>
+			<Variable Type="CardChildrenCount" UseCurrentTarget="True" ValueModifier="5x"/>
+			<Effect Type="Damage" Value="Variable"/>
+			<Effect Type="Cleanse"/>
+		</Target>
+		<Description>Destroy all ongoing spells on target creature. Deal 5 damage to that creature for each spell destroyed this way.</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Spell" Name="Spe_Dar_071" DisplayName="Mutual Agony" School="Dark" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="783" Unique="False">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="1" CardType="Unit"/>
 		<Trigger Type="OnEnchantedCardDeath">
