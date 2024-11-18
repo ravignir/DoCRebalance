@@ -783,7 +783,7 @@ Ambush: Deal 2 Fire damage to ambushed creature.
 			<Effect Type="MoveCardTo" Destination="Library"/>
 		</Target>
 	</Trigger>
-	<Description> When Sahaar Bedouin enters the battleground, search your library for a Neutral card, then shuffle your library and put that card on the top of your library. </Description>
+	<Description>When Sahaar Bedouin enters the battleground, search your library for a Neutral card, then shuffle your library and put that card on the top of your library. </Description>
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_052" DisplayName="Soothsayer" Faction="Neutral" SubType="Melee" Race="Human" Cost="2" MightLevel="1" DestinyLevel="2" Attack="1" Retaliate="0" HP="1" ID="524">
         <Trigger Type="OnThisCardDeploy">
