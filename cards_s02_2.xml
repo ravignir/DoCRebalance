@@ -308,18 +308,18 @@ While you control more creatures than your opponent, target creature is immobili
     <!--....................................................................-->
     <!-- Fortune - Stronghold -->
     <!--....................................................................-->
-    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Str_041" DisplayName="Orc Armory" Faction="Stronghold" Cost="3" DestinyLevel="2" ID="409">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Str_041" DisplayName="Orc Armory" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="409">
         <Target Zone="None" Side="Friendly">
-<Effect Type="IncreaseLevel" Value="2" LevelType="Might"/>
-</Target>
-<Target Zone="Hero" Amount="All" Side="Enemy">
-<Variable Type="Level" LevelType="Might">
-<Target Zone="Hero" Side="Friendly" Amount="All"/>
-</Variable>
-<Condition Operator="GreaterThan" ValueA="Variable" ValueB="7"/>
-<Effect Type="Damage" Value="2"/>
-</Target>
-<Description>Increase your [MIGHT] level by 2, then if your [MIGHT] level is 10 or higher, deal 2 damage to enemy hero.</Description>
+		<Effect Type="IncreaseLevel" Value="2" LevelType="Might"/>
+	</Target>
+	<Target Zone="Hero" Amount="All" Side="Enemy">
+		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="7"/>
+		<Variable Type="Level" LevelType="Might">
+			<Target Zone="Hero" Side="Friendly" Amount="All"/>
+		</Variable>
+		<Effect Type="Damage" Value="2"/>
+	</Target>
+	<Description>Increase your [MIGHT] level by 2, then if your [MIGHT] level is 10 or higher, deal 2 damage to enemy hero.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Str_042" DisplayName="Stampede" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="410">
         <Variable Type="CardPlayedCount">
