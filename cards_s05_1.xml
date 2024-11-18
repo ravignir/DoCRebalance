@@ -162,6 +162,7 @@ While Loyal Rakshasa is adjacent to a friendly Wizard creature, it gains +[2:ATK
 	</Card>
 	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Inf_074" DisplayName="Swelling Breeder" Faction="Inferno" SubType="Magic|Shooter" Race="Demon|Breeder" Cost="3" MightLevel="1" MagicLevel="2" DestinyLevel="0" Attack="1" Retaliate="1" HP="6" ID="722" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="SpellResist"/>
 		<Ability Type="MagicChannel" Value="1"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly">
 			<CardFilter IncludeRaces="Breeder"/>
