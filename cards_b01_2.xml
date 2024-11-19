@@ -274,20 +274,17 @@ Whenever opponent plays a card, they discard a card.</Description>
         </Target>
         <Description>Discard a fortune card. Take target non-unique fortune card from your graveyard and put it into your hand.</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_007" DisplayName="No Rest for the Wicked" Faction="Necropolis" Cost="1" DestinyLevel="1" ID="143">
-        <Ongoing Duration="UntilEndOfTurn"/>
-		<Variable Type="TargetCount" ValueModifier="-1.0x">
-            <Target Zone="Graveyard" Side="Friendly" Amount="All">
-                <CardFilter IncludeCardType="Unit"/>
-            </Target>
-        </Variable>
-		<Target Zone="Hero" Amount="All" Side="Friendly">
-            <Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="Variable">
-                <CardFilter IncludeCardType="Unit" SameGPID="True"/>
-            </Effect>
-        </Target>
-        <Description>Until end of turn:
-Your creature cards costs [1:RESOURCES] less to play for each creature card with the same name in your graveyard.</Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_007" DisplayName="No Rest for the Wicked" Faction="Necropolis" Cost="1" DestinyLevel="1" ID="143">	
+	<Ongoing Duration="Repeatable"/>
+	<Target Zone="Graveyard" Side="Friendly" CardType="Unit" Amount="1" AllowDuplicate="True">
+		<Effect Type="Banish"/>
+	</Target>
+	<Target Zone="Hero" Amount="All" Side="Friendly" ForceExecute="True" Persistent="True" AllowDuplicate="True">
+		<Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="-1" Duration="UntilPlayCardThisTurn">
+			<CardFilter IncludeCardType="Unit"/>
+		</Effect>
+	</Target>
+        <Description>Banish target creature card form your graveyard: your next creature card costs [1:RESOURCES] less to play. You can repeat this as many times as you want.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Nec_005" DisplayName="Graveyard" Faction="Necropolis" Cost="2" DestinyLevel="2" ID="144">
         <Target Zone="None" Side="Friendly">
