@@ -19,13 +19,13 @@
 		</Trigger>
 		<Description>When Captive Djinn enters the battleground, you may banish target non-unique ongoing spell or fortune.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Aca_091" DisplayName="Surging Djinn" Faction="Academy" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="3" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="1" HP="7" ID="912" School="Prime">
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Unit" Name="Cre_Aca_091" DisplayName="Surging Djinn" Faction="Academy" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="3" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="1" HP="7" ID="912" School="Prime">
 		<Trigger Type="OnThisCardDeath">
 			<Target Zone="None" Side="Friendly">
 				<Effect Type="IncreaseLevel" Value="-1" LevelType="Magic"/>
 			</Target>
 		</Trigger>
-		<Description>When Surging Djinn dies, decrease your [MAGIC] level by 2.</Description>
+		<Description>When Surging Djinn dies, decrease your [MAGIC] level by 1.</Description>
 	</Card>
 	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_092" DisplayName="Time-Bender Djinn" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="5" MightLevel="4" MagicLevel="5" DestinyLevel="0" Attack="4" Retaliate="3" HP="7" ID="913">
 		<Variable Type="TargetCount">
