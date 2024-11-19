@@ -64,14 +64,14 @@
 	<!--...............................................................................-->
 	<!-- Creatures - Haven -->
 	<!--...............................................................................-->
-	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Hav_090" DisplayName="Warding Inquisitor" Faction="Haven" SubType="Magic|Shooter" Race="Human|Priest" Cost="5" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="916" School="Light">
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Hav_090" DisplayName="Warding Inquisitor" Faction="Haven" SubType="Magic|Shooter" Race="Human|Priest" Cost="5" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="916" School="Light">
 		<Ability Type="ImmuneToRetaliate"/>
-<Trigger Type="OnThisCardDeploy">
-<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="SelfAndAdjacent" ForceExecute="True" Persistent="True">
-<Effect Type="ModifyAbility" Ability="EnemySpellWard" Duration="UntilYourNextTurn"/>
-</Target>
-</Trigger>
-	<Description> When Warding Inquisitor enters the battleground, it and adjacent friendly creatures gain Enemy Spell Ward until your next turn. </Description>
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="SelfAndAdjacent" ForceExecute="True" Persistent="True">
+				<Effect Type="ModifyAbility" Ability="EnemySpellWard" Duration="UntilYourNextTurn"/>
+			</Target>
+		</Trigger>
+		<Description> When Warding Inquisitor enters the battleground, it and adjacent friendly creatures gain Enemy Spell Ward until your next turn. </Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Hav_091" DisplayName="Blessing Inquisitor" Faction="Haven" SubType="Magic|Melee|Shooter" Race="Human|Priest" Cost="4" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="3" HP="7" ID="917" School="Light">
 		<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly">
