@@ -71,11 +71,11 @@ Enchanted creature gains -[X:ATK] and -[X:RET] where X is equal to your [MAGIC] 
 	<Target Zone="Battleground" Amount="Parent">
 		<Variable Type="CardPreventedDamage" UseParent="True" />
 		<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
-		<Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Combat"/>
+		<Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Magic" DamageExcludeFlags="Combat"/>
 	</Target>
         <Description>Enchant creature. Permanent:
 Enchanted creature gains Regenerate 1 and +[2:HEALTH].
-The first time combat damage is dealt to enchanted creature in a turn, prevent that damage.</Description>
+The first time non-combat magic damage is dealt to enchanted creature in a turn, prevent that damage.</Description>
     </Card>
     <Card Rarity="Common" Type="Spell" Name="Spe_Ear_061" DisplayName="Landslide" School="Earth" Cost="3" MagicLevel="3" ID="640">
         <Target Zone="BattlegroundPosition" CardType="Building" Amount="1" Shape="Self">
