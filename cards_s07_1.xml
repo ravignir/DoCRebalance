@@ -160,7 +160,7 @@ Adjacent dark creatures gain +[1:ATK].</Description>
 				<Effect Type="Play" Free="False" RequireLevel="True" CancelDestination="Graveyard"/>
 			</Target>
 		</Trigger>
-		<Description>When Spell Stealer Heretic enters the battleground, you may take target instant Dark or Fire spell from your graveyard and play it. You must still meet its kevel requirements and pay the cost. If you do, banish that spell.</Description>	
+		<Description>When Spell Stealer Heretic enters the battleground, you may take target instant Dark or Fire spell from your graveyard and play it. You must still meet its level requirements and pay the cost. If you do, banish that spell.</Description>	
 	</Card>
 	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Inf_094" DisplayName="Executioner Succubus" Faction="Inferno" SubType="Magic|Melee" Race="Demon|Succubus" Cost="6" MightLevel="4" MagicLevel="3" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="925" School="Dark">
 		<Trigger Type="OnThisCardDeploy" Side="Friendly">
