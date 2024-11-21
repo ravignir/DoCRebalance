@@ -386,16 +386,16 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 	</Card>
 	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Inf_091" DisplayName="Heretic Library" Faction="Inferno" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="973">
 		<Variable Type="OccupantCount">
-<CardFilter IncludeFaction="Inferno"/>
-</Variable>
-<Trigger Type="OnTurnBegin" Side="Friendly">
-<Target Zone="Graveyard" Amount="1" Side="Friendly">
-<CardFilter IncludeCardType="Fortune" IncludeFaction="Inferno"/>
-<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-<Effect Type="MoveCardTo" Destination="Hand"/>
-</Target>
-</Trigger>
-<Description>At the beginning of your turn, if an Inferno creature is at Heretic Library, take target forune card from your graveyard ad put it into your hand.</Description>
+			<CardFilter IncludeFaction="Inferno"/>
+		</Variable>
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+			<Target Zone="Graveyard" Amount="1" Side="Friendly">
+				<CardFilter IncludeCardType="Fortune"/>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+				<Effect Type="MoveCardTo" Destination="Hand"/>
+			</Target>
+		</Trigger>
+	<Description>At the beginning of your turn, if an Inferno creature is at Heretic Library, take target forune card from your graveyard ad put it into your hand.</Description>
 	</Card>
 	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Inf_092" DisplayName="Throne of Ahribban" Faction="Inferno" Cost="4" MightLevel="2" MagicLevel="2" DestinyLevel="0" ID="974">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
