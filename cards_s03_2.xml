@@ -626,26 +626,29 @@ At the beginning of your turn, return Outraging Vision to its owner's hand.</Des
     </Card>
     <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Str_051" DisplayName="Ancestral Guidance" Faction="Stronghold" Cost="2" DestinyLevel="3" ID="563">
         <Target Zone="Battleground" CardType="Unit" Amount="all">
-<Variable Type="TargetCount" ValueModifier="1">
-<Target Zone="Graveyard" Side="Friendly" Amount="All">
-<CardFilter IncludeCardID="For_Str_051"/>
-</Target>
-</Variable>
-<Effect Type="Damage" Value="Variable"/>
-</Target>
-<Description>Deal X damage to all creatures, where X is equal to 1 plus the number of cards named Ancestral Guidance in your graveyard.</Description>
+		<Variable Type="TargetCount" ValueModifier="1">
+			<Target Zone="Graveyard" Side="Friendly" Amount="All">
+			<CardFilter IncludeCardID="For_Str_051"/>
+			</Target>
+		</Variable>
+		<Effect Type="Damage" Value="Variable"/>
+	</Target>
+	<Description>Deal X damage to all creatures, where X is equal to 1 plus the number of cards named Ancestral Guidance in your graveyard.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Str_052" DisplayName="Desperate Assault" Faction="Stronghold" Cost="2" MightLevel="4" DestinyLevel="4" ID="564">
+	<Ongoing Duration="UntilEndOfTurn"/>
         <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1">
-<Effect Type="ModifyAttack" Value="4"/>
-<Effect Type="ModifyAbility" Ability="Charge"/>
-</Target>
-<Trigger Type="OnPostAttack" Side="Any">
-<Target Zone="Battleground" CardType="Unit" Amount="Parent">
-<Effect Type="Kill"/>
-</Target>
-</Trigger>
-<Description>Attach to creature. Until end of turn: Target melee creature gains + [4:ATK] and Charge. After the creature attacks, destroy it.</Description>
+		<CardFilter IncludeUnitType="Melee"/>
+			<Effect Type="ModifyAttack" Value="4"/>
+			<Effect Type="ModifyAbility" Ability="Charge"/>
+	</Target>
+        <Trigger Type="OnThisPostAttack">
+		<Target Zone="Battleground" CardType="Unit" Amount="Parent">
+			<Effect Type="Kill"/>
+		</Target>
+        </Trigger>
+<Description>Attach to creature. Until end of turn:
+Target melee creature gains + [4:ATK] and Charge. After the creature attacks, destroy it.</Description>
     </Card>
     <Card Rarity="Rare" Type="Fortune" Name="For_Str_053" DisplayName="Rushing Assault" Faction="Stronghold" Cost="3" DestinyLevel="3" ID="565">
         <Ongoing Duration="UntilEndOfTurn" />

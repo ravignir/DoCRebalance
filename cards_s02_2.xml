@@ -308,18 +308,18 @@ While you control more creatures than your opponent, target creature is immobili
     <!--....................................................................-->
     <!-- Fortune - Stronghold -->
     <!--....................................................................-->
-    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Str_041" DisplayName="Orc Armory" Faction="Stronghold" Cost="3" DestinyLevel="2" ID="409">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Fortune" Name="For_Str_041" DisplayName="Orc Armory" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="409">
         <Target Zone="None" Side="Friendly">
-<Effect Type="IncreaseLevel" Value="2" LevelType="Might"/>
-</Target>
-<Target Zone="Hero" Amount="All" Side="Enemy">
-<Variable Type="Level" LevelType="Might">
-<Target Zone="Hero" Side="Friendly" Amount="All"/>
-</Variable>
-<Condition Operator="GreaterThan" ValueA="Variable" ValueB="7"/>
-<Effect Type="Damage" Value="2"/>
-</Target>
-<Description>Increase your [MIGHT] level by 2, then if your [MIGHT] level is 10 or higher, deal 2 damage to enemy hero.</Description>
+		<Effect Type="IncreaseLevel" Value="2" LevelType="Might"/>
+	</Target>
+	<Target Zone="Hero" Amount="All" Side="Enemy">
+		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="7"/>
+		<Variable Type="Level" LevelType="Might">
+			<Target Zone="Hero" Side="Friendly" Amount="All"/>
+		</Variable>
+		<Effect Type="Damage" Value="2"/>
+	</Target>
+	<Description>Increase your [MIGHT] level by 2, then if your [MIGHT] level is 10 or higher, deal 2 damage to enemy hero.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Str_042" DisplayName="Stampede" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="410">
         <Variable Type="CardPlayedCount">
@@ -347,35 +347,29 @@ Whenever a friendly creature dies, increase your [MIGHT] level by 1.</Descriptio
     <!--....................................................................-->
     <!--  Fortune - Neutral -->
     <!--....................................................................-->
-    <Card NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Neu_040" DisplayName="Higher Learning" Faction="Neutral" Cost="4" MightLevel="2" MagicLevel="2" DestinyLevel="2" ID="412">
-        <Target Zone="None" Side="Enemy">
-<Effect Type="ChoiceOption"/>
-<Subgroup>
-<Target Zone="None" Side="Enemy">
-<Variable Type="Level" Side="Enemy" LevelType="Might"/>
-<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-<Option Value="0" DisplayText="Decrease [MIGHT] level."/>
-<Effect Type="IncreaseLevel" Value="5ma" LevelType="Might"/>
-</Target>
-<Target Zone="None" Side="Enemy">
-<Variable Type="Level" Side="Enemy" LevelType="Magic"/>
-<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-<Option Value="1" DisplayText="Decrease [MAGIC] level."/>
-<Effect Type="IncreaseLevel" Value="5ma" LevelType="Magic"/>
-</Target>
-<Target Zone="None" Side="Enemy">
-<Variable Type="Level" Side="Enemy" LevelType="Destiny"/>
-<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-<Option Value="2" DisplayText="Decrease [DESTINY] level."/>
-<Effect Type="IncreaseLevel" Value="5ma" LevelType="Destiny"/>
-</Target>
-<Target Zone="None" Side="Friendly">
-<Option Value="3" DisplayText="Draw a card."/>
-<Effect Type="Draw" Value="1"/>
-</Target>
-</Subgroup>
-</Target>
-<Description> Choose one: Draw a card OR Increase your [MIGHT], [MAGIC] or [DESTINY] level to 5.</Description>
+    <Card UseXmlDescription="True" NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Neu_040" DisplayName="Higher Learning" Faction="Neutral" Cost="3" MightLevel="2" MagicLevel="2" DestinyLevel="2" ID="412">
+	    <Target Zone="None" Side="Enemy">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<Target Zone="None" Side="Friendly">
+					<Option Value="0" DisplayText="Increase [MIGHT] level."/>
+					<Effect Type="IncreaseLevel" Value="5ma" LevelType="Might"/>
+				</Target>
+				<Target Zone="None" Side="Friendly">
+					<Option Value="1" DisplayText="Increase [MAGIC] level."/>
+					<Effect Type="IncreaseLevel" Value="5ma" LevelType="Magic"/>
+				</Target>
+				<Target Zone="None" Side="Friendly">
+					<Option Value="2" DisplayText="Increase [DESTINY] level."/>
+					<Effect Type="IncreaseLevel" Value="5ma" LevelType="Destiny"/>
+				</Target>
+				<Target Zone="None" Side="Friendly">
+					<Option Value="3" DisplayText="Draw a card."/>
+					<Effect Type="Draw" Value="1"/>
+				</Target>
+			</Subgroup>
+	    </Target>
+	    <Description> Choose one: Draw a card OR Increase your [MIGHT], [MAGIC] or [DESTINY] level to 5.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Neu_041" DisplayName="Forgotten Cave" Faction="Neutral" Cost="3" DestinyLevel="2" ID="413">
         <Target Zone="None" Side="Friendly">

@@ -156,7 +156,7 @@ Creatures deployed on the enchanted row cannot be targeted until their controlle
 All friendly creatures gain Dark Ward.
 When there are no friendly creatures on the battleground, destroy Ward Against Darkness.</Description>
     </Card>
-    <Card NotLocalized="True" Rarity="Uncommon" Type="Spell" Name="Spe_Lig_032" DisplayName="Purity" School="Light" Cost="2" MagicLevel="2" ID="321">
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Lig_032" DisplayName="Purity" School="Light" Cost="2" MagicLevel="2" ID="321">
         <Ongoing Duration="Permanent"/>
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Any">
             <Effect Type="RemoveCounter" CounterType="Any" Value="Infinite" Duration="Immediate"/>
@@ -171,12 +171,12 @@ When Purity enters the battleground, remove all counters from all creatures.</De
     <!--....................................................................-->
     <!-- Spells - Prime -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Pri_030" DisplayName="Negate Magic" School="Prime" Cost="1" MagicLevel="2" ID="322">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Pri_030" DisplayName="Negate Magic" School="Prime" Cost="1" MagicLevel="2" ID="322">
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="RemoveCounter" CounterType="Any" Value="Infinite"/>
             <Effect Type="Cleanse"/>
         </Target>
-        <Description>Remove all counters and destroy all ongoing spells on target creature.</Description>
+        <Description>Remove all counters and destroy all ongoing spells and fortunes on target creature.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Pri_031" DisplayName="Mass Dispel" School="Prime" Cost="3" MagicLevel="3" ID="323">
         <Target Zone="Battleground" CardType="Spell" Amount="All">
@@ -194,7 +194,7 @@ When Purity enters the battleground, remove all counters from all creatures.</De
     <!--....................................................................-->
     <!-- Spells - Water -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Wat_030" DisplayName="Water Wall" School="Water" Cost="2" MagicLevel="2" ID="325">
+    <Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Wat_030" DisplayName="Water Wall" School="Water" Cost="2" MagicLevel="2" ID="325">
         <Target Zone="BattlegroundPosition" Shape="Self" CardType="Unit" Amount="1">
             <Effect Type="Damage" Value="3" />
         </Target>

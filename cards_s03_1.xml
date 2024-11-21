@@ -773,17 +773,17 @@ When Rotting Mummy dies with poison counters on it, put the same number of poiso
 Ambush: Deal 2 Fire damage to ambushed creature.
 (Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>
     </Card>
-    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_051" DisplayName="Sahaar Bedouin" Faction="Neutral" SubType="Melee" Race="Human" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="5" ID="523" >
-	    <Trigger Type="OnThisCardDeploy">
-<Target Zone="Library" Side="Friendly">
-<Effect Type="Shuffle" CardHolder="Library"/>
-</Target>
-<Target Zone="Library" Side="Friendly" Amount="1">
-<Effect Type="MoveCardTo" Destination="Library"/>
-<CardFilter IncludeFaction="Neutral"/>
-</Target>
-</Trigger>
-<Description> When Sahaar Bedouin enters the battleground, search your library for a Neutral card, then shuffle your library and put that card on the top of your library. </Description>
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_051" DisplayName="Sahaar Bedouin" Faction="Neutral" SubType="Melee" Race="Human" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="4" ID="523" >
+	<Trigger Type="OnThisCardDeploy">
+		<Target Zone="Library" Side="Friendly">
+			<Effect Type="Shuffle" CardHolder="Library"/>
+		</Target>
+		<Target Zone="Library" Side="Friendly" Amount="1">
+			<CardFilter IncludeFaction="Neutral"/>
+			<Effect Type="MoveCardTo" Destination="Library"/>
+		</Target>
+	</Trigger>
+	<Description>When Sahaar Bedouin enters the battleground, search your library for a Neutral card, then shuffle your library and put that card on the top of your library. </Description>
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_052" DisplayName="Soothsayer" Faction="Neutral" SubType="Melee" Race="Human" Cost="2" MightLevel="1" DestinyLevel="2" Attack="1" Retaliate="0" HP="1" ID="524">
         <Trigger Type="OnThisCardDeploy">

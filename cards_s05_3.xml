@@ -44,11 +44,13 @@ Enchanted creature gains Swift and Charge.</Description>
 	<!--....................................................................-->
 	<Card UseXmlDescription="True" Rarity="Common" Type="Spell" Name="Spe_Dar_070" DisplayName="Agonizing Purge" School="Dark" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="782" Unique="False">
 		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Any">
-<Variable Type="CardChildrenCount" UseCurrentTarget="True" ValueModifier="5x"/>
-<Effect Type="Damage" Value="Variable"/>
-<Effect Type="Cleanse"/>
-</Target>
-<Description>Destroy all ongoing spells on target creature. Deal 5 damage to that creature for each spell destroyed this way.</Description>
+			<Variable Type="CardChildrenCount" UseCurrentTarget="True" ValueModifier="5x"/>
+			<Effect Type="Damage" Value="Variable"/>
+			<Effect Type="Cleanse"/>
+		</Target>
+		<Description>Destroy all ongoing spells and fortunes on target creature. Deal 5 damage to that creature for each card destroyed this way.</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Spell" Name="Spe_Dar_071" DisplayName="Mutual Agony" School="Dark" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="783" Unique="False">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="1" CardType="Unit"/>
 		<Trigger Type="OnEnchantedCardDeath">
@@ -88,10 +90,10 @@ When enchanted creature dies, return it to its owner's hand instead.</Descriptio
 Friendly Earth creatures on the front line gain Towering and Anchored.</Description>
 	</Card>
 	<Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Ear_072" DisplayName="Fissure" School="Earth" Cost="6" MightLevel="0" MagicLevel="6" DestinyLevel="0" ID="787" Unique="False">
-		<Target Zone="BattlegroundColumn" Amount="1"/>
+		<Target Zone="BattlegroundLine" Amount="1"/>
 		<Target Zone="None" Amount="Same">
 		<CardFilter IncludeCardType="Unit"/>
-			<Effect Type="Damage" Value="5"/>
+			<Effect Type="Damage" Value="4"/>
 		</Target>
 		<Target Zone="None" Amount="Same">
 		<CardFilter IncludeCardType="Unit" IncludeOccupant="True"/>
@@ -101,8 +103,8 @@ Friendly Earth creatures on the front line gain Towering and Anchored.</Descript
 		<CardFilter IncludeCardType="Building"/>
 			<Effect Type="Kill"/>
 		</Target>
-		<Description>Deal 5 damage to all creatures on target row.
-Destroy all creatures at a building on target row then destroy all buildings on target row.</Description>
+		<Description>Deal 4 damage to all creatures on target line.
+Destroy all creatures at a building on the target line then destroy all buildings on the target line.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Fire -->
@@ -146,7 +148,7 @@ All creatures gain +[1:ATK] and +[1:RET].</Description>
 		<Target Zone="Battleground" Amount="Same">
 			<Effect Type="Cleanse"/>
 		</Target>
-		<Description>Destroy all ongoing spells on target friendly creature. Heal 2 damage from that creature for each spell destroyed this way and put +[1:ATK] counter on it for each spell destroyed this way.</Description>
+		<Description>Destroy all ongoing spells and fortunes on target friendly creature. Heal 2 damage from that creature for each card destroyed this way and put +[1:ATK] counter on it for each card destroyed this way.</Description>
 	</Card>
 	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Lig_071" DisplayName="Avenging Shield" School="Light" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="792" Unique="False">
 		<Ongoing Duration="Permanent"/>

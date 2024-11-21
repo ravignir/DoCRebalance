@@ -69,7 +69,7 @@
 			<Effect Type="Heal" Value="2"/>
 		</Target>
 	</Trigger>
-	<Description> Whenever you play Light spell, heal 2 damage from all friendly creatures. </Description>
+	<Description>Whenever you play Light spell, heal 2 damage from all friendly creatures.</Description>
     </Card>
     <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Hav_008" DisplayName="Imperial Griffin" Faction="Haven" SubType="Flyer" Race="Griffin" Cost="4" MightLevel="4" Attack="2" Retaliate="2" HP="6" ID="50">
 	    <Ability Type="ImmuneToRetaliate"/>

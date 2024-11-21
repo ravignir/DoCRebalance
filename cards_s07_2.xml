@@ -125,7 +125,8 @@
 <Effect Type="Kill"/>
 </Target>
 </Trigger>
-<Description>Pernament: While you have a fire card in your graveyard, your creatures gains +[1:ATK] and +[1:RET]. While you have a dark card in your graveyard, your opponent's creatures gains -[1:ATK] and -[1:RET]. When a friendly Demon creature dies, destroy Ritual of the Dark Flame.</Description>
+<Description>Pernament:
+While you have a fire card in your graveyard, your creatures gains +[1:ATK] and +[1:RET]. While you have a dark card in your graveyard, your opponent's creatures gains -[1:ATK] and -[1:RET]. When a friendly Demon creature dies, destroy Ritual of the Dark Flame.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Fortune - Necropolis -->
@@ -167,9 +168,9 @@ Friendly Spirits creatures gain +1 [ATK].</Description>
 All enemy creatures gains -[2:ATK].</Description>
 	</Card>
 	<Card UseXmlDescription="True" NotLocalized="True" Rarity="Rare" Unique="False" Type="Fortune" Name="For_San_092" DisplayName="Foreknowledge" Faction="Sanctuary" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="4" ID="961">
-        <Target Zone="None" Side="Friendly">
+        	<Target Zone="None" Side="Friendly">
 		<Effect Type="ChoiceOption" />
-                <Subgroup>
+        	<Subgroup>
 			<Target Zone="Library" Side="Friendly" Amount="3" AmountVisible="5">
 				<Option Value="0" DisplayText="Look" />
 				<Effect Type="MoveCardTo" Destination="Hand"/>
@@ -179,14 +180,13 @@ All enemy creatures gains -[2:ATK].</Description>
 					</Target>
 				</Subgroup>
 			</Target>
-			<Target Zone="None" Side="Friendly" Cancelable="False" SkipSubTargetValidation="True">
-				<Option Value="1" DisplayText="Discard" />
-				<Effect Type="Draw" Value="5" />
-				<Subgroup>
-					<Target Zone="Hand" Amount="2" Side="Friendly" Cancelable="False">
-						<Effect Type="MoveCardTo" Destination="Graveyard" />
-					</Target>
-				</Subgroup>
+			<Target Zone="Hand" Side="Friendly" Amount="2" Cancelable="False">
+				<Option Value="1" DisplayText="Discard"/>
+				<Effect Type="MoveCardTo" Destination="Graveyard"/>
+			</Target>
+			<Target Zone="None" Side="Friendly">
+				<Option Value="1"/>
+				<Effect Type="Draw" Value="5"/>
 			</Target>
 		</Subgroup>
 		</Target>
@@ -386,16 +386,16 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 	</Card>
 	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Inf_091" DisplayName="Heretic Library" Faction="Inferno" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="973">
 		<Variable Type="OccupantCount">
-<CardFilter IncludeFaction="Inferno"/>
-</Variable>
-<Trigger Type="OnTurnBegin" Side="Friendly">
-<Target Zone="Graveyard" Amount="1" Side="Friendly">
-<CardFilter IncludeCardType="Fortune" IncludeFaction="Inferno"/>
-<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-<Effect Type="MoveCardTo" Destination="Hand"/>
-</Target>
-</Trigger>
-<Description>At the beginning of your turn, if an Inferno creature is at Heretic Library, take target forune card from your graveyard ad put it into your hand.</Description>
+			<CardFilter IncludeFaction="Inferno"/>
+		</Variable>
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+			<Target Zone="Graveyard" Amount="1" Side="Friendly">
+				<CardFilter IncludeCardType="Fortune"/>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+				<Effect Type="MoveCardTo" Destination="Hand"/>
+			</Target>
+		</Trigger>
+	<Description>At the beginning of your turn, if an Inferno creature is at Heretic Library, take target forune card from your graveyard ad put it into your hand.</Description>
 	</Card>
 	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Inf_092" DisplayName="Throne of Ahribban" Faction="Inferno" Cost="4" MightLevel="2" MagicLevel="2" DestinyLevel="0" ID="974">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
